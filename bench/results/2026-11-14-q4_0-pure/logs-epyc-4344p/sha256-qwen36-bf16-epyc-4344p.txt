@@ -1,0 +1,1 @@
+28711d8b975c31fcac1f88ec58b20bf7e82e37eabd08010dc53cf29302b29bcb  ~/q40pur/Qwen3.6-35B-A3B-BF16.gguf

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "~/reponses-1114/_srv_gen.py", line 18, in <module>
+    toks = r.get("tokens") or [c["id"] for c in r.get("completion_probabilities", [])]
+                               ~^^^^^^
+KeyError: 'id'

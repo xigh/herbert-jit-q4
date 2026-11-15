@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-10",
+  "object": "chat.completion",
+  "created": 1794678231,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "L'artiste R.M. Harringay, insatisfait de son portrait d'un joueur d'orgue de barbarie, assiste avec effroi à l'animation diabolique de la toile qui lui propose un pacte en échange de deux chefs-d'œuvre. Pour se débarrasser de l'entité, Harringay la recouvre entièrement d'une peinture verte, conservant ensuite la toile comme preuve de son récit, bien que son œuvre reste considérée comme médiocre par ses contemporains."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2738,
+    "completion_tokens": 106,
+    "total_tokens": 2844,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 2738,
+    "prompt_ms": 6788.257635,
+    "prompt_per_token_ms": 2.479275980642805,
+    "prompt_per_second": 403.3435598971635,
+    "predicted_n": 106,
+    "predicted_ms": 6695.293301,
+    "predicted_per_token_ms": 63.1631443490566,
+    "predicted_per_second": 15.832017394095041
+  }
+}

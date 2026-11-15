@@ -1,0 +1,28 @@
+{
+ "ref": "ref/qwen36-fr.kld",
+ "test": "out/qwen36-fr-llama-q40pur-re.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 248320,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact ppl from llama log; se from compressed"
+ },
+ "ppl_ref": 5.057731460919817,
+ "ppl_test": 5.388000000000001,
+ "nll_ref": 1.6209180548889228,
+ "nll_test": 1.6841742585481176,
+ "dnll": 0.06325620365919482,
+ "dnll_se": 0.007971060947672746,
+ "dnll_se_chunk": 0.009817953040495774,
+ "kl_mean": 0.07666612002518516,
+ "kl_se": 0.002841032458627388,
+ "kl_median": 0.04507368618365962,
+ "kl_p99": 0.4733793085207401,
+ "kl_p999": 0.9066137111443388,
+ "kl_max": 6.514376308857874,
+ "top1": 0.8599081364829396,
+ "top1_n": 2621,
+ "ref_nll_exact_minus_compressed": -1.2006989571691386e-05
+}

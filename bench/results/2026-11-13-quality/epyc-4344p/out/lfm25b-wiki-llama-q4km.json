@@ -1,0 +1,28 @@
+{
+ "ref": "ref/lfm25b-wiki.kld",
+ "test": "out/lfm25b-wiki-llama-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 128000,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact ppl from llama log; se from compressed"
+ },
+ "ppl_ref": 18.81105178157129,
+ "ppl_test": 19.183099999999996,
+ "nll_ref": 2.9344445578353544,
+ "nll_test": 2.9540296830895785,
+ "dnll": 0.019585125254224067,
+ "dnll_se": 0.010741659563281178,
+ "dnll_se_chunk": 0.018280324506346802,
+ "kl_mean": 0.19811033781481532,
+ "kl_se": 0.003935145244176462,
+ "kl_median": 0.10418512128886162,
+ "kl_p99": 1.4744345455366592,
+ "kl_p999": 3.1623499852872174,
+ "kl_max": 5.552609727554664,
+ "top1": 0.7898622047244095,
+ "top1_n": 4815,
+ "ref_nll_exact_minus_compressed": 0.0032016596114475345
+}

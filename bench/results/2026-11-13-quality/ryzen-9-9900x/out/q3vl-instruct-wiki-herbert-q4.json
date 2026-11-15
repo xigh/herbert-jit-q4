@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-instruct-wiki.kld",
+ "test": "out/q3vl-instruct-wiki-herbert-q4.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact"
+ },
+ "ppl_ref": 7.63968082518826,
+ "ppl_test": 8.163454622159792,
+ "nll_ref": 2.0333558254979347,
+ "nll_test": 2.0996674399430177,
+ "dnll": 0.06631161444508321,
+ "dnll_se": 0.007014585576904862,
+ "dnll_se_chunk": 0.00815366957639841,
+ "kl_mean": 0.1065660543252418,
+ "kl_se": 0.0020775284438958827,
+ "kl_median": 0.06408796362980895,
+ "kl_p99": 0.7167454258796588,
+ "kl_p999": 1.6572174033436213,
+ "kl_max": 4.098911990940479,
+ "top1": 0.839238845144357,
+ "top1_n": 5116,
+ "ref_nll_exact_minus_compressed": 0.002142214994004791
+}

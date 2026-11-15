@@ -1,0 +1,114 @@
+
+### p01 (écrire) réf 180 jetons, fin eos
+RÉF: ```python⏎def fusionner_intervalles(intervalles: list[tuple[int, int]]) -> list[tuple[int, int]]:⏎    if not intervalles:⏎        return []⏎    ⏎    # Trier par début d'intervalle⏎    sorted_intervals = sorted(intervalles, key=lambda x: x[0])⏎    ⏎    merged = [sorted_intervals[0]]⏎    ⏎    for current in sorted_intervals[1:]:⏎        last = merged[-1]⏎        # Si l'intervalle courant chevauche ou touche le dernier intervalle fusionné⏎        if current[0] <= last[1]:⏎            # Fusionner : étendre la borne supérieure si nécessaire⏎            merged[-1] = (last[0], max(last[1], current[1]))⏎        else:⏎            merged.append(current)⏎    ⏎    return merged⏎```
+  herbert-q40   dévie au jeton 44 : réf ' par' / bras ' les' (fin eos, 184 j.)
+      bras→ " les intervalles par leur début\n    triees = sorted(intervalles, key=lambda x: x[0])\n    \n    resultat = [triees[0]]\n    \n    for debut, fin in triees[1:]:\n        dernier_debut, dernier_fin = resultat[-1]\n        \n        # Si l'intervalle courant se chevauche ou touche le dernier ajouté\n        if debut <= dernier_fin:\n            # Fusionner en prenant le maximum des fins\n            resultat[-"
+  llama-q40pur  dévie au jeton 44 : réf ' par' / bras ' les' (fin eos, 184 j.)
+      bras→ " les intervalles par leur début\n    triees = sorted(intervalles, key=lambda x: x[0])\n    \n    resultat = [triees[0]]\n    \n    for debut, fin in triees[1:]:\n        dernier_debut, dernier_fin = resultat[-1]\n        \n        # Si l'intervalle courant se chevauche ou touche le dernier ajouté\n        if debut <= dernier_fin:\n            # Fusionner en prenant le maximum des fins\n            resultat[-"
+  ik-q40pur     dévie au jeton 44 : réf ' par' / bras ' les' (fin eos, 193 j.)
+      bras→ " les intervalles par leur début\n    triees = sorted(intervalles, key=lambda x: x[0])\n    \n    resultat = [triees[0]]\n    \n    for debut, fin in triees[1:]:\n        dernier_debut, dernier_fin = resultat[-1]\n        \n        # Si l'intervalle courant chevauche ou touche le dernier ajouté\n        if debut <= dernier_fin:\n            # Fusionner en prenant le maximum des fins\n            resultat[-1] "
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: dévie au jeton 115
+  paire herbert-q40|ik-q40pur: dévie au jeton 115
+
+### p02 (écrire) réf 185 jetons, fin eos
+RÉF: ```python⏎import unicodedata⏎import re⏎⏎def slug(titre: str) -> str:⏎    # Normaliser la chaîne pour décomposer les caractères accentués⏎    nfkd_form = unicodedata.normalize('NFKD', titre)⏎    # Ne garder que les caractères de base (enlever les diacritiques)⏎    ascii_form = ''.join([c for c in nfkd_form if not unicodedata.combining(c)])⏎    # Convertir en minuscules⏎    ascii_form = ascii_form.lower()⏎    # Remplacer toute séquence de caractères non alphanumériques par un tiret⏎    slug = re.sub(r'[^a-z0-9]+', '-', ascii_form)⏎    # Enlever les tirets au début et à la fin⏎    slug = slug.strip('-')⏎    return slug⏎```
+  herbert-q40   dévie au jeton 10 : réf '\n\n' / bras '\n\n\n' (fin eos, 172 j.)
+      bras→ "\n\n\ndef slug(titre: str) -> str:\n    # Normaliser la chaîne pour décomposer les caractères accentués\n    normalized = unicodedata.normalize('NFD', titre.lower())\n    \n    # Ne garder que les caractères de base (enlever les diacritiques)\n    ascii_str = ''.join(c for c in normalized if unicodedata.category(c) != 'Mn')\n    \n    # Remplacer toute séquence de caractères non alphanumériques par un tiret"
+  llama-q40pur  dévie au jeton 24 : réf ' Normal' / bras ' ' (fin eos, 260 j.)
+      bras→ " 1. Mettre en minuscules\n    titre = titre.lower()\n    \n    # 2. Décomposer les caractères accentués (NFD) et ne garder que la base\n    # unicodedata.normalize('NFD', titre) décompose 'é' en 'e' + accent aigu\n    # On filtre ensuite pour ne garder que les caractères de base (sans les diacritiques)\n    slug_text = unicodedata.normalize('NFD', titre)\n    slug_text = ''.join(c for c in slug_text if u"
+  ik-q40pur     dévie au jeton 24 : réf ' Normal' / bras ' ' (fin eos, 260 j.)
+      bras→ " 1. Mettre en minuscules\n    titre = titre.lower()\n    \n    # 2. Décomposer les caractères accentués (NFD) pour séparer les accents\n    # ex: 'é' devient 'e' + '\\u0301'\n    titre = unicodedata.normalize('NFD', titre)\n    \n    # 3. Supprimer les caractères diacritiques (les accents)\n    # On garde uniquement les caractères qui ne sont pas des diacritiques\n    titre = ''.join(c for c in titre if not"
+  llama-q4km    dévie au jeton 69 : réf ' di' / bras ' accents' (fin eos, 182 j.)
+      bras→ " accents)\n    ascii_form = ''.join([c for c in nfkd_form if not unicodedata.combining(c)])\n    # Convertir en minuscules\n    ascii_form = ascii_form.lower()\n    # Remplacer toute séquence de caractères non alphanumériques par un tiret\n    slug = re.sub(r'[^a-z0-9]+', '-', ascii_form)\n    # Enlever les tirets au début et à la fin\n    slug = slug.strip('-')\n    return slug\n```"
+  paire herbert-q40|llama-q40pur: dévie au jeton 10
+  paire llama-q40pur|ik-q40pur: dévie au jeton 59
+  paire herbert-q40|ik-q40pur: dévie au jeton 10
+
+### p03 (corriger) réf 107 jetons, fin eos
+RÉF: ```python⏎def recherche_dichotomique(liste: list[int], x: int) -> int:⏎    lo, hi = 0, len(liste) - 1⏎    while lo <= hi:⏎        mid = (lo + hi) // 2⏎        if liste[mid] == x:⏎            return mid⏎        elif liste[mid] < x:⏎            lo = mid + 1⏎        else:⏎            hi = mid - 1⏎    return -1⏎```
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### p04 (corriger) réf 89 jetons, fin eos
+RÉF: ```python⏎def mediane(nombres: list[float]) -> float:⏎    if not nombres:⏎        raise ValueError("liste vide")⏎    s = sorted(nombres)⏎    n = len(s)⏎    if n % 2 == 1:⏎        return s[n // 2]⏎    return (s[n // 2 - 1] + s[n // 2]) / 2⏎```
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### p05 (compléter) réf 150 jetons, fin eos
+RÉF: ```python⏎def en_romain(n: int) -> str:⏎    table = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"),⏎             (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]⏎    resultat = ""⏎    for value, symbol in table:⏎        while n >= value:⏎            resultat += symbol⏎            n -= value⏎    return resultat⏎```
+  herbert-q40   dévie au jeton 121 : réf ' value' / bras ' valeur' (fin eos, 150 j.)
+      bras→ ' valeur, symbole in table:\n        while n >= valeur:\n            resultat += symbole\n            n -= valeur\n    return resultat\n```'
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: dévie au jeton 121
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 121
+
+### p06 (prédire) réf 14 jetons, fin eos
+RÉF: ```python⏎[2, 3, 0]⏎```
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### p07 (prédire) réf 13 jetons, fin eos
+RÉF: ```python⏎2 4 -4 2 False⏎```
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### r01 (écrire) réf 154 jetons, fin eos
+RÉF: ```rust⏎pub fn moyenne_entiere(v: &[i32]) -> Option<i32> {⏎    if v.is_empty() {⏎        return None;⏎    }⏎⏎    let len = v.len() as i64;⏎    let sum: i64 = v.iter().map(|&x| x as i64).sum();⏎⏎    // Division entière vers zéro : Rust fait déjà cela pour les entiers signés⏎    // avec l'opérateur /, mais on doit faire attention au signe.⏎    // sum / len fait une division entière vers zéro pour les i64, ce qui est correct.⏎    Some((sum / len) as i32)⏎}⏎```
+  herbert-q40   dévie au jeton 76 : réf '\n\n' / bras '\n' (fin eos, 214 j.)
+      bras→ "\n    \n    // Division entière vers zéro pour i64, puis conversion en i32\n    // Rust's integer division truncates towards zero, which is what we want.\n    // We need to ensure the result fits in i32.\n    // Since we're averaging i32 values, the average must be within [i32::MIN, i32::MAX]\n    // because it's a convex combination of the values.\n    let avg = sum / len;\n    \n    // Safe cast since av"
+  llama-q40pur  dévie au jeton 76 : réf '\n\n' / bras '\n' (fin eos, 120 j.)
+      bras→ "\n    \n    // Division entière vers zéro pour les entiers signés\n    // Rust's integer division already truncates towards zero\n    Some((sum / len) as i32)\n}\n```"
+  ik-q40pur     dévie au jeton 84 : réf ' :' / bras ' pour' (fin eos, 200 j.)
+      bras→ " pour i64, puis conversion en i32\n    // Rust's integer division truncates towards zero, which is what we want.\n    // We need to ensure the result fits in i32.\n    let avg = sum / len;\n\n    // Check if the average fits in i32\n    if avg < i32::MIN as i64 || avg > i32::MAX as i64 {\n        None\n    } else {\n        Some(avg as i32)\n    }\n}\n```"
+  llama-q4km    dévie au jeton 98 : réf ' avec' / bras ' sum' (fin eos, 130 j.)
+      bras→ ' sum / len arrondit vers zéro pour les entiers signés\n    Some((sum / len) as i32)\n}\n```'
+  paire herbert-q40|llama-q40pur: dévie au jeton 86
+  paire llama-q40pur|ik-q40pur: dévie au jeton 76
+  paire herbert-q40|ik-q40pur: dévie au jeton 76
+
+### r02 (corriger) réf 28 jetons, fin eos
+RÉF: ```rust⏎pub fn inverser(s: &str) -> String {⏎    s.chars().rev().collect()⏎}⏎```
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### r03 (compléter) réf 153 jetons, fin eos
+RÉF: ```rust⏎use std::collections::HashMap;⏎⏎pub fn compter_mots(texte: &str) -> Vec<(String, usize)> {⏎    let mut compte: HashMap<String, usize> = HashMap::new();⏎    for mot in texte.split_whitespace() {⏎        let mot_min = mot.to_lowercase();⏎        *compte.entry(mot_min).or_insert(0) += 1;⏎    }⏎    let mut resultat: Vec<(String, usize)> = compte.into_iter().collect();⏎    resultat.sort_by(|a, b| {⏎        b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0))⏎    });⏎    resultat⏎}⏎```
+  herbert-q40   identique
+  llama-q40pur  dévie au jeton 61 : réf ' =' / bras 'usc' (fin eos, 157 j.)
+      bras→ 'uscule = mot.to_lowercase();\n        *compte.entry(mot_minuscule).or_insert(0) += 1;\n    }\n    let mut resultat: Vec<(String, usize)> = compte.into_iter().collect();\n    resultat.sort_by(|a, b| {\n        b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0))\n    });\n    resultat\n}\n```'
+  ik-q40pur     dévie au jeton 61 : réf ' =' / bras 'usc' (fin eos, 157 j.)
+      bras→ 'uscule = mot.to_lowercase();\n        *compte.entry(mot_minuscule).or_insert(0) += 1;\n    }\n    let mut resultat: Vec<(String, usize)> = compte.into_iter().collect();\n    resultat.sort_by(|a, b| {\n        b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0))\n    });\n    resultat\n}\n```'
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: dévie au jeton 61
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 61

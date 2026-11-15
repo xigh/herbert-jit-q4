@@ -1,0 +1,76 @@
+[workspace]
+members = [".", "crates/a64", "crates/rv", "herbert-chat", "herbert-serve", "bench/quality/hkld"]
+
+[package]
+name = "herbert-jit-q4"
+version = "0.1.0"
+edition = "2021"
+authors = ["Philippe Anel <philippe@dremml.com>"]
+license = "MIT"
+description = "LLM inference on the CPU: weights quantized to 4 bits (Q4_0) at load, every kernel emitted at run time (x86-64, AArch64, RISC-V), behind llama-server's HTTP API"
+# Supported targets: x86_64 Linux and Windows (iced-x86 emits AVX2/AVX-512), aarch64
+# macOS and Linux (crates/a64 emits NEON, BF16, SME), riscv64 Linux (crates/rv emits RVV);
+# build.rs and src/lib.rs refuse the rest.
+build = "build.rs"
+
+[lib]
+name = "herbert_jit_q4"
+path = "src/lib.rs"
+
+[[bin]]
+name = "herbert-jit-chat"
+path = "src/main.rs"
+
+[[bin]]
+name = "herbert-jit-stream"
+path = "src/bin/herbert-jit-stream.rs"
+
+[[bin]]
+name = "herbert-jit-llama-serve"
+path = "src/bin/herbert-jit-llama-serve.rs"
+required-features = ["serve"]
+
+[features]
+# Back the packed weights with 2 MiB pages (Linux MAP_HUGETLB); falls back to
+# ordinary pages when the machine has none reserved.
+hugepages = []
+# herbert-jit-llama-serve: llama-server's API (chat completions, tools, thinking, embeddings) for the families of
+# herbert-chat (herbert-serve).
+serve = ["dep:herbert-serve", "dep:windows-service"]
+
+[dependencies]
+memmap2 = "0.9"
+libc = "0.2"
+safetensors = "0.4.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+half = { version = "2.3", features = ["serde"] }
+thiserror = "1.0"
+tokenizers = { version = "0.22.2", default-features = false, features = ["fancy-regex"] }
+# What every engine shares: the families' dialects, the sampler, the detokenization (herbert-chat), llama-server's API
+# (herbert-serve, the server, left out of the default build).
+herbert-chat = { path = "herbert-chat" }
+herbert-serve = { path = "herbert-serve", optional = true }
+
+# The emitter of each target: iced-x86 for x86-64, the a64 crate of this workspace for
+# AArch64, the rv crate for RISC-V.
+[target.'cfg(target_arch = "x86_64")'.dependencies]
+iced-x86 = { version = "1.21.0", features = ["code_asm", "decoder", "nasm"] }
+
+# Windows: the process opts out of power throttling (EcoQoS) at load, src/pool/power.rs, and the default worker count
+# reads the cores' efficiency classes, src/core/cpu_detection.rs. Already in the tree through tokio (the server).
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_System_Threading", "Win32_System_SystemInformation", "Win32_System_Console"] }
+# `herbert-jit-llama-serve service install`: the server as a Windows service (`src/service.rs`).
+windows-service = { version = "0.8", optional = true }
+
+[target.'cfg(target_arch = "aarch64")'.dependencies]
+a64 = { path = "crates/a64" }
+
+[target.'cfg(target_arch = "riscv64")'.dependencies]
+rv = { path = "crates/rv" }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

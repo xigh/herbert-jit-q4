@@ -1,0 +1,200 @@
+
+### c1-en (court, début) : At about what time did Harringay go into his studio at the start of the story?
+  herbert-q40   (70 j., fin eos): 'Based on the text, Harringay went into his studio about **ten o\'clock**.\n\nThis is stated in the second paragraph: "Following his version of the affair, the narrative deposes that Harringay went into his studio about ten o\'clock to see what he could make of the head that he had been working at the day before."'
+  llama-q40pur  (70 j., fin eos): 'Based on the text, Harringay went into his studio about **ten o\'clock**.\n\nThis is stated in the second paragraph: "Following his version of the affair, the narrative deposes that Harringay went into his studio about ten o\'clock to see what he could make of the head that he had been working at the day before."'
+  ik-q40pur     (70 j., fin eos): 'Based on the text, Harringay went into his studio about **ten o\'clock**.\n\nThis is stated in the second paragraph: "Following his version of the affair, the narrative deposes that Harringay went into his studio about ten o\'clock to see what he could make of the head that he had been working at the day before."'
+  llama-q4km    (70 j., fin eos): 'Based on the text, Harringay went into his studio about **ten o\'clock**.\n\nThis is stated in the second paragraph: "Following his version of the affair, the narrative deposes that Harringay went into his studio about ten o\'clock to see what he could make of the head that he had been working at the day before."'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### c1-fr (court, début) : À quelle heure environ Harringay entre-t-il dans son atelier au début de l'histoire ?
+  herbert-q40   (26 j., fin eos): "D'après le texte, Harringay entre dans son studio vers **dix heures** (« about ten o'clock »)."
+  llama-q40pur  (26 j., fin eos): "D'après le texte, Harringay entre dans son studio vers **dix heures** (« about ten o'clock »)."
+  ik-q40pur     (26 j., fin eos): "D'après le texte, Harringay entre dans son studio vers **dix heures** (« about ten o'clock »)."
+  llama-q4km    (26 j., fin eos): "D'après le texte, Harringay entre dans son atelier vers **dix heures** (« about ten o'clock »)."
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: dévie au jeton 12
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### c2-en (court, milieu) : While retouching the eye, what colour did Harringay load his brush with by mistake, instead of brown?
+  herbert-q40   (77 j., fin eos): 'Based on the text, while retouching the eye, Harringay loaded his brush with **vermilion** (or bright red) by mistake, instead of brown.\n\nThe relevant passage states: "The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!"'
+  llama-q40pur  (66 j., fin eos): 'Based on the text, Harringay loaded his brush with **vermilion** (or bright red) by mistake.\n\nThe relevant passage states: "The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!"'
+  ik-q40pur     (66 j., fin eos): 'Based on the text, Harringay loaded his brush with **vermilion** (or bright red) by mistake.\n\nThe relevant passage states: "The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!"'
+  llama-q4km    (66 j., fin eos): 'Based on the text, Harringay loaded his brush with **vermilion** (or bright red) by mistake.\n\nThe relevant passage states: "The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!"'
+  paire herbert-q40|llama-q40pur: dévie au jeton 5
+  paire llama-q40pur|llama-q4km: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 5
+
+### c2-fr (court, milieu) : En retouchant l'œil, de quelle couleur Harringay a-t-il chargé son pinceau par erreur, au lieu du brun ?
+  herbert-q40   (117 j., fin eos): 'D\'après le texte, Harringay a chargé son pinceau de **vermillon** (ou de **rouge vif** / *bright red*) par erreur, au lieu du brun.\n\nLe passage concerné est le suivant :\n> "The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!"\n\nPeu après, le texte précise également :\n> "...he struck the brush full of **bright red** athwart the picture..."'
+  llama-q40pur  (89 j., fin eos): 'D\'après le texte, Harringay a chargé son pinceau de **vermillon** (ou de **rouge vif** / *bright red*) par erreur, au lieu du brun.\n\nLe passage concerné est le suivant :\n> "The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!"'
+  ik-q40pur     (120 j., fin eos): 'D\'après le texte, Harringay a chargé son pinceau de **vermillon** (ou de **rouge vif** / *bright red*) par erreur.\n\nLe passage concerné est le suivant :\n> "The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!"\n\nPlus loin, le texte confirme cette couleur en parlant de "bright red" :\n> "...he struck the brush full of **bright red** athwart the picture..."'
+  llama-q4km    (54 j., fin eos): 'Harringay a chargé son pinceau de **vermillon** (vermilion) par erreur, au lieu du brun.\n\nLe texte indique explicitement : *"Catastrophe! he had filled his brush with vermilion instead of brown..."*'
+  paire herbert-q40|llama-q40pur: fin différente au jeton 89
+  paire llama-q40pur|llama-q4km: dévie au jeton 0
+  paire llama-q40pur|ik-q40pur: dévie au jeton 37
+  paire herbert-q40|ik-q40pur: dévie au jeton 37
+
+### c3-en (court, fin) : What are the dimensions of the canvas Harringay shows as evidence, and what colour is it?
+  herbert-q40   (48 j., fin eos): 'Based on the text, the dimensions of the canvas are **24 by 20**, and it is enamelled a **pale green** (specifically described in the narrative as "Hedge Sparrow\'s Egg Tint").'
+  llama-q40pur  (49 j., fin eos): 'Based on the text, the dimensions of the canvas are **24 by 20**, and it is enamelled a **pale green** (specifically described earlier in the story as "Hedge Sparrow\'s Egg Tint").'
+  ik-q40pur     (49 j., fin eos): 'Based on the text, the dimensions of the canvas are **24 by 20**, and it is enamelled a **pale green** (specifically described earlier in the story as "Hedge Sparrow\'s Egg Tint").'
+  llama-q4km    (45 j., fin eos): 'Based on the text, the dimensions of the canvas are **24 by 20**, and it is enamelled a **pale green** (specifically described as "Hedge Sparrow\'s Egg Tint").'
+  paire herbert-q40|llama-q40pur: dévie au jeton 34
+  paire llama-q40pur|llama-q4km: dévie au jeton 34
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 34
+
+### c3-fr (court, fin) : Quelles sont les dimensions de la toile qu'Harringay montre comme preuve, et de quelle couleur est-elle ?
+  herbert-q40   (132 j., fin eos): "D'après le texte, la toile qu'Harringay présente comme preuve a les dimensions de **24 par 20** (probablement en pouces, bien que l'unité ne soit pas explicitement précisée dans l'extrait, c'est l'unité standard pour ce type de description dans la littérature anglaise de l'époque).\n\nElle est peinte d'une couleur uniforme : un **vert pâle** (décrit dans le texte comme « *Hedge Sparrow's Egg Tint* », soit une teinte d'œuf de moineau, et plus loin comme « *pale green* »)."
+  llama-q40pur  (132 j., fin eos): "D'après le texte, la toile qu'Harringay présente comme preuve a les dimensions de **24 par 20** (probablement en pouces, bien que l'unité ne soit pas explicitement précisée dans l'extrait, c'est l'unité standard pour ce type de description dans la littérature anglaise de l'époque).\n\nElle est peinte d'une couleur uniforme : un **vert pâle** (décrit dans le texte comme « *Hedge Sparrow's Egg Tint* », soit une teinte d'œuf de moineau, et plus loin comme « *pale green* »)."
+  ik-q40pur     (132 j., fin eos): "D'après le texte, la toile qu'Harringay présente comme preuve a les dimensions de **24 par 20** (probablement en pouces, bien que l'unité ne soit pas explicitement précisée dans l'extrait, c'est l'unité standard pour ce type de description dans la littérature anglaise de l'époque).\n\nElle est peinte d'une couleur uniforme : un **vert pâle** (décrit dans le texte comme « *Hedge Sparrow's Egg Tint* », soit une teinte d'œuf de moineau, et plus loin comme « *pale green* »)."
+  llama-q4km    (136 j., fin eos): "D'après le texte, la toile qu'Harringay présente comme preuve a les dimensions de **24 par 20** (les unités ne sont pas précisées, mais il s'agit probablement de pouces ou de centimètres) et elle est émaillée d'une couleur **vert pâle** (décrite dans le texte comme « Hedge Sparrow's Egg Tint », soit une teinte rappelant l'œuf de moineau des haies, qui est un vert pâle).\n\nLe passage pertinent est :\n> « He supports it by a small canvas (24 by 20) enamelled a pale green... »"
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: dévie au jeton 28
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### c4-en (court, citation) : Quote, word for word, the first sentence the picture speaks aloud.
+  herbert-q40   (12 j., fin eos): '"That was rather hasty of you," said the picture.'
+  llama-q40pur  (12 j., fin eos): '"That was rather hasty of you," said the picture.'
+  ik-q40pur     (12 j., fin eos): '"That was rather hasty of you," said the picture.'
+  llama-q4km    (12 j., fin eos): '"That was rather hasty of you," said the picture.'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### c4-fr (court, citation) : Cite, mot pour mot, la première phrase que le tableau prononce à voix haute.
+  herbert-q40   (12 j., fin eos): '"That was rather hasty of you," said the picture.'
+  llama-q40pur  (12 j., fin eos): '"That was rather hasty of you," said the picture.'
+  ik-q40pur     (12 j., fin eos): '"That was rather hasty of you," said the picture.'
+  llama-q4km    (14 j., fin eos): '« That was rather hasty of you, » said the picture.'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: dévie au jeton 0
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### c5-en (court, résumé) : Summarise the story in two sentences.
+  herbert-q40   (78 j., fin eos): 'Artist R.M. Harringay becomes frustrated with his static portrait of an organ-grinder, which suddenly animates into a devilish figure that critiques his lack of true artistic inspiration. After a physical struggle in which Harringay paints over the demon with enamel, he claims the canvas is now blank, though his friends remain skeptical of his tale given his history of never producing a masterpiece.'
+  llama-q40pur  (79 j., fin eos): 'Artist R.M. Harringay becomes convinced that his painting of an Italian organ-grinder has come to life and is mocking his lack of artistic inspiration, leading to a physical struggle where he attempts to paint over the moving canvas. Harringay ultimately silences the demon by covering the entire portrait with pale green enamel, leaving behind only a blank, enamelled panel as proof of his encounter.'
+  ik-q40pur     (75 j., fin eos): 'Artist R.M. Harringay becomes frustrated with his static portrait of an organ-grinder, which suddenly animates into a devilish figure that critiques his lack of true inspiration. After a physical struggle in which Harringay paints over the demon with enamel, he silences the creature and is left with a blank green canvas, though he remains unable to produce a masterpiece.'
+  llama-q4km    (67 j., fin eos): 'An artist named Harringay becomes frustrated with his lifeless painting of an Italian organ-grinder, which suddenly comes to life and offers him masterpieces in exchange for his soul. Harringay rejects the devil’s bargain and violently paints over the canvas with enamel, silencing the creature and leaving behind only a blank, green panel.'
+  paire herbert-q40|llama-q40pur: dévie au jeton 8
+  paire llama-q40pur|llama-q4km: dévie au jeton 0
+  paire llama-q40pur|ik-q40pur: dévie au jeton 8
+  paire herbert-q40|ik-q40pur: dévie au jeton 34
+
+### c5-fr (court, résumé) : Résume l'histoire en deux phrases.
+  herbert-q40   (105 j., fin eos): "L'artiste R.M. Harringay, insatisfait de son portrait d'un joueur d'orgue de barbarie, assiste avec effroi à l'animation diabolique de la toile qui lui propose un pacte en échange de deux chefs-d'œuvre. Pour se débarrasser de l'entité, Harringay la recouvre entièrement d'une peinture verte, conservant ensuite la toile comme preuve de son récit, bien que son œuvre reste considérée comme médiocre par ses contemporains."
+  llama-q40pur  (103 j., fin eos): "L'artiste R.M. Harringay, frustré par son incapacité à animer son portrait d'un joueur d'orgue de barbarie, assiste avec effroi à l'apparition d'un diable sur la toile qui lui propose un pacte en échange de deux chefs-d'œuvre. Pour échapper à cette tentation et à la créature, Harringay recouvre entièrement le tableau d'une couche d'émail vert, conservant ensuite la toile comme preuve de son récit."
+  ik-q40pur     (116 j., fin eos): "L'artiste R.M. Harringay, frustré par son incapacité à animer son portrait d'un joueur d'orgue de barbarie, assiste avec effroi à l'apparition d'un diable sur la toile qui lui reproche son manque d'inspiration. Pour se débarrasser de cette créature démoniaque qui lui offre des chefs-d'œuvre en échange de son âme, Harringay la recouvre entièrement d'une peinture émaillée verte, laissant derrière lui une œuvre inachevée et un récit contesté."
+  llama-q4km    (125 j., fin eos): "L'artiste R.M. Harringay, insatisfait de son tableau d'un joueur d'orgue de barbarie, assiste avec effroi à l'animation diabolique de la toile qui lui reproche son manque d'inspiration et lui propose un pacte en échange de chefs-d'œuvre. Pour se débarrasser de l'entité, Harringay recouvre le tableau de peinture verte, mais l'histoire se termine sur une note sceptique, suggérant que cet incident n'est qu'une invention de l'artiste pour justifier son incapacité à produire une œuvre majeure."
+  paire herbert-q40|llama-q40pur: dévie au jeton 10
+  paire llama-q40pur|llama-q4km: dévie au jeton 10
+  paire llama-q40pur|ik-q40pur: dévie au jeton 50
+  paire herbert-q40|ik-q40pur: dévie au jeton 10
+
+### l1-en (long, début) : In what year did Pawkins publish his work on the mesoblast of the Death's Head Moth?
+  herbert-q40   (78 j., fin eos): 'Based on the text, Pawkins published his work on the "mesoblast" of the Death\'s Head Moth in **1891**.\n\nThis is stated in the paragraph beginning: "But in 1891 Pawkins, whose health had been bad for some time, published some work upon the \'mesoblast\' of the Death\'s Head Moth."'
+  llama-q40pur  (75 j., fin eos): 'Based on the text, Pawkins published his work on the mesoblast of the Death\'s Head Moth in **1891**.\n\nThis is stated in the paragraph: "But in 1891 Pawkins, whose health had been bad for some time, published some work upon the \'mesoblast\' of the Death\'s Head Moth."'
+  ik-q40pur     (78 j., fin eos): 'Based on the text, Pawkins published his work on the "mesoblast" of the Death\'s Head Moth in **1891**.\n\nThis is stated in the paragraph beginning: "But in 1891 Pawkins, whose health had been bad for some time, published some work upon the \'mesoblast\' of the Death\'s Head Moth."'
+  llama-q4km    (76 j., fin eos): 'Based on the text, Pawkins published his work on the mesoblast of the Death\'s Head Moth in **1891**.\n\nThis is stated in the paragraph beginning: "But in 1891 Pawkins, whose health had been bad for some time, published some work upon the \'mesoblast\' of the Death\'s Head Moth."'
+  paire herbert-q40|llama-q40pur: dévie au jeton 12
+  paire llama-q40pur|llama-q4km: dévie au jeton 36
+  paire llama-q40pur|ik-q40pur: dévie au jeton 12
+  paire herbert-q40|ik-q40pur: identique
+
+### l1-fr (long, début) : En quelle année Pawkins publie-t-il son travail sur le mésoblaste du sphinx tête-de-mort (Death's Head Moth) ?
+  herbert-q40   (80 j., fin eos): 'D\'après le texte, Pawkins a publié son travail sur le mésoblaste du sphinx tête-de-mort en **1891**.\n\nLe passage pertinent est le suivant :\n> "But in **1891** Pawkins, whose health had been bad for some time, published some work upon the "mesoblast" of the Death\'s Head Moth."'
+  llama-q40pur  (81 j., fin eos): 'D\'après le texte, Pawkins a publié son travail sur le mésoblaste du sphinx tête-de-mort en **1891**.\n\nLe passage concerné est le suivant :\n> "But in **1891** Pawkins, whose health had been bad for some time, published some work upon the "mesoblast" of the Death\'s Head Moth."'
+  ik-q40pur     (81 j., fin eos): 'D\'après le texte, Pawkins a publié son travail sur le mésoblaste du sphinx tête-de-mort en **1891**.\n\nLe passage concerné est le suivant :\n> "But in **1891** Pawkins, whose health had been bad for some time, published some work upon the "mesoblast" of the Death\'s Head Moth."'
+  llama-q4km    (77 j., fin eos): 'D\'après le texte, Pawkins publie son travail sur le mésoblaste du sphinx tête-de-mort en **1891**.\n\nLe passage concerné indique : « But in 1891 Pawkins, whose health had been bad for some time, published some work upon the "mesoblast" of the Death\'s Head Moth. »'
+  paire herbert-q40|llama-q40pur: dévie au jeton 34
+  paire llama-q40pur|llama-q4km: dévie au jeton 8
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 34
+
+### l2-en (long, milieu) : On which day of his study of diatoms did Hapley first notice the strange moth?
+  herbert-q40   (57 j., fin eos): 'Based on the text, Hapley first noticed the strange moth on the **third day** of his study of diatoms.\n\nThe text states: "It was on the third day of the diatoms that Hapley became aware of a novel addition to the local fauna."'
+  llama-q40pur  (57 j., fin eos): 'Based on the text, Hapley first noticed the strange moth on the **third day** of his study of diatoms.\n\nThe text states: "It was on the third day of the diatoms that Hapley became aware of a novel addition to the local fauna."'
+  ik-q40pur     (57 j., fin eos): 'Based on the text, Hapley first noticed the strange moth on the **third day** of his study of diatoms.\n\nThe text states: "It was on the third day of the diatoms that Hapley became aware of a novel addition to the local fauna."'
+  llama-q4km    (57 j., fin eos): 'Based on the text, Hapley first noticed the strange moth on the **third day** of his study of diatoms.\n\nThe text states: "It was on the third day of the diatoms that Hapley became aware of a novel addition to the local fauna."'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### l2-fr (long, milieu) : Quel jour de son étude des diatomées Hapley remarque-t-il pour la première fois l'étrange papillon ?
+  herbert-q40   (69 j., fin eos): 'D\'après le texte, Hapley remarque l\'étrange papillon le **troisième jour** de son étude des diatomées.\n\nLe passage pertinent est le suivant :\n> "It was on the **third day** of the diatoms that Hapley became aware of a novel addition to the local fauna."'
+  llama-q40pur  (92 j., fin eos): "D'après le texte, Hapley remarque l'étrange papillon le **troisième jour** où il étudie les diatomées.\n\nLe texte précise : « It was on the third day of the diatoms that Hapley became aware of a novel addition to the local fauna. » (C'est le troisième jour des diatomées qu'Hapley a pris conscience d'une nouvelle addition à la faune locale.)"
+  ik-q40pur     (89 j., fin eos): "D'après le texte, Hapley remarque l'étrange papillon le **troisième jour** de son étude des diatomées.\n\nLe texte précise : « It was on the third day of the diatoms that Hapley became aware of a novel addition to the local fauna. » (C'était le troisième jour des diatomées qu'Hapley prit conscience d'une nouvelle addition à la faune locale.)"
+  llama-q4km    (91 j., fin eos): "D'après le texte, Hapley remarque l'étrange papillon le **troisième jour** de son étude des diatomées.\n\nLe passage pertinent indique : « It was on the third day of the diatoms that Hapley became aware of a novel addition to the local fauna. » (C'est le troisième jour des diatomées qu'Hapley a pris conscience d'une nouvelle addition à la faune locale.)"
+  paire herbert-q40|llama-q40pur: dévie au jeton 23
+  paire llama-q40pur|llama-q4km: dévie au jeton 23
+  paire llama-q40pur|ik-q40pur: dévie au jeton 23
+  paire herbert-q40|ik-q40pur: dévie au jeton 33
+
+### l3-en (long, fin) : At the end of the story, where is Hapley spending the rest of his days, and what does he say the moth is?
+  herbert-q40   (48 j., fin eos): 'Based on the text, at the end of the story, Hapley is spending the remainder of his days in a **padded room** (or an asylum).\n\nHe says that the moth is the **ghost of Pawkins**.'
+  llama-q40pur  (48 j., fin eos): 'Based on the text, at the end of the story, Hapley is spending the remainder of his days in a **padded room** (or an asylum).\n\nHe says that the moth is the **ghost of Pawkins**.'
+  ik-q40pur     (45 j., fin eos): 'Based on the final paragraph of the text, Hapley is spending the remainder of his days in a **padded room** (at an asylum).\n\nHe says that the moth is the **ghost of Pawkins**.'
+  llama-q4km    (47 j., fin eos): 'Based on the text, at the end of the story, Hapley is spending the remainder of his days in a **padded room** (in an asylum).\n\nHe says the moth is the **ghost of Pawkins**.'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: dévie au jeton 30
+  paire llama-q40pur|ik-q40pur: dévie au jeton 3
+  paire herbert-q40|ik-q40pur: dévie au jeton 3
+
+### l3-fr (long, fin) : À la fin de l'histoire, où Hapley passe-t-il le reste de ses jours, et que dit-il que le papillon est ?
+  herbert-q40   (109 j., fin eos): 'À la fin de l\'histoire, Hapley passe le reste de ses jours dans une **chambre capitonnée** (un *padded room*) d\'un asile psychiatrique.\n\nConcernant le papillon, bien que le médecin de l\'asile le qualifie d\'hallucination, Hapley affirme qu\'il s\'agit du **fantôme de Pawkins** (le "ghost of Pawkins"). Il considère par conséquent ce papillon comme un spécimen unique et intéressant à capturer.'
+  llama-q40pur  (61 j., fin eos): "À la fin de l'histoire, Hapley passe le reste de ses jours dans une **chambre capitonnée** (un *padded room*) d'un asile.\n\nIl dit que le papillon est le **fantôme de Pawkins** (le *ghost of Pawkins*)."
+  ik-q40pur     (65 j., fin eos): "À la fin de l'histoire, Hapley passe le reste de ses jours dans une **chambre capitonnée** (un *padded room*) d'un asile psychiatrique.\n\nIl dit que le papillon est le **fantôme de Pawkins** (le *ghost of Pawkins*)."
+  llama-q4km    (96 j., fin eos): "À la fin de l'histoire, Hapley passe le reste de ses jours dans une **chambre matelassée** (ou asile d'aliénés), où il est gardé sous contrainte.\n\nConcernant le papillon (ou mite), il affirme qu'il s'agit de **l'ombre (ou fantôme) de Pawkins**. Il le considère donc comme un spécimen unique et méritant d'être capturé."
+  paire herbert-q40|llama-q40pur: dévie au jeton 36
+  paire llama-q40pur|llama-q4km: dévie au jeton 22
+  paire llama-q40pur|ik-q40pur: dévie au jeton 36
+  paire herbert-q40|ik-q40pur: dévie au jeton 42
+
+### l4-en (long, citation) : Quote, word for word, the sentence Hapley says to the Vicar right after the Vicar answers "Certainly not."
+  herbert-q40   (21 j., fin eos): '"The eye of faith is no better than the eye of science," said Hapley, awkwardly.'
+  llama-q40pur  (48 j., fin eos): '"Hapley was thunderstruck. He gasped. The Vicar was staring at him. Clearly the man saw nothing. \'The eye of faith is no better than the eye of science,\' said Hapley, awkwardly."'
+  ik-q40pur     (48 j., fin eos): '"Hapley was thunderstruck. He gasped. The Vicar was staring at him. Clearly the man saw nothing. \'The eye of faith is no better than the eye of science,\' said Hapley, awkwardly."'
+  llama-q4km    (21 j., fin eos): '"The eye of faith is no better than the eye of science," said Hapley, awkwardly.'
+  paire herbert-q40|llama-q40pur: dévie au jeton 0
+  paire llama-q40pur|llama-q4km: dévie au jeton 0
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 0
+
+### l4-fr (long, citation) : Cite, mot pour mot, la phrase que Hapley dit au vicaire juste après que celui-ci a répondu « Certainly not ».
+  herbert-q40   (48 j., fin eos): 'Hapley was thunderstruck. He gasped. The Vicar was staring at him. Clearly the man saw nothing. "The eye of faith is no better than the eye of science," said Hapley, awkwardly.'
+  llama-q40pur  (48 j., fin eos): 'Hapley was thunderstruck. He gasped. The Vicar was staring at him. Clearly the man saw nothing. "The eye of faith is no better than the eye of science," said Hapley, awkwardly.'
+  ik-q40pur     (48 j., fin eos): 'Hapley was thunderstruck. He gasped. The Vicar was staring at him. Clearly the man saw nothing. "The eye of faith is no better than the eye of science," said Hapley, awkwardly.'
+  llama-q4km    (48 j., fin eos): 'Hapley was thunderstruck. He gasped. The Vicar was staring at him. Clearly the man saw nothing. "The eye of faith is no better than the eye of science," said Hapley, awkwardly.'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|llama-q4km: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### l5-en (long, résumé) : Summarise the story in two sentences.
+  herbert-q40   (88 j., fin eos): 'After a bitter, decades-long scientific feud ends with the death of his rival Professor Pawkins, celebrated entomologist Hapley retreats to the countryside to recover, only to become obsessed with a mysterious moth that only he can see. This hallucination, which he interprets as the ghost of Pawkins, drives him to madness, resulting in his confinement in an asylum where he spends his remaining days trying to catch the invisible insect.'
+  llama-q40pur  (101 j., fin eos): "After a bitter, decades-long scientific feud with Professor Pawkins ends with Pawkins' death, the victorious but mentally unmoored entomologist Hapley retreats to the countryside, where he begins to hallucinate a mysterious, unseen moth that increasingly resembles his deceased rival. Consumed by this obsession and unable to distinguish reality from his delusions, Hapley’s sanity collapses, leading to his confinement in an asylum where he remains tormented by the phantom insect he insists is a unique specimen."
+  ik-q40pur     (101 j., fin eos): "After a bitter, decades-long scientific feud with Professor Pawkins ends with Pawkins' death, the victorious but mentally unmoored entomologist Hapley retreats to the countryside, where he begins to hallucinate a mysterious, unseen moth that increasingly resembles his deceased rival. Consumed by this obsession and unable to distinguish reality from his delusions, Hapley’s sanity collapses, leading to his confinement in an asylum where he remains tormented by the phantom insect he insists is a unique specimen."
+  llama-q4km    (79 j., fin eos): 'Driven to madness by the death of his lifelong scientific rival, Professor Pawkins, the entomologist Hapley becomes obsessed with catching a mysterious moth that only he can see, interpreting it as a manifestation of his deceased enemy. His relentless pursuit of this hallucination leads to public humiliation and physical injury, ultimately resulting in his confinement in an asylum where he remains tormented by the phantom insect.'
+  paire herbert-q40|llama-q40pur: dévie au jeton 8
+  paire llama-q40pur|llama-q4km: dévie au jeton 0
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 8
+
+### l5-fr (long, résumé) : Résume l'histoire en deux phrases.
+  herbert-q40   (100 j., fin eos): "Après avoir poussé son rival scientifique à la mort lors d'une polémique acharnée, l'entomologiste Hapley sombre dans la folie et développe une hallucination persistante d'un papillon inconnu, qu'il poursuit avec une obsession morbide. Il finit ses jours enfermé dans un asile, convaincu que cette créature est l'esprit de son défunt ennemi Pawkins, alors que les médecins ne voient qu'une simple illusion."
+  llama-q40pur  (112 j., fin eos): "Après avoir poussé son rival scientifique à la mort lors d'une polémique acharnée, l'entomologiste Hapley sombre dans la folie et développe une hallucination persistante d'un papillon inconnu, qu'il voit partout et qui lui rappelle son défunt adversaire. Interné dans un asile, il passe ses derniers jours à tenter vainement de capturer cette créature imaginaire, qu'il considère comme une découverte scientifique majeure tandis que les médecins la traitent comme un simple symptôme de sa maladie mentale."
+  ik-q40pur     (97 j., fin eos): "Après avoir poussé son rival scientifique à la mort lors d'une polémique acharnée, l'entomologiste Hapley sombre dans la folie et développe une hallucination persistante d'un papillon inconnu, qu'il perçoit comme la manifestation du fantôme de son défunt adversaire. Il finit ses jours enfermé dans un asile, tourmenté par cette créature invisible qu'il s'obstine à vouloir capturer."
+  llama-q4km    (96 j., fin eos): "Après avoir provoqué la mort de son rival scientifique, l'entomologiste Hapley sombre dans la folie et est hanté par une hallucination persistante d'un papillon inconnu, qu'il associe à l'esprit de son défunt adversaire. Il finit ses jours enfermé dans un asile psychiatrique, tourmenté par cette créature invisible qu'il s'obstine à vouloir capturer."
+  paire herbert-q40|llama-q40pur: dévie au jeton 50
+  paire llama-q40pur|llama-q4km: dévie au jeton 3
+  paire llama-q40pur|ik-q40pur: dévie au jeton 50
+  paire herbert-q40|ik-q40pur: dévie au jeton 50

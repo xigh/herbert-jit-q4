@@ -1,0 +1,12 @@
+debut Sat Nov 14 05:44:31 UTC 2026
+convert fini Sat Nov 14 05:47:40 UTC 2026
+-rw-rw-r-- 1 user user 71066994368 Nov 14 05:47 ~/q40pur/Qwen3.6-35B-A3B-BF16.gguf
+quantize fini Sat Nov 14 05:48:35 UTC 2026
+llama_model_quantize_impl: quant size  = 19121.08 MiB (4.52 BPW)
+
+llama_quantize: quantize time = 54887.77 ms
+llama_quantize:    total time = 54887.77 ms
+28711d8b975c31fcac1f88ec58b20bf7e82e37eabd08010dc53cf29302b29bcb  ~/q40pur/Qwen3.6-35B-A3B-BF16.gguf
+bf16 supprime
+531009e7cfefc30f1c7d85a5fdb8ebe3a6288de973aa1ef50e3f52d9b1457146  ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf
+FAB FINIE Sat Nov 14 05:49:38 UTC 2026

@@ -1,0 +1,105 @@
+{
+ "label": "ik-q40pur-qwen36",
+ "text": [
+  {
+   "words": 78,
+   "rep": 0,
+   "wall_s": 6.4361848999978974,
+   "prompt_n": 217,
+   "prompt_ms": 668.797,
+   "prompt_per_second": 324.46317791497273,
+   "predicted_n": 128,
+   "predicted_ms": 5745.772,
+   "predicted_per_second": 22.277250124091246
+  },
+  {
+   "words": 78,
+   "rep": 1,
+   "wall_s": 6.427622532006353,
+   "prompt_n": 217,
+   "prompt_ms": 664.319,
+   "prompt_per_second": 326.6502990280272,
+   "predicted_n": 128,
+   "predicted_ms": 5745.92,
+   "predicted_per_second": 22.27667631989307
+  },
+  {
+   "words": 78,
+   "rep": 2,
+   "wall_s": 6.433209759998135,
+   "prompt_n": 217,
+   "prompt_ms": 671.143,
+   "prompt_per_second": 323.32900737994737,
+   "predicted_n": 128,
+   "predicted_ms": 5745.154,
+   "predicted_per_second": 22.279646463784957
+  },
+  {
+   "words": 380,
+   "rep": 0,
+   "wall_s": 7.3435275490628555,
+   "prompt_n": 621,
+   "prompt_ms": 1525.894,
+   "prompt_per_second": 406.97453427302287,
+   "predicted_n": 128,
+   "predicted_ms": 5800.405,
+   "predicted_per_second": 22.067424602247602
+  },
+  {
+   "words": 380,
+   "rep": 1,
+   "wall_s": 7.348450972000137,
+   "prompt_n": 621,
+   "prompt_ms": 1530.89,
+   "prompt_per_second": 405.64638870199684,
+   "predicted_n": 128,
+   "predicted_ms": 5800.212,
+   "predicted_per_second": 22.068158887985472
+  },
+  {
+   "words": 380,
+   "rep": 2,
+   "wall_s": 7.339045397937298,
+   "prompt_n": 621,
+   "prompt_ms": 1524.292,
+   "prompt_per_second": 407.40225626061147,
+   "predicted_n": 128,
+   "predicted_ms": 5797.453,
+   "predicted_per_second": 22.07866109479456
+  },
+  {
+   "words": 4240,
+   "rep": 0,
+   "wall_s": 19.698604849982075,
+   "prompt_n": 6125,
+   "prompt_ms": 13433.874,
+   "prompt_per_second": 455.9369843724901,
+   "predicted_n": 128,
+   "predicted_ms": 6249.733,
+   "predicted_per_second": 20.480874942977565
+  },
+  {
+   "words": 4240,
+   "rep": 1,
+   "wall_s": 19.714794524013996,
+   "prompt_n": 6125,
+   "prompt_ms": 13447.455,
+   "prompt_per_second": 455.47651953473724,
+   "predicted_n": 128,
+   "predicted_ms": 6249.332,
+   "predicted_per_second": 20.482189136374895
+  },
+  {
+   "words": 4240,
+   "rep": 2,
+   "wall_s": 19.702905860031024,
+   "prompt_n": 6125,
+   "prompt_ms": 13437.168,
+   "prompt_per_second": 455.82521555137214,
+   "predicted_n": 128,
+   "predicted_ms": 6247.793,
+   "predicted_per_second": 20.48723445222977
+  }
+ ],
+ "image": []
+}

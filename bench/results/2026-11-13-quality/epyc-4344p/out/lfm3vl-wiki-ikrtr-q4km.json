@@ -1,0 +1,28 @@
+{
+ "ref": "ref/lfm3vl-wiki.kld",
+ "test": "out/lfm3vl-wiki-ikrtr-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 128000,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 154.23878151845273,
+ "ppl_test": 161.5239154512697,
+ "nll_ref": 5.038501930924734,
+ "nll_test": 5.084653214989059,
+ "dnll": 0.04615128406432486,
+ "dnll_se": 0.00900404439602657,
+ "dnll_se_chunk": 0.015238232742038671,
+ "kl_mean": 0.16328662664429122,
+ "kl_se": 0.0027417590962841793,
+ "kl_median": 0.1077004455453998,
+ "kl_p99": 0.988735249217706,
+ "kl_p999": 2.405704939250289,
+ "kl_max": 4.777218929785592,
+ "top1": 0.7747703412073491,
+ "top1_n": 4723,
+ "ref_nll_exact_minus_compressed": 0.004181706310453025
+}

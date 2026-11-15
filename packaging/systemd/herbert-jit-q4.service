@@ -1,0 +1,24 @@
+# herbert-jit-llama-serve as a systemd user unit (`herbert-jit-llama-serve service install` writes the same, with
+# absolute paths, and enables it).
+#
+#   cp packaging/systemd/herbert-jit-q4.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now herbert-jit-q4
+#   journalctl --user -u herbert-jit-q4 -f
+#
+# The binary is expected in ~/.local/bin (cp target/release/herbert-jit-llama-serve ~/.local/bin/). The model is a
+# directory or a repository of Hugging Face (org/name[@revision]) already in ~/.cache/huggingface/hub: herbert downloads
+# nothing, so `hf download` it first (README.md); a missing model fails the start. A user unit stops at the last logout
+# unless `loginctl enable-linger $USER`. It listens on 127.0.0.1 only; --host 0.0.0.0 opens it to the network.
+
+[Unit]
+Description=herbert-jit-llama-serve (herbert-jit-q4)
+After=network-online.target
+
+[Service]
+ExecStart=%h/.local/bin/herbert-jit-llama-serve Qwen/Qwen3.5-0.8B --q4 --host 127.0.0.1 --port 8000 --ctx 8192
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

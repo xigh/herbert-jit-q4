@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-1",
+  "object": "chat.completion",
+  "created": 1794678133,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Based on the text, Harringay went into his studio about **ten o'clock**.\n\nThis is stated in the second paragraph: \"Following his version of the affair, the narrative deposes that Harringay went into his studio about ten o'clock to see what he could make of the head that he had been working at the day before.\""
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2741,
+    "completion_tokens": 71,
+    "total_tokens": 2812,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 2741,
+    "prompt_ms": 6694.126756000001,
+    "prompt_per_token_ms": 2.4422206333454946,
+    "prompt_per_second": 409.463414708008,
+    "predicted_n": 71,
+    "predicted_ms": 4419.182752000001,
+    "predicted_per_token_ms": 62.2420105915493,
+    "predicted_per_second": 16.06631904233138
+  }
+}

@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-instruct-wiki.kld",
+ "test": "out/q3vl-instruct-wiki-ikrtr-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 7.63968082518826,
+ "ppl_test": 7.809217640696491,
+ "nll_ref": 2.0333558254979347,
+ "nll_test": 2.0553047847872956,
+ "dnll": 0.021948959289360775,
+ "dnll_se": 0.004621918690933608,
+ "dnll_se_chunk": 0.0052399677419849,
+ "kl_mean": 0.040592033595692904,
+ "kl_se": 0.0011949235539144556,
+ "kl_median": 0.018537228530937196,
+ "kl_p99": 0.3761292989905474,
+ "kl_p999": 1.0354595285400157,
+ "kl_max": 3.290822815429408,
+ "top1": 0.9079724409448819,
+ "top1_n": 5535,
+ "ref_nll_exact_minus_compressed": 0.002142214994004791
+}

@@ -1,0 +1,57 @@
+quantize fini Sat Nov 14 06:45:35 CET 2026
+llama_model_quantize_impl: model size  = 66152.24 MiB (16.01 BPW)
+llama_model_quantize_impl: quant size  = 18666.22 MiB (4.52 BPW)
+
+llama_quantize: quantize time = 808916.36 ms
+llama_quantize:    total time = 808916.36 ms
+11d3f9d55709f352088823f6cb10917652443deac0cabcf3b9177dfc093a0886  Qwen3.6-35B-A3B-Q4_0-pure.gguf
+# output.weight Q4_0×1 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) — tête ; Q4_0 : échelle f16 | même
+# output_norm.weight F32×1 | f32 (petit vecteur ou norme) | même
+# token_embd.weight Q4_0×1 | bf16 (table lue, non quantifiée) | DIFFÉRENT
+# blk.*.attn_gate.weight Q4_0×30 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.attn_norm.weight F32×40 | f32 (petit vecteur ou norme) | même
+# blk.*.attn_qkv.weight Q4_0×30 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.ffn_down_exps.weight Q4_0×40 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.ffn_down_shexp.weight Q4_0×40 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.ffn_gate_exps.weight Q4_0×40 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.ffn_gate_inp.weight F32×40 | bf16 (routeur, blocs de 16 experts) | DIFFÉRENT
+# blk.*.ffn_gate_inp_shexp.weight F32×40 | bf16 (shared_expert_gate) | DIFFÉRENT
+# blk.*.ffn_gate_shexp.weight Q4_0×40 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.ffn_up_exps.weight Q4_0×40 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.ffn_up_shexp.weight Q4_0×40 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.post_attention_norm.weight F32×40 | f32 (petit vecteur ou norme) | même
+# blk.*.ssm_a F32×30 | f32 (petit vecteur ou norme) | même
+# blk.*.ssm_alpha.weight Q4_0×30 | f32 (in_proj_a / in_proj_b) | DIFFÉRENT
+# blk.*.ssm_beta.weight Q4_0×30 | f32 (in_proj_a / in_proj_b) | DIFFÉRENT
+# blk.*.ssm_conv1d.weight F32×30 | f32 (conv1d) | même
+# blk.*.ssm_dt.bias F32×30 | f32 (petit vecteur ou norme) | même
+# blk.*.ssm_norm.weight F32×30 | f32 (petit vecteur ou norme) | même
+# blk.*.ssm_out.weight Q4_0×30 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.attn_k.weight Q4_0×10 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.attn_k_norm.weight F32×10 | f32 (petit vecteur ou norme) | même
+# blk.*.attn_output.weight Q4_0×10 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) — tête ; Q4_0 : échelle f16 | même
+# blk.*.attn_q.weight Q4_0×10 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+# blk.*.attn_q_norm.weight F32×10 | f32 (petit vecteur ou norme) | même
+# blk.*.attn_v.weight Q4_0×10 | Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16 | même
+attente du verrou Sat Nov 14 06:46:15 CET 2026
+verrou pris Sat Nov 14 06:47:00 CET 2026
+== 05:47:00 qwen36 wiki llama-q40pur (llama ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf)
+
+{"ref": "ref/qwen36-wiki.kld", "test": "out/qwen36-wiki-llama-q40pur.kld", "n_ctx": 256, "chunks": 48, "positions": 6096, "vocab": 248320, "nll_sources": {"ref_nll": "exact", "test_nll": "exact ppl from llama log; se from compressed"}, "ppl_ref": 7.049681597277328, "ppl_test": 7.447799999999999, "nll_ref": 1.9529824522975134, "nll_test": 2.00791868676782, "dnll": 0.0549362344703066, "dnll_se": 0.005666731259156854, "dnll_se_chunk": 0.006165860571510782, "kl_mean": 0.07234196518727966, "kl_se": 0.001941976193276217, "kl_median": 0.03779304630468365, "kl_p99": 0.63888884437501, "kl_p999": 2.0074
+== 05:48:10 qwen36 wiki ik-q40pur (ik ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf)
+Final estimate: PPL over 48 chunks for n_ctx=256 = 7.4825 +/- 0.25266
+{"ref": "ref/qwen36-wiki.kld", "test": "out/qwen36-wiki-ik-q40pur.kld", "n_ctx": 256, "chunks": 48, "positions": 6096, "vocab": 248320, "nll_sources": {"ref_nll": "exact", "test_nll": "compressed"}, "ppl_ref": 7.049681597277328, "ppl_test": 7.482538727322037, "nll_ref": 1.9529824522975134, "nll_test": 2.0125721364509404, "dnll": 0.05958968415342689, "dnll_se": 0.005838470575502908, "dnll_se_chunk": 0.00564890925405075, "kl_mean": 0.0736394613864414, "kl_se": 0.002070902624389206, "kl_median": 0.038727347026077996, "kl_p99": 0.6121919398137948, "kl_p999": 2.139309773411541, "kl_max": 4.76452392
+== 05:48:53 qwen36 wiki ikrtr-q40pur (ikrtr ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf)
+Final estimate: PPL over 48 chunks for n_ctx=256 = 7.4571 +/- 0.25160
+{"ref": "ref/qwen36-wiki.kld", "test": "out/qwen36-wiki-ikrtr-q40pur.kld", "n_ctx": 256, "chunks": 48, "positions": 6096, "vocab": 248320, "nll_sources": {"ref_nll": "exact", "test_nll": "compressed"}, "ppl_ref": 7.049681597277328, "ppl_test": 7.457155241016783, "nll_ref": 1.9529824522975134, "nll_test": 2.0091740065046495, "dnll": 0.05619155420713623, "dnll_se": 0.005725899979786798, "dnll_se_chunk": 0.0058843168997916384, "kl_mean": 0.07300728265802077, "kl_se": 0.00204172816195166, "kl_median": 0.03818517650856061, "kl_p99": 0.6154021529197073, "kl_p999": 2.0027135854470446, "kl_max": 5.084
+== 05:49:35 qwen36 fr llama-q40pur (llama ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf)
+
+{"ref": "ref/qwen36-fr.kld", "test": "out/qwen36-fr-llama-q40pur.kld", "n_ctx": 256, "chunks": 24, "positions": 3048, "vocab": 248320, "nll_sources": {"ref_nll": "exact", "test_nll": "exact ppl from llama log; se from compressed"}, "ppl_ref": 5.057731460919817, "ppl_test": 5.388000000000001, "nll_ref": 1.6209180548889228, "nll_test": 1.6841742585481176, "dnll": 0.06325620365919482, "dnll_se": 0.007971060947672746, "dnll_se_chunk": 0.009817953040495774, "kl_mean": 0.07666612002518516, "kl_se": 0.002841032458627388, "kl_median": 0.04507368618365962, "kl_p99": 0.4733793085207401, "kl_p999": 0.906
+== 05:50:11 qwen36 fr ik-q40pur (ik ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf)
+Final estimate: PPL over 24 chunks for n_ctx=256 = 5.4248 +/- 0.21420
+{"ref": "ref/qwen36-fr.kld", "test": "out/qwen36-fr-ik-q40pur.kld", "n_ctx": 256, "chunks": 24, "positions": 3048, "vocab": 248320, "nll_sources": {"ref_nll": "exact", "test_nll": "compressed"}, "ppl_ref": 5.057731460919817, "ppl_test": 5.424853082622412, "nll_ref": 1.6209180548889228, "nll_test": 1.6909908175155557, "dnll": 0.07007276262663295, "dnll_se": 0.00801607090511361, "dnll_se_chunk": 0.009508528000057059, "kl_mean": 0.07673759643391478, "kl_se": 0.0029138540770192265, "kl_median": 0.04465894826449845, "kl_p99": 0.5140291923627613, "kl_p999": 1.1002020853027177, "kl_max": 6.5301480113
+== 05:50:32 qwen36 fr ikrtr-q40pur (ikrtr ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf)
+Final estimate: PPL over 24 chunks for n_ctx=256 = 5.3898 +/- 0.21219
+{"ref": "ref/qwen36-fr.kld", "test": "out/qwen36-fr-ikrtr-q40pur.kld", "n_ctx": 256, "chunks": 24, "positions": 3048, "vocab": 248320, "nll_sources": {"ref_nll": "exact", "test_nll": "compressed"}, "ppl_ref": 5.057731460919817, "ppl_test": 5.389792093243704, "nll_ref": 1.6209180548889228, "nll_test": 1.6845068114949022, "dnll": 0.06358875660597936, "dnll_se": 0.007978525440081022, "dnll_se_chunk": 0.009870148725354659, "kl_mean": 0.07657037536909429, "kl_se": 0.003085302970325875, "kl_median": 0.04432422657576678, "kl_p99": 0.48455326329421616, "kl_p999": 0.9581154311609319, "kl_max": 7.448417
+verrou rendu Sat Nov 14 06:50:54 CET 2026
+CHAINE Q40 FINIE Sat Nov 14 06:50:54 CET 2026

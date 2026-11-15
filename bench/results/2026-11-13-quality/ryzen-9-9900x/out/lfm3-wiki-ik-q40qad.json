@@ -1,0 +1,28 @@
+{
+ "ref": "ref/lfm3-wiki.kld",
+ "test": "out/lfm3-wiki-ik-q40qad.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 128000,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 29.206923551550396,
+ "ppl_test": 36.47510456887785,
+ "nll_ref": 3.3744057890984016,
+ "nll_test": 3.596629961269109,
+ "dnll": 0.22222417217070703,
+ "dnll_se": 0.011451172659126693,
+ "dnll_se_chunk": 0.03844759196926607,
+ "kl_mean": 0.2451788334113174,
+ "kl_se": 0.005038807824387275,
+ "kl_median": 0.11456287185118709,
+ "kl_p99": 1.8815944689024917,
+ "kl_p999": 3.8672848121525063,
+ "kl_max": 7.942978642268562,
+ "top1": 0.7522965879265092,
+ "top1_n": 4586,
+ "ref_nll_exact_minus_compressed": 0.0009102696242916433
+}

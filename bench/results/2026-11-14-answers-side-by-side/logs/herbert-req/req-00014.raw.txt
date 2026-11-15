@@ -1,0 +1,9 @@
+```json
+{
+  "nom": "Charles-François-Bienvenu Myriel",
+  "fonction": "évêque de Digne",
+  "ville": "Digne",
+  "age_approx": 75,
+  "en_poste_depuis": 1806
+}
+```<|im_end|>

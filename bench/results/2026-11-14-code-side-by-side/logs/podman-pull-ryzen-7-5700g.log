@@ -1,0 +1,16 @@
+Trying to pull docker.io/library/python:3.12-slim...
+Getting image source signatures
+Copying config sha256:78976a69c067520ef8be34cde307ef9f6fea6dcefa50edb57039773d241ca0db
+Writing manifest to image destination
+78976a69c067520ef8be34cde307ef9f6fea6dcefa50edb57039773d241ca0db
+Trying to pull docker.io/library/rust:1.82-slim...
+Getting image source signatures
+Copying config sha256:2ad2833ed20a43f85cc810338510502d0bc644da8dacee03a94e84eb9f731a84
+Writing manifest to image destination
+2ad2833ed20a43f85cc810338510502d0bc644da8dacee03a94e84eb9f731a84
+REPOSITORY                TAG         IMAGE ID      CREATED      SIZE
+docker.io/ollama/ollama   latest      8d0356014a54  8 days ago   5.1 GB
+docker.io/library/python  3.12-slim   78976a69c067  9 days ago   124 MB
+docker.io/library/rust    1.82-slim   2ad2833ed20a  2 years ago  814 MB
+
+[exited with code 0]

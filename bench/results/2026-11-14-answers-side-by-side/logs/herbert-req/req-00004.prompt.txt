@@ -1,0 +1,7 @@
+<|im_start|>user
+Combien font 17 × 24 ? Donne seulement le résultat.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

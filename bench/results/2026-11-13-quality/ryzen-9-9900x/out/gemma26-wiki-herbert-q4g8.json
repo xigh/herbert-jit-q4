@@ -1,0 +1,28 @@
+{
+ "ref": "ref/gemma26-wiki.kld",
+ "test": "out/gemma26-wiki-herbert-q4g8.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 262144,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact"
+ },
+ "ppl_ref": 1041.2122396325913,
+ "ppl_test": 1165.0498769172698,
+ "nll_ref": 6.948140928364985,
+ "nll_test": 7.060519177887882,
+ "dnll": 0.11237824952289678,
+ "dnll_se": 0.017054334239672706,
+ "dnll_se_chunk": 0.03464591378633054,
+ "kl_mean": 0.34695540443204237,
+ "kl_se": 0.006063887388831154,
+ "kl_median": 0.2146882232294212,
+ "kl_p99": 2.1413514473067297,
+ "kl_p999": 4.76514197588064,
+ "kl_max": 11.433282041640204,
+ "top1": 0.7048884514435696,
+ "top1_n": 4297,
+ "ref_nll_exact_minus_compressed": 0.1569873051582632
+}

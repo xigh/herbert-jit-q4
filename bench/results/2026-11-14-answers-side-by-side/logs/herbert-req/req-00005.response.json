@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-5",
+  "object": "chat.completion",
+  "created": 1794676011,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Pour déterminer l'heure d'arrivée, il faut d'abord calculer la durée du trajet.\n\nLa formule pour calculer le temps est :\n$$ \\text{Temps} = \\frac{\\text{Distance}}{\\text{Vitesse}} $$\n\nIci :\n*   Distance = 189 km\n*   Vitesse = 84 km/h\n\n$$ \\text{Temps} = \\frac{189}{84} = 2,25 \\text{ heures} $$\n\nConvertissons 0,25 heure en minutes :\n$$ 0,25 \\times 60 = 15 \\text{ minutes} $$\n\nLe trajet dure donc **2 heures et 15 minutes**.\n\nLe train part à **14 h 10**.\n*   Ajout de 2 heures : 16 h 10\n*   Ajout de 15 minutes :"
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 52,
+    "completion_tokens": 200,
+    "total_tokens": 252,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 52,
+    "prompt_ms": 334.74620999999996,
+    "prompt_per_token_ms": 6.437427115384614,
+    "prompt_per_second": 155.34156458410686,
+    "predicted_n": 200,
+    "predicted_ms": 12029.566237,
+    "predicted_per_token_ms": 60.147831184999994,
+    "predicted_per_second": 16.625703376140777
+  }
+}

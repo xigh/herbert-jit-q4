@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nUn article coûte 80 €. Son prix baisse de 25 %, puis augmente de 25 %. Quel est son prix final ? Justifie en deux phrases.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 200,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nÉcris en Python une fonction `fusionner_intervalles(intervalles: list[tuple[int, int]]) -> list[tuple[int, int]]`. Chaque intervalle (a, b) est fermé, avec a <= b. La fonction rend la liste des intervalles fusionnés, triée par début : deux intervalles qui se chevauchent ou se touchent (comme (1, 3) et (3, 5)) n'en font qu'un. La liste d'entrée peut être vide ou dans le désordre, et ne doit pas être modifiée. Réponds par le code seul, dans un seul bloc ```python, sans explication.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 500,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

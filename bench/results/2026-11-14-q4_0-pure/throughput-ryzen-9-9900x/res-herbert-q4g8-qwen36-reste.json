@@ -1,0 +1,138 @@
+{
+ "label": "herbert-q4g8",
+ "text": [
+  {
+   "words": 78,
+   "rep": 0,
+   "wall_s": 6.586533517926,
+   "prompt_n": 217,
+   "prompt_ms": 575.413679,
+   "prompt_per_second": 377.11998848744787,
+   "predicted_n": 128,
+   "predicted_ms": 6008.435635,
+   "predicted_per_second": 21.3033820740929
+  },
+  {
+   "words": 78,
+   "rep": 1,
+   "wall_s": 6.585622262908146,
+   "prompt_n": 217,
+   "prompt_ms": 576.5700059999999,
+   "prompt_per_second": 376.36366398150795,
+   "predicted_n": 128,
+   "predicted_ms": 6006.825345,
+   "predicted_per_second": 21.3090930147562
+  },
+  {
+   "words": 78,
+   "rep": 2,
+   "wall_s": 6.585516216000542,
+   "prompt_n": 217,
+   "prompt_ms": 576.0889689999999,
+   "prompt_per_second": 376.677929411976,
+   "predicted_n": 128,
+   "predicted_ms": 6008.427773,
+   "predicted_per_second": 21.303409949469987
+  },
+  {
+   "words": 600,
+   "rep": 0,
+   "wall_s": 8.448344114935026,
+   "prompt_n": 924,
+   "prompt_ms": 2346.023718,
+   "prompt_per_second": 393.8579106897162,
+   "predicted_n": 128,
+   "predicted_ms": 6100.486938999999,
+   "predicted_per_second": 20.98193165232511
+  },
+  {
+   "words": 600,
+   "rep": 1,
+   "wall_s": 8.464743895921856,
+   "prompt_n": 924,
+   "prompt_ms": 2348.8895479999996,
+   "prompt_per_second": 393.3773730598592,
+   "predicted_n": 128,
+   "predicted_ms": 6112.936977,
+   "predicted_per_second": 20.939198372501068
+  },
+  {
+   "words": 600,
+   "rep": 2,
+   "wall_s": 8.448088829987682,
+   "prompt_n": 924,
+   "prompt_ms": 2344.6895130000003,
+   "prompt_per_second": 394.0820287193394,
+   "predicted_n": 128,
+   "predicted_ms": 6101.738289,
+   "predicted_per_second": 20.9776286588289
+  },
+  {
+   "words": 2420,
+   "rep": 0,
+   "wall_s": 15.38264517695643,
+   "prompt_n": 3575,
+   "prompt_ms": 8934.324813,
+   "prompt_per_second": 400.1421567747517,
+   "predicted_n": 128,
+   "predicted_ms": 6444.226027,
+   "predicted_per_second": 19.862742160766235
+  },
+  {
+   "words": 2420,
+   "rep": 1,
+   "wall_s": 15.394153660046868,
+   "prompt_n": 3575,
+   "prompt_ms": 8943.97882,
+   "prompt_per_second": 399.7102488666224,
+   "predicted_n": 128,
+   "predicted_ms": 6445.046481,
+   "predicted_per_second": 19.860213634974404
+  },
+  {
+   "words": 2420,
+   "rep": 2,
+   "wall_s": 15.393444227986038,
+   "prompt_n": 3575,
+   "prompt_ms": 8944.438433,
+   "prompt_per_second": 399.6897096200293,
+   "predicted_n": 128,
+   "predicted_ms": 6445.091421,
+   "predicted_per_second": 19.86007515470431
+  },
+  {
+   "words": 4240,
+   "rep": 0,
+   "wall_s": 22.589000475942157,
+   "prompt_n": 6125,
+   "prompt_ms": 15811.435003999999,
+   "prompt_per_second": 387.3778691466327,
+   "predicted_n": 128,
+   "predicted_ms": 6771.168814000001,
+   "predicted_per_second": 18.903678746769465
+  },
+  {
+   "words": 4240,
+   "rep": 1,
+   "wall_s": 22.614734441041946,
+   "prompt_n": 6125,
+   "prompt_ms": 15833.252816,
+   "prompt_per_second": 386.8440724833557,
+   "predicted_n": 128,
+   "predicted_ms": 6774.206864,
+   "predicted_per_second": 18.89520095411128
+  },
+  {
+   "words": 4240,
+   "rep": 2,
+   "wall_s": 22.603169199079275,
+   "prompt_n": 6125,
+   "prompt_ms": 15823.454436,
+   "prompt_per_second": 387.08361848377365,
+   "predicted_n": 128,
+   "predicted_ms": 6773.823154000001,
+   "predicted_per_second": 18.896271291702515
+  }
+ ],
+ "image": []
+}

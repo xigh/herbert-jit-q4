@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nÉcris en Python une fonction `slug(titre: str) -> str` qui fabrique un identifiant d'URL : tout en minuscules, lettres accentuées ramenées à leur lettre de base (é → e, ç → c, ï → i), chaque suite de caractères hors de a-z et 0-9 remplacée par un seul tiret, et aucun tiret au début ni à la fin. Par exemple, `slug(\"Les Misérables, tome 1 !\")` rend `\"les-miserables-tome-1\"`. N'utilise que la bibliothèque standard. Réponds par le code seul, dans un seul bloc ```python, sans explication.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 500,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

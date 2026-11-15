@@ -1,0 +1,33 @@
+[loader] gemma4_text — hidden 2560, 42 layers, 8 heads / 2 kv heads × 256, intermediate 10240, vocab 262144, rotary 256 dims, rope_theta 10000, tied head true
+[loader] shard model.safetensors: 2076 tensors, 14.79 GiB mapped, 2.3 s
+[loader] 42 layers assembled, RoPE tables built, 8.4 s in all
+[loader] read as bf16: 344 matrices packed R16 (8.65 GiB), 0 gated q_proj permuted (the int8 / Q4 copies, if asked, are made at mount) — lm_head.weight (tied embedding)×1, mlp.down_proj.weight×42, mlp.gate_proj.weight×42, mlp.up_proj.weight×42, model.language_model.per_layer_model_projection.weight×1, per_layer_input_gate.weight×42, per_layer_projection.weight×42, self_attn.k_proj.weight×24, self_attn.o_proj.weight×42, self_attn.q_proj.weight×42, self_attn.v_proj.weight×24
+[pool] 2 CCDs, 12 cores, worker order [0, 6, 1, 7, 2, 8, 3, 9, 4, 10, 5, 11]…
+[pool] 12 workers on cpus [0,6,1,7,2,8,3,9,4,10,5,11] · caller = worker 0: yes · spin 500 µs · coordinator spins: yes
+[engine] 2.66 GiB of weights touched in 0.003 s
+[engine] loaded in 8.8 s, mounted in 0.60 s — 272 positions reserved, prefill program Some((9989347, 880529, 881792)), decode program Some((7467984, 880529, 881792))
+[kld] chunk 1/24 rows 127 ppl 28.9721 (8.9 s)
+[kld] chunk 2/24 rows 254 ppl 27.4212 (17.9 s)
+[kld] chunk 3/24 rows 381 ppl 33.3789 (26.8 s)
+[kld] chunk 4/24 rows 508 ppl 31.4668 (35.8 s)
+[kld] chunk 5/24 rows 635 ppl 32.7662 (44.7 s)
+[kld] chunk 6/24 rows 762 ppl 33.8174 (53.6 s)
+[kld] chunk 7/24 rows 889 ppl 35.3860 (62.6 s)
+[kld] chunk 8/24 rows 1016 ppl 35.5677 (71.5 s)
+[kld] chunk 9/24 rows 1143 ppl 30.5029 (80.5 s)
+[kld] chunk 10/24 rows 1270 ppl 27.9427 (89.4 s)
+[kld] chunk 11/24 rows 1397 ppl 28.1820 (98.3 s)
+[kld] chunk 12/24 rows 1524 ppl 26.6014 (107.3 s)
+[kld] chunk 13/24 rows 1651 ppl 26.5973 (116.2 s)
+[kld] chunk 14/24 rows 1778 ppl 25.9113 (125.1 s)
+[kld] chunk 15/24 rows 1905 ppl 26.5464 (134.1 s)
+[kld] chunk 16/24 rows 2032 ppl 26.6781 (143.0 s)
+[kld] chunk 17/24 rows 2159 ppl 26.1061 (152.0 s)
+[kld] chunk 18/24 rows 2286 ppl 26.4365 (160.9 s)
+[kld] chunk 19/24 rows 2413 ppl 26.5528 (169.9 s)
+[kld] chunk 20/24 rows 2540 ppl 27.3924 (178.8 s)
+[kld] chunk 21/24 rows 2667 ppl 27.3254 (187.7 s)
+[kld] chunk 22/24 rows 2794 ppl 27.8626 (196.7 s)
+[kld] chunk 23/24 rows 2921 ppl 28.8877 (205.6 s)
+[kld] chunk 24/24 rows 3048 ppl 29.3577 (214.6 s)
+[kld] done: 24 chunks, n_ctx 256, 3048 rows, mean nll 3.379555, ppl 29.3577

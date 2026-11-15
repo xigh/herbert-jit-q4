@@ -1,0 +1,27 @@
+| q | question | jetons réf. | herbert Q4_0 | llama Q4_0 | ik Q4_0 | llama Q4_K_M | herbert / llama Q4_0 | fond (jugement) |
+|---|---|---|---|---|---|---|---|---|
+| q01 | capitale de l'Australie | 10 | = | = | = | = | = | identique partout |
+| q02 | prise de la Bastille | 37 | = | = | = | ≠ 20 | = | Q4_K_M : formulation (« célébrée » pour « commémorée ») ; à un ex aequo exact de la référence (deux jetons à 41,3 %) |
+| q03 | tungstène | 35 | = | = | = | = | = | identique partout |
+| q04 | 17 × 24 | 3 | = | = | = | = | = | identique partout (408) |
+| q05 | train, 189 km à 84 km/h | 200 (coupée) | ≠ 56 | ≠ 56 | ≠ 56 | ≠ 56 | = | formulation : même calcul (2,25 h = 2 h 15), tous coupés à 200 jetons avant l'heure d'arrivée, référence comprise |
+| q06 | −25 % puis +25 % | 84 | ≠ 3 | ≠ 3 | ≠ 3 | ≠ 15 | = | formulation : 75 € partout |
+| q07 | ciel bleu, trois phrases | 89 | ≠ 6 | ≠ 6 | ≠ 6 | ≠ 26 | ≠ 7 | formulation ; herbert écrit « molécles » (faute) et nomme la diffusion de Rayleigh |
+| q08 | inflation, trois phrases | 78 | ≠ 30 | ≠ 30 | ≠ 5 | = | = | fond pour herbert et llama Q4_0 (l'indice des prix devient une formule circulaire) ; ik : formulation ; Q4_K_M identique |
+| q09 | cinq fleuves | 15 | ≠ 14 | ≠ 14 | ≠ 14 | ≠ 15 | = | fond, en mieux : la référence cite deux fois la Loire ; Rhin (Q4_0), Somme (Q4_K_M) |
+| q10 | sommeil, trois puces | 84 | ≠ 2 | ≠ 2 | ≠ 2 | ≠ 63 | ≠ 9 | formulation : les trois mêmes conseils ; puces « *␣␣␣ » pour les Q4_0 |
+| q11 | résumé Myriel, deux lignes | 52 | ≠ 13 | ≠ 13 | ≠ 13 | ≠ 18 | ≠ 22 | fond, en mieux : la référence attribue la respectabilité à la servante, les quatre bras quantifiés à Baptistine ; les Q4_0 partent d'un ex aequo exact de la référence (deux jetons à 39,85 %) |
+| q12 | résumé de l'auberge, trois lignes | 106 | ≠ 5 | ≠ 5 | ≠ 5 | ≠ 5 | ≠ 26 | fond, en mieux : la référence place Labarre à Grenoble, les quatre bras quantifiés à Digne (Croix-de-Colbas) |
+| q13 | JSON, plus grande ville du Canada | 34 | ≠ 8 | ≠ 8 | ≠ 1 | ≠ 8 | ≠ 29 | fond, en pire : Montréal au lieu de Toronto, pour les quatre bras quantifiés |
+| q14 | JSON extrait de l'incipit | 68 | ≠ 31 | ≠ 1 | ≠ 31 | = | ≠ 1 | formulation : « évêque de Digne » (herbert, ik) ; llama Q4_0 sans clôture ```json |
+| q15 | traduction | 22 | ≠ 5 | ≠ 5 | ≠ 5 | = | ≠ 19 | formulation : « watched » pour « looked » (Q4_0) |
+
+- herbert Q4_0 : dévie sur 11/15, identique sur 4 ; premier jeton différent après le 10e dans 5 des 11.
+- llama Q4_0 : dévie sur 11/15, identique sur 4 ; premier jeton différent après le 10e dans 4 des 11.
+- ik Q4_0 : dévie sur 11/15, identique sur 4 ; premier jeton différent après le 10e dans 4 des 11.
+- llama Q4_K_M : dévie sur 9/15, identique sur 6 ; premier jeton différent après le 10e dans 7 des 9.
+- herbert et llama Q4_0 identiques entre eux jusqu'au bout (ou la coupe) : 8/15 ; quand les deux dévient (11), même jeton au même rang : 10.
+- llama Q4_0 et ik Q4_0 (même fichier) identiques jusqu'au bout : 7/15.
+- Les deux Q4_0 dévient, Q4_K_M identique à la référence : 3 (q08, q14, q15) ; dont ensemble (même rang, même jeton) : 2 (q08, q15).
+- Les cinq bras identiques : 3 (q01, q03, q04).
+- Référence rejouée : identique au premier passage sur 15/15.

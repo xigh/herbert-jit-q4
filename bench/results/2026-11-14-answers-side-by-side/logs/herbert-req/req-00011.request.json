@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nRésume ce texte en deux lignes :\n\nM. Myriel était arrivé à Digne accompagné d'une vieille fille, mademoiselle Baptistine, qui était sa soeur et qui avait dix ans de moins que lui.\n\nIls avaient pour tout domestique une servante du même âge que mademoiselle Baptistine, et appelée madame Magloire, laquelle, après avoir été la servante de M. le Curé, prenait maintenant le double titre de femme de chambre de mademoiselle et femme de charge de monseigneur.\n\nMademoiselle Baptistine était une personne longue, pâle, mince, douce ; elle réalisait l'idéal de ce qu'exprime le mot « respectable » ; car il semble qu'il soit nécessaire qu'une femme soit mère pour être vénérable.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 200,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

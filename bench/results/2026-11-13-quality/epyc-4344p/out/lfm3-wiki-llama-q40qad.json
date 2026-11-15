@@ -1,0 +1,28 @@
+{
+ "ref": "ref/lfm3-wiki.kld",
+ "test": "out/lfm3-wiki-llama-q40qad.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 128000,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact ppl from llama log; se from compressed"
+ },
+ "ppl_ref": 29.231848126907856,
+ "ppl_test": 36.5516,
+ "nll_ref": 3.3752588041824945,
+ "nll_test": 3.5987249608874565,
+ "dnll": 0.22346615670496206,
+ "dnll_se": 0.011597141514675783,
+ "dnll_se_chunk": 0.03914842520547949,
+ "kl_mean": 0.2486043606214727,
+ "kl_se": 0.005113771317327073,
+ "kl_median": 0.1159470217488468,
+ "kl_p99": 1.8908617836250516,
+ "kl_p999": 4.110714553141547,
+ "kl_max": 7.30954831937349,
+ "top1": 0.7534448818897638,
+ "top1_n": 4593,
+ "ref_nll_exact_minus_compressed": 0.0009471305100010381
+}

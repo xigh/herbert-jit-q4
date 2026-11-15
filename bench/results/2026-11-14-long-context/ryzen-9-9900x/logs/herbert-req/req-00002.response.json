@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-2",
+  "object": "chat.completion",
+  "created": 1794678144,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "D'après le texte, Harringay entre dans son studio vers **dix heures** (« about ten o'clock »)."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2749,
+    "completion_tokens": 27,
+    "total_tokens": 2776,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 2749,
+    "prompt_ms": 6733.242303,
+    "prompt_per_token_ms": 2.4493424165150963,
+    "prompt_per_second": 408.27284631880565,
+    "predicted_n": 27,
+    "predicted_ms": 1661.4964730000002,
+    "predicted_per_token_ms": 61.536906407407415,
+    "predicted_per_second": 16.250410662171774
+  }
+}

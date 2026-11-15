@@ -1,0 +1,59 @@
+
+Loading weights:   0%|          | 0/693 [00:00<?, ?it/s]
+Loading weights:   1%|          | 6/693 [00:00<00:14, 46.98it/s]
+Loading weights:   2%|▏         | 14/693 [00:00<00:14, 47.32it/s]
+Loading weights:   4%|▍         | 26/693 [00:00<00:09, 70.93it/s]
+Loading weights:   5%|▍         | 34/693 [00:00<00:12, 51.49it/s]
+Loading weights:   8%|▊         | 53/693 [00:00<00:10, 63.45it/s]
+Loading weights:   9%|▊         | 60/693 [00:01<00:10, 59.08it/s]
+Loading weights:  10%|▉         | 69/693 [00:01<00:09, 64.14it/s]
+Loading weights:  11%|█         | 76/693 [00:01<00:11, 53.06it/s]
+Loading weights:  13%|█▎        | 87/693 [00:01<00:13, 43.72it/s]
+Loading weights:  14%|█▎        | 94/693 [00:01<00:12, 46.80it/s]
+Loading weights:  16%|█▌        | 109/693 [00:01<00:09, 61.57it/s]
+Loading weights:  17%|█▋        | 116/693 [00:02<00:09, 60.92it/s]
+Loading weights:  18%|█▊        | 123/693 [00:02<00:10, 56.95it/s]
+Loading weights:  20%|██        | 139/693 [00:02<00:08, 62.28it/s]
+Loading weights:  21%|██        | 146/693 [00:02<00:09, 55.46it/s]
+Loading weights:  25%|██▌       | 174/693 [00:02<00:05, 91.09it/s]
+Loading weights:  30%|███       | 211/693 [00:02<00:03, 124.02it/s]
+Loading weights:  35%|███▌      | 245/693 [00:03<00:02, 153.44it/s]
+Loading weights:  38%|███▊      | 261/693 [00:03<00:03, 142.63it/s]
+Loading weights:  40%|████      | 278/693 [00:03<00:02, 146.37it/s]
+Loading weights:  42%|████▏     | 293/693 [00:03<00:03, 110.00it/s]
+Loading weights:  45%|████▌     | 313/693 [00:03<00:03, 116.11it/s]
+Loading weights:  47%|████▋     | 326/693 [00:04<00:04, 84.63it/s] 
+Loading weights:  49%|████▉     | 338/693 [00:04<00:04, 86.31it/s]
+Loading weights:  50%|█████     | 348/693 [00:04<00:04, 82.21it/s]
+Loading weights:  52%|█████▏    | 360/693 [00:04<00:03, 85.75it/s]
+Loading weights:  53%|█████▎    | 370/693 [00:04<00:05, 56.78it/s]
+Loading weights:  59%|█████▉    | 408/693 [00:04<00:02, 104.22it/s]
+Loading weights:  61%|██████    | 422/693 [00:05<00:03, 84.02it/s] 
+Loading weights:  63%|██████▎   | 436/693 [00:05<00:02, 92.16it/s]
+Loading weights:  65%|██████▍   | 448/693 [00:05<00:03, 78.33it/s]
+Loading weights: 100%|██████████| 693/693 [00:05<00:00, 125.05it/s]
+loaded Qwen3_5MoeForCausalLM in 7 s, transformers 5.22.1, torch 2.9.1+cpu
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[ref] c1-en 2741 -> 19 tokens in 210 s (prefill 204.3 s = 13 tok/s, decode 0.301 s/tok)
+[ref] c1-fr 2749 -> 27 tokens in 40 s (prefill 26.5 s = 104 tok/s, decode 0.526 s/tok)
+[ref] c2-en 2746 -> 67 tokens in 32 s (prefill 15.2 s = 181 tok/s, decode 0.253 s/tok)
+[ref] c2-fr 2759 -> 59 tokens in 31 s (prefill 16.1 s = 172 tok/s, decode 0.254 s/tok)
+[ref] c3-en 2742 -> 50 tokens in 27 s (prefill 14.6 s = 188 tok/s, decode 0.252 s/tok)
+[ref] c3-fr 2752 -> 104 tokens in 43 s (prefill 15.8 s = 174 tok/s, decode 0.259 s/tok)
+[ref] c4-en 2736 -> 13 tokens in 37 s (prefill 27.4 s = 100 tok/s, decode 0.769 s/tok)
+[ref] c4-fr 2748 -> 15 tokens in 45 s (prefill 37.4 s = 74 tok/s, decode 0.524 s/tok)
+[ref] c5-en 2731 -> 84 tokens in 81 s (prefill 38.7 s = 70 tok/s, decode 0.511 s/tok)
+[ref] c5-fr 2738 -> 104 tokens in 80 s (prefill 33.7 s = 81 tok/s, decode 0.448 s/tok)
+[ref] l1-en 5304 -> 79 tokens in 127 s (prefill 77.0 s = 69 tok/s, decode 0.642 s/tok)
+[ref] l1-fr 5320 -> 78 tokens in 114 s (prefill 72.6 s = 73 tok/s, decode 0.540 s/tok)
+[ref] l2-en 5301 -> 62 tokens in 80 s (prefill 48.0 s = 110 tok/s, decode 0.519 s/tok)
+[ref] l2-fr 5316 -> 92 tokens in 139 s (prefill 82.5 s = 64 tok/s, decode 0.618 s/tok)
+[ref] l3-en 5310 -> 42 tokens in 97 s (prefill 63.1 s = 84 tok/s, decode 0.822 s/tok)
+[ref] l3-fr 5320 -> 67 tokens in 120 s (prefill 74.9 s = 71 tok/s, decode 0.680 s/tok)
+[ref] l4-en 5308 -> 22 tokens in 83 s (prefill 63.4 s = 84 tok/s, decode 0.910 s/tok)
+[ref] l4-fr 5318 -> 49 tokens in 108 s (prefill 82.1 s = 65 tok/s, decode 0.542 s/tok)
+[ref] l5-en 5291 -> 80 tokens in 109 s (prefill 64.6 s = 82 tok/s, decode 0.559 s/tok)
+[ref] l5-fr 5298 -> 102 tokens in 139 s (prefill 77.3 s = 69 tok/s, decode 0.607 s/tok)

@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-11",
+  "object": "chat.completion",
+  "created": 1794678251,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Based on the text, Pawkins published his work on the \"mesoblast\" of the Death's Head Moth in **1891**.\n\nThis is stated in the paragraph beginning: \"But in 1891 Pawkins, whose health had been bad for some time, published some work upon the 'mesoblast' of the Death's Head Moth.\""
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5304,
+    "completion_tokens": 79,
+    "total_tokens": 5383,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 5304,
+    "prompt_ms": 13379.141063000001,
+    "prompt_per_token_ms": 2.522462493024133,
+    "prompt_per_second": 396.43800562565303,
+    "predicted_n": 79,
+    "predicted_ms": 5171.66162,
+    "predicted_per_token_ms": 65.4640711392405,
+    "predicted_per_second": 15.275554706535498
+  }
+}

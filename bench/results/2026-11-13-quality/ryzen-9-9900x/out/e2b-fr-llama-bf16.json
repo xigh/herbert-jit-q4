@@ -1,0 +1,28 @@
+{
+ "ref": "ref/e2b-fr.kld",
+ "test": "out/e2b-fr-llama-bf16.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 262144,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact ppl from llama log; se from compressed"
+ },
+ "ppl_ref": 40.18515140877563,
+ "ppl_test": 40.1454,
+ "nll_ref": 3.6934975594509303,
+ "nll_test": 3.69250786346794,
+ "dnll": -0.0009896959829904795,
+ "dnll_se": 0.0029494504322589996,
+ "dnll_se_chunk": 0.0032866632110586176,
+ "kl_mean": 0.0015083702874479697,
+ "kl_se": 7.724364772635807e-05,
+ "kl_median": 0.001022025147436299,
+ "kl_p99": 0.007706189534731872,
+ "kl_p999": 0.03428802368310322,
+ "kl_max": 0.18374720359821492,
+ "top1": 0.9767060367454068,
+ "top1_n": 2977,
+ "ref_nll_exact_minus_compressed": 0.004488025045644628
+}

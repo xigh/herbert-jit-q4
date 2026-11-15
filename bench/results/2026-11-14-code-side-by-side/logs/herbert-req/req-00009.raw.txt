@@ -1,0 +1,5 @@
+```rust
+pub fn inverser(s: &str) -> String {
+    s.chars().rev().collect()
+}
+```<|im_end|>

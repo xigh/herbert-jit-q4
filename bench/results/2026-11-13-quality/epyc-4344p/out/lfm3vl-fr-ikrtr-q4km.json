@@ -1,0 +1,28 @@
+{
+ "ref": "ref/lfm3vl-fr.kld",
+ "test": "out/lfm3vl-fr-ikrtr-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 128000,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 227.35616968234237,
+ "ppl_test": 230.149378895178,
+ "nll_ref": 5.426517817278406,
+ "nll_test": 5.43872857156388,
+ "dnll": 0.012210754285473642,
+ "dnll_se": 0.012606482578121215,
+ "dnll_se_chunk": 0.01691812871726985,
+ "kl_mean": 0.17075232470471974,
+ "kl_se": 0.0035026129554684834,
+ "kl_median": 0.12195066265634316,
+ "kl_p99": 0.9122043174251229,
+ "kl_p999": 1.8552591077501581,
+ "kl_max": 4.7280401494266595,
+ "top1": 0.735236220472441,
+ "top1_n": 2241,
+ "ref_nll_exact_minus_compressed": 0.00014414685809850593
+}

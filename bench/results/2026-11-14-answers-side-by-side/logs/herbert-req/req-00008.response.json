@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-8",
+  "object": "chat.completion",
+  "created": 1794676033,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "L'inflation est une augmentation générale et durable des prix des biens et services au fil du temps. Elle entraîne une baisse du pouvoir d'achat des consommateurs, car il faut dépenser davantage pour acquérir les mêmes biens. Ce phénomène est généralement mesuré par l'augmentation du taux d'augmentation des prix, souvent exprimé en pourcentage."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 24,
+    "completion_tokens": 71,
+    "total_tokens": 95,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 24,
+    "prompt_ms": 270.552325,
+    "prompt_per_token_ms": 11.273013541666666,
+    "prompt_per_second": 88.70742470980429,
+    "predicted_n": 71,
+    "predicted_ms": 4251.884954,
+    "predicted_per_token_ms": 59.88570357746479,
+    "predicted_per_second": 16.69847626832097
+  }
+}

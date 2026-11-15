@@ -1,0 +1,1162 @@
+{
+  "prompt_ids": [
+    248045,
+    846,
+    198,
+    42498,
+    2295,
+    644,
+    53367,
+    30705,
+    83244,
+    501,
+    173941,
+    1725,
+    187451,
+    13,
+    248046,
+    198,
+    248045,
+    74455,
+    198,
+    248068,
+    271,
+    248069,
+    271
+  ],
+  "generated_ids": [
+    8482,
+    178975,
+    3717,
+    179560,
+    11,
+    13958,
+    1649,
+    198372,
+    11,
+    1725,
+    220786,
+    401,
+    38332,
+    3424,
+    176387,
+    401,
+    324,
+    6,
+    7941,
+    20134,
+    1723,
+    12656,
+    13,
+    2831,
+    28457,
+    505,
+    324,
+    6,
+    266,
+    164253,
+    11725,
+    208424,
+    11,
+    3424,
+    206372,
+    624,
+    293,
+    6,
+    1264,
+    76043,
+    305,
+    188557,
+    3424,
+    2013,
+    2262,
+    180471,
+    1663,
+    293,
+    6,
+    16723,
+    11,
+    20912,
+    501,
+    187451,
+    11,
+    1649,
+    3424,
+    43503,
+    176387,
+    13,
+    351,
+    16811,
+    19450,
+    55411,
+    18181,
+    742,
+    520,
+    11,
+    242786,
+    55411,
+    401,
+    12870,
+    60845,
+    11,
+    7528,
+    20251,
+    7657,
+    173941,
+    796,
+    72973,
+    12066,
+    356,
+    54710,
+    177809,
+    2295,
+    13,
+    248046
+  ],
+  "steps": [
+    {
+      "top": [
+        {
+          "id": 8482,
+          "logit": 22.625,
+          "prob": 0.5535053113711422,
+          "text": "La"
+        }
+      ],
+      "chosen": 8482,
+      "chosen_text": "La"
+    },
+    {
+      "top": [
+        {
+          "id": 178975,
+          "logit": 22.875,
+          "prob": 0.9828922407366312,
+          "text": " lumière"
+        }
+      ],
+      "chosen": 178975,
+      "chosen_text": " lumière"
+    },
+    {
+      "top": [
+        {
+          "id": 3717,
+          "logit": 24.875,
+          "prob": 0.9752534468975529,
+          "text": " du"
+        }
+      ],
+      "chosen": 3717,
+      "chosen_text": " du"
+    },
+    {
+      "top": [
+        {
+          "id": 179560,
+          "logit": 21.875,
+          "prob": 0.7532835506540349,
+          "text": " soleil"
+        }
+      ],
+      "chosen": 179560,
+      "chosen_text": " soleil"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 19.75,
+          "prob": 0.8273247531193074,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 13958,
+          "logit": 21.875,
+          "prob": 0.5575523471949447,
+          "text": " bien"
+        }
+      ],
+      "chosen": 13958,
+      "chosen_text": " bien"
+    },
+    {
+      "top": [
+        {
+          "id": 1649,
+          "logit": 24.125,
+          "prob": 0.6506676385310166,
+          "text": " que"
+        }
+      ],
+      "chosen": 1649,
+      "chosen_text": " que"
+    },
+    {
+      "top": [
+        {
+          "id": 198372,
+          "logit": 19.75,
+          "prob": 0.8611273275451561,
+          "text": " blanche"
+        }
+      ],
+      "chosen": 198372,
+      "chosen_text": " blanche"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 22.5,
+          "prob": 0.9912779977498919,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 1725,
+          "logit": 21.875,
+          "prob": 0.885652983759136,
+          "text": " est"
+        }
+      ],
+      "chosen": 1725,
+      "chosen_text": " est"
+    },
+    {
+      "top": [
+        {
+          "id": 220786,
+          "logit": 21.125,
+          "prob": 0.8375893824312728,
+          "text": " composée"
+        }
+      ],
+      "chosen": 220786,
+      "chosen_text": " composée"
+    },
+    {
+      "top": [
+        {
+          "id": 401,
+          "logit": 25.375,
+          "prob": 0.939155437885563,
+          "text": " de"
+        }
+      ],
+      "chosen": 401,
+      "chosen_text": " de"
+    },
+    {
+      "top": [
+        {
+          "id": 38332,
+          "logit": 23.5,
+          "prob": 0.9263405817609063,
+          "text": " toutes"
+        }
+      ],
+      "chosen": 38332,
+      "chosen_text": " toutes"
+    },
+    {
+      "top": [
+        {
+          "id": 3424,
+          "logit": 27.25,
+          "prob": 0.9999487319416714,
+          "text": " les"
+        }
+      ],
+      "chosen": 3424,
+      "chosen_text": " les"
+    },
+    {
+      "top": [
+        {
+          "id": 176387,
+          "logit": 24.625,
+          "prob": 0.9995853011715381,
+          "text": " couleurs"
+        }
+      ],
+      "chosen": 176387,
+      "chosen_text": " couleurs"
+    },
+    {
+      "top": [
+        {
+          "id": 401,
+          "logit": 24.375,
+          "prob": 0.9934074058072823,
+          "text": " de"
+        }
+      ],
+      "chosen": 401,
+      "chosen_text": " de"
+    },
+    {
+      "top": [
+        {
+          "id": 324,
+          "logit": 27.0,
+          "prob": 0.9998731805876139,
+          "text": " l"
+        }
+      ],
+      "chosen": 324,
+      "chosen_text": " l"
+    },
+    {
+      "top": [
+        {
+          "id": 6,
+          "logit": 28.25,
+          "prob": 0.9900811910534365,
+          "text": "'"
+        }
+      ],
+      "chosen": 6,
+      "chosen_text": "'"
+    },
+    {
+      "top": [
+        {
+          "id": 7941,
+          "logit": 26.25,
+          "prob": 0.9997654593551824,
+          "text": "arc"
+        }
+      ],
+      "chosen": 7941,
+      "chosen_text": "arc"
+    },
+    {
+      "top": [
+        {
+          "id": 20134,
+          "logit": 26.5,
+          "prob": 0.9999778948224972,
+          "text": "-en"
+        }
+      ],
+      "chosen": 20134,
+      "chosen_text": "-en"
+    },
+    {
+      "top": [
+        {
+          "id": 1723,
+          "logit": 29.125,
+          "prob": 0.9994916800277931,
+          "text": "-c"
+        }
+      ],
+      "chosen": 1723,
+      "chosen_text": "-c"
+    },
+    {
+      "top": [
+        {
+          "id": 12656,
+          "logit": 24.625,
+          "prob": 0.9949378017949686,
+          "text": "iel"
+        }
+      ],
+      "chosen": 12656,
+      "chosen_text": "iel"
+    },
+    {
+      "top": [
+        {
+          "id": 13,
+          "logit": 19.375,
+          "prob": 0.5229142811352139,
+          "text": "."
+        }
+      ],
+      "chosen": 13,
+      "chosen_text": "."
+    },
+    {
+      "top": [
+        {
+          "id": 2831,
+          "logit": 19.625,
+          "prob": 0.41979482674631974,
+          "text": " En"
+        }
+      ],
+      "chosen": 2831,
+      "chosen_text": " En"
+    },
+    {
+      "top": [
+        {
+          "id": 28457,
+          "logit": 21.125,
+          "prob": 0.8846508245497254,
+          "text": " travers"
+        }
+      ],
+      "chosen": 28457,
+      "chosen_text": " travers"
+    },
+    {
+      "top": [
+        {
+          "id": 505,
+          "logit": 29.625,
+          "prob": 0.9999853355163144,
+          "text": "ant"
+        }
+      ],
+      "chosen": 505,
+      "chosen_text": "ant"
+    },
+    {
+      "top": [
+        {
+          "id": 324,
+          "logit": 28.125,
+          "prob": 0.9901362039723114,
+          "text": " l"
+        }
+      ],
+      "chosen": 324,
+      "chosen_text": " l"
+    },
+    {
+      "top": [
+        {
+          "id": 6,
+          "logit": 33.0,
+          "prob": 0.9993581663529616,
+          "text": "'"
+        }
+      ],
+      "chosen": 6,
+      "chosen_text": "'"
+    },
+    {
+      "top": [
+        {
+          "id": 266,
+          "logit": 28.125,
+          "prob": 0.999952932001121,
+          "text": "at"
+        }
+      ],
+      "chosen": 266,
+      "chosen_text": "at"
+    },
+    {
+      "top": [
+        {
+          "id": 164253,
+          "logit": 28.375,
+          "prob": 0.9998992281455035,
+          "text": "mosph"
+        }
+      ],
+      "chosen": 164253,
+      "chosen_text": "mosph"
+    },
+    {
+      "top": [
+        {
+          "id": 11725,
+          "logit": 31.0,
+          "prob": 0.9999807181652032,
+          "text": "ère"
+        }
+      ],
+      "chosen": 11725,
+      "chosen_text": "ère"
+    },
+    {
+      "top": [
+        {
+          "id": 208424,
+          "logit": 25.375,
+          "prob": 0.9939160490783249,
+          "text": " terrestre"
+        }
+      ],
+      "chosen": 208424,
+      "chosen_text": " terrestre"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 24.25,
+          "prob": 0.9998551409295471,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 3424,
+          "logit": 23.0,
+          "prob": 0.42742421944236864,
+          "text": " les"
+        }
+      ],
+      "chosen": 3424,
+      "chosen_text": " les"
+    },
+    {
+      "top": [
+        {
+          "id": 206372,
+          "logit": 19.125,
+          "prob": 0.6735074857879735,
+          "text": " moléc"
+        }
+      ],
+      "chosen": 206372,
+      "chosen_text": " moléc"
+    },
+    {
+      "top": [
+        {
+          "id": 624,
+          "logit": 28.0,
+          "prob": 0.8801168093150168,
+          "text": "les"
+        }
+      ],
+      "chosen": 624,
+      "chosen_text": "les"
+    },
+    {
+      "top": [
+        {
+          "id": 293,
+          "logit": 22.5,
+          "prob": 0.649588619794498,
+          "text": " d"
+        }
+      ],
+      "chosen": 293,
+      "chosen_text": " d"
+    },
+    {
+      "top": [
+        {
+          "id": 6,
+          "logit": 28.875,
+          "prob": 0.996769999885588,
+          "text": "'"
+        }
+      ],
+      "chosen": 6,
+      "chosen_text": "'"
+    },
+    {
+      "top": [
+        {
+          "id": 1264,
+          "logit": 27.625,
+          "prob": 0.9994669465999578,
+          "text": "air"
+        }
+      ],
+      "chosen": 1264,
+      "chosen_text": "air"
+    },
+    {
+      "top": [
+        {
+          "id": 76043,
+          "logit": 19.0,
+          "prob": 0.5140521592914947,
+          "text": " dispers"
+        }
+      ],
+      "chosen": 76043,
+      "chosen_text": " dispers"
+    },
+    {
+      "top": [
+        {
+          "id": 305,
+          "logit": 27.0,
+          "prob": 0.9999531329866437,
+          "text": "ent"
+        }
+      ],
+      "chosen": 305,
+      "chosen_text": "ent"
+    },
+    {
+      "top": [
+        {
+          "id": 188557,
+          "logit": 21.25,
+          "prob": 0.7083231969378412,
+          "text": " davantage"
+        }
+      ],
+      "chosen": 188557,
+      "chosen_text": " davantage"
+    },
+    {
+      "top": [
+        {
+          "id": 3424,
+          "logit": 26.25,
+          "prob": 0.9433952750490536,
+          "text": " les"
+        }
+      ],
+      "chosen": 3424,
+      "chosen_text": " les"
+    },
+    {
+      "top": [
+        {
+          "id": 2013,
+          "logit": 19.25,
+          "prob": 0.5168502508983092,
+          "text": " cour"
+        }
+      ],
+      "chosen": 2013,
+      "chosen_text": " cour"
+    },
+    {
+      "top": [
+        {
+          "id": 2262,
+          "logit": 31.0,
+          "prob": 0.9999836639009196,
+          "text": "tes"
+        }
+      ],
+      "chosen": 2262,
+      "chosen_text": "tes"
+    },
+    {
+      "top": [
+        {
+          "id": 180471,
+          "logit": 21.625,
+          "prob": 0.9910740889788047,
+          "text": " longue"
+        }
+      ],
+      "chosen": 180471,
+      "chosen_text": " longue"
+    },
+    {
+      "top": [
+        {
+          "id": 1663,
+          "logit": 25.875,
+          "prob": 0.9984653191325759,
+          "text": "urs"
+        }
+      ],
+      "chosen": 1663,
+      "chosen_text": "urs"
+    },
+    {
+      "top": [
+        {
+          "id": 293,
+          "logit": 27.75,
+          "prob": 0.9999497509445893,
+          "text": " d"
+        }
+      ],
+      "chosen": 293,
+      "chosen_text": " d"
+    },
+    {
+      "top": [
+        {
+          "id": 6,
+          "logit": 30.125,
+          "prob": 0.9996618210309749,
+          "text": "'"
+        }
+      ],
+      "chosen": 6,
+      "chosen_text": "'"
+    },
+    {
+      "top": [
+        {
+          "id": 16723,
+          "logit": 27.0,
+          "prob": 0.9970357737679933,
+          "text": "onde"
+        }
+      ],
+      "chosen": 16723,
+      "chosen_text": "onde"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 20.5,
+          "prob": 0.9002543018436155,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 20912,
+          "logit": 20.5,
+          "prob": 0.481672238096341,
+          "text": " comme"
+        }
+      ],
+      "chosen": 20912,
+      "chosen_text": " comme"
+    },
+    {
+      "top": [
+        {
+          "id": 501,
+          "logit": 26.625,
+          "prob": 0.9962278224001976,
+          "text": " le"
+        }
+      ],
+      "chosen": 501,
+      "chosen_text": " le"
+    },
+    {
+      "top": [
+        {
+          "id": 187451,
+          "logit": 24.75,
+          "prob": 0.9966163659242918,
+          "text": " bleu"
+        }
+      ],
+      "chosen": 187451,
+      "chosen_text": " bleu"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 23.125,
+          "prob": 0.9253146546656538,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 1649,
+          "logit": 22.0,
+          "prob": 0.8884746396753501,
+          "text": " que"
+        }
+      ],
+      "chosen": 1649,
+      "chosen_text": " que"
+    },
+    {
+      "top": [
+        {
+          "id": 3424,
+          "logit": 27.125,
+          "prob": 0.9983118131319317,
+          "text": " les"
+        }
+      ],
+      "chosen": 3424,
+      "chosen_text": " les"
+    },
+    {
+      "top": [
+        {
+          "id": 43503,
+          "logit": 22.75,
+          "prob": 0.9170727478950201,
+          "text": " autres"
+        }
+      ],
+      "chosen": 43503,
+      "chosen_text": " autres"
+    },
+    {
+      "top": [
+        {
+          "id": 176387,
+          "logit": 22.75,
+          "prob": 0.9866266486438783,
+          "text": " couleurs"
+        }
+      ],
+      "chosen": 176387,
+      "chosen_text": " couleurs"
+    },
+    {
+      "top": [
+        {
+          "id": 13,
+          "logit": 20.75,
+          "prob": 0.9357155348606672,
+          "text": "."
+        }
+      ],
+      "chosen": 13,
+      "chosen_text": "."
+    },
+    {
+      "top": [
+        {
+          "id": 351,
+          "logit": 21.125,
+          "prob": 0.766565121787574,
+          "text": " C"
+        }
+      ],
+      "chosen": 351,
+      "chosen_text": " C"
+    },
+    {
+      "top": [
+        {
+          "id": 16811,
+          "logit": 25.625,
+          "prob": 0.9985129614433556,
+          "text": "'est"
+        }
+      ],
+      "chosen": 16811,
+      "chosen_text": "'est"
+    },
+    {
+      "top": [
+        {
+          "id": 19450,
+          "logit": 23.625,
+          "prob": 0.9784502951393442,
+          "text": " cette"
+        }
+      ],
+      "chosen": 19450,
+      "chosen_text": " cette"
+    },
+    {
+      "top": [
+        {
+          "id": 55411,
+          "logit": 22.75,
+          "prob": 0.974818912289194,
+          "text": " diffusion"
+        }
+      ],
+      "chosen": 55411,
+      "chosen_text": " diffusion"
+    },
+    {
+      "top": [
+        {
+          "id": 18181,
+          "logit": 16.375,
+          "prob": 0.3315692103429167,
+          "text": " sé"
+        }
+      ],
+      "chosen": 18181,
+      "chosen_text": " sé"
+    },
+    {
+      "top": [
+        {
+          "id": 742,
+          "logit": 28.25,
+          "prob": 0.9999667961190792,
+          "text": "lect"
+        }
+      ],
+      "chosen": 742,
+      "chosen_text": "lect"
+    },
+    {
+      "top": [
+        {
+          "id": 520,
+          "logit": 28.0,
+          "prob": 0.9997144702326436,
+          "text": "ive"
+        }
+      ],
+      "chosen": 520,
+      "chosen_text": "ive"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 19.875,
+          "prob": 0.661459524203934,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 242786,
+          "logit": 22.5,
+          "prob": 0.9650158523691704,
+          "text": " appelée"
+        }
+      ],
+      "chosen": 242786,
+      "chosen_text": " appelée"
+    },
+    {
+      "top": [
+        {
+          "id": 55411,
+          "logit": 23.375,
+          "prob": 0.9948689785155502,
+          "text": " diffusion"
+        }
+      ],
+      "chosen": 55411,
+      "chosen_text": " diffusion"
+    },
+    {
+      "top": [
+        {
+          "id": 401,
+          "logit": 23.5,
+          "prob": 0.7048268816531754,
+          "text": " de"
+        }
+      ],
+      "chosen": 401,
+      "chosen_text": " de"
+    },
+    {
+      "top": [
+        {
+          "id": 12870,
+          "logit": 29.75,
+          "prob": 0.9998673369152795,
+          "text": " Ray"
+        }
+      ],
+      "chosen": 12870,
+      "chosen_text": " Ray"
+    },
+    {
+      "top": [
+        {
+          "id": 60845,
+          "logit": 25.875,
+          "prob": 0.9998520999175373,
+          "text": "leigh"
+        }
+      ],
+      "chosen": 60845,
+      "chosen_text": "leigh"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 25.125,
+          "prob": 0.9995790294214195,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 7528,
+          "logit": 23.875,
+          "prob": 0.9871836537032412,
+          "text": " qui"
+        }
+      ],
+      "chosen": 7528,
+      "chosen_text": " qui"
+    },
+    {
+      "top": [
+        {
+          "id": 20251,
+          "logit": 17.625,
+          "prob": 0.5012640088156264,
+          "text": " donne"
+        }
+      ],
+      "chosen": 20251,
+      "chosen_text": " donne"
+    },
+    {
+      "top": [
+        {
+          "id": 7657,
+          "logit": 22.25,
+          "prob": 0.6732080195278746,
+          "text": " au"
+        }
+      ],
+      "chosen": 7657,
+      "chosen_text": " au"
+    },
+    {
+      "top": [
+        {
+          "id": 173941,
+          "logit": 22.5,
+          "prob": 0.9984467123705487,
+          "text": " ciel"
+        }
+      ],
+      "chosen": 173941,
+      "chosen_text": " ciel"
+    },
+    {
+      "top": [
+        {
+          "id": 796,
+          "logit": 20.375,
+          "prob": 0.9670981648949718,
+          "text": " sa"
+        }
+      ],
+      "chosen": 796,
+      "chosen_text": " sa"
+    },
+    {
+      "top": [
+        {
+          "id": 72973,
+          "logit": 23.125,
+          "prob": 0.9193677032346813,
+          "text": " couleur"
+        }
+      ],
+      "chosen": 72973,
+      "chosen_text": " couleur"
+    },
+    {
+      "top": [
+        {
+          "id": 12066,
+          "logit": 22.375,
+          "prob": 0.8292614504268294,
+          "text": " ble"
+        }
+      ],
+      "chosen": 12066,
+      "chosen_text": " ble"
+    },
+    {
+      "top": [
+        {
+          "id": 356,
+          "logit": 29.125,
+          "prob": 0.999967288049234,
+          "text": "ue"
+        }
+      ],
+      "chosen": 356,
+      "chosen_text": "ue"
+    },
+    {
+      "top": [
+        {
+          "id": 54710,
+          "logit": 21.0,
+          "prob": 0.9334719398743391,
+          "text": " caract"
+        }
+      ],
+      "chosen": 54710,
+      "chosen_text": " caract"
+    },
+    {
+      "top": [
+        {
+          "id": 177809,
+          "logit": 25.375,
+          "prob": 0.9993484480714163,
+          "text": "érist"
+        }
+      ],
+      "chosen": 177809,
+      "chosen_text": "érist"
+    },
+    {
+      "top": [
+        {
+          "id": 2295,
+          "logit": 27.625,
+          "prob": 0.9995884216308072,
+          "text": "ique"
+        }
+      ],
+      "chosen": 2295,
+      "chosen_text": "ique"
+    },
+    {
+      "top": [
+        {
+          "id": 13,
+          "logit": 19.875,
+          "prob": 0.5336422562356414,
+          "text": "."
+        }
+      ],
+      "chosen": 13,
+      "chosen_text": "."
+    },
+    {
+      "top": [
+        {
+          "id": 248046,
+          "logit": 23.5,
+          "prob": 0.9992811161602859,
+          "text": "<|im_end|>"
+        }
+      ],
+      "chosen": 248046,
+      "chosen_text": "<|im_end|>"
+    }
+  ]
+}

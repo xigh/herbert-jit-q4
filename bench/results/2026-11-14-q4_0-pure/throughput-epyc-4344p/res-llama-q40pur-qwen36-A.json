@@ -1,0 +1,72 @@
+{
+ "label": "llama-q40pur",
+ "text": [
+  {
+   "words": 380,
+   "rep": 0,
+   "wall_s": 9.023695515468717,
+   "prompt_n": 627,
+   "prompt_ms": 3664.886,
+   "prompt_per_second": 171.0830841668745,
+   "predicted_n": 128,
+   "predicted_ms": 5333.71,
+   "predicted_per_second": 23.810818360953256
+  },
+  {
+   "words": 380,
+   "rep": 1,
+   "wall_s": 8.960790200158954,
+   "prompt_n": 627,
+   "prompt_ms": 3651.053,
+   "prompt_per_second": 171.73127862016793,
+   "predicted_n": 128,
+   "predicted_ms": 5307.997,
+   "predicted_per_second": 23.92616273144088
+  },
+  {
+   "words": 380,
+   "rep": 2,
+   "wall_s": 8.981055271811783,
+   "prompt_n": 627,
+   "prompt_ms": 3652.149,
+   "prompt_per_second": 171.67974252967227,
+   "predicted_n": 128,
+   "predicted_ms": 5327.127,
+   "predicted_per_second": 23.840242592301628
+  },
+  {
+   "words": 1500,
+   "rep": 0,
+   "wall_s": 18.881701020523906,
+   "prompt_n": 2255,
+   "prompt_ms": 13362.272,
+   "prompt_per_second": 168.7587260609573,
+   "predicted_n": 128,
+   "predicted_ms": 5516.179,
+   "predicted_per_second": 23.02318325783119
+  },
+  {
+   "words": 1500,
+   "rep": 1,
+   "wall_s": 18.923603997565806,
+   "prompt_n": 2255,
+   "prompt_ms": 13379.052,
+   "prompt_per_second": 168.54706895525933,
+   "predicted_n": 128,
+   "predicted_ms": 5541.601,
+   "predicted_per_second": 22.917564797609934
+  },
+  {
+   "words": 1500,
+   "rep": 2,
+   "wall_s": 18.876302681863308,
+   "prompt_n": 2255,
+   "prompt_ms": 13340.77,
+   "prompt_per_second": 169.03072311418308,
+   "predicted_n": 128,
+   "predicted_ms": 5531.924,
+   "predicted_per_second": 22.957654515861027
+  }
+ ],
+ "image": []
+}

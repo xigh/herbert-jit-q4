@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-4",
+  "object": "chat.completion",
+  "created": 1794678164,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "D'après le texte, Harringay a chargé son pinceau de **vermillon** (ou de **rouge vif** / *bright red*) par erreur, au lieu du brun.\n\nLe passage concerné est le suivant :\n> \"The eye, then? Catastrophe! he had filled his brush with **vermilion** instead of brown, and yet he had felt sure it was brown!\"\n\nPeu après, le texte précise également :\n> \"...he struck the brush full of **bright red** athwart the picture...\""
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2759,
+    "completion_tokens": 118,
+    "total_tokens": 2877,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 2759,
+    "prompt_ms": 6688.5823709999995,
+    "prompt_per_token_ms": 2.424277771293947,
+    "prompt_per_second": 412.4939855659587,
+    "predicted_n": 118,
+    "predicted_ms": 7477.057246,
+    "predicted_per_token_ms": 63.36489191525424,
+    "predicted_per_second": 15.78160981221943
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-8",
+  "object": "chat.completion",
+  "created": 1794684353,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```rust\npub fn moyenne_entiere(v: &[i32]) -> Option<i32> {\n    if v.is_empty() {\n        return None;\n    }\n\n    let len = v.len() as i64;\n    let sum: i64 = v.iter().map(|&x| x as i64).sum();\n    \n    // Division entière vers zéro pour i64, puis conversion en i32\n    // Rust's integer division truncates towards zero, which is what we want.\n    // We need to ensure the result fits in i32.\n    // Since we're averaging i32 values, the average must be within [i32::MIN, i32::MAX]\n    // because it's a convex combination of the values.\n    let avg = sum / len;\n    \n    // Safe cast since average of i32s is always within i32 range\n    Some(avg as i32)\n}\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 127,
+    "completion_tokens": 215,
+    "total_tokens": 342,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 127,
+    "prompt_ms": 502.59292300000004,
+    "prompt_per_token_ms": 3.9574245905511813,
+    "prompt_per_second": 252.68959069684314,
+    "predicted_n": 215,
+    "predicted_ms": 12976.613348,
+    "predicted_per_token_ms": 60.35634115348837,
+    "predicted_per_second": 16.568267408008772
+  }
+}

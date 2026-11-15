@@ -1,0 +1,14 @@
+{
+ "ref": "ref/e4b-fr.npz",
+ "test": "out/e4b-fr-vllm-bf16",
+ "positions": 3048,
+ "ppl_ref": 29.181010503614417,
+ "ppl_test": 29.102284275002336,
+ "dnll": -0.0027015039829374984,
+ "dnll_se": 0.0015747715520864085,
+ "dnll_se_chunk": 0.0020539022042148736,
+ "top1": 0.9793307086614174,
+ "kl_mean": null,
+ "kl_p99": null,
+ "note": "KL non disponible : prompt_logprobs ne rend pas la loi compl\u00e8te"
+}

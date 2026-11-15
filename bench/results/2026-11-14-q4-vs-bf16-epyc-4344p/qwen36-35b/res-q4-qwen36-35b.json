@@ -1,0 +1,39 @@
+{
+ "label": "q4-qwen36-35b",
+ "text": [
+  {
+   "words": 4240,
+   "rep": 0,
+   "wall_s": 25.53495651949197,
+   "prompt_n": 6131,
+   "prompt_ms": 20152.68378,
+   "prompt_per_second": 304.22746999506586,
+   "predicted_n": 128,
+   "predicted_ms": 5373.432542,
+   "predicted_per_second": 23.820900141487254
+  },
+  {
+   "words": 4240,
+   "rep": 1,
+   "wall_s": 25.50227178260684,
+   "prompt_n": 6131,
+   "prompt_ms": 20118.101387,
+   "prompt_per_second": 304.7504275906352,
+   "predicted_n": 128,
+   "predicted_ms": 5373.033456,
+   "predicted_per_second": 23.82266945631317
+  },
+  {
+   "words": 4240,
+   "rep": 2,
+   "wall_s": 25.495184015482664,
+   "prompt_n": 6131,
+   "prompt_ms": 20115.683877,
+   "prompt_per_second": 304.7870526047639,
+   "predicted_n": 128,
+   "predicted_ms": 5373.769077999999,
+   "predicted_per_second": 23.81940834116356
+  }
+ ],
+ "image": []
+}

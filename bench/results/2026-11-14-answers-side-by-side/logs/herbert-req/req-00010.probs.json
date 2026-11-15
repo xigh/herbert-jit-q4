@@ -1,0 +1,1685 @@
+{
+  "prompt_ids": [
+    248045,
+    846,
+    198,
+    7751,
+    785,
+    53367,
+    88713,
+    4755,
+    13958,
+    183499,
+    11,
+    644,
+    212835,
+    53367,
+    17714,
+    1547,
+    13,
+    248046,
+    198,
+    248045,
+    74455,
+    198,
+    248068,
+    271,
+    248069,
+    271
+  ],
+  "generated_ids": [
+    9,
+    256,
+    41468,
+    19931,
+    632,
+    4658,
+    11657,
+    401,
+    212477,
+    36338,
+    172781,
+    644,
+    8740,
+    25313,
+    505,
+    1778,
+    644,
+    8740,
+    9056,
+    178337,
+    505,
+    3656,
+    1147,
+    25639,
+    74095,
+    44156,
+    9394,
+    11,
+    25639,
+    501,
+    1936,
+    12692,
+    11,
+    4755,
+    36338,
+    8219,
+    14487,
+    4658,
+    245345,
+    223274,
+    13,
+    198,
+    9,
+    256,
+    4404,
+    7639,
+    89,
+    632,
+    178373,
+    401,
+    212477,
+    22113,
+    644,
+    1036,
+    315,
+    1277,
+    62962,
+    1147,
+    83840,
+    11,
+    644,
+    157521,
+    177956,
+    501,
+    212997,
+    1778,
+    644,
+    71098,
+    5992,
+    187199,
+    210992,
+    318,
+    38574,
+    220,
+    16,
+    23,
+    1778,
+    220,
+    17,
+    15,
+    29922,
+    553,
+    198,
+    9,
+    256,
+    196041,
+    52809,
+    3424,
+    181400,
+    581,
+    234901,
+    7657,
+    38548,
+    5992,
+    74095,
+    31495,
+    501,
+    235448,
+    11,
+    1740,
+    1147,
+    178975,
+    12066,
+    356,
+    19529,
+    68,
+    1147,
+    5492,
+    401,
+    30000,
+    5351,
+    263,
+    472,
+    11,
+    324,
+    37596,
+    483,
+    588,
+    225885,
+    3656,
+    324,
+    6,
+    400,
+    483,
+    47981,
+    13,
+    248046
+  ],
+  "steps": [
+    {
+      "top": [
+        {
+          "id": 9,
+          "logit": 24.25,
+          "prob": 0.9299006817640746,
+          "text": "*"
+        }
+      ],
+      "chosen": 9,
+      "chosen_text": "*"
+    },
+    {
+      "top": [
+        {
+          "id": 256,
+          "logit": 18.875,
+          "prob": 0.7570712875557375,
+          "text": "  "
+        }
+      ],
+      "chosen": 256,
+      "chosen_text": "  "
+    },
+    {
+      "top": [
+        {
+          "id": 41468,
+          "logit": 18.875,
+          "prob": 0.8664968289783286,
+          "text": " Maint"
+        }
+      ],
+      "chosen": 41468,
+      "chosen_text": " Maint"
+    },
+    {
+      "top": [
+        {
+          "id": 19931,
+          "logit": 28.0,
+          "prob": 0.9992787479558315,
+          "text": "enez"
+        }
+      ],
+      "chosen": 19931,
+      "chosen_text": "enez"
+    },
+    {
+      "top": [
+        {
+          "id": 632,
+          "logit": 23.125,
+          "prob": 0.695585490383758,
+          "text": " un"
+        }
+      ],
+      "chosen": 632,
+      "chosen_text": " un"
+    },
+    {
+      "top": [
+        {
+          "id": 4658,
+          "logit": 20.125,
+          "prob": 0.6909015730868578,
+          "text": " hor"
+        }
+      ],
+      "chosen": 4658,
+      "chosen_text": " hor"
+    },
+    {
+      "top": [
+        {
+          "id": 11657,
+          "logit": 23.0,
+          "prob": 0.9983553939652491,
+          "text": "aire"
+        }
+      ],
+      "chosen": 11657,
+      "chosen_text": "aire"
+    },
+    {
+      "top": [
+        {
+          "id": 401,
+          "logit": 24.25,
+          "prob": 0.9616667094564786,
+          "text": " de"
+        }
+      ],
+      "chosen": 401,
+      "chosen_text": " de"
+    },
+    {
+      "top": [
+        {
+          "id": 212477,
+          "logit": 20.75,
+          "prob": 0.512308957855841,
+          "text": " sommeil"
+        }
+      ],
+      "chosen": 212477,
+      "chosen_text": " sommeil"
+    },
+    {
+      "top": [
+        {
+          "id": 36338,
+          "logit": 23.75,
+          "prob": 0.969239595536813,
+          "text": " rég"
+        }
+      ],
+      "chosen": 36338,
+      "chosen_text": " rég"
+    },
+    {
+      "top": [
+        {
+          "id": 172781,
+          "logit": 24.875,
+          "prob": 0.9993068672535891,
+          "text": "ulier"
+        }
+      ],
+      "chosen": 172781,
+      "chosen_text": "ulier"
+    },
+    {
+      "top": [
+        {
+          "id": 644,
+          "logit": 21.25,
+          "prob": 0.5629073312313622,
+          "text": " en"
+        }
+      ],
+      "chosen": 644,
+      "chosen_text": " en"
+    },
+    {
+      "top": [
+        {
+          "id": 8740,
+          "logit": 20.25,
+          "prob": 0.9281643137439569,
+          "text": " vous"
+        }
+      ],
+      "chosen": 8740,
+      "chosen_text": " vous"
+    },
+    {
+      "top": [
+        {
+          "id": 25313,
+          "logit": 22.0,
+          "prob": 0.9874135477795399,
+          "text": " couch"
+        }
+      ],
+      "chosen": 25313,
+      "chosen_text": " couch"
+    },
+    {
+      "top": [
+        {
+          "id": 505,
+          "logit": 27.375,
+          "prob": 0.9999763500144339,
+          "text": "ant"
+        }
+      ],
+      "chosen": 505,
+      "chosen_text": "ant"
+    },
+    {
+      "top": [
+        {
+          "id": 1778,
+          "logit": 28.25,
+          "prob": 0.9999823802251008,
+          "text": " et"
+        }
+      ],
+      "chosen": 1778,
+      "chosen_text": " et"
+    },
+    {
+      "top": [
+        {
+          "id": 644,
+          "logit": 27.0,
+          "prob": 0.9971686851494278,
+          "text": " en"
+        }
+      ],
+      "chosen": 644,
+      "chosen_text": " en"
+    },
+    {
+      "top": [
+        {
+          "id": 8740,
+          "logit": 24.75,
+          "prob": 0.9994601960016056,
+          "text": " vous"
+        }
+      ],
+      "chosen": 8740,
+      "chosen_text": " vous"
+    },
+    {
+      "top": [
+        {
+          "id": 9056,
+          "logit": 22.375,
+          "prob": 0.6178559249087123,
+          "text": " ré"
+        }
+      ],
+      "chosen": 9056,
+      "chosen_text": " ré"
+    },
+    {
+      "top": [
+        {
+          "id": 178337,
+          "logit": 25.875,
+          "prob": 0.8572933832745396,
+          "text": "veill"
+        }
+      ],
+      "chosen": 178337,
+      "chosen_text": "veill"
+    },
+    {
+      "top": [
+        {
+          "id": 505,
+          "logit": 29.25,
+          "prob": 0.9999946636418054,
+          "text": "ant"
+        }
+      ],
+      "chosen": 505,
+      "chosen_text": "ant"
+    },
+    {
+      "top": [
+        {
+          "id": 3656,
+          "logit": 26.875,
+          "prob": 0.9958098350640973,
+          "text": " à"
+        }
+      ],
+      "chosen": 3656,
+      "chosen_text": " à"
+    },
+    {
+      "top": [
+        {
+          "id": 1147,
+          "logit": 26.5,
+          "prob": 0.9978418990978789,
+          "text": " la"
+        }
+      ],
+      "chosen": 1147,
+      "chosen_text": " la"
+    },
+    {
+      "top": [
+        {
+          "id": 25639,
+          "logit": 27.875,
+          "prob": 0.9991377611730226,
+          "text": " même"
+        }
+      ],
+      "chosen": 25639,
+      "chosen_text": " même"
+    },
+    {
+      "top": [
+        {
+          "id": 74095,
+          "logit": 24.75,
+          "prob": 0.9974745489303404,
+          "text": " heure"
+        }
+      ],
+      "chosen": 74095,
+      "chosen_text": " heure"
+    },
+    {
+      "top": [
+        {
+          "id": 44156,
+          "logit": 23.75,
+          "prob": 0.6559789394770947,
+          "text": " chaque"
+        }
+      ],
+      "chosen": 44156,
+      "chosen_text": " chaque"
+    },
+    {
+      "top": [
+        {
+          "id": 9394,
+          "logit": 29.5,
+          "prob": 0.9999464620241133,
+          "text": " jour"
+        }
+      ],
+      "chosen": 9394,
+      "chosen_text": " jour"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 24.375,
+          "prob": 0.9320954643424579,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 25639,
+          "logit": 22.625,
+          "prob": 0.863292404031412,
+          "text": " même"
+        }
+      ],
+      "chosen": 25639,
+      "chosen_text": " même"
+    },
+    {
+      "top": [
+        {
+          "id": 501,
+          "logit": 25.375,
+          "prob": 0.62211526116065,
+          "text": " le"
+        }
+      ],
+      "chosen": 501,
+      "chosen_text": " le"
+    },
+    {
+      "top": [
+        {
+          "id": 1936,
+          "logit": 26.875,
+          "prob": 0.9872697015921812,
+          "text": " week"
+        }
+      ],
+      "chosen": 1936,
+      "chosen_text": " week"
+    },
+    {
+      "top": [
+        {
+          "id": 12692,
+          "logit": 28.0,
+          "prob": 0.9996669243801015,
+          "text": "-end"
+        }
+      ],
+      "chosen": 12692,
+      "chosen_text": "-end"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 25.25,
+          "prob": 0.5621252359045621,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 4755,
+          "logit": 25.375,
+          "prob": 0.9045393375487706,
+          "text": " pour"
+        }
+      ],
+      "chosen": 4755,
+      "chosen_text": " pour"
+    },
+    {
+      "top": [
+        {
+          "id": 36338,
+          "logit": 19.0,
+          "prob": 0.5113022274167002,
+          "text": " rég"
+        }
+      ],
+      "chosen": 36338,
+      "chosen_text": " rég"
+    },
+    {
+      "top": [
+        {
+          "id": 8219,
+          "logit": 27.375,
+          "prob": 0.9949341284290213,
+          "text": "uler"
+        }
+      ],
+      "chosen": 8219,
+      "chosen_text": "uler"
+    },
+    {
+      "top": [
+        {
+          "id": 14487,
+          "logit": 25.875,
+          "prob": 0.9867855196349999,
+          "text": " votre"
+        }
+      ],
+      "chosen": 14487,
+      "chosen_text": " votre"
+    },
+    {
+      "top": [
+        {
+          "id": 4658,
+          "logit": 21.75,
+          "prob": 0.739196928393894,
+          "text": " hor"
+        }
+      ],
+      "chosen": 4658,
+      "chosen_text": " hor"
+    },
+    {
+      "top": [
+        {
+          "id": 245345,
+          "logit": 27.875,
+          "prob": 0.9952977193000989,
+          "text": "loge"
+        }
+      ],
+      "chosen": 245345,
+      "chosen_text": "loge"
+    },
+    {
+      "top": [
+        {
+          "id": 223274,
+          "logit": 25.625,
+          "prob": 0.9759536576276343,
+          "text": " biologique"
+        }
+      ],
+      "chosen": 223274,
+      "chosen_text": " biologique"
+    },
+    {
+      "top": [
+        {
+          "id": 13,
+          "logit": 25.625,
+          "prob": 0.9958823372892205,
+          "text": "."
+        }
+      ],
+      "chosen": 13,
+      "chosen_text": "."
+    },
+    {
+      "top": [
+        {
+          "id": 198,
+          "logit": 25.25,
+          "prob": 0.981933630410734,
+          "text": "\n"
+        }
+      ],
+      "chosen": 198,
+      "chosen_text": "\n"
+    },
+    {
+      "top": [
+        {
+          "id": 9,
+          "logit": 26.375,
+          "prob": 0.9998930030146191,
+          "text": "*"
+        }
+      ],
+      "chosen": 9,
+      "chosen_text": "*"
+    },
+    {
+      "top": [
+        {
+          "id": 256,
+          "logit": 23.375,
+          "prob": 0.9995764035622529,
+          "text": "  "
+        }
+      ],
+      "chosen": 256,
+      "chosen_text": "  "
+    },
+    {
+      "top": [
+        {
+          "id": 4404,
+          "logit": 18.0,
+          "prob": 0.7130986126281326,
+          "text": " Cr"
+        }
+      ],
+      "chosen": 4404,
+      "chosen_text": " Cr"
+    },
+    {
+      "top": [
+        {
+          "id": 7639,
+          "logit": 26.625,
+          "prob": 0.9998883450682056,
+          "text": "ée"
+        }
+      ],
+      "chosen": 7639,
+      "chosen_text": "ée"
+    },
+    {
+      "top": [
+        {
+          "id": 89,
+          "logit": 34.0,
+          "prob": 0.9999987295641686,
+          "text": "z"
+        }
+      ],
+      "chosen": 89,
+      "chosen_text": "z"
+    },
+    {
+      "top": [
+        {
+          "id": 632,
+          "logit": 26.125,
+          "prob": 0.9240045694419847,
+          "text": " un"
+        }
+      ],
+      "chosen": 632,
+      "chosen_text": " un"
+    },
+    {
+      "top": [
+        {
+          "id": 178373,
+          "logit": 23.75,
+          "prob": 0.998773558545276,
+          "text": " environnement"
+        }
+      ],
+      "chosen": 178373,
+      "chosen_text": " environnement"
+    },
+    {
+      "top": [
+        {
+          "id": 401,
+          "logit": 18.5,
+          "prob": 0.5037787396754074,
+          "text": " de"
+        }
+      ],
+      "chosen": 401,
+      "chosen_text": " de"
+    },
+    {
+      "top": [
+        {
+          "id": 212477,
+          "logit": 17.125,
+          "prob": 0.4317891600271052,
+          "text": " sommeil"
+        }
+      ],
+      "chosen": 212477,
+      "chosen_text": " sommeil"
+    },
+    {
+      "top": [
+        {
+          "id": 22113,
+          "logit": 20.375,
+          "prob": 0.677617612164789,
+          "text": " optimal"
+        }
+      ],
+      "chosen": 22113,
+      "chosen_text": " optimal"
+    },
+    {
+      "top": [
+        {
+          "id": 644,
+          "logit": 20.5,
+          "prob": 0.9593112129249629,
+          "text": " en"
+        }
+      ],
+      "chosen": 644,
+      "chosen_text": " en"
+    },
+    {
+      "top": [
+        {
+          "id": 1036,
+          "logit": 18.125,
+          "prob": 0.46128907063559077,
+          "text": " ass"
+        }
+      ],
+      "chosen": 1036,
+      "chosen_text": " ass"
+    },
+    {
+      "top": [
+        {
+          "id": 315,
+          "logit": 22.5,
+          "prob": 0.6026243978155107,
+          "text": "om"
+        }
+      ],
+      "chosen": 315,
+      "chosen_text": "om"
+    },
+    {
+      "top": [
+        {
+          "id": 1277,
+          "logit": 29.0,
+          "prob": 0.9997505262444112,
+          "text": "br"
+        }
+      ],
+      "chosen": 1277,
+      "chosen_text": "br"
+    },
+    {
+      "top": [
+        {
+          "id": 62962,
+          "logit": 26.625,
+          "prob": 0.9981655571894772,
+          "text": "issant"
+        }
+      ],
+      "chosen": 62962,
+      "chosen_text": "issant"
+    },
+    {
+      "top": [
+        {
+          "id": 1147,
+          "logit": 20.625,
+          "prob": 0.671380150996814,
+          "text": " la"
+        }
+      ],
+      "chosen": 1147,
+      "chosen_text": " la"
+    },
+    {
+      "top": [
+        {
+          "id": 83840,
+          "logit": 25.5,
+          "prob": 0.9833726552350655,
+          "text": " chambre"
+        }
+      ],
+      "chosen": 83840,
+      "chosen_text": " chambre"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 22.875,
+          "prob": 0.9977892423091331,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 644,
+          "logit": 24.75,
+          "prob": 0.999678097852348,
+          "text": " en"
+        }
+      ],
+      "chosen": 644,
+      "chosen_text": " en"
+    },
+    {
+      "top": [
+        {
+          "id": 157521,
+          "logit": 19.75,
+          "prob": 0.7918066987427045,
+          "text": " rédu"
+        }
+      ],
+      "chosen": 157521,
+      "chosen_text": " rédu"
+    },
+    {
+      "top": [
+        {
+          "id": 177956,
+          "logit": 29.0,
+          "prob": 0.9998617485537572,
+          "text": "isant"
+        }
+      ],
+      "chosen": 177956,
+      "chosen_text": "isant"
+    },
+    {
+      "top": [
+        {
+          "id": 501,
+          "logit": 25.625,
+          "prob": 0.9950291843212273,
+          "text": " le"
+        }
+      ],
+      "chosen": 501,
+      "chosen_text": " le"
+    },
+    {
+      "top": [
+        {
+          "id": 212997,
+          "logit": 25.25,
+          "prob": 0.9981855778131246,
+          "text": " bruit"
+        }
+      ],
+      "chosen": 212997,
+      "chosen_text": " bruit"
+    },
+    {
+      "top": [
+        {
+          "id": 1778,
+          "logit": 21.25,
+          "prob": 0.9876709007116137,
+          "text": " et"
+        }
+      ],
+      "chosen": 1778,
+      "chosen_text": " et"
+    },
+    {
+      "top": [
+        {
+          "id": 644,
+          "logit": 23.0,
+          "prob": 0.9869754011449411,
+          "text": " en"
+        }
+      ],
+      "chosen": 644,
+      "chosen_text": " en"
+    },
+    {
+      "top": [
+        {
+          "id": 71098,
+          "logit": 18.875,
+          "prob": 0.7540712268457108,
+          "text": " maintenant"
+        }
+      ],
+      "chosen": 71098,
+      "chosen_text": " maintenant"
+    },
+    {
+      "top": [
+        {
+          "id": 5992,
+          "logit": 28.375,
+          "prob": 0.9994103415821043,
+          "text": " une"
+        }
+      ],
+      "chosen": 5992,
+      "chosen_text": " une"
+    },
+    {
+      "top": [
+        {
+          "id": 187199,
+          "logit": 25.25,
+          "prob": 0.9986833510035258,
+          "text": " température"
+        }
+      ],
+      "chosen": 187199,
+      "chosen_text": " température"
+    },
+    {
+      "top": [
+        {
+          "id": 210992,
+          "logit": 22.0,
+          "prob": 0.9440442413395626,
+          "text": " fraîche"
+        }
+      ],
+      "chosen": 210992,
+      "chosen_text": " fraîche"
+    },
+    {
+      "top": [
+        {
+          "id": 318,
+          "logit": 20.25,
+          "prob": 0.7253906219780151,
+          "text": " ("
+        }
+      ],
+      "chosen": 318,
+      "chosen_text": " ("
+    },
+    {
+      "top": [
+        {
+          "id": 38574,
+          "logit": 21.875,
+          "prob": 0.4260938367631065,
+          "text": "entre"
+        }
+      ],
+      "chosen": 38574,
+      "chosen_text": "entre"
+    },
+    {
+      "top": [
+        {
+          "id": 220,
+          "logit": 26.5,
+          "prob": 0.9999948776137368,
+          "text": " "
+        }
+      ],
+      "chosen": 220,
+      "chosen_text": " "
+    },
+    {
+      "top": [
+        {
+          "id": 16,
+          "logit": 27.75,
+          "prob": 0.9999987477838657,
+          "text": "1"
+        }
+      ],
+      "chosen": 16,
+      "chosen_text": "1"
+    },
+    {
+      "top": [
+        {
+          "id": 23,
+          "logit": 27.0,
+          "prob": 0.9925084547094201,
+          "text": "8"
+        }
+      ],
+      "chosen": 23,
+      "chosen_text": "8"
+    },
+    {
+      "top": [
+        {
+          "id": 1778,
+          "logit": 28.0,
+          "prob": 0.993306443531715,
+          "text": " et"
+        }
+      ],
+      "chosen": 1778,
+      "chosen_text": " et"
+    },
+    {
+      "top": [
+        {
+          "id": 220,
+          "logit": 23.25,
+          "prob": 0.9999527214581442,
+          "text": " "
+        }
+      ],
+      "chosen": 220,
+      "chosen_text": " "
+    },
+    {
+      "top": [
+        {
+          "id": 17,
+          "logit": 24.875,
+          "prob": 0.8932985304624762,
+          "text": "2"
+        }
+      ],
+      "chosen": 17,
+      "chosen_text": "2"
+    },
+    {
+      "top": [
+        {
+          "id": 15,
+          "logit": 29.625,
+          "prob": 0.9999576059573817,
+          "text": "0"
+        }
+      ],
+      "chosen": 15,
+      "chosen_text": "0"
+    },
+    {
+      "top": [
+        {
+          "id": 29922,
+          "logit": 23.75,
+          "prob": 0.6739629132997698,
+          "text": "°C"
+        }
+      ],
+      "chosen": 29922,
+      "chosen_text": "°C"
+    },
+    {
+      "top": [
+        {
+          "id": 553,
+          "logit": 26.625,
+          "prob": 0.983811713467451,
+          "text": ")."
+        }
+      ],
+      "chosen": 553,
+      "chosen_text": ")."
+    },
+    {
+      "top": [
+        {
+          "id": 198,
+          "logit": 24.625,
+          "prob": 0.9999212430475121,
+          "text": "\n"
+        }
+      ],
+      "chosen": 198,
+      "chosen_text": "\n"
+    },
+    {
+      "top": [
+        {
+          "id": 9,
+          "logit": 26.75,
+          "prob": 0.999986401337992,
+          "text": "*"
+        }
+      ],
+      "chosen": 9,
+      "chosen_text": "*"
+    },
+    {
+      "top": [
+        {
+          "id": 256,
+          "logit": 21.375,
+          "prob": 0.9961920146458958,
+          "text": "  "
+        }
+      ],
+      "chosen": 256,
+      "chosen_text": "  "
+    },
+    {
+      "top": [
+        {
+          "id": 196041,
+          "logit": 21.875,
+          "prob": 0.9008694077758574,
+          "text": " Év"
+        }
+      ],
+      "chosen": 196041,
+      "chosen_text": " Év"
+    },
+    {
+      "top": [
+        {
+          "id": 52809,
+          "logit": 27.125,
+          "prob": 0.9985956938357241,
+          "text": "itez"
+        }
+      ],
+      "chosen": 52809,
+      "chosen_text": "itez"
+    },
+    {
+      "top": [
+        {
+          "id": 3424,
+          "logit": 25.5,
+          "prob": 0.9880452307939157,
+          "text": " les"
+        }
+      ],
+      "chosen": 3424,
+      "chosen_text": " les"
+    },
+    {
+      "top": [
+        {
+          "id": 181400,
+          "logit": 22.875,
+          "prob": 0.9975799572624171,
+          "text": " écr"
+        }
+      ],
+      "chosen": 181400,
+      "chosen_text": " écr"
+    },
+    {
+      "top": [
+        {
+          "id": 581,
+          "logit": 29.75,
+          "prob": 0.9999660776039244,
+          "text": "ans"
+        }
+      ],
+      "chosen": 581,
+      "chosen_text": "ans"
+    },
+    {
+      "top": [
+        {
+          "id": 234901,
+          "logit": 18.625,
+          "prob": 0.5056153920658949,
+          "text": " lumineux"
+        }
+      ],
+      "chosen": 234901,
+      "chosen_text": " lumineux"
+    },
+    {
+      "top": [
+        {
+          "id": 7657,
+          "logit": 19.375,
+          "prob": 0.533790876106866,
+          "text": " au"
+        }
+      ],
+      "chosen": 7657,
+      "chosen_text": " au"
+    },
+    {
+      "top": [
+        {
+          "id": 38548,
+          "logit": 25.25,
+          "prob": 0.9998154621159406,
+          "text": " moins"
+        }
+      ],
+      "chosen": 38548,
+      "chosen_text": " moins"
+    },
+    {
+      "top": [
+        {
+          "id": 5992,
+          "logit": 28.875,
+          "prob": 0.9999014602108539,
+          "text": " une"
+        }
+      ],
+      "chosen": 5992,
+      "chosen_text": " une"
+    },
+    {
+      "top": [
+        {
+          "id": 74095,
+          "logit": 25.25,
+          "prob": 0.9981116951634116,
+          "text": " heure"
+        }
+      ],
+      "chosen": 74095,
+      "chosen_text": " heure"
+    },
+    {
+      "top": [
+        {
+          "id": 31495,
+          "logit": 30.0,
+          "prob": 0.9993005048325674,
+          "text": " avant"
+        }
+      ],
+      "chosen": 31495,
+      "chosen_text": " avant"
+    },
+    {
+      "top": [
+        {
+          "id": 501,
+          "logit": 25.875,
+          "prob": 0.993256274648659,
+          "text": " le"
+        }
+      ],
+      "chosen": 501,
+      "chosen_text": " le"
+    },
+    {
+      "top": [
+        {
+          "id": 235448,
+          "logit": 23.75,
+          "prob": 0.9991517049045652,
+          "text": " coucher"
+        }
+      ],
+      "chosen": 235448,
+      "chosen_text": " coucher"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 23.5,
+          "prob": 0.7960885638608748,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 1740,
+          "logit": 23.25,
+          "prob": 0.8279995790567447,
+          "text": " car"
+        }
+      ],
+      "chosen": 1740,
+      "chosen_text": " car"
+    },
+    {
+      "top": [
+        {
+          "id": 1147,
+          "logit": 28.5,
+          "prob": 0.99706667231197,
+          "text": " la"
+        }
+      ],
+      "chosen": 1147,
+      "chosen_text": " la"
+    },
+    {
+      "top": [
+        {
+          "id": 178975,
+          "logit": 25.5,
+          "prob": 0.9987431375850669,
+          "text": " lumière"
+        }
+      ],
+      "chosen": 178975,
+      "chosen_text": " lumière"
+    },
+    {
+      "top": [
+        {
+          "id": 12066,
+          "logit": 26.375,
+          "prob": 0.9991872174912019,
+          "text": " ble"
+        }
+      ],
+      "chosen": 12066,
+      "chosen_text": " ble"
+    },
+    {
+      "top": [
+        {
+          "id": 356,
+          "logit": 28.375,
+          "prob": 0.9997100685024877,
+          "text": "ue"
+        }
+      ],
+      "chosen": 356,
+      "chosen_text": "ue"
+    },
+    {
+      "top": [
+        {
+          "id": 19529,
+          "logit": 18.25,
+          "prob": 0.4519163135636615,
+          "text": " inhib"
+        }
+      ],
+      "chosen": 19529,
+      "chosen_text": " inhib"
+    },
+    {
+      "top": [
+        {
+          "id": 68,
+          "logit": 28.625,
+          "prob": 0.9998030785747481,
+          "text": "e"
+        }
+      ],
+      "chosen": 68,
+      "chosen_text": "e"
+    },
+    {
+      "top": [
+        {
+          "id": 1147,
+          "logit": 28.25,
+          "prob": 0.9998477016092916,
+          "text": " la"
+        }
+      ],
+      "chosen": 1147,
+      "chosen_text": " la"
+    },
+    {
+      "top": [
+        {
+          "id": 5492,
+          "logit": 26.0,
+          "prob": 0.8312713520933546,
+          "text": " production"
+        }
+      ],
+      "chosen": 5492,
+      "chosen_text": " production"
+    },
+    {
+      "top": [
+        {
+          "id": 401,
+          "logit": 29.625,
+          "prob": 0.9999915306760133,
+          "text": " de"
+        }
+      ],
+      "chosen": 401,
+      "chosen_text": " de"
+    },
+    {
+      "top": [
+        {
+          "id": 30000,
+          "logit": 26.5,
+          "prob": 0.9982972844522392,
+          "text": " mé"
+        }
+      ],
+      "chosen": 30000,
+      "chosen_text": " mé"
+    },
+    {
+      "top": [
+        {
+          "id": 5351,
+          "logit": 26.625,
+          "prob": 0.9986753113026442,
+          "text": "lat"
+        }
+      ],
+      "chosen": 5351,
+      "chosen_text": "lat"
+    },
+    {
+      "top": [
+        {
+          "id": 263,
+          "logit": 25.125,
+          "prob": 0.9888718373004508,
+          "text": "on"
+        }
+      ],
+      "chosen": 263,
+      "chosen_text": "on"
+    },
+    {
+      "top": [
+        {
+          "id": 472,
+          "logit": 28.5,
+          "prob": 0.9999027369949945,
+          "text": "ine"
+        }
+      ],
+      "chosen": 472,
+      "chosen_text": "ine"
+    },
+    {
+      "top": [
+        {
+          "id": 11,
+          "logit": 24.0,
+          "prob": 0.834272750203962,
+          "text": ","
+        }
+      ],
+      "chosen": 11,
+      "chosen_text": ","
+    },
+    {
+      "top": [
+        {
+          "id": 324,
+          "logit": 22.0,
+          "prob": 0.9934266149593804,
+          "text": " l"
+        }
+      ],
+      "chosen": 324,
+      "chosen_text": " l"
+    },
+    {
+      "top": [
+        {
+          "id": 37596,
+          "logit": 30.0,
+          "prob": 0.9323041371003081,
+          "text": "'h"
+        }
+      ],
+      "chosen": 37596,
+      "chosen_text": "'h"
+    },
+    {
+      "top": [
+        {
+          "id": 483,
+          "logit": 28.5,
+          "prob": 0.9998988290119559,
+          "text": "orm"
+        }
+      ],
+      "chosen": 483,
+      "chosen_text": "orm"
+    },
+    {
+      "top": [
+        {
+          "id": 588,
+          "logit": 29.125,
+          "prob": 0.997913761561016,
+          "text": "one"
+        }
+      ],
+      "chosen": 588,
+      "chosen_text": "one"
+    },
+    {
+      "top": [
+        {
+          "id": 225885,
+          "logit": 19.625,
+          "prob": 0.27492349374950975,
+          "text": " essentielle"
+        }
+      ],
+      "chosen": 225885,
+      "chosen_text": " essentielle"
+    },
+    {
+      "top": [
+        {
+          "id": 3656,
+          "logit": 22.375,
+          "prob": 0.847812238449834,
+          "text": " à"
+        }
+      ],
+      "chosen": 3656,
+      "chosen_text": " à"
+    },
+    {
+      "top": [
+        {
+          "id": 324,
+          "logit": 27.625,
+          "prob": 0.9999367957308375,
+          "text": " l"
+        }
+      ],
+      "chosen": 324,
+      "chosen_text": " l"
+    },
+    {
+      "top": [
+        {
+          "id": 6,
+          "logit": 30.625,
+          "prob": 0.9987696914081953,
+          "text": "'"
+        }
+      ],
+      "chosen": 6,
+      "chosen_text": "'"
+    },
+    {
+      "top": [
+        {
+          "id": 400,
+          "logit": 28.25,
+          "prob": 0.9973847497685271,
+          "text": "end"
+        }
+      ],
+      "chosen": 400,
+      "chosen_text": "end"
+    },
+    {
+      "top": [
+        {
+          "id": 483,
+          "logit": 22.625,
+          "prob": 0.9958323633400196,
+          "text": "orm"
+        }
+      ],
+      "chosen": 483,
+      "chosen_text": "orm"
+    },
+    {
+      "top": [
+        {
+          "id": 47981,
+          "logit": 25.5,
+          "prob": 0.9923159022257669,
+          "text": "issement"
+        }
+      ],
+      "chosen": 47981,
+      "chosen_text": "issement"
+    },
+    {
+      "top": [
+        {
+          "id": 13,
+          "logit": 26.625,
+          "prob": 0.99993896917454,
+          "text": "."
+        }
+      ],
+      "chosen": 13,
+      "chosen_text": "."
+    },
+    {
+      "top": [
+        {
+          "id": 248046,
+          "logit": 27.125,
+          "prob": 0.9999739689623747,
+          "text": "<|im_end|>"
+        }
+      ],
+      "chosen": 248046,
+      "chosen_text": "<|im_end|>"
+    }
+  ]
+}

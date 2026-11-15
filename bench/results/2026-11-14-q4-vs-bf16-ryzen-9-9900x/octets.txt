@@ -1,0 +1,17 @@
+## ~/models/Qwen3.5-4B
+Qwen3.5-4B : tête liée True ; fichiers 9.320 Go (BF16 9.320, F32 0.000) ; partie langage 8.412 Go dont tables de recherche 1.271
+  matrices relues par jeton : 249, bf16 8.410 Go (7.83 GiB), Q4 2.628 Go (2.45 GiB) ; reste 0.0019 Go
+  octets relus par jeton (hors experts) : bf16 8.412 Go, Q4 2.630 Go, rapport 0.313
+## ~/models/Qwen3.5-2B
+Qwen3.5-2B : tête liée True ; fichiers 4.548 Go (BF16 4.548, F32 0.000) ; partie langage 3.764 Go dont tables de recherche 1.017
+  matrices relues par jeton : 151, bf16 3.760 Go (3.50 GiB), Q4 1.175 Go (1.09 GiB) ; reste 0.0035 Go
+  octets relus par jeton (hors experts) : bf16 3.764 Go, Q4 1.179 Go, rapport 0.313
+## ~/models/gemma-4-E4B-it-qat-q4_0-unquantized
+gemma-4-E4B-it-qat-q4_0-unquantized : tête liée True ; fichiers 15.882 Go (BF16 15.882) ; partie langage 14.926 Go dont tables de recherche 6.979
+  matrices relues par jeton : 344, bf16 9.288 Go (8.65 GiB), Q4 2.902 Go (2.70 GiB) ; reste 0.0011 Go
+  octets relus par jeton (hors experts) : bf16 9.289 Go, Q4 2.904 Go, rapport 0.313
+## ~/models/Qwen3.6-35B-A3B
+Qwen3.6-35B-A3B : tête liée False ; fichiers 71.904 Go (BF16 71.904) ; partie langage 69.321 Go dont tables de recherche 1.017, experts 64.425
+  matrices relues par jeton : 351, bf16 3.877 Go (3.61 GiB), Q4 1.212 Go (1.13 GiB) ; reste 0.0025 Go
+  octets relus par jeton (hors experts) : bf16 3.880 Go, Q4 1.214 Go, rapport 0.313
+## Qwen3.6-35B-A3B, experts routés (config : 256 experts, 8 par jeton) : 64,425 × 8 / 256 = 2,013 Go en bf16, 0,629 Go en Q4 (× 0,3125) ; total par jeton bf16 3,880 + 2,013 = 5,893 Go, Q4 1,214 + 0,629 = 1,843 Go (le journal du serveur dit « 63.61 GiB of weights touched » en bf16 et 19.91 en Q4 : tout ce qui est monté, pas ce qui est relu par jeton)

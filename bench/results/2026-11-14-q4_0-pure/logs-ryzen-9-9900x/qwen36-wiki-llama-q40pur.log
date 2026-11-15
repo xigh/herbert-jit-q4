@@ -1,0 +1,11 @@
+0.05.700.062 I cmn          init: llama threadpool init, n_threads = 12
+0.05.781.373 I 
+0.05.781.506 I system_info: n_threads = 12 (n_threads_batch = 12) / 24 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.05.781.593 I perplexity: saving all logits to out/qwen36-wiki-llama-q40pur.kld
+0.05.781.599 I perplexity: tokenizing the input ..
+0.06.080.186 I perplexity: tokenization took 298.579 ms
+0.06.080.316 I perplexity: calculating perplexity over 48 chunks, n_ctx=256, batch_size=256, n_seq=1
+0.07.527.556 I perplexity: 1.43 seconds per pass - ETA 1.13 minutes
+[1]7.4821,[2]7.9851,[3]9.5592,[4]9.4067,[5]9.3205,[6]8.1643,[7]8.7302,[8]8.3621,[9]8.2636,[10]7.9240,[11]8.2792,[12]8.2872,[13]8.3627,[14]8.4458,[15]8.4775,[16]8.7901,[17]9.0483,[18]9.4388,[19]9.3415,[20]9.5111,[21]9.4739,[22]9.4490,[23]9.2481,[24]9.2066,[25]9.2915,[26]9.5184,[27]9.3344,[28]8.9728,[29]8.8908,[30]8.7324,[31]8.7115,[32]8.7437,[33]8.5468,[34]8.3368,[35]8.4094,[36]8.5182,[37]8.5105,[38]8.5216,[39]8.4126,[40]8.4101,[41]8.3362,[42]8.2064,[43]8.2615,[44]8.1824,[45]7.9252,[46]7.7674,[47]7.6500,[48]7.4478,
+1.00.306.790 I Final estimate: PPL = 7.4478 +/- 0.25145
+

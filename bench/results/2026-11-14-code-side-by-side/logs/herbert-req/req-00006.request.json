@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nQu'affiche ce programme Python ?\n\n```python\ndef f(xs, acc=[]):\n    acc.append(len(xs))\n    return acc\n\nf(\"ab\")\nf([1, 2, 3])\nprint(f(\"\"))\n```\n\nRéponds par la sortie exacte seule, dans un seul bloc de code, sans explication.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 500,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

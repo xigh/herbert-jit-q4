@@ -1,0 +1,14 @@
+0.00.417.141 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.417.167 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.419.474 W load: '</s>' is a normal token here, removing it from EOG list
+0.03.332.616 I cmn          init: llama threadpool init, n_threads = 12
+0.03.407.166 I 
+0.03.407.385 I system_info: n_threads = 12 (n_threads_batch = 12) / 24 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.03.407.453 I perplexity: saving all logits to out/e4b-fr-llama-q40-re.kld
+0.03.407.458 I perplexity: tokenizing the input ..
+0.03.458.843 I perplexity: tokenization took 51.381 ms
+0.03.458.859 I perplexity: calculating perplexity over 24 chunks, n_ctx=256, batch_size=256, n_seq=1
+0.04.141.854 I perplexity: 0.66 seconds per pass - ETA 0.25 minutes
+[1]28.2361,[2]27.1414,[3]33.0027,[4]31.2948,[5]32.4998,[6]33.5713,[7]35.0541,[8]35.3498,[9]30.3081,[10]27.7927,[11]27.9572,[12]26.4112,[13]26.4211,[14]25.7659,[15]26.4014,[16]26.5590,[17]25.9690,[18]26.2941,[19]26.4100,[20]27.2533,[21]27.1841,[22]27.7596,[23]28.7952,[24]29.2927,
+0.19.077.923 I Final estimate: PPL = 29.2927 +/- 1.94291
+

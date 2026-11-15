@@ -1,0 +1,7 @@
+<|im_start|>user
+Explique en trois phrases ce qu'est l'inflation.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

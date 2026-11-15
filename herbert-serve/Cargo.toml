@@ -1,0 +1,20 @@
+[package]
+name = "herbert-serve"
+version = "0.1.0"
+edition = "2021"
+authors = ["Philippe Anel <philippe@dremml.com>"]
+license = "MIT"
+description = "llama-server's HTTP API in front of any herbert engine: the routes, the load and unload, the queue, the prefix kept from one request to the next, the side state, the prefix cache on disk, the answer streamed with its tool calls and thinking"
+
+[dependencies]
+herbert-chat = { path = "../herbert-chat" }
+axum = "0.8"
+tokio = { version = "1", features = ["rt-multi-thread", "net", "sync"] }
+tokio-stream = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+# The keys of the requests and of the tool schemas in their order, as the templates write them.
+serde_json = { version = "1.0", features = ["preserve_order"] }
+tokenizers = { version = "0.22.2", default-features = false, features = ["fancy-regex"] }
+# The images of the requests (`image.rs`): `data:` URLs, PNG, JPEG and WebP.
+base64 = "0.13"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"] }

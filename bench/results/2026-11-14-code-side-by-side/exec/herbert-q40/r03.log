@@ -1,0 +1,9 @@
+@@COMPILE@@ok
+   Compiling sol v0.1.0 (/work/crate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.45s
+  Executable unittests src/lib.rs (/work/target/debug/deps/sol-1df6049d1d327ff9)
+@@TEST@@tests_caches::accents@@ok
+@@TEST@@tests_caches::blancs@@ok
+@@TEST@@tests_caches::egalites@@ok
+@@TEST@@tests_caches::exemple@@ok
+@@TEST@@tests_caches::vide@@ok

@@ -1,0 +1,7 @@
+<|im_start|>user
+Traduis en anglais, sans rien ajouter : « Le vieux pêcheur regardait la mer sans rien dire, comme on regarde un ami qui va partir. »<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

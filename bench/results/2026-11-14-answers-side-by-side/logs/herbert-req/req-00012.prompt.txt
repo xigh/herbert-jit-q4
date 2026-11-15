@@ -1,0 +1,9 @@
+<|im_start|>user
+Résume ce texte en trois lignes au plus :
+
+Il y avait alors à Digne une belle auberge à l'enseigne de la Croix-de-Colbas. Cette auberge avait pour hôtelier un nommé Jacquin Labarre, homme considéré dans la ville pour sa parenté avec un autre Labarre, qui tenait à Grenoble l'auberge des Trois-Dauphins et qui avait servi dans les guides. Lors du débarquement de l'empereur, beaucoup de bruits avaient couru dans le pays sur cette auberge des Trois-Dauphins. On contait que le général Bertrand, déguisé en charretier, y avait fait de fréquents voyages au mois de janvier, et qu'il y avait distribué des croix d'honneur à des soldats et des poignées de napoléons à des bourgeois. La réalité est que l'empereur, entré dans Grenoble, avait refusé de s'installer à l'hôtel de la préfecture ; il avait remercié le maire en disant : « Je vais chez un brave homme que je connais », et il était allé aux Trois-Dauphins.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

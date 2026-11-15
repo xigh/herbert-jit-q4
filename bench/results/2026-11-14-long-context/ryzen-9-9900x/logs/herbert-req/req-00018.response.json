@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-18",
+  "object": "chat.completion",
+  "created": 1794678375,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hapley was thunderstruck. He gasped. The Vicar was staring at him. Clearly the man saw nothing. \"The eye of faith is no better than the eye of science,\" said Hapley, awkwardly."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5318,
+    "completion_tokens": 49,
+    "total_tokens": 5367,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 5318,
+    "prompt_ms": 13384.689599,
+    "prompt_per_token_ms": 2.516865287514103,
+    "prompt_per_second": 397.3196360412661,
+    "predicted_n": 49,
+    "predicted_ms": 3184.314412,
+    "predicted_per_token_ms": 64.98600840816327,
+    "predicted_per_second": 15.387927716981988
+  }
+}

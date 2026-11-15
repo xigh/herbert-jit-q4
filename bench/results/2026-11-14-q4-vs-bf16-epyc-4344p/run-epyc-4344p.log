@@ -1,0 +1,139 @@
+Q4 CONTRE BF16 EPYC 4344P 17:09:05 ;  17:09:05 up 73 days, 18:45,  1 user,  load average: 0.00, 0.01, 0.00 ; code 68c3a96 ; 37e5e1b50db0046d9015072f9c75c278eede282299b96f84bbc15e24c46e847b  ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve
+WARM 1.277087312 s : ~/models/qwen/Qwen3.5-2B/model.safetensors-00001-of-00001.safetensors
+=== bf16-qwen35-2b-r1 17:09:07 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/qwen/Qwen3.5-2B --threads 8 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:09:07 up 73 days, 18:45,  1 user,  load average: 0.00, 0.01, 0.00
+Mem:           63907        6909         428           2       57290       56997
+LOAD bf16-qwen35-2b-r1 4.035856448 s
+REST bf16-qwen35-2b-r1 VmHWM: 8670676 kB;VmRSS: 6316968 kB;RssAnon: 6306780 kB;RssFile: 10188 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET bf16-qwen35-2b-r1 VmHWM: 6316968 kB;VmRSS: 6316968 kB;RssAnon: 6306780 kB;RssFile: 10188 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+bf16-qwen35-2b-r1 text {"words": 380, "rep": 0, "wall_s": 10.09562923014164, "prompt_n": 627, "prompt_ms": 866.73488, "prompt_per_second": 723.4046009547925, "predicted_n": 128, "predicted_ms": 9227.130009, "predicted_per_second": 13.872135742657878}
+bf16-qwen35-2b-r1 text {"words": 380, "rep": 1, "wall_s": 10.102248702198267, "prompt_n": 627, "prompt_ms": 873.6190419999999, "prompt_per_second": 717.7041363070473, "predicted_n": 128, "predicted_ms": 9227.275558000001, "predicted_per_second": 13.871916926662568}
+bf16-qwen35-2b-r1 text {"words": 380, "rep": 2, "wall_s": 10.217746436595917, "prompt_n": 627, "prompt_ms": 874.341899, "prompt_per_second": 717.1107786520477, "predicted_n": 128, "predicted_ms": 9342.072959, "predicted_per_second": 13.701455829103423}
+bf16-qwen35-2b-r1 text {"words": 4240, "rep": 0, "wall_s": 18.632759378291667, "prompt_n": 6131, "prompt_ms": 9195.994322, "prompt_per_second": 666.703325961449, "predicted_n": 128, "predicted_ms": 9430.565271000001, "predicted_per_second": 13.572887342566169}
+bf16-qwen35-2b-r1 text {"words": 4240, "rep": 1, "wall_s": 18.64043385349214, "prompt_n": 6131, "prompt_ms": 9200.619117, "prompt_per_second": 666.368200012947, "predicted_n": 128, "predicted_ms": 9433.651028, "predicted_per_second": 13.568447637090186}
+bf16-qwen35-2b-r1 text {"words": 4240, "rep": 2, "wall_s": 18.640103868208826, "prompt_n": 6131, "prompt_ms": 9204.019264999999, "prompt_per_second": 666.1220303301919, "predicted_n": 128, "predicted_ms": 9430.154612, "predicted_per_second": 13.573478406930704}
+BANC DONE bf16-qwen35-2b-r1
+END bf16-qwen35-2b-r1 VmHWM: 6317400 kB;VmRSS: 6317400 kB;RssAnon: 6306948 kB;RssFile: 10452 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+=== q4-qwen35-2b-r1 17:10:45 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/qwen/Qwen3.5-2B --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:10:45 up 73 days, 18:47,  1 user,  load average: 5.30, 1.97, 0.71
+Mem:           63907        6878        7310           2       50439       57029
+LOAD q4-qwen35-2b-r1 8.081952462 s
+REST q4-qwen35-2b-r1 VmHWM: 6309764 kB;VmRSS: 3303944 kB;RssAnon: 3293992 kB;RssFile: 9952 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET q4-qwen35-2b-r1 VmHWM: 3303944 kB;VmRSS: 3303944 kB;RssAnon: 3293992 kB;RssFile: 9952 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+q4-qwen35-2b-r1 text {"words": 380, "rep": 0, "wall_s": 3.530985727906227, "prompt_n": 627, "prompt_ms": 567.538176, "prompt_per_second": 1104.7714964640545, "predicted_n": 128, "predicted_ms": 2961.851525, "predicted_per_second": 43.216210846355644}
+q4-qwen35-2b-r1 text {"words": 380, "rep": 1, "wall_s": 3.5363039122894406, "prompt_n": 627, "prompt_ms": 572.322318, "prompt_per_second": 1095.5365189864917, "predicted_n": 128, "predicted_ms": 2962.673779, "predicted_per_second": 43.204216713729515}
+q4-qwen35-2b-r1 text {"words": 380, "rep": 2, "wall_s": 3.536979703232646, "prompt_n": 627, "prompt_ms": 572.75377, "prompt_per_second": 1094.711257858678, "predicted_n": 128, "predicted_ms": 2962.991084, "predicted_per_second": 43.19958999917126}
+q4-qwen35-2b-r1 text {"words": 4240, "rep": 0, "wall_s": 9.607574549503624, "prompt_n": 6131, "prompt_ms": 6435.151164, "prompt_per_second": 952.735972124244, "predicted_n": 128, "predicted_ms": 3166.6596569999997, "predicted_per_second": 40.42114210696815}
+q4-qwen35-2b-r1 text {"words": 4240, "rep": 1, "wall_s": 9.607892881147563, "prompt_n": 6131, "prompt_ms": 6437.092895, "prompt_per_second": 952.4485819930054, "predicted_n": 128, "predicted_ms": 3165.126146, "predicted_per_second": 40.440726244596256}
+q4-qwen35-2b-r1 text {"words": 4240, "rep": 2, "wall_s": 9.617481514811516, "prompt_n": 6131, "prompt_ms": 6440.406522, "prompt_per_second": 951.9585416008931, "predicted_n": 128, "predicted_ms": 3171.5208869999997, "predicted_per_second": 40.35918556446197}
+BANC DONE q4-qwen35-2b-r1
+END q4-qwen35-2b-r1 VmHWM: 3304384 kB;VmRSS: 3304384 kB;RssAnon: 3294164 kB;RssFile: 10220 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+=== q4-qwen35-2b-r2 17:11:40 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/qwen/Qwen3.5-2B --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:11:40 up 73 days, 18:48,  1 user,  load average: 5.22, 2.53, 0.98
+Mem:           63907        6904        7282           2       50441       57003
+LOAD q4-qwen35-2b-r2 7.553583408 s
+REST q4-qwen35-2b-r2 VmHWM: 6305900 kB;VmRSS: 3300372 kB;RssAnon: 3290376 kB;RssFile: 9996 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET q4-qwen35-2b-r2 VmHWM: 3300372 kB;VmRSS: 3300372 kB;RssAnon: 3290376 kB;RssFile: 9996 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+q4-qwen35-2b-r2 text {"words": 380, "rep": 0, "wall_s": 3.530355582945049, "prompt_n": 627, "prompt_ms": 566.233646, "prompt_per_second": 1107.3167488884967, "predicted_n": 128, "predicted_ms": 2962.512205, "predicted_per_second": 43.2065730510636}
+q4-qwen35-2b-r2 text {"words": 380, "rep": 1, "wall_s": 3.534303480759263, "prompt_n": 627, "prompt_ms": 571.147341, "prompt_per_second": 1097.7902810546395, "predicted_n": 128, "predicted_ms": 2961.8490250000004, "predicted_per_second": 43.21624732374736}
+q4-qwen35-2b-r2 text {"words": 380, "rep": 2, "wall_s": 3.535078334622085, "prompt_n": 627, "prompt_ms": 571.4391410000001, "prompt_per_second": 1097.2297048164573, "predicted_n": 128, "predicted_ms": 2962.386102, "predicted_per_second": 43.20841227062981}
+q4-qwen35-2b-r2 text {"words": 4240, "rep": 0, "wall_s": 9.590044253505766, "prompt_n": 6131, "prompt_ms": 6417.046657, "prompt_per_second": 955.4239399696482, "predicted_n": 128, "predicted_ms": 3167.0386590000003, "predicted_per_second": 40.41630487719285}
+q4-qwen35-2b-r2 text {"words": 4240, "rep": 1, "wall_s": 9.593639446422458, "prompt_n": 6131, "prompt_ms": 6421.438402, "prompt_per_second": 954.7705071951573, "predicted_n": 128, "predicted_ms": 3166.612724, "predicted_per_second": 40.42174119679309}
+q4-qwen35-2b-r2 text {"words": 4240, "rep": 2, "wall_s": 9.598863227292895, "prompt_n": 6131, "prompt_ms": 6426.860761, "prompt_per_second": 953.9649648557245, "predicted_n": 128, "predicted_ms": 3166.494877, "predicted_per_second": 40.423245567120496}
+BANC DONE q4-qwen35-2b-r2
+END q4-qwen35-2b-r2 VmHWM: 3300808 kB;VmRSS: 3300808 kB;RssAnon: 3290544 kB;RssFile: 10264 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+=== bf16-qwen35-2b-r2 17:12:34 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/qwen/Qwen3.5-2B --threads 8 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:12:34 up 73 days, 18:49,  1 user,  load average: 5.93, 3.15, 1.27
+Mem:           63907        6894        7291           2       50441       57013
+LOAD bf16-qwen35-2b-r2 3.726801195 s
+REST bf16-qwen35-2b-r2 VmHWM: 8621308 kB;VmRSS: 6267868 kB;RssAnon: 6257808 kB;RssFile: 10060 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET bf16-qwen35-2b-r2 VmHWM: 6267868 kB;VmRSS: 6267868 kB;RssAnon: 6257808 kB;RssFile: 10060 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+bf16-qwen35-2b-r2 text {"words": 380, "rep": 0, "wall_s": 10.082953088916838, "prompt_n": 627, "prompt_ms": 861.111065, "prompt_per_second": 728.1290712482019, "predicted_n": 128, "predicted_ms": 9220.231641, "predicted_per_second": 13.88251455970118}
+bf16-qwen35-2b-r2 text {"words": 380, "rep": 1, "wall_s": 10.088393378071487, "prompt_n": 627, "prompt_ms": 867.0020000000001, "prompt_per_second": 723.1817227641919, "predicted_n": 128, "predicted_ms": 9220.084436000001, "predicted_per_second": 13.882736203610184}
+bf16-qwen35-2b-r2 text {"words": 380, "rep": 2, "wall_s": 10.08791589923203, "prompt_n": 627, "prompt_ms": 866.976709, "prompt_per_second": 723.2028190505865, "predicted_n": 128, "predicted_ms": 9219.694603, "predicted_per_second": 13.883323202305423}
+bf16-qwen35-2b-r2 text {"words": 4240, "rep": 0, "wall_s": 18.54992066323757, "prompt_n": 6131, "prompt_ms": 9123.526198, "prompt_per_second": 671.9989472210863, "predicted_n": 128, "predicted_ms": 9420.49465, "predicted_per_second": 13.587396920818803}
+bf16-qwen35-2b-r2 text {"words": 4240, "rep": 1, "wall_s": 18.55048273317516, "prompt_n": 6131, "prompt_ms": 9123.690378, "prompt_per_second": 671.9868546595698, "predicted_n": 128, "predicted_ms": 9421.182904, "predicted_per_second": 13.58640430870463}
+bf16-qwen35-2b-r2 text {"words": 4240, "rep": 2, "wall_s": 18.55164024978876, "prompt_n": 6131, "prompt_ms": 9126.687209, "prompt_per_second": 671.7662016458835, "predicted_n": 128, "predicted_ms": 9419.296361, "predicted_per_second": 13.58912546057855}
+BANC DONE bf16-qwen35-2b-r2
+END bf16-qwen35-2b-r2 VmHWM: 6268192 kB;VmRSS: 6268192 kB;RssAnon: 6257944 kB;RssFile: 10248 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+WARM 2.572344656 s : ~/models/gemma/gemma-4-E4B-it-qat-q4_0-unquantized/model.safetensors
+=== bf16-gemmae4b-r1 17:14:14 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-E4B-it-qat-q4_0-unquantized --threads 8 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:14:14 up 73 days, 18:50,  1 user,  load average: 6.85, 4.30, 1.88
+Mem:           63907        6898        1009           2       56720       57009
+LOAD bf16-gemmae4b-r1 6.280273568 s
+REST bf16-gemmae4b-r1 VmHWM: 21567892 kB;VmRSS: 21167216 kB;RssAnon: 12085716 kB;RssFile: 9081500 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET bf16-gemmae4b-r1 VmHWM: 21167216 kB;VmRSS: 21167216 kB;RssAnon: 12085716 kB;RssFile: 9081500 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+bf16-gemmae4b-r1 text {"words": 78, "rep": 0, "wall_s": 23.405056816525757, "prompt_n": 218, "prompt_ms": 811.336598, "prompt_per_second": 268.6924274553679, "predicted_n": 128, "predicted_ms": 22592.856506, "predicted_per_second": 5.665507589357147}
+bf16-gemmae4b-r1 text {"words": 78, "rep": 1, "wall_s": 23.411143616773188, "prompt_n": 218, "prompt_ms": 815.893956, "prompt_per_second": 267.1915858633962, "predicted_n": 128, "predicted_ms": 22594.426114, "predicted_per_second": 5.6651140132604825}
+bf16-gemmae4b-r1 text {"words": 78, "rep": 2, "wall_s": 23.41256125457585, "prompt_n": 218, "prompt_ms": 815.871685, "prompt_per_second": 267.1988794414406, "predicted_n": 128, "predicted_ms": 22595.89107, "predicted_per_second": 5.664746727777529}
+bf16-gemmae4b-r1 text {"words": 380, "rep": 0, "wall_s": 25.026555091142654, "prompt_n": 626, "prompt_ms": 2350.918752, "prompt_per_second": 266.27887478775784, "predicted_n": 128, "predicted_ms": 22674.60854, "predicted_per_second": 5.64508091834074}
+bf16-gemmae4b-r1 text {"words": 380, "rep": 1, "wall_s": 25.028632110916078, "prompt_n": 626, "prompt_ms": 2353.3330960000003, "prompt_per_second": 266.00569254901603, "predicted_n": 128, "predicted_ms": 22674.271886, "predicted_per_second": 5.645164733119051}
+bf16-gemmae4b-r1 text {"words": 380, "rep": 2, "wall_s": 25.025047407485545, "prompt_n": 626, "prompt_ms": 2351.799377, "prompt_per_second": 266.1791673737653, "predicted_n": 128, "predicted_ms": 22672.223627, "predicted_per_second": 5.645674729829622}
+bf16-gemmae4b-r1 text {"words": 4240, "rep": 0, "wall_s": 48.535886702127755, "prompt_n": 6184, "prompt_ms": 25388.914308, "prompt_per_second": 243.57087211292972, "predicted_n": 128, "predicted_ms": 23142.302828999997, "predicted_per_second": 5.530996675041393}
+bf16-gemmae4b-r1 text {"words": 4240, "rep": 1, "wall_s": 48.53768927231431, "prompt_n": 6184, "prompt_ms": 25389.370956, "prompt_per_second": 243.56649129735925, "predicted_n": 128, "predicted_ms": 23144.053652, "predicted_per_second": 5.530578261035911}
+bf16-gemmae4b-r1 text {"words": 4240, "rep": 2, "wall_s": 48.530074601992965, "prompt_n": 6184, "prompt_ms": 25383.297824, "prompt_per_second": 243.62476628836643, "predicted_n": 128, "predicted_ms": 23142.482917999998, "predicted_per_second": 5.530953634211947}
+BANC DONE bf16-gemmae4b-r1
+END bf16-gemmae4b-r1 VmHWM: 21176452 kB;VmRSS: 21176452 kB;RssAnon: 12085864 kB;RssFile: 9090588 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+=== q4-gemmae4b-r1 17:19:20 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-E4B-it-qat-q4_0-unquantized --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:19:20 up 73 days, 18:56,  1 user,  load average: 6.92, 6.50, 3.57
+Mem:           63907        6892       12712           1       45022       57014
+LOAD q4-gemmae4b-r1 11.696752738 s
+REST q4-gemmae4b-r1 VmHWM: 15597068 kB;VmRSS: 15187364 kB;RssAnon: 6105776 kB;RssFile: 9081588 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET q4-gemmae4b-r1 VmHWM: 15187364 kB;VmRSS: 15187364 kB;RssAnon: 6105776 kB;RssFile: 9081588 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+q4-gemmae4b-r1 text {"words": 78, "rep": 0, "wall_s": 7.647384563460946, "prompt_n": 218, "prompt_ms": 526.371136, "prompt_per_second": 414.1564479705818, "predicted_n": 128, "predicted_ms": 7120.208586999999, "predicted_per_second": 17.97700143696647}
+q4-gemmae4b-r1 text {"words": 78, "rep": 1, "wall_s": 7.652445615269244, "prompt_n": 218, "prompt_ms": 530.733347, "prompt_per_second": 410.7524074608412, "predicted_n": 128, "predicted_ms": 7120.898351, "predicted_per_second": 17.975260099313836}
+q4-gemmae4b-r1 text {"words": 78, "rep": 2, "wall_s": 7.650557991117239, "prompt_n": 218, "prompt_ms": 530.352393, "prompt_per_second": 411.0474523681464, "predicted_n": 128, "predicted_ms": 7119.454777999999, "predicted_per_second": 17.978904844727143}
+q4-gemmae4b-r1 text {"words": 380, "rep": 0, "wall_s": 8.755874757654965, "prompt_n": 626, "prompt_ms": 1562.441731, "prompt_per_second": 400.65494128817534, "predicted_n": 128, "predicted_ms": 7192.426757, "predicted_per_second": 17.796496832647552}
+q4-gemmae4b-r1 text {"words": 380, "rep": 1, "wall_s": 8.756136442534626, "prompt_n": 626, "prompt_ms": 1562.9174689999998, "prompt_per_second": 400.5329855328401, "predicted_n": 128, "predicted_ms": 7192.231809, "predicted_per_second": 17.7969792130208}
+q4-gemmae4b-r1 text {"words": 380, "rep": 2, "wall_s": 8.75491960439831, "prompt_n": 626, "prompt_ms": 1562.6098160000001, "prompt_per_second": 400.6118441022259, "predicted_n": 128, "predicted_ms": 7191.31985, "predicted_per_second": 17.799236116580186}
+q4-gemmae4b-r1 text {"words": 4240, "rep": 0, "wall_s": 25.45924055110663, "prompt_n": 6184, "prompt_ms": 17785.728769999998, "prompt_per_second": 347.69449596188804, "predicted_n": 128, "predicted_ms": 7669.191069, "predicted_per_second": 16.69015660822363}
+q4-gemmae4b-r1 text {"words": 4240, "rep": 1, "wall_s": 25.46289277728647, "prompt_n": 6184, "prompt_ms": 17790.786838, "prompt_per_second": 347.5956435378882, "predicted_n": 128, "predicted_ms": 7667.828788999999, "predicted_per_second": 16.69312181091267}
+q4-gemmae4b-r1 text {"words": 4240, "rep": 2, "wall_s": 25.4649695539847, "prompt_n": 6184, "prompt_ms": 17792.646153, "prompt_per_second": 347.5593201159302, "predicted_n": 128, "predicted_ms": 7668.021124, "predicted_per_second": 16.692703101635328}
+BANC DONE q4-gemmae4b-r1
+END q4-gemmae4b-r1 VmHWM: 15196604 kB;VmRSS: 15196604 kB;RssAnon: 6105928 kB;RssFile: 9090676 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+=== q4-gemmae4b-r2 17:21:45 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-E4B-it-qat-q4_0-unquantized --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:21:45 up 73 days, 18:58,  1 user,  load average: 6.64, 6.69, 4.07
+Mem:           63907        6926       12677           1       45023       56980
+LOAD q4-gemmae4b-r2 11.687775024 s
+REST q4-gemmae4b-r2 VmHWM: 15615944 kB;VmRSS: 15280692 kB;RssAnon: 6199048 kB;RssFile: 9081644 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET q4-gemmae4b-r2 VmHWM: 15280692 kB;VmRSS: 15280692 kB;RssAnon: 6199048 kB;RssFile: 9081644 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+q4-gemmae4b-r2 text {"words": 78, "rep": 0, "wall_s": 7.644030779600143, "prompt_n": 218, "prompt_ms": 527.2505910000001, "prompt_per_second": 413.4656342187011, "predicted_n": 128, "predicted_ms": 7115.932478000001, "predicted_per_second": 17.987804183883377}
+q4-gemmae4b-r2 text {"words": 78, "rep": 1, "wall_s": 7.648041483946145, "prompt_n": 218, "prompt_ms": 532.802504, "prompt_per_second": 409.1572362430189, "predicted_n": 128, "predicted_ms": 7114.424849999999, "predicted_per_second": 17.991616005333164}
+q4-gemmae4b-r2 text {"words": 78, "rep": 2, "wall_s": 7.647140879184008, "prompt_n": 218, "prompt_ms": 533.3102389999999, "prompt_per_second": 408.76770040786715, "predicted_n": 128, "predicted_ms": 7113.009098, "predicted_per_second": 17.99519700262866}
+q4-gemmae4b-r2 text {"words": 380, "rep": 0, "wall_s": 8.74988058861345, "prompt_n": 626, "prompt_ms": 1566.09705, "prompt_per_second": 399.7198002512041, "predicted_n": 128, "predicted_ms": 7182.755237, "predicted_per_second": 17.820459667154324}
+q4-gemmae4b-r2 text {"words": 380, "rep": 1, "wall_s": 8.752950560301542, "prompt_n": 626, "prompt_ms": 1566.001804, "prompt_per_second": 399.7441116613171, "predicted_n": 128, "predicted_ms": 7185.938048, "predicted_per_second": 17.812566591166917}
+q4-gemmae4b-r2 text {"words": 380, "rep": 2, "wall_s": 8.751947614364326, "prompt_n": 626, "prompt_ms": 1565.759201, "prompt_per_second": 399.80604910397074, "predicted_n": 128, "predicted_ms": 7185.165824000001, "predicted_per_second": 17.814480992554472}
+q4-gemmae4b-r2 text {"words": 4240, "rep": 0, "wall_s": 25.510723983868957, "prompt_n": 6184, "prompt_ms": 17849.379605, "prompt_per_second": 346.4546184152937, "predicted_n": 128, "predicted_ms": 7656.59848, "predicted_per_second": 16.717606432458503}
+q4-gemmae4b-r2 text {"words": 4240, "rep": 1, "wall_s": 25.518087829463184, "prompt_n": 6184, "prompt_ms": 17856.996911, "prompt_per_second": 346.30683036018365, "predicted_n": 128, "predicted_ms": 7656.742474, "predicted_per_second": 16.717292038311278}
+q4-gemmae4b-r2 text {"words": 4240, "rep": 2, "wall_s": 25.52028843946755, "prompt_n": 6184, "prompt_ms": 17859.328737, "prompt_per_second": 346.26161436786373, "predicted_n": 128, "predicted_ms": 7656.610067, "predicted_per_second": 16.7175811331545}
+BANC DONE q4-gemmae4b-r2
+END q4-gemmae4b-r2 VmHWM: 15289936 kB;VmRSS: 15289936 kB;RssAnon: 6199204 kB;RssFile: 9090732 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+=== bf16-gemmae4b-r2 17:24:10 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-E4B-it-qat-q4_0-unquantized --threads 8 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:24:10 up 73 days, 19:00,  1 user,  load average: 6.61, 6.80, 4.50
+Mem:           63907        6917       12686           1       45023       56990
+LOAD bf16-gemmae4b-r2 5.911580664 s
+REST bf16-gemmae4b-r2 VmHWM: 21525452 kB;VmRSS: 21170640 kB;RssAnon: 12088984 kB;RssFile: 9081656 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET bf16-gemmae4b-r2 VmHWM: 21170640 kB;VmRSS: 21170640 kB;RssAnon: 12088984 kB;RssFile: 9081656 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+bf16-gemmae4b-r2 text {"words": 78, "rep": 0, "wall_s": 23.420758930966258, "prompt_n": 218, "prompt_ms": 821.2827139999999, "prompt_per_second": 265.4384370739356, "predicted_n": 128, "predicted_ms": 22598.631512, "predicted_per_second": 5.664059787515509}
+bf16-gemmae4b-r2 text {"words": 78, "rep": 1, "wall_s": 23.426403522491455, "prompt_n": 218, "prompt_ms": 825.1008760000001, "prompt_per_second": 264.21011823044046, "predicted_n": 128, "predicted_ms": 22600.493829000003, "predicted_per_second": 5.6635930598895055}
+bf16-gemmae4b-r2 text {"words": 78, "rep": 2, "wall_s": 23.4238423043862, "prompt_n": 218, "prompt_ms": 825.277702, "prompt_per_second": 264.1535079303524, "predicted_n": 128, "predicted_ms": 22597.748591, "predicted_per_second": 5.664281089089492}
+bf16-gemmae4b-r2 text {"words": 380, "rep": 0, "wall_s": 25.055552572011948, "prompt_n": 626, "prompt_ms": 2377.802915, "prompt_per_second": 263.2682448368518, "predicted_n": 128, "predicted_ms": 22676.718041, "predicted_per_second": 5.644555784861513}
+bf16-gemmae4b-r2 text {"words": 380, "rep": 1, "wall_s": 25.053247088566422, "prompt_n": 626, "prompt_ms": 2376.802496, "prompt_per_second": 263.3790569698224, "predicted_n": 128, "predicted_ms": 22675.433664, "predicted_per_second": 5.644875502567147}
+bf16-gemmae4b-r2 text {"words": 380, "rep": 2, "wall_s": 25.053178097121418, "prompt_n": 626, "prompt_ms": 2378.13576, "prompt_per_second": 263.2313976894237, "predicted_n": 128, "predicted_ms": 22674.017414, "predicted_per_second": 5.645228089176944}
+bf16-gemmae4b-r2 text {"words": 4240, "rep": 0, "wall_s": 48.68949813582003, "prompt_n": 6184, "prompt_ms": 25541.67251, "prompt_per_second": 242.11413710589463, "predicted_n": 128, "predicted_ms": 23143.282857, "predicted_per_second": 5.530762458848169}
+bf16-gemmae4b-r2 text {"words": 4240, "rep": 1, "wall_s": 48.68987575825304, "prompt_n": 6184, "prompt_ms": 25543.793223, "prompt_per_second": 242.09403615246293, "predicted_n": 128, "predicted_ms": 23141.766431, "predicted_per_second": 5.531124876817317}
+bf16-gemmae4b-r2 text {"words": 4240, "rep": 2, "wall_s": 48.68985485192388, "prompt_n": 6184, "prompt_ms": 25543.640683999998, "prompt_per_second": 242.09548186580653, "predicted_n": 128, "predicted_ms": 23141.897284, "predicted_per_second": 5.5310936017548356}
+BANC DONE bf16-gemmae4b-r2
+END bf16-gemmae4b-r2 VmHWM: 21179900 kB;VmRSS: 21179900 kB;RssAnon: 12089156 kB;RssFile: 9090744 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+=== q4-qwen36-35b 17:29:16 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/qwen/Qwen3.6-35B-A3B --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 17:29:16 up 73 days, 19:06,  1 user,  load average: 7.42, 7.43, 5.43
+Mem:           63907        6962       12895           1       44830       56945
+LOAD q4-qwen36-35b 55.732510150 s
+REST q4-qwen36-35b VmHWM: 26720916 kB;VmRSS: 24089212 kB;RssAnon: 24079964 kB;RssFile: 9248 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET q4-qwen36-35b VmHWM: 24089212 kB;VmRSS: 24089212 kB;RssAnon: 24079964 kB;RssFile: 9248 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+q4-qwen36-35b text {"words": 4240, "rep": 0, "wall_s": 25.53495651949197, "prompt_n": 6131, "prompt_ms": 20152.68378, "prompt_per_second": 304.22746999506586, "predicted_n": 128, "predicted_ms": 5373.432542, "predicted_per_second": 23.820900141487254}
+q4-qwen36-35b text {"words": 4240, "rep": 1, "wall_s": 25.50227178260684, "prompt_n": 6131, "prompt_ms": 20118.101387, "prompt_per_second": 304.7504275906352, "predicted_n": 128, "predicted_ms": 5373.033456, "predicted_per_second": 23.82266945631317}
+q4-qwen36-35b text {"words": 4240, "rep": 2, "wall_s": 25.495184015482664, "prompt_n": 6131, "prompt_ms": 20115.683877, "prompt_per_second": 304.7870526047639, "predicted_n": 128, "predicted_ms": 5373.769077999999, "predicted_per_second": 23.81940834116356}
+BANC DONE q4-qwen36-35b
+END q4-qwen36-35b VmHWM: 24089792 kB;VmRSS: 24089792 kB;RssAnon: 24080100 kB;RssFile: 9692 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+Q4 CONTRE BF16 EPYC 4344P FINI 17:31:37

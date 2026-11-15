@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nQu'affiche ce programme Python 3 ?\n\n```python\nprint(round(2.5), round(3.5), -7 // 2, -7 % 3, 0.1 + 0.2 == 0.3)\n```\n\nRéponds par la sortie exacte seule, dans un seul bloc de code, sans explication.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 500,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

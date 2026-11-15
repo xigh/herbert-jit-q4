@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-thinking-fr.kld",
+ "test": "out/q3vl-thinking-fr-llama-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact ppl from llama log; se from compressed"
+ },
+ "ppl_ref": 6.129255068067422,
+ "ppl_test": 6.1779,
+ "nll_ref": 1.8130732202255784,
+ "nll_test": 1.820978407897275,
+ "dnll": 0.007905187671696678,
+ "dnll_se": 0.004431797049114941,
+ "dnll_se_chunk": 0.005567915731155128,
+ "kl_mean": 0.023015461832320037,
+ "kl_se": 0.0005480242801665149,
+ "kl_median": 0.016139621828886556,
+ "kl_p99": 0.14395083764418398,
+ "kl_p999": 0.27287992640387126,
+ "kl_max": 0.44058296425378596,
+ "top1": 0.9120734908136483,
+ "top1_n": 2780,
+ "ref_nll_exact_minus_compressed": -1.3693413900990715e-05
+}

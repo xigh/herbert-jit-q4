@@ -1,0 +1,13 @@
+<|im_start|>user
+Qu'affiche ce programme Python 3 ?
+
+```python
+print(round(2.5), round(3.5), -7 // 2, -7 % 3, 0.1 + 0.2 == 0.3)
+```
+
+Réponds par la sortie exacte seule, dans un seul bloc de code, sans explication.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

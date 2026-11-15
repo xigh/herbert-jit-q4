@@ -1,0 +1,15 @@
+== 2026-11-14 19:58:31 CET Ryzen 7 5700G podman 4.9.3
+temoin-juste p01 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_vide": "ok", "test_un": "ok", "test_desordre": "ok", "test_touchent": "ok", "test_inclus": "ok", "test_disjoints": "ok", "test_negatifs": 
+temoin-juste p02 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_exemple": "ok", "test_accents": "ok", "test_cedille_trema": "ok", "test_vide": "ok", "test_que_ponctuation": "ok", "test_bords": "ok", "te
+temoin-juste p03 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_milieu": "ok", "test_premier": "ok", "test_dernier": "ok", "test_un_seul": "ok", "test_vide": "ok", "test_absent": "ok", "test_absent_bord
+temoin-juste p04 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "ok", "test_deux": "ok", "test_un": "ok", "test_vide": "ok", "test_non_modifiee": "ok", "test_flottants": "ok"
+temoin-juste p05 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_4": "ok", "test_1994": "ok", "test_1": "ok", "test_3999": "ok", "test_ix_xl": "ok", "test_tous": "ok"}, "erreur": null}
+temoin-juste r01 code=0 8 
+temoin-juste r02 code=0 6 
+temoin-juste r03 code=0 5 
+temoin-fourni p03 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_milieu": "ok", "test_premier": "ok", "test_dernier": "échec: AssertionError()", "test_un_seul": "échec: AssertionError()", "test_vide": 
+temoin-fourni p04 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "échec: AssertionError()", "test_deux": "échec: IndexError('list index out of range')", "test_un": "ok", "te
+temoin-fourni p05 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_4": "échec: AssertionError()", "test_1994": "échec: AssertionError()", "test_1": "échec: AssertionError()", "test_3999": "échec: Asser
+temoin-fourni r02 code=0 2 
+temoin-fourni r03 code=0 0 
+== FIN 19:58:35

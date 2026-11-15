@@ -1,0 +1,7 @@
+<|im_start|>user
+Donne trois conseils pour bien dormir, en exactement trois puces.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

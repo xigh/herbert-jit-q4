@@ -1,0 +1,802 @@
+kv	GGUF.version	3
+kv	GGUF.tensor_count	753
+kv	GGUF.kv_count	46
+kv	general.architecture	qwen35moe
+kv	general.type	model
+kv	general.sampling.top_k	20
+kv	general.sampling.top_p	0.949999988079071
+kv	general.sampling.temp	1.0
+kv	general.name	Qwen3.6 35B A3B
+kv	general.basename	Qwen3.6
+kv	general.size_label	35B-A3B
+kv	qwen35moe.block_count	41
+kv	qwen35moe.context_length	262144
+kv	qwen35moe.embedding_length	2048
+kv	qwen35moe.attention.head_count	16
+kv	qwen35moe.attention.head_count_kv	2
+kv	qwen35moe.rope.dimension_sections	[11, 11, 10, 0]
+kv	qwen35moe.rope.freq_base	10000000.0
+kv	qwen35moe.attention.layer_norm_rms_epsilon	9.999999974752427e-07
+kv	qwen35moe.expert_count	256
+kv	qwen35moe.expert_used_count	8
+kv	qwen35moe.attention.key_length	256
+kv	qwen35moe.attention.value_length	256
+kv	qwen35moe.expert_feed_forward_length	512
+kv	qwen35moe.expert_shared_feed_forward_length	512
+kv	qwen35moe.nextn_predict_layers	1
+kv	qwen35moe.ssm.conv_kernel	4
+kv	qwen35moe.ssm.state_size	128
+kv	qwen35moe.ssm.group_count	16
+kv	qwen35moe.ssm.time_step_rank	32
+kv	qwen35moe.ssm.inner_size	4096
+kv	qwen35moe.attention.recurrent_layers	ded6451dd4f60803
+kv	qwen35moe.full_attention_interval	4
+kv	qwen35moe.rope.dimension_count	64
+kv	tokenizer.ggml.model	gpt2
+kv	tokenizer.ggml.pre	qwen35
+kv	tokenizer.ggml.tokens	75d9e6ca921b886f
+kv	tokenizer.ggml.token_type	d54439ef48197cc1
+kv	tokenizer.ggml.merges	d931cae12eac899f
+kv	tokenizer.ggml.eos_token_id	248046
+kv	tokenizer.ggml.padding_token_id	19d4fed54ce56ffd
+kv	tokenizer.ggml.bos_token_id	248044
+kv	tokenizer.ggml.add_bos_token	False
+kv	tokenizer.ggml.add_eos_token	6e340b9cffb37a98
+kv	tokenizer.chat_template	e84f32a23fdda276
+kv	tokenizer.ggml.normalizer.nfc	4bf5122f344554c5
+kv	tokenizer.ggml.clean_spaces	6e340b9cffb37a98
+kv	general.quantization_version	2
+kv	general.file_type	2
+t	output.weight	Q4_0	[2048, 248320]	ba43766cdc7dbdc073a4fc16f6a337e9c2677a81f45281c9f1b904a2add2d6ea
+t	output_norm.weight	F32	[2048]	19f7f87ea054c19dee992e4d1ce5a2d3468b067b9f300fc031e58048f1d750a0
+t	token_embd.weight	Q4_0	[2048, 248320]	50d12b3ef6c7a33f7aad1bc8322240cf667f970d0a134141ea0cf5129337a494
+t	blk.0.attn_gate.weight	Q4_0	[2048, 4096]	1bf40422d69e9817d8e0035bf1edb19ffba1abd20acc82e24b5f18254cb30f5d
+t	blk.0.attn_norm.weight	F32	[2048]	f452e90d3bc696497fce0aee0233ce7d3f7dfa4dbfc2ebcc992d426a5df9e4ee
+t	blk.0.attn_qkv.weight	Q4_0	[2048, 8192]	23ee381d189cd87390a2eb625cca391bd51e92b5751ba8774e9e764be3ce2597
+t	blk.0.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	85745a5d2c46ed800c1b2317ae5c1f7b86befc0ad102cf3a22d480c58c8d90f7
+t	blk.0.ffn_down_shexp.weight	Q4_0	[512, 2048]	21849298d81a7bf55a3bd3e979519ef9cf355b6c7d357f716f58f0fbd8496374
+t	blk.0.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	83ab953c19005900d9e56eeb00d1e99b44a42bde7c50f06e3fc17fe7f4467990
+t	blk.0.ffn_gate_inp.weight	F32	[2048, 256]	b07fb695bd8ed184fba6e13c43d21ef4fb0c29b76d3cca7b0ece67b7def85222
+t	blk.0.ffn_gate_inp_shexp.weight	F32	[2048]	b79f587c6837e413617b7c1a1569b96880aacbdaed0599521e8b4f7580474932
+t	blk.0.ffn_gate_shexp.weight	Q4_0	[2048, 512]	e0f5096f46f9d3fd1576a4d0c070929561f03f37d0068b98ee391d4ace49886b
+t	blk.0.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	ae8aa4d3ab458f6519810e98461bdc40d31b0bf5d23b60072ebd51ec3aa8298b
+t	blk.0.ffn_up_shexp.weight	Q4_0	[2048, 512]	d1f39985f88ed67ce17940d4645c5e62447bbf9093eb8c1ab15bf8ae0885359f
+t	blk.0.post_attention_norm.weight	F32	[2048]	b22b5501c496a7a4fa185022fd42cc59309ffc0334119ab09935f4f260e650fa
+t	blk.0.ssm_a	F32	[32]	9f7ba1bb4cd1279b23e5e64a6b9fc64cb2530f9f7790c3376eaa77f90f5946ad
+t	blk.0.ssm_alpha.weight	Q4_0	[2048, 32]	9aac8d67ecf63fdda295e8774d74924f7804ed84d0545c340373dcf5c2427d4f
+t	blk.0.ssm_beta.weight	Q4_0	[2048, 32]	b325a4a7e0f3dc5ca4f3efbe26ae59fd79e42ee4da6490e5f06c5406347824d2
+t	blk.0.ssm_conv1d.weight	F32	[4, 8192]	86a4640cfc294de8dd913421a3670a679032dc73324984ac16ccd37a99ba807b
+t	blk.0.ssm_dt.bias	F32	[32]	29c9394e85df2ad2fb5e7aaa18c1c0e2dc3b0b39f775640b85554f5e69ea80a6
+t	blk.0.ssm_norm.weight	F32	[128]	8b51ece7e812b72c556fa4540e4ce46ead78c137b11c2dbdace07f238f85b36c
+t	blk.0.ssm_out.weight	Q4_0	[4096, 2048]	8a7e8ba2043c7f17dba4d99c28f67590b84ee14872d26b4e11e3c65c169bc3c8
+t	blk.1.attn_gate.weight	Q4_0	[2048, 4096]	1d707598e909da899facd33aa2a9ce4e9630843c003fc0ecc44f7c6749e09831
+t	blk.1.attn_norm.weight	F32	[2048]	80bbc15117a1a0188ec3b9b51d0e36e4d082e21c894156e6fd6101f65603efea
+t	blk.1.attn_qkv.weight	Q4_0	[2048, 8192]	cd880f324c6a5e5ceb98a0837c9d9fb0f63ae4baf772c667b8e0f6c4bc56120a
+t	blk.1.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	11730af0a618d39be2785b041b852605a32e0c3667bb2deb83d484d68956e76d
+t	blk.1.ffn_down_shexp.weight	Q4_0	[512, 2048]	49da2f7d94f29805573b0b42f691eca2c97b75babca862b690bd06c2efa327bd
+t	blk.1.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	de7d5859e0db6825f7a50fe8479263d099ac7e667cd7106db1c178fc5f1c6c90
+t	blk.1.ffn_gate_inp.weight	F32	[2048, 256]	57ded4e8769bcab55929cdc37f01d6b5d4cdfaa9d068230cc504ca7260357fb9
+t	blk.1.ffn_gate_inp_shexp.weight	F32	[2048]	1b1fd57c4881b3260172470f241ac0dcd82acb75071eb93bd8dd58c39558b4ff
+t	blk.1.ffn_gate_shexp.weight	Q4_0	[2048, 512]	24ae0ad69400c2fd650f5cba64c0f8c7e6fc0c638ca79565a9c9f779bc2918a9
+t	blk.1.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	f76382f23b8c7b269c373fc74eae24e3fb8db02c97417ac9e2ddb6b69b503048
+t	blk.1.ffn_up_shexp.weight	Q4_0	[2048, 512]	252cbb7965308c181ce45a4326e1e02de07cb3b3b31e75ef115d0feabc0c1b75
+t	blk.1.post_attention_norm.weight	F32	[2048]	f30b87f9ca2ad9b3ad5066568690e5907e3fe1a6c9f91bf517124793612cdd7e
+t	blk.1.ssm_a	F32	[32]	87a06e61c2c5623b0579e18ed4cacb85be30a0480c59b1bf80537a204d48931d
+t	blk.1.ssm_alpha.weight	Q4_0	[2048, 32]	28e2adb5a8363c2528b3c0e730c0e242df93af127e01033627bcb76a619779b2
+t	blk.1.ssm_beta.weight	Q4_0	[2048, 32]	e6c625f4dfa63dd420bbe3ef713dad1be5b907f1417bb056d054dcf1aae039ac
+t	blk.1.ssm_conv1d.weight	F32	[4, 8192]	4125a21f4dbcd98c7cfbe2a7688950dc039a0e8e5bc3d2d99e9d5d0d7c58d386
+t	blk.1.ssm_dt.bias	F32	[32]	ae7fa8f1efc0c753eca697b4b565622b8fa3ec20073749339aa9e90b6dde2aba
+t	blk.1.ssm_norm.weight	F32	[128]	c33f19dd8b0441984cc79299badeac3e01add7db32de3609ca6249c1f153ef36
+t	blk.1.ssm_out.weight	Q4_0	[4096, 2048]	7eaa0d669c59dbd984ac24983d110372e1df5f5c4dd1fbd1dbe448fca2aff930
+t	blk.2.attn_gate.weight	Q4_0	[2048, 4096]	0258b40d4acd0f673a4fdceda44ff744f4797e717d9f439520b719ed84d999a9
+t	blk.2.attn_norm.weight	F32	[2048]	b3ffec5cfaf5bc320c0b1898b57d7b8ecff20d1f73ca86347c7c29aeb2740f60
+t	blk.2.attn_qkv.weight	Q4_0	[2048, 8192]	68b7da1e1555618d57688735b90ac3137f69e994b246da98b6ca4b02e464d6b7
+t	blk.2.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	58db79880677f15295d8d9a2cd65a311fe55c3f2958d663eda893fd1ce18f28a
+t	blk.2.ffn_down_shexp.weight	Q4_0	[512, 2048]	ae030969359cacdf1e4fc7d4022468fb84653a97292d8145d493d661b10d0641
+t	blk.2.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	7334d1cc53b2d14f3db5eb6a090787f7e14a236d5ff7e5064efb2f0a1189556c
+t	blk.2.ffn_gate_inp.weight	F32	[2048, 256]	488f1e8d2825c9d9f0db6d4382c834139837da43bd019f87f357766fade308b4
+t	blk.2.ffn_gate_inp_shexp.weight	F32	[2048]	69f49c49ae17c06269c5e4d2c8809e357cec8659a11db6b5159900b80f8169d0
+t	blk.2.ffn_gate_shexp.weight	Q4_0	[2048, 512]	d884d6582672df41bcc37eb8d86341716ab9bbceb041ca4958c7b3d3cc423a88
+t	blk.2.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	f91c613ac8dd98e90ca0100f4dec9480bbc7a03b548bb8e5e4a20d98eaf37c7d
+t	blk.2.ffn_up_shexp.weight	Q4_0	[2048, 512]	7550df0afa05728b27117fb1ab0f26dd6a4a7ec051d98cdddaf623c2361c399c
+t	blk.2.post_attention_norm.weight	F32	[2048]	d4dba16b0ecb2d28cf28529714963fa05562f7f4a8f1dae32a66f06074888b1e
+t	blk.2.ssm_a	F32	[32]	ad3725900690dd76eea7b91805f3a7e076fdea5e800586fa5498e157e6216d67
+t	blk.2.ssm_alpha.weight	Q4_0	[2048, 32]	c879f6ca9da064b7981b6e326051ddcc2fcec21f015a50ef2cdc179dbabd6ece
+t	blk.2.ssm_beta.weight	Q4_0	[2048, 32]	54dd05f6f2f825136dc4f70e2834563c63560586aea5c45853dd6b2a1af91b27
+t	blk.2.ssm_conv1d.weight	F32	[4, 8192]	6ce65c96e33dfe06da9c54863e2459b0c75cb53a70183b34017911c2d8f29df9
+t	blk.2.ssm_dt.bias	F32	[32]	9a8562d083f817c716ffcf8bd453749280842e7d4ab5db61fc7a8a8df8b30d98
+t	blk.2.ssm_norm.weight	F32	[128]	c6a14eefd60495262b3bbf35920691d3d79146405f57a53cc8d0099d1baec00d
+t	blk.2.ssm_out.weight	Q4_0	[4096, 2048]	ca94a3f756a798342d33e7c8f386a66a0af920398d4218ae9575d47427a1216c
+t	blk.3.attn_k.weight	Q4_0	[2048, 512]	ae3d3eddea7088313cdff98eb9f0c8cc2df714be4db5536af6540dc4efcfab41
+t	blk.3.attn_k_norm.weight	F32	[256]	d50d149bd840708117471d1533498f249bb9bd04e24115da9950a13d3a606c49
+t	blk.3.attn_norm.weight	F32	[2048]	9442749a4fdfe04e0324ffd2a7e313096cc781789291eec581b2d44ba07db637
+t	blk.3.attn_output.weight	Q4_0	[4096, 2048]	996437e5572e25ab890f2067d3393bc9b4bd0447dca7edf82c239a22c55114c5
+t	blk.3.attn_q.weight	Q4_0	[2048, 8192]	aa6ce7363cb998b620eee418609e92d6925ed454136e95f2975b418cc4eca0d1
+t	blk.3.attn_q_norm.weight	F32	[256]	5fcde32a0447477e2ee5abab51c9f7c61aab2d3abc51d7153bbeb5dce452acb9
+t	blk.3.attn_v.weight	Q4_0	[2048, 512]	88e58a22527184831f4d3ae71ce8852ec1643aecf3255d4b7c2195117fa14e79
+t	blk.3.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	000f5089956e7013b3f841f7c72f2624bf355355a43e2150b841b8405d717a20
+t	blk.3.ffn_down_shexp.weight	Q4_0	[512, 2048]	b69d43d1a3b4ebae1002fd94c93985274d5480b68471995b0236aa35df1de962
+t	blk.3.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	5a72910002e2aa4c492c52600ea1d8753a19e80f7a577aa21f049e8e54df471e
+t	blk.3.ffn_gate_inp.weight	F32	[2048, 256]	1ba877ada6820191a9f63702e81a0b8505eaae17b370fe6b54a5504f0f17703e
+t	blk.3.ffn_gate_inp_shexp.weight	F32	[2048]	437fffe805279669471b0913bcaf9eb4f0fee6c20528a8c221c243af5042c047
+t	blk.3.ffn_gate_shexp.weight	Q4_0	[2048, 512]	8f56db55b757b16ff6ca122760304eed69d7e7cfc82900d90187c5f36818de9b
+t	blk.3.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	aab81f8aac8a2055480582b91f626f4372e718653a9a4d9bbc75caa307a12c3e
+t	blk.3.ffn_up_shexp.weight	Q4_0	[2048, 512]	86124349f9ed6119ba2d8ffbc8204652d942501f06728b654ab0d1268f14ca8e
+t	blk.3.post_attention_norm.weight	F32	[2048]	9f1fac902b141f1a60b07e3c7645af6f0fcd9e09d8688bc1531637893859e754
+t	blk.4.attn_gate.weight	Q4_0	[2048, 4096]	205a676aee26a57dbc23fabcfe7f81e097f5675c5fb6ac5b397e2065bc01205e
+t	blk.4.attn_norm.weight	F32	[2048]	5f3eb46f631708214c56c997ef25a2e8879db68c97100e270e7ab7c098e3c7dc
+t	blk.4.attn_qkv.weight	Q4_0	[2048, 8192]	f6756c03ce25088e407235e9d80d5f2456a30fb39d63a4b524727199fd82032b
+t	blk.4.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	315d3a8ee1d80a3ff7cfd5c7e0bdd725f3e3e07d25b77b60979624c72be5a85e
+t	blk.4.ffn_down_shexp.weight	Q4_0	[512, 2048]	c7a6869af90ac586ab23fe771f6ab2fd6afc72f707ea8bd6fc1efda54120ee7b
+t	blk.4.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	0f786bf84da9a67cf3f146c4d876bf6a15339907cdc03d76170cd718e79356e7
+t	blk.4.ffn_gate_inp.weight	F32	[2048, 256]	601da849ecab83e580213e246f63bbb1b62ae62ad284891a42241b4d1fc0814b
+t	blk.4.ffn_gate_inp_shexp.weight	F32	[2048]	6a83ee78d47a4cfd288aa7e4258ead7720bf5ef9aa492354902dfbeb55738ce9
+t	blk.4.ffn_gate_shexp.weight	Q4_0	[2048, 512]	6e54321b0c36853620dec856da5fab1efdd322e4887637b601fb1d789686dcd3
+t	blk.4.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	8d2905c4d661ca098b3250291fdd23adb8b7e5a32bedff1d080985e6442ec483
+t	blk.4.ffn_up_shexp.weight	Q4_0	[2048, 512]	2e38cad7a88bfbc895505b293ea1cf4409cf0d963ae696de142f7f447a8e70f4
+t	blk.4.post_attention_norm.weight	F32	[2048]	ea3fdf2b9852d0dacbc9233de82f9ec665584c011fa7ae26619773b1efb19f21
+t	blk.4.ssm_a	F32	[32]	59d0c5f3616f0f40c4104c087f6846e2ff23f752ff93257edd093df8eb645845
+t	blk.4.ssm_alpha.weight	Q4_0	[2048, 32]	360f5faaa9ed2d1a2412e671fe7ba21d5d284d8095dbfe53145344b0b58f9b51
+t	blk.4.ssm_beta.weight	Q4_0	[2048, 32]	4085682140f6c6242ec8a678a516d46bf111e2fb4a43238e9c53924b1e2faf36
+t	blk.4.ssm_conv1d.weight	F32	[4, 8192]	0055bd783722cc1f69060aa6317b03c225409bf97f68c3ec11ac79c4dbf3aab0
+t	blk.4.ssm_dt.bias	F32	[32]	1c1c5780e14440f46020b08103fb3e9b466ea7ba271072c68f8ac6a57976ede2
+t	blk.4.ssm_norm.weight	F32	[128]	5060bfd047f40052f0f1f11388a436f1b9cb8f1ff35ebea00c50c9e8ef37be81
+t	blk.4.ssm_out.weight	Q4_0	[4096, 2048]	189c8ad61bfd5082acb9ebe263b600906f6875a3db47e17f831d06de3f753a9e
+t	blk.5.attn_gate.weight	Q4_0	[2048, 4096]	6d27983a14a3e71da0ac95ec1680bb125f7581f49494ebbbbfa6107b964208ef
+t	blk.5.attn_norm.weight	F32	[2048]	2dfe5462593c21131a983df7e7feacdc11b9c31d98b5ff9a75c47fc3b0c85b16
+t	blk.5.attn_qkv.weight	Q4_0	[2048, 8192]	709913854c333d03977cf6d9bab17aa1a7165177d40e60ac7c0c6d709a46ab8c
+t	blk.5.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	fa8d5a3d567641676b9b269c11b950efce8f992619a1d636fda5bc32dc132f24
+t	blk.5.ffn_down_shexp.weight	Q4_0	[512, 2048]	74fea82b66c529a5c9dca5df046cf58bf3696c70e810683e5e24b8069ee9082e
+t	blk.5.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	9e1f357ea75c2cf0a32d03ebb4c26fba0698b9726d62936ed04432811b3972c1
+t	blk.5.ffn_gate_inp.weight	F32	[2048, 256]	caf717571423c1f8dde3340f35e9cace75f53477cc91295e76957c3dda0725f8
+t	blk.5.ffn_gate_inp_shexp.weight	F32	[2048]	5ed9f5c8766f0bfe42cb4e8c3191422db9b0e157cfd22e3b999f11b4913347b1
+t	blk.5.ffn_gate_shexp.weight	Q4_0	[2048, 512]	f0c1058293480dd442092381a4896a09459f8933048b63fdcc9adedf0b442279
+t	blk.5.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	aac20d4b1240a6e7e1bbafecce0fa9d8b9cddb8499282cc694468bd3854b7610
+t	blk.5.ffn_up_shexp.weight	Q4_0	[2048, 512]	33084a26ec34438333b66cd981feca108de6829bcdbf119c3f2498be9c443a82
+t	blk.5.post_attention_norm.weight	F32	[2048]	e4e3f8da4e8c3c2fac9f6cf0c0b442a02fca060029d96fba519f11dac6047dac
+t	blk.5.ssm_a	F32	[32]	363458cc9343f4c55ac936e9f0cd3d916a7859863d3cc6ff3aec655d1e864753
+t	blk.5.ssm_alpha.weight	Q4_0	[2048, 32]	388ab9965f1d20e39caacbf0d91625655816ad7f006e3745682f846883ac5499
+t	blk.5.ssm_beta.weight	Q4_0	[2048, 32]	c7fcc6bcc5c40c5255ba833d69382da942ca1c735f93459aeb83a3ae5f7a4dc4
+t	blk.5.ssm_conv1d.weight	F32	[4, 8192]	e89e25d013818fbd41bd4952130874baecbe28617e52532053e3aeebd7f9e8d2
+t	blk.5.ssm_dt.bias	F32	[32]	c52cf2190aa7ea6e9ef7f7a37d168e1f04d4d9dba3a9950cc1987831511a85ce
+t	blk.5.ssm_norm.weight	F32	[128]	669bbad90cea1c5f037123c223e225bcb5e00c045252389c0349c2d8dc6c3742
+t	blk.5.ssm_out.weight	Q4_0	[4096, 2048]	b4db636d941959a13c7f2b4d588afed7370a4839080f08e3440c4d6da3235dc0
+t	blk.6.attn_gate.weight	Q4_0	[2048, 4096]	a831b90cbb0fc720ad7c5f03ffddb5c99698ab1a03de1d66ebbe83a506ba8831
+t	blk.6.attn_norm.weight	F32	[2048]	2005e855d0e4f52beb46899a86f6516df7e852c2d8f5ad4cb1575438db8b9570
+t	blk.6.attn_qkv.weight	Q4_0	[2048, 8192]	f6c88a90817c7f67cfb48bf9835ad382e042d23bf183a41e9e36fedde85b8390
+t	blk.6.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	245d13625f145d6a96283c9fb5c7f9cc4722a0ca92e2227d23c2d6f04ca72366
+t	blk.6.ffn_down_shexp.weight	Q4_0	[512, 2048]	1883a65ac082aa3a6f58262a0a0df521050db7b9d7b29d024b9ac7a807b2b692
+t	blk.6.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	c5dc30aa983da954eac2349e144c0d09fedcbfda71d926665983e714f85d5a70
+t	blk.6.ffn_gate_inp.weight	F32	[2048, 256]	b227b5db7a6bf43f045bc9d19bdfd758067c4fc924525551112bff52c87a1d03
+t	blk.6.ffn_gate_inp_shexp.weight	F32	[2048]	545cfd0672dded48ee5a54163ca0d6474bb9aa43e2df687ef64786be99036a0c
+t	blk.6.ffn_gate_shexp.weight	Q4_0	[2048, 512]	4dec706f2a853b08409d963591d14c56c049e565b659cb830cf6c3bf27eb74d6
+t	blk.6.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	b8727417045e8f21a2044fb0117fbbc36ed54081782433d38b91da41cc6c9932
+t	blk.6.ffn_up_shexp.weight	Q4_0	[2048, 512]	ba884b81c889454abb81946a436dec57459fa9914fd514f56928692c5b2691b7
+t	blk.6.post_attention_norm.weight	F32	[2048]	8727fcd0a49bee5d873c941b9a939592aedfcde54561fa6437958e21775211ec
+t	blk.6.ssm_a	F32	[32]	b3185713f08dbbb816ecc75c74ebca9f78af83bd473f1cbc1ddbd6d972fbb66f
+t	blk.6.ssm_alpha.weight	Q4_0	[2048, 32]	5225824c8b1ad991cdbf8960347fe5df94e7e81701d1fef21e2d061a02ffc066
+t	blk.6.ssm_beta.weight	Q4_0	[2048, 32]	5d9e732b5183ded8cfa4e6e53c76bef003f2efc5af37b29ce4f81dbefdb862fb
+t	blk.6.ssm_conv1d.weight	F32	[4, 8192]	133d811148e8a0ca95bd037263fd5f949685a0a73e8121cc15dcc950a5caaf11
+t	blk.6.ssm_dt.bias	F32	[32]	3b399e6eff25615fa35a4b98714f7c1b22ece4592c57b242c02549ffbe6352d2
+t	blk.6.ssm_norm.weight	F32	[128]	76b910a5d6cdc14d348f4366c66fc1b473301054406fadb6cd22d2b69bbf1c65
+t	blk.6.ssm_out.weight	Q4_0	[4096, 2048]	8df3497bd5dd3654a318e4f1686cfd5894dc49723d0dc7de1636de6cdf373233
+t	blk.7.attn_k.weight	Q4_0	[2048, 512]	764f812868c4993aaf38fc9b472e5c1690a80f189fc6c4adf88c1c4cb5b890fd
+t	blk.7.attn_k_norm.weight	F32	[256]	092870999fbac3bd37ac3ea7f2bd35b5731cad0b807bd4f936937b025c907b33
+t	blk.7.attn_norm.weight	F32	[2048]	3229a37782036c3ec49bd4a02947beaa7a963e73b74c148e0369e235142a767c
+t	blk.7.attn_output.weight	Q4_0	[4096, 2048]	39ec5d2ee5a64aad552b7fd22f47957d0bafd6df97e491e25d4b269eaf8a05ed
+t	blk.7.attn_q.weight	Q4_0	[2048, 8192]	3bcae9cd414b5c6036e2ab277999220c5115defaebafdc6bd4f07bb066ae4cec
+t	blk.7.attn_q_norm.weight	F32	[256]	c796871f06e3ca742ada4ee551d6bc416914af7877497bb187c50fc6aa5015c6
+t	blk.7.attn_v.weight	Q4_0	[2048, 512]	d3fe9d04a6ea708b7749c7f58f18f11b8da096ef6e4a43336df22991a8872ece
+t	blk.7.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	5ba336cdf6d9c51f8355338f6b9c29e275eeae9a252ebc5b5cd9347bf160b605
+t	blk.7.ffn_down_shexp.weight	Q4_0	[512, 2048]	353ab4ba78e45037317ccc303f29debb6b60e529352fa415e7672a70d6fd280c
+t	blk.7.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	e4ea67257e53c2b7bef4f0d8ac24aa8b952fabcc44b202871b6d03b9581045c8
+t	blk.7.ffn_gate_inp.weight	F32	[2048, 256]	f5f02d62be6c2c879c3c8b8fba7dfa401a2897b894686f84d93ef4f13cebb0dd
+t	blk.7.ffn_gate_inp_shexp.weight	F32	[2048]	f27d5410f5c9fca17a9756f7e8f7537f051e74dd664149d3ccddbe806eb299dd
+t	blk.7.ffn_gate_shexp.weight	Q4_0	[2048, 512]	08b778e755ecf30510b6bbe1765c63a1c3d97cf78cf6c116c65866e64c8efe86
+t	blk.7.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	a644adeadbd7d4e49eefcedc665a1e982f7026614a09ed95b772916585393985
+t	blk.7.ffn_up_shexp.weight	Q4_0	[2048, 512]	80df0fcb2ff81d0a7e29de16f53f76320b1b14ca9ecd731871b830518937d068
+t	blk.7.post_attention_norm.weight	F32	[2048]	001b8ba8dd7e1b59ca3be873d397622b4552eae02c797cd7d82a30066d521b79
+t	blk.8.attn_gate.weight	Q4_0	[2048, 4096]	0feb6906db6ba6176ed2778d71f29ea3a24c4c41c4ac8ef206109566a65248f4
+t	blk.8.attn_norm.weight	F32	[2048]	be7706ddcc8eff7419b3bc740412903b640e803dcaafeb58eefe2647c9e67a24
+t	blk.8.attn_qkv.weight	Q4_0	[2048, 8192]	b18b6e136f25d1be354b3f45eed59b1a995130b3bc4bebe1147fa85b5d2f679d
+t	blk.8.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	2efc7bae16e8e9d43a86f1d6eed885f54fcd1cf5f031752317d034d30356b040
+t	blk.8.ffn_down_shexp.weight	Q4_0	[512, 2048]	525b31e40d1e9f8cc1697920dcba08eca7973f37cbf540edee09617d0d382e77
+t	blk.8.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	506cbe99e3fc6565d0a2ea1ac377f825ef413fcac26a0b4106d9666ad01dcc3f
+t	blk.8.ffn_gate_inp.weight	F32	[2048, 256]	4d8a1e50d58694f0b440221e19ad2d460f7036c5f6d3ca0027d5640b2313aee6
+t	blk.8.ffn_gate_inp_shexp.weight	F32	[2048]	59229dcaef4d608ed7bc91b1ae882140c7977ba984eb596825d1f01c51274c34
+t	blk.8.ffn_gate_shexp.weight	Q4_0	[2048, 512]	bca1e90ac5bdaf3801879f53753f1c44048f45d5339d89e1a3867f42b5a8844d
+t	blk.8.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	ddafbf36d99de519daf05fec1a628d3b0fd399a1d19e5363ee280e5ba49b8ec3
+t	blk.8.ffn_up_shexp.weight	Q4_0	[2048, 512]	b0f45f9a101099e2cbd2068122fcd2fe4672a68a3bc3bcd6abb7df6d3925932f
+t	blk.8.post_attention_norm.weight	F32	[2048]	0bc340df7c7f9a4dc78900269ccf3ff48bec0fa42454ac642f386d33b82b7f42
+t	blk.8.ssm_a	F32	[32]	4a729bc5ce1bdcdb57f4d599e6ed9b6ae730885a5d9ed7a1516df4666cc77576
+t	blk.8.ssm_alpha.weight	Q4_0	[2048, 32]	1e9ee42a207a2dab0ea2157da343e007ac896ab1ba3d0ecbe95b395986132c07
+t	blk.8.ssm_beta.weight	Q4_0	[2048, 32]	e93bdf551a840b7b576cf81f31fc7265ae3ede7151f9a9881bdc7905b9035211
+t	blk.8.ssm_conv1d.weight	F32	[4, 8192]	c3383424e196965fe8bfe097ff74ca521c2319734b3d570e8d69c15f5aacbac4
+t	blk.8.ssm_dt.bias	F32	[32]	6ec42ea5b01cfbcfa913f71bb915871f9467f7933853ba9c959e65364b245610
+t	blk.8.ssm_norm.weight	F32	[128]	32cccdd46089251dde46adb05ebad9d7a218f7bddd53c5cdfa4aa836d668b7b7
+t	blk.8.ssm_out.weight	Q4_0	[4096, 2048]	fc75ee4201bb251bf92fb0d0acb67a46a19d6400a498c9234347a81d479576fe
+t	blk.9.attn_gate.weight	Q4_0	[2048, 4096]	f821aa63928e19627ad96a8c19796343a90c6dff8bd1fa583235fbaa900095e9
+t	blk.9.attn_norm.weight	F32	[2048]	f17f3b2bc1e60d635be4bdd407158323463287e30633676cd17c54b352fb24dd
+t	blk.9.attn_qkv.weight	Q4_0	[2048, 8192]	c5da49809609dba0994b81a85709bb22a8c02d1ae8d03553807643b26e861bba
+t	blk.9.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	de531e65eced2f45c9a9ca32e6a9255624287462d1495117de16aa4a75f655db
+t	blk.9.ffn_down_shexp.weight	Q4_0	[512, 2048]	63e40e56b8e7bb26a783c903f59bf08ea9be8da64d0f3450dc6c75e8175097ea
+t	blk.9.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	340334c879eca6e44d2d0eccdad62676e88db7762b313aa5be77c0d14956a3e7
+t	blk.9.ffn_gate_inp.weight	F32	[2048, 256]	614e45e533fb2be87cc8b3ceb0dff0c083a8ece32c7945b34b0e1865b9e62c02
+t	blk.9.ffn_gate_inp_shexp.weight	F32	[2048]	7c91eadcd32cb2893a0c4f817b1a1d60dd51a7b77bc46ebcac894ed27933cb7f
+t	blk.9.ffn_gate_shexp.weight	Q4_0	[2048, 512]	9fa61327c03c5ba94ebcf7c1b94ea8d3c1074e29e4c6066efd03678c570102d8
+t	blk.9.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	0a28c5355153a6a1b92aece4933b07b3f7a38d7b2e41e674e0a0e1bf8eb7a904
+t	blk.9.ffn_up_shexp.weight	Q4_0	[2048, 512]	e113844608e628c7b87dad384816aabb48a26231310108708190115e0b1b939c
+t	blk.9.post_attention_norm.weight	F32	[2048]	5c083ce12a55823dd653a35393ae40258d6f313c43eb3d2bca7b81c5e9ecc999
+t	blk.9.ssm_a	F32	[32]	e36bd8993411fe0f4ec878d9867d756414805ccd1f50d3d478478491f69f7850
+t	blk.9.ssm_alpha.weight	Q4_0	[2048, 32]	2753386e9725cd195abaa7b7b48e1148877fd8174c98f164ded05e7fefa541da
+t	blk.9.ssm_beta.weight	Q4_0	[2048, 32]	107322dd92d9377240ce1c761fade3c06334dd4f86772fc6c763cb66e713f5de
+t	blk.9.ssm_conv1d.weight	F32	[4, 8192]	c188d78bfd845aaa597f4e1454b4dca9733feab983123a7f28ae41535505204e
+t	blk.9.ssm_dt.bias	F32	[32]	01a15f26132a606760828c820deeb6bd78d247c8308713cb03472cad222a486a
+t	blk.9.ssm_norm.weight	F32	[128]	3b1c9f45dc27d550847d7b60922a0626867abf0d35550496f4e7e99c2973702c
+t	blk.9.ssm_out.weight	Q4_0	[4096, 2048]	003f5cc8bb7819cabf4486f90860e815b6f0fe22c4c68a17875c870c18c1c48b
+t	blk.10.attn_gate.weight	Q4_0	[2048, 4096]	913ebe81faf1ea76515a61fb84c058e3635571b3af1c85462cd75ec854ca6e1c
+t	blk.10.attn_norm.weight	F32	[2048]	c5fbf5b0186c9bee57761db07e0e165e92b43b523015b48d2d40ca8a672ad8f3
+t	blk.10.attn_qkv.weight	Q4_0	[2048, 8192]	e942d8acf9812ed907d71e0c7080b66dcdfd76f63b6fc5f4864b2087d2b58727
+t	blk.10.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	d56de636ea734e333abc032d151cc64fbeb445efac885551ea2ab13aec0afcbf
+t	blk.10.ffn_down_shexp.weight	Q4_0	[512, 2048]	ea53f482f8f3c6dfb71df173b13e760adf8dd0802dd7353793f54d61dde9b8bd
+t	blk.10.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	e1a3abe7fae167ea269828ece98856d261750718e33ddf408aa5334554188af4
+t	blk.10.ffn_gate_inp.weight	F32	[2048, 256]	c44d7c455c3002fbe98e98817e807c97aa04180ea0846503751faef05d984587
+t	blk.10.ffn_gate_inp_shexp.weight	F32	[2048]	daeb491cc7e892c709c752e9badecba986e570a288b6a9cd3d8a9a0683e15eb1
+t	blk.10.ffn_gate_shexp.weight	Q4_0	[2048, 512]	55cc14c7d297e9241e9b19e11a0fe1e213579df6c0361bb383249f4ca698d438
+t	blk.10.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	12cf68c1603e275849759949eb58e0b7956fa8fb1ceb0274a9a813c475560064
+t	blk.10.ffn_up_shexp.weight	Q4_0	[2048, 512]	c1381c2b7edcccc1e5c87cd686fee23a827c6c8c6a7690d0eee056782b7c2957
+t	blk.10.post_attention_norm.weight	F32	[2048]	e2244dff2ef30ef6adc3d50c9d3fc134a3d4648144cbaaeba85cfc0974935af1
+t	blk.10.ssm_a	F32	[32]	94ac7010115da6f508f0fea80bb2b3a91ad8261b8c5de874d91302237217fa39
+t	blk.10.ssm_alpha.weight	Q4_0	[2048, 32]	956593bfb83276731cbb42baaf608e34a1e0c07fdb1f2303a8654b8e614c793f
+t	blk.10.ssm_beta.weight	Q4_0	[2048, 32]	d822acb84907d3a941e0a3f97e9033480db2f76efcd9e8690d33f744e47ad3f2
+t	blk.10.ssm_conv1d.weight	F32	[4, 8192]	f430c0addd0dc5d6051517c7ca090fcdf5de3ff5226b167a36a6dbf9da81ca94
+t	blk.10.ssm_dt.bias	F32	[32]	721e7496d3b1eeef3c07ebda0145e0d36b75e10fb5742e85b5022c300d71c7b1
+t	blk.10.ssm_norm.weight	F32	[128]	5f7156624d43eda3a80bd61efd17c629153cafba237b73326b90f0660f6146b7
+t	blk.10.ssm_out.weight	Q4_0	[4096, 2048]	b14aa8038954164ab3176947c5995f9b74adaee2e98354401429e288417047da
+t	blk.11.attn_k.weight	Q4_0	[2048, 512]	5d8027aeea5bd84e517ebcd40df0b5b829631dcc0a37bf814966280c0d1f7f2f
+t	blk.11.attn_k_norm.weight	F32	[256]	41f8b08f0487a390cd60949301ecc07296de3f49bc415e71615c7ade0ed17416
+t	blk.11.attn_norm.weight	F32	[2048]	da01028235452e2428f4b099c74dcafcfc1c64c53b511caf65a725b0d9d11d93
+t	blk.11.attn_output.weight	Q4_0	[4096, 2048]	0e39037fd37e9971cb47ada431d5588268037a53cedf3b1f8947b91231785a40
+t	blk.11.attn_q.weight	Q4_0	[2048, 8192]	dcc02028da12e664c44d88b65510bc407370e385776621888eda2d4fd33c35f0
+t	blk.11.attn_q_norm.weight	F32	[256]	3a0dc3c44ebc1d399be44c1ccb6c530572d940ad2127869dd8cb77cbe322ff72
+t	blk.11.attn_v.weight	Q4_0	[2048, 512]	0edbcb616999a8af0cac7b2ecbf0837ed60e508866c40b8921f69af5a0f8a4dd
+t	blk.11.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	5a957cf7bcc5cde9b8fe486f95c1fcf85202ee910b09f27c6a010c03468f4c0c
+t	blk.11.ffn_down_shexp.weight	Q4_0	[512, 2048]	84d524bfde62e4c6b4d393d67e985b11ce9b55def22e4f3c4f58b0be390f4da8
+t	blk.11.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	bc8f1356fedde07504ec07ea9f73d9b763c6d0e6c9f5b2f77faa673ca4a9c3be
+t	blk.11.ffn_gate_inp.weight	F32	[2048, 256]	450566e0404b3662a9985853d9306d6d54872ee380fba70e3e7c838afffb247a
+t	blk.11.ffn_gate_inp_shexp.weight	F32	[2048]	be8550e84e067eddaf4c8eb0d7c92d322ec7a618e4692316e94f73cfafc98a20
+t	blk.11.ffn_gate_shexp.weight	Q4_0	[2048, 512]	37a97be3845dc3cac9baa2c7c022884fa6305d03dea2271a976ffc15e5a78bb8
+t	blk.11.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	f87e64db2cda59a85dde21fca9d381c4054396769dcb4bc6282ae5b267a29d88
+t	blk.11.ffn_up_shexp.weight	Q4_0	[2048, 512]	974a32081d961d66afcc02bdf773d5256433dafd4c84506f0e3ffec132f2aaca
+t	blk.11.post_attention_norm.weight	F32	[2048]	22a51933e23bb52c56ea239c5f1e0f2af0e30f8949aa4ac6124903cfd4745207
+t	blk.12.attn_gate.weight	Q4_0	[2048, 4096]	baf233da9d3235bc598862320443cfbd251dc7a3b2c52181e6326b2c3e5ea98c
+t	blk.12.attn_norm.weight	F32	[2048]	5213e1fa41fa3305aec129362f5dc51460cb3548ddb41791f4a93944117092ee
+t	blk.12.attn_qkv.weight	Q4_0	[2048, 8192]	6e465287a2ecbe8829ed4e9749444c802cce558d3c459c186d300cca0e260cdf
+t	blk.12.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	7c95576f315c7769f99afbd9ccb627f4e289b5541c78b24f6c0bd839933487ed
+t	blk.12.ffn_down_shexp.weight	Q4_0	[512, 2048]	c67d623835ea2e402819da2109835c40f4d74883aaeaaadf9ac817f9aea2e835
+t	blk.12.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	9f3eea4be685ffa8d0db3886b4e688ff77731e0694c6b935328d934f86b4bfeb
+t	blk.12.ffn_gate_inp.weight	F32	[2048, 256]	483fb9d9c74bc28949b551fc03fc6ed746e8b42192428f066e5efeafc63bb6b2
+t	blk.12.ffn_gate_inp_shexp.weight	F32	[2048]	f33e3a2c0443b903316db06406af506609f2e35a37991ed37b777aa2d0f3dd85
+t	blk.12.ffn_gate_shexp.weight	Q4_0	[2048, 512]	71ed0f261885bc4ff5d1a188d6efc00a733a22c6f9629b6d8758c15b4afc7e37
+t	blk.12.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	5c8399e2ddf0df23db4064d962b0f9aeebce4a0a20049cfee88b06f2f0b11992
+t	blk.12.ffn_up_shexp.weight	Q4_0	[2048, 512]	a390e8375f1c5e1a8023e435d888d4b2b410558929715c039c77651eac5240a8
+t	blk.12.post_attention_norm.weight	F32	[2048]	938c09b29b14619ed745815bc359dfc97eff6947c908417c359bc5473f36209c
+t	blk.12.ssm_a	F32	[32]	b6419c47d077080d519520783d70b828a6179894a61f80e0a1962a9d523fca12
+t	blk.12.ssm_alpha.weight	Q4_0	[2048, 32]	4c91fe6d68242166f85e9fddf9554a22159672dd3aa33cffe583a8a2be548f9f
+t	blk.12.ssm_beta.weight	Q4_0	[2048, 32]	120faad8275b5851df6d753ab3be79745d396db7c62fcf75bc60c673a3dd5ad6
+t	blk.12.ssm_conv1d.weight	F32	[4, 8192]	bf7b20c57abc1fe5e96c68aa59609cd7fb45d22fc98201f2e08edb8a9275a0ed
+t	blk.12.ssm_dt.bias	F32	[32]	1f6ed7600df405b71adfced42f622fdf009d85893651f11a0831113eeaabfcb1
+t	blk.12.ssm_norm.weight	F32	[128]	0b08c73437f36bd76b847a323610de504e92faa772fd1ad4e985bf38e258876b
+t	blk.12.ssm_out.weight	Q4_0	[4096, 2048]	68934ee9953546f3ac77cc7308f51b78b3c35e7736ee54add337c1205f1c2179
+t	blk.13.attn_gate.weight	Q4_0	[2048, 4096]	36c2b50a70fa84e2bad6d1dd569c21b656a85ed8e098fa4fc2f8c7b7e8ae7740
+t	blk.13.attn_norm.weight	F32	[2048]	a67fed6c4d83654cf79865223ef794f0dfd32e7041d818f3d8beb39e0de0cd6d
+t	blk.13.attn_qkv.weight	Q4_0	[2048, 8192]	b7d0965b893abb807ca3b6239ada6feda7b1e36056ab309b0370c94717842e42
+t	blk.13.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	b9995bf648682dd6fe8640888690ce221d39e102b745b30d4c40d278a0d87a4c
+t	blk.13.ffn_down_shexp.weight	Q4_0	[512, 2048]	02b8087c39506b82f400c68149bb79c8c01cb597c8f2ed7753327bacd87086f8
+t	blk.13.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	7be440c8cf3782c7d75d1e2cffe0ed39e37c942ddb49966745fe088f44c8036c
+t	blk.13.ffn_gate_inp.weight	F32	[2048, 256]	d366ded9297b34722b3366ca1881e81b41f7373922002e63d9c35b64eb55c8c4
+t	blk.13.ffn_gate_inp_shexp.weight	F32	[2048]	5bb060cff82b69a301660b804248f01a01235df99598aef80d58bf7015da2b63
+t	blk.13.ffn_gate_shexp.weight	Q4_0	[2048, 512]	443c7189e48cbbb596db056f78d50d5801039f6e9974a6c05f67410ff7c0d564
+t	blk.13.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	c49d2b98b982349f56f13edeffa23d9e715213a9124be431048259c8b65f83ea
+t	blk.13.ffn_up_shexp.weight	Q4_0	[2048, 512]	675262bf6e792cab8a290f9e8b6abdc8a5439f52ce7d462c9e751174d976c8ff
+t	blk.13.post_attention_norm.weight	F32	[2048]	57b134d1a96a733bdf001db823c714a678b49fb9c0aab1780b2e9a42e3fd561c
+t	blk.13.ssm_a	F32	[32]	bb40dc4e2a60286c817ec8a36a47610b61320415ff636145ded8ef9f063fc518
+t	blk.13.ssm_alpha.weight	Q4_0	[2048, 32]	7487acd9e24574b6c0f8f182a0fe629475a9e5fce9cfe5bd4722534f53c458aa
+t	blk.13.ssm_beta.weight	Q4_0	[2048, 32]	2a9dc27d57cd2b2f835f0bd8a3cfa87897fbdaf05bbdab48fb55992a2d14d26a
+t	blk.13.ssm_conv1d.weight	F32	[4, 8192]	2a1d8beee8a75774b8c81e26d7c947603e43a906cbe51b4732f40bb2bdaba375
+t	blk.13.ssm_dt.bias	F32	[32]	c8a93b884096100f8a1d4d7cb2ed40f0e17e999a40df5625db177e20c37d2afb
+t	blk.13.ssm_norm.weight	F32	[128]	f1cdba67dc2bfcd5964f1bb305249184c8a9c08fdfa24d64c1a9c7513108f700
+t	blk.13.ssm_out.weight	Q4_0	[4096, 2048]	391c18737bcedd5e110c754450f6c48e9f564ca3a7e67017345dd907aabfe27c
+t	blk.14.attn_gate.weight	Q4_0	[2048, 4096]	dd11ef21fb91f45d3a716d4c6a71312e85cc6a69ab580d11988a8c3093820e4b
+t	blk.14.attn_norm.weight	F32	[2048]	fa1345932259c9b7584742602bc4a94e831032f6a069d0482a6be43c131456bf
+t	blk.14.attn_qkv.weight	Q4_0	[2048, 8192]	de4511ba4000aa2d9b2edfa2d07e472f68c5448e90375f14f64e9da1f2f32feb
+t	blk.14.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	b10d77b858a07424bc46f2bd8b317078f6121ebb936d3c97d53232c3315b800f
+t	blk.14.ffn_down_shexp.weight	Q4_0	[512, 2048]	a7810dfd4f52892be2f461c1f355bd60be6c90c261f8f081afd7658948b6f1b4
+t	blk.14.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	3b1ed2920e8c18bb747ca98103620b209752019751ab27724c18d6ccadc50b64
+t	blk.14.ffn_gate_inp.weight	F32	[2048, 256]	5902660d302e569a8f0e76e513396fb8c4efed64039485ddcfd52d122c546b91
+t	blk.14.ffn_gate_inp_shexp.weight	F32	[2048]	90510164aa8b32f2624ccfd285a53dbb3ac3ed0b3f8c1e1fa7dd31e1723a2cdc
+t	blk.14.ffn_gate_shexp.weight	Q4_0	[2048, 512]	5933dc8fd2a06a8d7c10caa5f84bd3b2fab4b05e4a14903fa3677340e37df83c
+t	blk.14.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	9b415ac005eeec75e5073b6128e9b5111b18f9b1ad1bfa945d486f5c6aac57f4
+t	blk.14.ffn_up_shexp.weight	Q4_0	[2048, 512]	0687eb6a1c0b3f758d87a73c5b39a7274af6a26f633cfc85a21c48a0381d0503
+t	blk.14.post_attention_norm.weight	F32	[2048]	16b829ce198728eab55dcaf8aecf6196f20056ffee276f321b9da145efed1032
+t	blk.14.ssm_a	F32	[32]	e3f00e4d7f1a752e9793940ac5168107813f626a62b3d8a3fc44db41b119cc13
+t	blk.14.ssm_alpha.weight	Q4_0	[2048, 32]	44629814bb7bcdfd999fb3bafde3e0404fae989bcaaea1486e550a2dbab3b76f
+t	blk.14.ssm_beta.weight	Q4_0	[2048, 32]	a8f2a2fe7ea1d730917b489eeabca61f643fe62658c9839872ce4fa9fe504211
+t	blk.14.ssm_conv1d.weight	F32	[4, 8192]	c76eb7732d16ec59f5c25dcfc11c0a8f3d8e0971596374222b1d2eee92a7bccc
+t	blk.14.ssm_dt.bias	F32	[32]	2361530f9654e6fbf3b4d9759eedb798e44869f10f991c075f102ed3a1965a66
+t	blk.14.ssm_norm.weight	F32	[128]	5a13c2cf15cf100b0d6b9276e739c0668504f7cd0a03b0a9f131d20394e76314
+t	blk.14.ssm_out.weight	Q4_0	[4096, 2048]	47a2c8fc3fab7a36f8adecc1cc0f3bcd5b771ed69cd67aa10b6c79b74921ff68
+t	blk.15.attn_k.weight	Q4_0	[2048, 512]	b46a567ff38190a335d4eb7ac78d71800956490c22e8d749d5fbde496862d30e
+t	blk.15.attn_k_norm.weight	F32	[256]	68031bcede62b2a9ea30e98af6c5dd8580c141ed13d560e206f8781863983a39
+t	blk.15.attn_norm.weight	F32	[2048]	5e58ac632d8d8a3a1692c2a2d63d031eed8098d656c04730525bafea697aa8c5
+t	blk.15.attn_output.weight	Q4_0	[4096, 2048]	a87ce3d7fdae7c4b87eaf875c4c6365c64de3a04e308f8f102f353ce0274b8ef
+t	blk.15.attn_q.weight	Q4_0	[2048, 8192]	125cd50a7dadbd00fc00ac8605f2ea9a0cd640c1c4c67cd43cfd6ec6cc3e1d0f
+t	blk.15.attn_q_norm.weight	F32	[256]	7d5916de404f184f7d565298678b2762961b7ace27f1a9722b140ef312870f41
+t	blk.15.attn_v.weight	Q4_0	[2048, 512]	7db241917dc26fb2b097b8de19a682fa49d8665be297178c909a85f6216ed2c0
+t	blk.15.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	d7be0fc7ed95fa1e6edcfc3759a17bb46cb5319fbe7b4733d35d9d695477d853
+t	blk.15.ffn_down_shexp.weight	Q4_0	[512, 2048]	10290999a2726bb8cc8b78fb7d2e2da361510db5d9fa7240dfe099c53f782abb
+t	blk.15.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	392cd626bd6b60710c610283774be2b932dbc059e1a1ff9737b3d558da026115
+t	blk.15.ffn_gate_inp.weight	F32	[2048, 256]	26a9300e29294d2c0c9a00903b82044f85faf70d53a1743e1d01dd925c8a40a6
+t	blk.15.ffn_gate_inp_shexp.weight	F32	[2048]	025311e3bd3467dd106aae168acd5412fddbcae6cf5e44c5a24416a3c1d40c72
+t	blk.15.ffn_gate_shexp.weight	Q4_0	[2048, 512]	9c4d73dd95f42de094975793e74661a4a656df2ab32e6f25df11d5892a04c7f4
+t	blk.15.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	65be1104cc6a5aa974d0c83dc4f1703c98bef5436a000163079a2708df87014c
+t	blk.15.ffn_up_shexp.weight	Q4_0	[2048, 512]	e7b679f6e71a7231c7eb0224d59451dc5ed2d8cc7fe50c90cdf301ee8fa7eb28
+t	blk.15.post_attention_norm.weight	F32	[2048]	df008c4daeffd5cdff46a802bc2d57f9d3525c1a94b434092f4884f7fe7ca7ba
+t	blk.16.attn_gate.weight	Q4_0	[2048, 4096]	15a64497c436bdbaef81ee043068be0509598c98e40e6ee860708b06f0b1789a
+t	blk.16.attn_norm.weight	F32	[2048]	6b2a33b641f3a097ab90c18887e47806458e7756e7d7f9388a07c6ebb6a99e32
+t	blk.16.attn_qkv.weight	Q4_0	[2048, 8192]	173556e8babb9be7dbf24d959f59ca34af909489ba5418bd12f52fdce65c58bc
+t	blk.16.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	7b33d43baee601fd7066742d4d3a6214eda99a957f28d7fbf6ea5f1d141ad980
+t	blk.16.ffn_down_shexp.weight	Q4_0	[512, 2048]	f9a75cb724e1f40fd6dd3ea7e0fc9753187ef16c959225a53330b8286fc0a4a2
+t	blk.16.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	5eda1d47d002df96929910e63492dbc1d55cf1db6a49de83792ef9b509714b84
+t	blk.16.ffn_gate_inp.weight	F32	[2048, 256]	2b34eb09fff08b4f329a8144b8f0c268196f20a5c111605ffe8d9cba2738e68b
+t	blk.16.ffn_gate_inp_shexp.weight	F32	[2048]	1f56afe543fbc4ec8bf8e4eb6d02e018943eb8db86fd144c452f47fe32dcc56a
+t	blk.16.ffn_gate_shexp.weight	Q4_0	[2048, 512]	f80004174f9fd972414adcd2e37420d1f048f3eba1f20d122ac4c4a15fc22ea1
+t	blk.16.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	e943d2dcb5e0439ac7b7d27aee9fe19c121d491a6c4461f15893c92eab8dc863
+t	blk.16.ffn_up_shexp.weight	Q4_0	[2048, 512]	dda30bf6a8547e874e94990fe77b290f684167bd3193b4db78f8b76d568480df
+t	blk.16.post_attention_norm.weight	F32	[2048]	fe97e3577a638868575f7ebf4cf51cb5ebaba279b3934b27e9c76611ee4f8253
+t	blk.16.ssm_a	F32	[32]	12eeea9d16953e4e2ada995ef1bf4db02fd29c8ef6687334a0d718d71e39164b
+t	blk.16.ssm_alpha.weight	Q4_0	[2048, 32]	382650222f403702d47804a1de8e73938d22c77139b988625ab9065bc1d4a316
+t	blk.16.ssm_beta.weight	Q4_0	[2048, 32]	daa66898e159417f91d33f7a51a04a68d0c02ba95fa1a1a653d25b7bdeba2771
+t	blk.16.ssm_conv1d.weight	F32	[4, 8192]	8b2e13cd83671dead3f21f32bf662a4b3514c324af24986fab26d4fed7acd08b
+t	blk.16.ssm_dt.bias	F32	[32]	ece61c8c29305deba08381e203122906b144d0a4e01f81413b83c9a553ac01c8
+t	blk.16.ssm_norm.weight	F32	[128]	a65674976c1c3133e335009a69da4833aa832fcedb0795c428594efcfabe0f67
+t	blk.16.ssm_out.weight	Q4_0	[4096, 2048]	ea13333b3657dbd350ffd74c1efc813cdaca9729df41d154dbb125af84877087
+t	blk.17.attn_gate.weight	Q4_0	[2048, 4096]	0281daad5008bc56f49a8a34720097a15d0730e190ac20c4edec0c17b8f15e7b
+t	blk.17.attn_norm.weight	F32	[2048]	9ba4094c37228961be2f91e0d7299c7a2d6ed50ffbd30145a02b8bfba30430f4
+t	blk.17.attn_qkv.weight	Q4_0	[2048, 8192]	620318718f495f243dccf3855e27377bebef4520b542204ff984e8ffb430c5a4
+t	blk.17.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	bac3c90554c26e655f1d8f578792a3284222b2c3a7cfe992aadbef4c1603eb16
+t	blk.17.ffn_down_shexp.weight	Q4_0	[512, 2048]	44d268536dbb2d3e25e75619213d92b53d5faaf7666cf6f97c0665ff88ffed7b
+t	blk.17.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	070cefe54e3c63dcb45546934df37ef9106c67df00676a0bf0984430b65741ef
+t	blk.17.ffn_gate_inp.weight	F32	[2048, 256]	8f8423f00c37b832d8f61bf5193f9b1dafd789e0c507510841c3de9cd49db2a8
+t	blk.17.ffn_gate_inp_shexp.weight	F32	[2048]	2789c021e511865d964e17692d940c7bc379d3f3a8ba080d4fe728d4ee485d6b
+t	blk.17.ffn_gate_shexp.weight	Q4_0	[2048, 512]	d0170bd3285cc6fed12010b44bbd5e9cbf50f41aa81e23c9266528f027e62b9c
+t	blk.17.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	36fb8d47755b4840ab471033f019023b802710522b386beab482c2ee119a9849
+t	blk.17.ffn_up_shexp.weight	Q4_0	[2048, 512]	80cc96fd0135a144ea2f1723ee64369d11e0ea5855a6680aba1ae71734c71120
+t	blk.17.post_attention_norm.weight	F32	[2048]	d18d3d29734ee405954e5294378e4290dab39bd15e6cd3868251d907331f716f
+t	blk.17.ssm_a	F32	[32]	fdb68c54ac6e647eb2f0f8951faf6327a11edb24fce759230c4cbd82fb7d6247
+t	blk.17.ssm_alpha.weight	Q4_0	[2048, 32]	d3f7ad2450d59ea80d1e4607739c42450da2533a9b0e4a737b3e5138c4206578
+t	blk.17.ssm_beta.weight	Q4_0	[2048, 32]	d1453382da38f8a5cd2a815460e3876eaca5f1954064d805875c62562b2bba17
+t	blk.17.ssm_conv1d.weight	F32	[4, 8192]	808e9ce41d84c8734aa6e3d427aa2f5f846a6e7019c4d793665e0020b918fd90
+t	blk.17.ssm_dt.bias	F32	[32]	5d919f5973806741f0d8c16574cd45d06c7c880257f6b7da6aa3128f50c31e24
+t	blk.17.ssm_norm.weight	F32	[128]	2c11a94bbb7ad8f6b344f9080e7af71e39e9179e8b1916db44cc86e9f520b71a
+t	blk.17.ssm_out.weight	Q4_0	[4096, 2048]	cc022d777ea5f3ace3bca41117bcace93d72b42b212a9347e34d9b8351604550
+t	blk.18.attn_gate.weight	Q4_0	[2048, 4096]	2a37a32f178c41d667303e5554b890c816b9fcd44eff0901c69bf1a60c69e22a
+t	blk.18.attn_norm.weight	F32	[2048]	0bbd2dd69af69862b272adec879a64715909d48685667c3c9239e8b50b83161b
+t	blk.18.attn_qkv.weight	Q4_0	[2048, 8192]	920d57e97b2f3b04c0ce56527694aa8f999c530390e2ff6d91ae7b6e2a1ba2e1
+t	blk.18.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	468601dcb2f23fedcae8b0156505aad2d093efd5c31e25d77e1669dd3f93d0ab
+t	blk.18.ffn_down_shexp.weight	Q4_0	[512, 2048]	bb7a0c9a2e1c274598d2dd3173eb65fe7054216a1c50aea14929be456cfe6b70
+t	blk.18.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	d7af2b9848a06ff8c8f3783e58e6d8a9f1f0206e0c8dd29a59c4b64e52859c50
+t	blk.18.ffn_gate_inp.weight	F32	[2048, 256]	08695ce4efc80518b4b5d8c2722045c3672c88c25ff955be16d6171bf1e8ad9d
+t	blk.18.ffn_gate_inp_shexp.weight	F32	[2048]	b28135ed1abd8e259f3d563c5112eddebcf25d7ea2297d929ac395c7e30aa5ae
+t	blk.18.ffn_gate_shexp.weight	Q4_0	[2048, 512]	88e3737d6f890dc796f03b8e567c74b296cb09f9b746ec24892aaecb2b7723b5
+t	blk.18.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	5a2e242d4c01eab28748ff2e97f28aec3b578fedf9c27d0cc0d5c250eeb37f13
+t	blk.18.ffn_up_shexp.weight	Q4_0	[2048, 512]	77bd68c447d9bbff9d67f4a9dbae63d8ffaeade515be006e6e7853b619141366
+t	blk.18.post_attention_norm.weight	F32	[2048]	522d65b310023785c6728188d4a34952236a024127e606c30b8f2ab9135bede1
+t	blk.18.ssm_a	F32	[32]	317e83375386205b76759cc2cc8874e615e773fb7e5dee3670b4bd60e1b25b79
+t	blk.18.ssm_alpha.weight	Q4_0	[2048, 32]	f960d562dcebd34ce1ddd2ea8a8d96d2b6fd6958588ab0797f6bfe34eaf0af1f
+t	blk.18.ssm_beta.weight	Q4_0	[2048, 32]	eb3eeeb23fcb7bc0635e8f02421c9aa9c86cf04b4382f71b4924fa46c57efef0
+t	blk.18.ssm_conv1d.weight	F32	[4, 8192]	eb029a7f9d7f61a56abe0e893a390e4471ec26258cb7464e11a9c8eadff6153c
+t	blk.18.ssm_dt.bias	F32	[32]	4992c8d4494c4c974a52a142abf4da27af6e1380f417b4cf066a61829d9e0782
+t	blk.18.ssm_norm.weight	F32	[128]	37a77f90df5407125d79bc5f6641ab91742a4a00489ec71bae5e2985944df957
+t	blk.18.ssm_out.weight	Q4_0	[4096, 2048]	cff6290e0e8dde2d40384f0b330d18ada261129014b4ad4923cecd636845553a
+t	blk.19.attn_k.weight	Q4_0	[2048, 512]	a3b7131ba23606ffc8d27abba127e3e6bc81b87fa952cd00d1a70bae738fd8b8
+t	blk.19.attn_k_norm.weight	F32	[256]	bf5fe1535430475e5ec58d5895059b382ab92b95b7a6a092014b3f19286d33ab
+t	blk.19.attn_norm.weight	F32	[2048]	6cf766bd08651d6897625c6e38a7f95537d015318028029bbd825a6c24374b18
+t	blk.19.attn_output.weight	Q4_0	[4096, 2048]	e020188db0117d0611d6f54d16f8e46d7e11b7f23c4c6921cc11c72daeeb791d
+t	blk.19.attn_q.weight	Q4_0	[2048, 8192]	1486349e2df30cb8e8c31f6c5ecc19b332d9939041b19fe85399ab2d7634d26d
+t	blk.19.attn_q_norm.weight	F32	[256]	c1a0357d975013c0362e48473169ecb8c2c7706ed1c9ade23e8d53b9a010bd6e
+t	blk.19.attn_v.weight	Q4_0	[2048, 512]	073712745929e7dcc5a1610a06f1a200bf50ec661daca19039293af8c195a1c2
+t	blk.19.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	4afeceeaf47d23fcab84f9e7f28de07366c7c5dd2d8c8148c2594a98f3a24483
+t	blk.19.ffn_down_shexp.weight	Q4_0	[512, 2048]	c3e93a41fc6f4683f601ffcebc6fce9fe8e2500d3a5fa829f87f3d60bd8e2f92
+t	blk.19.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	9e6ce3558b4b03d6d997667177811d3256146f09773d9c73bf15bbfd73a9e2dc
+t	blk.19.ffn_gate_inp.weight	F32	[2048, 256]	e774eec996a0ed587668ffeaf11ffa8108faecfe9d507bece715e78e1d1dd654
+t	blk.19.ffn_gate_inp_shexp.weight	F32	[2048]	261fba9c288f554214946f4fc65abe10c5f211da7cd0acd0cc9eff0f0c4a6871
+t	blk.19.ffn_gate_shexp.weight	Q4_0	[2048, 512]	43ea7e6a0a49a7c36bd2e56bb7c5cf3b801b6f7683c577eb980575e9d59f2722
+t	blk.19.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	4cd0ea2e1c57c6cd73f96d5afe8178f551bd778247371f1f5cb040c2eb669b56
+t	blk.19.ffn_up_shexp.weight	Q4_0	[2048, 512]	6a17fb525f3f0132db3dc2f36788286eb6bf14d6662370e7b73b9fff9bef5877
+t	blk.19.post_attention_norm.weight	F32	[2048]	1565f4ba75937001b78c18f0c82d1b2fd2ad5c1fe01aff845b28fa3186395a02
+t	blk.20.attn_gate.weight	Q4_0	[2048, 4096]	c46ab1ca12f567fcc994811a2814b24f3fb7c04cc2c2df7605ce9d20703d9a1e
+t	blk.20.attn_norm.weight	F32	[2048]	5ddb5a36b9efc486e5faf05dae1cb7ceeccc69f18fe2bcfc157d9332e4e0470d
+t	blk.20.attn_qkv.weight	Q4_0	[2048, 8192]	122758f120af381bac72e115751adfb224e6247df9b7d1b528b736f792d89fa3
+t	blk.20.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	b4d3ed5b1e1fd775e777d9caf181328fbc3126a60d8e3b466c8852ef423989c2
+t	blk.20.ffn_down_shexp.weight	Q4_0	[512, 2048]	848e68f660d62183012d673aee88eca3926157ffd68308d4dd9583543f68b57f
+t	blk.20.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	66dca2bb2aa29be20dece27a30ec0d6a8e107f8045e9e09d9c73271130a96c2f
+t	blk.20.ffn_gate_inp.weight	F32	[2048, 256]	aeef1fccbbbd1ada323fb39cc9aeeb474cc639a7441b65ff12a62ce5dfdb90d5
+t	blk.20.ffn_gate_inp_shexp.weight	F32	[2048]	34e8aa999087393e946fa9f2f727f3719af74bd6de1d9820253624d8afd4e00c
+t	blk.20.ffn_gate_shexp.weight	Q4_0	[2048, 512]	8ead7f7a98417b57a689014947e99c54de561507a5934e01011104a819412564
+t	blk.20.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	163579ef37707d277d78d2ea240fc232089ddc657b412602d12ee12626e4b08d
+t	blk.20.ffn_up_shexp.weight	Q4_0	[2048, 512]	7cc3fcd9b66c7ce6349da216eeb24347479a26560a3041dcff7da31711c29638
+t	blk.20.post_attention_norm.weight	F32	[2048]	c934426fdf15b32168bf4f9d17e7583b38a0eaede077763e4f95fe5d8ca31771
+t	blk.20.ssm_a	F32	[32]	6bf886be2ecee02c29631a469e0fe0345a893349e97d15905f1f6a94d7c0cbc1
+t	blk.20.ssm_alpha.weight	Q4_0	[2048, 32]	25583693910f5762fde35577f2c276680aafd8238a574be90c7c9773e410863c
+t	blk.20.ssm_beta.weight	Q4_0	[2048, 32]	b748d62437a2f6118b4c5f7fef313a93f69723f63931508b6ee6ebb6a60667c5
+t	blk.20.ssm_conv1d.weight	F32	[4, 8192]	ab23f4760f428f1ec9cc934f529d1e169c1d2697afc1a8dcf4e6c2af2aac3241
+t	blk.20.ssm_dt.bias	F32	[32]	e911dcf739e3522ec87f449b53f08dca1bf5c928fa21f187ba8a7c15499699af
+t	blk.20.ssm_norm.weight	F32	[128]	f0d14140ce8b7737650ac917f47d168360c47770b515123df754ec7eae32c838
+t	blk.20.ssm_out.weight	Q4_0	[4096, 2048]	6192a622a83dc2a7e85408010f27d8049e74627354b2681245d12b2fdd897ca8
+t	blk.21.attn_gate.weight	Q4_0	[2048, 4096]	c16c98a522af92df476073c3865733a7ea3a2690119c6085230da5cfb68a08de
+t	blk.21.attn_norm.weight	F32	[2048]	2fa7f2a41d22df78189c0a3f2a39bd5761e6496f11f291af56175cf2a9ac9371
+t	blk.21.attn_qkv.weight	Q4_0	[2048, 8192]	450bcf71d16b7ddb4d197f18e57c4a6e6584bb85d73a720c806eaea11b89d9a6
+t	blk.21.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	6003e7454ba7ed73b6424358ef1803f9d09bebde90b5037fef0e067c8c0f3c07
+t	blk.21.ffn_down_shexp.weight	Q4_0	[512, 2048]	32f38939987adc7ae7a2b77d2dd1d71d6288213c6b97ac1b6b522abdcdab9993
+t	blk.21.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	426073478b66aa48399e14ae5be2ab69c546d5637e64b5b7f05010ab001da892
+t	blk.21.ffn_gate_inp.weight	F32	[2048, 256]	dab8e7acc8bce45c4138188e4c5c165900d37092b99a5ae32b7cd48a0a1a9fdf
+t	blk.21.ffn_gate_inp_shexp.weight	F32	[2048]	3340f5664487b53c7cef6e90c5ba2ab20d282974d19c347a9f7fda023c9dad31
+t	blk.21.ffn_gate_shexp.weight	Q4_0	[2048, 512]	3be4cfd92b4a9d2e4945cdd25deae32318c8c47d7483173555cafaa666afbe20
+t	blk.21.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	338c58993ebd2f157b7e28dcd51e0900712ec66c3d8b608413f25fb6db3d29e2
+t	blk.21.ffn_up_shexp.weight	Q4_0	[2048, 512]	0ee51f22396f275dbeddaeb342969437401b95e0a35dbf8332d68fc4f5de88db
+t	blk.21.post_attention_norm.weight	F32	[2048]	244fd7582f04f263706fbc1270f8e2b5cab91296f6156b8858cbca5c3a4993fd
+t	blk.21.ssm_a	F32	[32]	c3745b834bb58e3edddcc1e03a6cea9e84c4ded082c32bad5de8ebe3a93558f7
+t	blk.21.ssm_alpha.weight	Q4_0	[2048, 32]	5d357319dd70221bba1064800f08815d1c710d07957ff53296dbc6918f445773
+t	blk.21.ssm_beta.weight	Q4_0	[2048, 32]	b7f61fb7bb86c6a9a4e329268417a636c3e5228f09a7d7ae17f48ef60f9e3f46
+t	blk.21.ssm_conv1d.weight	F32	[4, 8192]	f9137d59911ce40cff3ce87d4b76ef7db1562b49454bf63db03cb09d2d40f574
+t	blk.21.ssm_dt.bias	F32	[32]	0214fb609bb7cc180053a4f26b46bbca2970ac8a5fe5231678b34d2ff27f96aa
+t	blk.21.ssm_norm.weight	F32	[128]	1b79c825ae0432b4f6e011d3d643ca8f2a48e1c5d11f87f70981581ee82b18c6
+t	blk.21.ssm_out.weight	Q4_0	[4096, 2048]	1f66b81e8053d2cb7e64303af7fdf58b605a5e2260341e8593bcd80e00b09262
+t	blk.22.attn_gate.weight	Q4_0	[2048, 4096]	dd8bb1f3b48f0ade31f846adbac5a4549304a1ec14840769ef1414d38a90dc48
+t	blk.22.attn_norm.weight	F32	[2048]	8c3b0f83e7e16a70c4ff2b5000790eb3a37724e236484fcefd3e88fdfe851a00
+t	blk.22.attn_qkv.weight	Q4_0	[2048, 8192]	dc67dc717ef88d1b3141956c2af6948b5d098c7d2cec91f7242341ccd7308db1
+t	blk.22.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	fa40dd8ed987b7077d82dab00a4b77cd4d727c8f241bfa54b030339e13ba4745
+t	blk.22.ffn_down_shexp.weight	Q4_0	[512, 2048]	625d50d4f01fec7baea8a5661bd4891e292399ce7c2b3e110a28e6a706038542
+t	blk.22.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	f124827d4c734f6301322055b5f1e57ab4fa0af046d6055bea7d37b2c020c41e
+t	blk.22.ffn_gate_inp.weight	F32	[2048, 256]	356238dfe1da359fafb1b90685a9cf01c8da4e22acec36e787b11984ca2903fd
+t	blk.22.ffn_gate_inp_shexp.weight	F32	[2048]	a5643e1f678f203e12bd693f4246a0d05fc1d9caa3097ad2ccb5253a83d5d43b
+t	blk.22.ffn_gate_shexp.weight	Q4_0	[2048, 512]	9948c974a86edc71ba995a701f83475f33e9fd2060ebd8816dee229b76ebed49
+t	blk.22.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	266e70d8d0ffd2157f21855fbb526f3d88cd566b693d7fc9b6b7b7ffb16ccfc5
+t	blk.22.ffn_up_shexp.weight	Q4_0	[2048, 512]	99105378884fba64dbc2218f3068ca26892ab785e4e87730f9d663ab9a154e69
+t	blk.22.post_attention_norm.weight	F32	[2048]	aa24af3016f307a3d244ce44835f5514291534ddb61d186aa907de99fab6bad0
+t	blk.22.ssm_a	F32	[32]	b1c7c5c4f94fc5c3a2c9b6fa9c1e6d7189e7733082fc8920fd3fe4cd9b7fc56f
+t	blk.22.ssm_alpha.weight	Q4_0	[2048, 32]	07c3b306371b67c330728159bb2094b9208d99e414778ee27ec8ac5e0fbcf41a
+t	blk.22.ssm_beta.weight	Q4_0	[2048, 32]	4ef2e7810bd3dd3c827cc184a28e8c70aa3d5574ed456b8a7ebb57a6b8d3480b
+t	blk.22.ssm_conv1d.weight	F32	[4, 8192]	2c1dbc4b0957c909dfc846af73c1966605dee896d8ffa77ce0d62549804a1286
+t	blk.22.ssm_dt.bias	F32	[32]	585508ac980ba99bb7024be65209116c12b9c63038dced8b7da9e0e9fbcbb7ad
+t	blk.22.ssm_norm.weight	F32	[128]	197c6e2b894d412ecb1b24ac6553af2fe2a0b82bfd90ef17891b688d0191c892
+t	blk.22.ssm_out.weight	Q4_0	[4096, 2048]	3d2396dfc7c29ca6beb03bd8ef835c4d7967803dc74de170908bea01ac521b68
+t	blk.23.attn_k.weight	Q4_0	[2048, 512]	d3801eed8bb6ae56eaa2b9c52604de112d0c73e3a255fe1d2cbf22031264beb4
+t	blk.23.attn_k_norm.weight	F32	[256]	6f76f5a3331c8740aa7350b9bec2d686b34e9f24d77b9188f9b043303e34a988
+t	blk.23.attn_norm.weight	F32	[2048]	d7364da16cce7a7d5746355462490230fc992d0f5f2da1277cdf5189676f5bb9
+t	blk.23.attn_output.weight	Q4_0	[4096, 2048]	bd49bda3d8c1033765fa4c5988fb16b7f44c70cb136fca6ec5763e7b22302ca6
+t	blk.23.attn_q.weight	Q4_0	[2048, 8192]	050e77a2fcd8015fc18ca1e782beca42cf0078730b39fe9dfc9ce65647b0debb
+t	blk.23.attn_q_norm.weight	F32	[256]	4d36df1a85ea7f724ec5ada95fc6808f86fd07d4ae2e55d9b2f77975b7e1a485
+t	blk.23.attn_v.weight	Q4_0	[2048, 512]	bd8b0ca160c79e821a47d5571312135116bb223d1e5e2e1d25b0a41986339e3c
+t	blk.23.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	be8ee6b27489749885bea479996f705c90ad100b5d6fe3984892a81386070dce
+t	blk.23.ffn_down_shexp.weight	Q4_0	[512, 2048]	0f910a25ab52de2e33b23ef69bc8838cc4d1f56ffaaac0d92334cddff2707f6f
+t	blk.23.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	50271b14b71b0ccb4cc6a293f8655a25e477e706b0f43d9d7ef9a9b3b9192cff
+t	blk.23.ffn_gate_inp.weight	F32	[2048, 256]	0380d4052346ea809512fd2c440513f1447fdf86392c88176eae57ab437e36ac
+t	blk.23.ffn_gate_inp_shexp.weight	F32	[2048]	81ec809d76a66cbc42df364012d519ddbda258f4a41eefadbc1fa3e2c0773d44
+t	blk.23.ffn_gate_shexp.weight	Q4_0	[2048, 512]	3d1ae7284fcb9dae63b364ef1013a1c341a008e1dd09e0af73fa7ce080e03be7
+t	blk.23.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	fc6fc2487e779bb44465c1a5e8cb322838823017256280c65c92abf10f1055f7
+t	blk.23.ffn_up_shexp.weight	Q4_0	[2048, 512]	9e82c097631bdc3738b70dfdf77295da3a3151806e46e3d56729f1875012cf51
+t	blk.23.post_attention_norm.weight	F32	[2048]	7f03ac07e07a6bf4f010cc67a42ec34295b6792de5f7d5b4f31e61bf2c995c64
+t	blk.24.attn_gate.weight	Q4_0	[2048, 4096]	fbe4c5c352f6815ba6e47f5641a6719f4ca5a428af81527c0e410da5b61be483
+t	blk.24.attn_norm.weight	F32	[2048]	91a3b48b4ce892d1ec0ce75ecaef4553b01566c49fb2c282aad495abf1271037
+t	blk.24.attn_qkv.weight	Q4_0	[2048, 8192]	25cdf378a6c3f7769097f1185c4a3e6ce7c93143c4525d1c35cd4d7c092b09ec
+t	blk.24.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	5e63d46bc9723bc9a207dca2290f20155ac3f967b72fddf3f007fd212a9bf494
+t	blk.24.ffn_down_shexp.weight	Q4_0	[512, 2048]	3e86bf0d7640afccfad3f4098a897342469157ffbf591e32cd79450217f5d6cc
+t	blk.24.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	b77f8bed9882a6a234dccb24a1d86e59725c8fe4d8bd1d554e34b0c113ad9a73
+t	blk.24.ffn_gate_inp.weight	F32	[2048, 256]	0655724f1d05f186998bbe4586170df6a0b6c5841eb3554f2f30d4fc6766cebc
+t	blk.24.ffn_gate_inp_shexp.weight	F32	[2048]	a7790f1e0b47a4455e6247c0eaf99cbad4923c7e31c515ff79593640de92da06
+t	blk.24.ffn_gate_shexp.weight	Q4_0	[2048, 512]	0c8672d2c9b1b641236fe634b74fba127305f3d6a6dfa42875bdc0ef3df664a2
+t	blk.24.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	2436efa64b0c03c5186a2ef22963c6c530fe90d1d654353c62b3cfd39dddfc16
+t	blk.24.ffn_up_shexp.weight	Q4_0	[2048, 512]	d45a4a9965c835426020559d3a640bd9b60fa3c4c5a245b8d262c2464032d0be
+t	blk.24.post_attention_norm.weight	F32	[2048]	b3f627466002ebea4f87b661e21c0f29279c8554a446d7408e49ebe72420f5c4
+t	blk.24.ssm_a	F32	[32]	c1cad01f25801c14d0da2d88938902d30cad0687ed1ddc2923cfed349c46c87c
+t	blk.24.ssm_alpha.weight	Q4_0	[2048, 32]	87f737fbe72bc06a54b40633ab45c919af5d0eae6e232201488e109455091241
+t	blk.24.ssm_beta.weight	Q4_0	[2048, 32]	a9c515aa8fdced3f1ad0fb7a22f8ddda07181c4af6a53a2a16d190a593724026
+t	blk.24.ssm_conv1d.weight	F32	[4, 8192]	8a43a2860ee4af762f8661bdd83f7889739336703faba1f27562a33f7162697a
+t	blk.24.ssm_dt.bias	F32	[32]	1ae5a615b970db0336cedaf4ced047fee9394aa636e42839751bcf9de8a11fea
+t	blk.24.ssm_norm.weight	F32	[128]	143bf25b7b2e2baee50e5c6e8955be33495f2f2afbb731e8ecce6815294588f9
+t	blk.24.ssm_out.weight	Q4_0	[4096, 2048]	4a6ae8eb6268f29834972c04043326765c05a772ea166cf70bddcdaad7205b3d
+t	blk.25.attn_gate.weight	Q4_0	[2048, 4096]	5fb7c02095db23f34e5588a0086563c993e02f04c68ffdacc0f9dd0837eecc12
+t	blk.25.attn_norm.weight	F32	[2048]	1258e2334dea42b3b0d4005e86ee7389f34b97dea7d7feeaa3ab6cd3b9a249e7
+t	blk.25.attn_qkv.weight	Q4_0	[2048, 8192]	2b62f98bd9b15436baf4d2cef97da22e3b08cee1dd71c53524e4abc484672c1f
+t	blk.25.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	b928dce334816d6d4e4ec5f17fb1f6389cf2049d6ccfaf2857cbcc0d8e3eca39
+t	blk.25.ffn_down_shexp.weight	Q4_0	[512, 2048]	50e20f82f1f4b962160917b8980a0a965488de7d14852a92a1583c56f979a043
+t	blk.25.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	cd85fde1d7dc7674add0742b3f60c49ca6f1007c97c76ad57b33027b13516b9a
+t	blk.25.ffn_gate_inp.weight	F32	[2048, 256]	be1d9dd9bce1b7a65c56386884831dbce3c852b623ba6921fc243c0ac9b9b024
+t	blk.25.ffn_gate_inp_shexp.weight	F32	[2048]	48cc0c9780c3dee8e42607f79ba8dfe1b1ffbb134db45b000d870e3cd86892f8
+t	blk.25.ffn_gate_shexp.weight	Q4_0	[2048, 512]	c383d78e73285067eb444d4e94ccfe645f5602e6816e4b76603e1590e42949fd
+t	blk.25.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	1c34ef97abcaf8b345d9e1e5febb13f8a71bd56dfe30f6210912927a4e150531
+t	blk.25.ffn_up_shexp.weight	Q4_0	[2048, 512]	3d9977616b5b039a80cfcd2e38db99c025170e7fef8bfe372cc547be88bb5f09
+t	blk.25.post_attention_norm.weight	F32	[2048]	9743e4d75ad26fce31e3c51c21237f7a433d4ee317f97703b2d48ef296ed6666
+t	blk.25.ssm_a	F32	[32]	96e191648beafcd7265d4cdadfcd86364df3ef78e4158ff53de64bc2f8bd52b2
+t	blk.25.ssm_alpha.weight	Q4_0	[2048, 32]	def60297e6c3861a5e612a336b5f93b3a783e37fe2256d16962201ee7b4f4d68
+t	blk.25.ssm_beta.weight	Q4_0	[2048, 32]	0036ac1512b070158dc54ed12f22d009d02d620d1799173ee7c787bcb7627475
+t	blk.25.ssm_conv1d.weight	F32	[4, 8192]	04520f511d78f29e182af54a425e9cbb138aa6b5fac274e1240f0122cfe68562
+t	blk.25.ssm_dt.bias	F32	[32]	a253eda5b3df1b45f3e90b9c78f80d58b10734cc5d2ae668373dd0e92db3e8e0
+t	blk.25.ssm_norm.weight	F32	[128]	a5973e8ae7c56bba2420956704c475d8fdc8debee3b8ac5daa6a52c0db6188fb
+t	blk.25.ssm_out.weight	Q4_0	[4096, 2048]	f8c6e9a5e79a0bd5b8af406c4328abafaf116ac9de34fa282c5f6457d0f2e579
+t	blk.26.attn_gate.weight	Q4_0	[2048, 4096]	38024e77c0d7e9ce948b56d34f851fe2618f28af4e52444d6988f4b3dc19a7dd
+t	blk.26.attn_norm.weight	F32	[2048]	79c09619ebd9d13fbb921f0b5acf22488df6015e9eab23c04885df14e33b6ca5
+t	blk.26.attn_qkv.weight	Q4_0	[2048, 8192]	3109368f3df29d25b0db1430c2e3807acf55c460aee7f9d5301cee9414c739a1
+t	blk.26.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	8d837feae21d3436e7f72841d625828329d439b9422302534f16b77decb14af6
+t	blk.26.ffn_down_shexp.weight	Q4_0	[512, 2048]	433f16efe5bccddf8effb8b9446f65b678ecc2187c1f28ae270d610749e5ef4f
+t	blk.26.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	c220c1b183437da06b807cc1b6b3d120cb81e77a72124157d5ca06a477b3d8a1
+t	blk.26.ffn_gate_inp.weight	F32	[2048, 256]	863b1486f1e334e7b62a2d382fe157a83982dcb901d0762f38daa91c42dd3df7
+t	blk.26.ffn_gate_inp_shexp.weight	F32	[2048]	541b7dbcc40c79d688f8cc46d750e7a68453492b8cec83ff72898f18656ba5f6
+t	blk.26.ffn_gate_shexp.weight	Q4_0	[2048, 512]	eced1af0eeb012b61fe4f1d93c7271e2750315c0baab5abfb92ff6d0579e9856
+t	blk.26.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	f6397eee0096b0746ad74dbccdfdc1393b9f67fe0b8505ebd63ad00c628b68bc
+t	blk.26.ffn_up_shexp.weight	Q4_0	[2048, 512]	ee163cda2ff3f4f6567ab04912efb5ba47b2970fb41081f7b79ef1f05dc44891
+t	blk.26.post_attention_norm.weight	F32	[2048]	e211ca5fd8e6101b3d86a083f753396e3ae3f88e03313026865ea2793ee7a7e9
+t	blk.26.ssm_a	F32	[32]	4545925a2a458bd30cd214cdb7992e04dd3e000a250ee397b25caad45c1aff96
+t	blk.26.ssm_alpha.weight	Q4_0	[2048, 32]	28629bbd7aa885ea2fd631f5a9606a40f7f401348e81f4658148ad77f8caf860
+t	blk.26.ssm_beta.weight	Q4_0	[2048, 32]	d9907353d9d0b8fb3c2d27020af86b1454ceb83c2b712352766c6289e589679f
+t	blk.26.ssm_conv1d.weight	F32	[4, 8192]	05b3cbad2c95f972d0db37400ab64909c417394a2c0ec79254b04001fec364f2
+t	blk.26.ssm_dt.bias	F32	[32]	65b769f22a946ec1ec3e90da562cadf0be312f47e2e36155e7c0e0fdbb452ac9
+t	blk.26.ssm_norm.weight	F32	[128]	0d32aadd99369acd8d808b1bfab37b337b26359472d9139e7cedc9c68b9fe5b2
+t	blk.26.ssm_out.weight	Q4_0	[4096, 2048]	dea7d700e874000e54982221d2bfa89dd0cd066bca5affd8c3fc3bed74c62c17
+t	blk.27.attn_k.weight	Q4_0	[2048, 512]	7706bda6930126442ab47c582a3b5425dbe765e49c3994258a12f49edbd4408d
+t	blk.27.attn_k_norm.weight	F32	[256]	55025dab7457688dbd0243fc63337b4c682bf04ea56a1ec29d505864aa66330b
+t	blk.27.attn_norm.weight	F32	[2048]	574416f99e8efbe78da98af7bb48a29bdc689124e556f51ca5803a54c0620626
+t	blk.27.attn_output.weight	Q4_0	[4096, 2048]	8b052954a76a850667c9c8dd25c03ddd3287797bd25a8e686a3efa62ce640290
+t	blk.27.attn_q.weight	Q4_0	[2048, 8192]	577fab95d0958137dab70d034e5eac89bab9226217de3a0805398727f1047ab6
+t	blk.27.attn_q_norm.weight	F32	[256]	d075651fe6c1245a9773979356484eec66a285a9491b8e3de39d5c463cd7d431
+t	blk.27.attn_v.weight	Q4_0	[2048, 512]	51fab015c23bb5f3669375f8dd0db16ad8768d1b1311c03861e0741339e285c2
+t	blk.27.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	79c853f575118ddf9b646596418ce0440ac549b5a4fe0fe8463ad8bf2f0f3942
+t	blk.27.ffn_down_shexp.weight	Q4_0	[512, 2048]	26b69d0cdfaac4867dde7e48dc1ab4d7a6260302330acdd2d280c254032ffff9
+t	blk.27.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	9567ab3577506bcd619de44d82f6d7841d6d9c5eeaa2ef42e6e1e9da89dad8a8
+t	blk.27.ffn_gate_inp.weight	F32	[2048, 256]	36adc0e6ab6a4bc911d29ec7259c252c48d23be0a12f412457fadaa85bed6273
+t	blk.27.ffn_gate_inp_shexp.weight	F32	[2048]	e7a74c7cdf3e4dca77d8b16c4bb8168b628f91129752afd5aaa28908700144b9
+t	blk.27.ffn_gate_shexp.weight	Q4_0	[2048, 512]	0c9fd5e00d387d86c14b820ccc343533358c4256b8babb35c9f332e176eba04b
+t	blk.27.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	a60df60fc9a403e9c86aed74d2d803350ac08341c0fa0523dc4c6d41e1e22a31
+t	blk.27.ffn_up_shexp.weight	Q4_0	[2048, 512]	b23a34a4789385a03f23fa9041c27e1d90b9d0f988a2914427e92e77415fa137
+t	blk.27.post_attention_norm.weight	F32	[2048]	8c84abe4cdb95006217ab1cda4a39c62a72b61bab6a5ecd1d71fe3bae69851cd
+t	blk.28.attn_gate.weight	Q4_0	[2048, 4096]	d47a5108b23d1fe244780ae118c87ba85e92d37e3eee6e52bd99ff82adad3df7
+t	blk.28.attn_norm.weight	F32	[2048]	f03621529f4f078ced5cae5e0a2c1fa4cf2b10bae80f6bcf6cd528cd738c3d90
+t	blk.28.attn_qkv.weight	Q4_0	[2048, 8192]	d97411efd8beed2e07cf538f64af7206c1ba5748aeb68b2d87e4cde23ee9f813
+t	blk.28.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	9b3d85c9c0e4b7823e49f188d1e2b3456c5e27fcb3b76845e63038287ff75e2f
+t	blk.28.ffn_down_shexp.weight	Q4_0	[512, 2048]	de85a183dca4034d0ddeac3fe765a3b3845563751337b64e29bd7122f9e8abf2
+t	blk.28.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	b1d296f4977410ca5d8964c02e694c57ba3e6d22b68775b8d404b2c2b47e36ec
+t	blk.28.ffn_gate_inp.weight	F32	[2048, 256]	f72bb35f31cf74bc0e5f72bb2fac08179a5114ad0ba3f6b398a4f84fb6e75de5
+t	blk.28.ffn_gate_inp_shexp.weight	F32	[2048]	3015e09d97f4d4a624c25e34e3f9fa7a2f723c0569c85033a7d1add7ef8b67c1
+t	blk.28.ffn_gate_shexp.weight	Q4_0	[2048, 512]	75efb77585cb6b88b7b007deae102e34867a3b84ce8b5811e8cb5fc3532f2975
+t	blk.28.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	e288f52a071f50340339fd04f44bca29c6bf24196134b5f9eaaae26ca3db6bd2
+t	blk.28.ffn_up_shexp.weight	Q4_0	[2048, 512]	a290ed6b5626997abd807700bc75bd2772d34defef4aba021f60589b15bcac4a
+t	blk.28.post_attention_norm.weight	F32	[2048]	efc0b6e6ca164f0739c5a0bcd1d9a9a1413356c9e0db37caaa5bc7dcbfd723d0
+t	blk.28.ssm_a	F32	[32]	485ef87a17589bdd24e02b5baa473cdf844ef60b33b6f36ef7c9c4a985be853c
+t	blk.28.ssm_alpha.weight	Q4_0	[2048, 32]	69855c15578c6ea7601f63e284075d1ee816c18de1705190b5f5b3447127f724
+t	blk.28.ssm_beta.weight	Q4_0	[2048, 32]	5369367656bee11717fa9738a31f7ae2216704cd6e7fb1c2f7846d0780ab0f33
+t	blk.28.ssm_conv1d.weight	F32	[4, 8192]	a13a003a08a1a2c4fdf82e1e911656f69637b30a5d7b3435f8ecb29c6ba06258
+t	blk.28.ssm_dt.bias	F32	[32]	9840101f45536659066110c38797f4712636768a7ef1e0c265c2443e0ed18129
+t	blk.28.ssm_norm.weight	F32	[128]	58adaab16ad214974c88d1c28e9a4bcbef6b314e5c2aa50dff38fd0670ca08e0
+t	blk.28.ssm_out.weight	Q4_0	[4096, 2048]	a7956977b43f3890f6850dce0dd54a289fa554099494e2a0d036a891d8a80b30
+t	blk.29.attn_gate.weight	Q4_0	[2048, 4096]	3e56c26af6e9b0071c1744b94596835e7d0e29d708c0fc34eeb0d045bd2a083f
+t	blk.29.attn_norm.weight	F32	[2048]	1274f519a17ec3286b26bcc54e4cae245c1a3a433e0a7a4f671645a1de31bf6f
+t	blk.29.attn_qkv.weight	Q4_0	[2048, 8192]	d2076baa2cc993c7dd67b83af63c2cf1045a066d0b42a703e00e1ef22fd4a698
+t	blk.29.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	c99a73fa2fd0283935a094838ef3e408cc81904fbc7d8618505a5373e3772a0a
+t	blk.29.ffn_down_shexp.weight	Q4_0	[512, 2048]	62d01753db2cb6c8bb4a8fd11f7b8544067b2b8650f65d8f853fe06997216211
+t	blk.29.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	d86048088371a65019602b27bc4310712af6ec911a5ab44314f43ee0ab61a7b5
+t	blk.29.ffn_gate_inp.weight	F32	[2048, 256]	b2652362e3a94eaba46440aa5127f12866fd93563f70c2ed24a4f181c0b28fb9
+t	blk.29.ffn_gate_inp_shexp.weight	F32	[2048]	88d439538f51c6c1c94d91aeef71c868763e274f8fcefe6b153b4a25140dec02
+t	blk.29.ffn_gate_shexp.weight	Q4_0	[2048, 512]	b7fb5a7077b925011538e520da7d386a06db81dda8f82ee7d76873a94c715f9f
+t	blk.29.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	b76fed356a4bc6be126a1fffb76751cbe30556c4728659a851e9ade4ec9c28d0
+t	blk.29.ffn_up_shexp.weight	Q4_0	[2048, 512]	538a22dd653fa9bf50424771f9ad65d7e02ae0b193ce3b7f5910d49dd5fcb72e
+t	blk.29.post_attention_norm.weight	F32	[2048]	083e2ccd72b66c11fc9f06b23d80383e976f4b61018050d37d5c77fffda304ee
+t	blk.29.ssm_a	F32	[32]	a6a62e9b623244ed976f4f95f8a3b11d470b174f100b96f13908c626de5defac
+t	blk.29.ssm_alpha.weight	Q4_0	[2048, 32]	71a237ce3ae4b2fd516d0e9af35b70ce2b5ec661f550119ac2c4e0f97920face
+t	blk.29.ssm_beta.weight	Q4_0	[2048, 32]	7aec8cfce59e0c0d23fa1f4072bd45091e94751f32be513bd4bd0478d64a98a4
+t	blk.29.ssm_conv1d.weight	F32	[4, 8192]	b5a247e6657f869d2ba6d12958d7f2974c13f89b9bc6a5dcd6b428b48c1e69d6
+t	blk.29.ssm_dt.bias	F32	[32]	aec824d76a12a4e1cd827cc063555551354613faee4b00ee198ba5c732fe7c28
+t	blk.29.ssm_norm.weight	F32	[128]	ba7c71e070096af174f953f024f81c5fb75c3827f5effba3a3b426a618148d89
+t	blk.29.ssm_out.weight	Q4_0	[4096, 2048]	fee40f2623d760d3e6e9360374f358850858242b39e623da9dcf2bac39927c27
+t	blk.30.attn_gate.weight	Q4_0	[2048, 4096]	a21fa6fcc6e7b2c3eb5102e356879bb78d6e2826a6919f2b3627d8a854674a1b
+t	blk.30.attn_norm.weight	F32	[2048]	a02bdf6531ce58f8104b723cdd124e7daf7d3a6e5d57e01f88a3c4381e400495
+t	blk.30.attn_qkv.weight	Q4_0	[2048, 8192]	25bd0231fd57cb9bc715f982c44b0bb778148dd6d5e4a5ba90cedf672a474fef
+t	blk.30.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	64d07a61d31cd3f347e63371dd5e014d74e57d0acbd319b67f3ad77f75328ab7
+t	blk.30.ffn_down_shexp.weight	Q4_0	[512, 2048]	09b21b04819b4ea048f1683974a1e379d7d68c652c09131d658cad48371a333b
+t	blk.30.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	1d6661eeb7e220f89159c1d882d3fce10c8e50c008f02371c107dce44a933eeb
+t	blk.30.ffn_gate_inp.weight	F32	[2048, 256]	aa70bfd297521107d46864e78c08389ac6a8a2f196ee91d7e5f08e388b1b94f1
+t	blk.30.ffn_gate_inp_shexp.weight	F32	[2048]	aa70e5d52da1fb05d5b2dfe49f1b3dfccae1e6f59691b8ca25076d848afd4bc6
+t	blk.30.ffn_gate_shexp.weight	Q4_0	[2048, 512]	68a890fa876b29ef00047b3d8d21f2bcaeeef8d8aff624e848057157c9860d32
+t	blk.30.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	ef722af06a4a86e3d7887d104c9e497f611f0ff2638d9174ff61126a796f8f3b
+t	blk.30.ffn_up_shexp.weight	Q4_0	[2048, 512]	d747cff52a0558cde20e6afa165209b08e0e87218f9ca37a964ef6ebdf9786b5
+t	blk.30.post_attention_norm.weight	F32	[2048]	105be2c68ec7cdbc74d1393dbe879d0a1431063643e3bc592ccbaf2fe544abfd
+t	blk.30.ssm_a	F32	[32]	781ac24f9236e55f1d66c5190177ee2d1a60a78182b83ed7d67ca12ece45bfd9
+t	blk.30.ssm_alpha.weight	Q4_0	[2048, 32]	bedf89ac338180c36967ba435d4bb349d712ca17745b16fba8ec7681d3227b0f
+t	blk.30.ssm_beta.weight	Q4_0	[2048, 32]	fc8671ed11a3b44bb1d8d70d5c8c937f42e980b4e52bb0ad3c6f025b84d19a65
+t	blk.30.ssm_conv1d.weight	F32	[4, 8192]	adadd65af38af347b6c4c54d523485ea604fbbd72b1e3ae6841fcea7733a8d64
+t	blk.30.ssm_dt.bias	F32	[32]	eb2f696a9a8ed2990c2a1bc58b9d47aa1492684a467feb6a74ec04d0c76eb66b
+t	blk.30.ssm_norm.weight	F32	[128]	7796171888277d466fdae9a635ca270e7be8f51bc4fd7a1f5561c2a2bb0a8fc3
+t	blk.30.ssm_out.weight	Q4_0	[4096, 2048]	76d1d72c5296aa3d49077e13dbf33b59819df0166188414c3af7c652ce74f9fa
+t	blk.31.attn_k.weight	Q4_0	[2048, 512]	6e2d598ec03e5fb1eaeea9a37a31525f7b40ab3a5a8393479788031f61585c96
+t	blk.31.attn_k_norm.weight	F32	[256]	16e1370ddc867df12ddaeda9b8601b8edc59bdaf7dc03f97b8b189329f5b45d3
+t	blk.31.attn_norm.weight	F32	[2048]	19fe8bcb1fe5b716c88a9b36ee5d7b3d05a0ab6a17a62aea2c72cec47c1c7ee6
+t	blk.31.attn_output.weight	Q4_0	[4096, 2048]	5a9126a5c6281a2540733b5338dbaa35973e169952e74eba9952a0f459cd28a7
+t	blk.31.attn_q.weight	Q4_0	[2048, 8192]	9305b39c15c358f8fd172d12ecc0d3199222cfea69ecff8e787c666c98774162
+t	blk.31.attn_q_norm.weight	F32	[256]	1836068151c76facc02868d5506ba3f292a8ec43caa4a6fcb9ccba0bfa545132
+t	blk.31.attn_v.weight	Q4_0	[2048, 512]	b1361beb1b8f87b29279b5648fe2865226502e223969622009e1c3f3abde1ccf
+t	blk.31.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	d619459720b37a01e908a58991381a8366e6d82ce806a9bf45bac3a18db5cf1a
+t	blk.31.ffn_down_shexp.weight	Q4_0	[512, 2048]	85685ec6d152b6f3bfa8ea93b92aa4ff31bbe876a745a6f73770b513685673a1
+t	blk.31.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	cfc35d2dc70734ca9468e6ef43ed33ab23736b7b45f5cbdfafed98a124b5a95c
+t	blk.31.ffn_gate_inp.weight	F32	[2048, 256]	9338daa50a0ec2391efa5104aab067425f1caca8d90aab2e52a98ecc9fe910ad
+t	blk.31.ffn_gate_inp_shexp.weight	F32	[2048]	cc9ef4b022aad2f26865c6f7fdc454ebed9839ad87e70ca74e71d3627d310305
+t	blk.31.ffn_gate_shexp.weight	Q4_0	[2048, 512]	bcd1a6a944335ad3acdcb9fdb8b3ed426b7fb875cb35ac5524370f36c793ab15
+t	blk.31.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	e442a7d722d7512a46dd10d41b6cf238c43e21caa8e6ad1ad372dac36a14081d
+t	blk.31.ffn_up_shexp.weight	Q4_0	[2048, 512]	07c5ae256baf847342944f7a71c94925b16e651bc2b22c7ac54a2186c10ed233
+t	blk.31.post_attention_norm.weight	F32	[2048]	2809d6fd7e8cca9f02e56066f6c3701297fef97081f3a23c31cbf2bddddbe3b8
+t	blk.32.attn_gate.weight	Q4_0	[2048, 4096]	2dd510b57d2b922f046e3bc3c0f56f7310c39d21a8e51326ccdb1c7456f2f581
+t	blk.32.attn_norm.weight	F32	[2048]	524d9778046c2278ec3e1690ce4897cd5990c42a6ab6ad95483accd786840341
+t	blk.32.attn_qkv.weight	Q4_0	[2048, 8192]	6e39bae56a63551295e1184eb93af983152828ec5843ae98ced5d491d4873318
+t	blk.32.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	0992540fb465ad89a9a8911afc9a2a4e10059855ecd9e6d495be5aa6c3e5da71
+t	blk.32.ffn_down_shexp.weight	Q4_0	[512, 2048]	42ef238059ea544e8ca4c06f49988b76ded9281201201382d55560079750331c
+t	blk.32.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	b30bdfd1f6183c1892d60bb3a56e800a428100fa7b3db1157325f653289a3cd1
+t	blk.32.ffn_gate_inp.weight	F32	[2048, 256]	88acac76096e5009a0d717b8458fc4b1459c71b29210848d63e5376f13edecee
+t	blk.32.ffn_gate_inp_shexp.weight	F32	[2048]	548b751a08b3d0e3e79c06ff3b4de1c0e8f8962a6c9720c610de8b5acd944bcc
+t	blk.32.ffn_gate_shexp.weight	Q4_0	[2048, 512]	6eaa590ecedf6cde648e6ba491dc8694443e2aa8b87ec21aea108068a3823b2a
+t	blk.32.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	734adc1d9c1873d7da78aff53099e14363f9af967805db766c10a9b58b304315
+t	blk.32.ffn_up_shexp.weight	Q4_0	[2048, 512]	3feaa32347b4996faffcf2b0a04be915e89706cea4eb4d4b809a52af5f1953d0
+t	blk.32.post_attention_norm.weight	F32	[2048]	73dbf8b8206ee6e885cf3e714c2565fb7f95efb1425f996137da9ec97f694a5e
+t	blk.32.ssm_a	F32	[32]	a7cb0c686d6bcec91e7d98f1119310226496a17ef30d33ea3969957ca79c9bbf
+t	blk.32.ssm_alpha.weight	Q4_0	[2048, 32]	3762f4a75bd6f2b8c9e6fdd8c6c160b47410e79e9d981f0d19c76c1795baafed
+t	blk.32.ssm_beta.weight	Q4_0	[2048, 32]	eba01454e691d1a67dbd1e6c9447bae8dea2b4fdc036c11376f71d95984d776b
+t	blk.32.ssm_conv1d.weight	F32	[4, 8192]	1621559d7a7e7f0ac0f0b31bb5e73bb1b60fc8551ccd113bac055bfce5327b28
+t	blk.32.ssm_dt.bias	F32	[32]	38f41d593940a6cdff43e0164a28a0ff1571c50fa95ac3b73ca0201d8235430a
+t	blk.32.ssm_norm.weight	F32	[128]	76027e1711b3c4d1786abdcc9cc658ede25bbc3114eeab81f542d7cd063af378
+t	blk.32.ssm_out.weight	Q4_0	[4096, 2048]	e8068816b89283baf7ea87c456436e99e004512909c9c0a580daddee73d636a8
+t	blk.33.attn_gate.weight	Q4_0	[2048, 4096]	b2560340995ff9e36669b0333e5795241ff13a4d4d7749250b94040efc3dd8f7
+t	blk.33.attn_norm.weight	F32	[2048]	5e6d94142ac34348c243b0c5d23be000cf6149fcb66b8b8ceb521058906b70d6
+t	blk.33.attn_qkv.weight	Q4_0	[2048, 8192]	b9fd92f5dec8b2f35b3b0b6ffa536a6ee1923c218efaeb94f1f06dcaaf186738
+t	blk.33.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	5fb20f82db8bcb31a03d520c699c6cf840668e9aa58b69e18125f8353ba2df1d
+t	blk.33.ffn_down_shexp.weight	Q4_0	[512, 2048]	b2a0c53fd4dd7e83d58d0b0496693edb52cddac0a9497e2aee34fc39a334fb1a
+t	blk.33.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	51c392beae48a447097e076d87ea5eafe07bdef1e55f72e95267ac1147ff1a12
+t	blk.33.ffn_gate_inp.weight	F32	[2048, 256]	4cec8dfe7590907fe40f435b9a8e3ebfa804e085084e0866c02de4cddf7c10c0
+t	blk.33.ffn_gate_inp_shexp.weight	F32	[2048]	301bb8c8d70addb33cbe54b2363850e9d7f4e3a4602c83d69a25eb1b40ce1cad
+t	blk.33.ffn_gate_shexp.weight	Q4_0	[2048, 512]	b8d517c0105e150ee48d918dd1e3ee6e337d883edd47c069dcaad323c5c2afff
+t	blk.33.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	9316a86d2b645cbfd985080c17a1677098146f083e3b129b73c671b3ece3f77c
+t	blk.33.ffn_up_shexp.weight	Q4_0	[2048, 512]	33c7ba689041e161dbf2a37245939f5f4ae0c3c0026de38b4fb4859dff6619ae
+t	blk.33.post_attention_norm.weight	F32	[2048]	a1796bbf07fc253ab6bc0020ffe98d74e49af3faaaebf3e6b0ec336220763f97
+t	blk.33.ssm_a	F32	[32]	878257c2b5a842c6f7aee40221ef174eda307507efb764c62e50914503017398
+t	blk.33.ssm_alpha.weight	Q4_0	[2048, 32]	fb620eca718c1dceb7213a3e3499b2d9e099b0bcfd8cd9ae87e1841eb15359d4
+t	blk.33.ssm_beta.weight	Q4_0	[2048, 32]	c715c1f16fcedb0658a0854e3fe664921f0264581bc153a123e7afdd3ad1de18
+t	blk.33.ssm_conv1d.weight	F32	[4, 8192]	d2fd5c639d39e4a194e208edea41523e4a75d63f8a22fb97e29a3a867de0479b
+t	blk.33.ssm_dt.bias	F32	[32]	10eba46e4edb86b086628579fe77498c94cf0ea2f2e0e0ffa0369ecadb14e66c
+t	blk.33.ssm_norm.weight	F32	[128]	600a28c79a8292f17704f370e907f800d3c0406d2275e10d0554a75fdbaa4373
+t	blk.33.ssm_out.weight	Q4_0	[4096, 2048]	8d6e601fe4398873d1ee4529e51b88eaca6759913372ca8116986850a4e880aa
+t	blk.34.attn_gate.weight	Q4_0	[2048, 4096]	82eba64cc031fdea149974ede9140e4e9543426bf0bc1d099713d6ea9ea7fd34
+t	blk.34.attn_norm.weight	F32	[2048]	f39837a3706627efff4a137e05127449b11b90dc671ce3ec8a448547c6c08a47
+t	blk.34.attn_qkv.weight	Q4_0	[2048, 8192]	1c1d2f498814da1413ff780521d49dccd2af82a0ef16b09034b3f5a3a2705398
+t	blk.34.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	bd997e1c4bec3d8b9729ffd8a01b5d21fc57d02a01223a854a5450c43370b877
+t	blk.34.ffn_down_shexp.weight	Q4_0	[512, 2048]	3bdcba2bef8be95a6e3ac1ab18d9b525b9834b76bb3568471698f5f8949b5050
+t	blk.34.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	1e4bb81ce6fd0915e4ddb39ebd2e3fcd8542d6bc2eda642881fdf6b207882588
+t	blk.34.ffn_gate_inp.weight	F32	[2048, 256]	2c46bd306e200a7515e05b92ec25b23582eff51ae68b0531f1712ddb31ee14d6
+t	blk.34.ffn_gate_inp_shexp.weight	F32	[2048]	c8a905b547bae926d481d346a8e220f533d8889bb8340db0e4b5b2dee4e6502e
+t	blk.34.ffn_gate_shexp.weight	Q4_0	[2048, 512]	3be782d4e2cd7b448206d0ae885de60d5bdac748d0740b87ac2cdea7b9e2a8b1
+t	blk.34.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	333379bf911289e23e7bc7ac5b2670e2e69039ecec3a4b25939ca7d7d308cdce
+t	blk.34.ffn_up_shexp.weight	Q4_0	[2048, 512]	cf78f203d189dd0b0f143c9c0fc518bdc0ba57a49e9966a17a4510eac0183b72
+t	blk.34.post_attention_norm.weight	F32	[2048]	fc4094a3963720f1198122011fc6802c41c8ab6680e7f62ec5e0a036b6066025
+t	blk.34.ssm_a	F32	[32]	32e9d440bb79683e642a88638ef1513e086ec4172f49424d3cdee9eb8b5e115f
+t	blk.34.ssm_alpha.weight	Q4_0	[2048, 32]	08f5ea9f6aabb7da0e4ab0303567f64c1cba1c3a6d911da56bf9b70746ba238e
+t	blk.34.ssm_beta.weight	Q4_0	[2048, 32]	3d94759c97c694a7ea4aadeb00b6cd1a904fa7246545e1ea51418fdc7b448744
+t	blk.34.ssm_conv1d.weight	F32	[4, 8192]	143700e55b1b598917282606f972a846968d9726238e106e3726b3795d748e24
+t	blk.34.ssm_dt.bias	F32	[32]	d05443aab124c3d905e3b6909ca578d1df9953ead8e59b3c2a92ad1bf8c9c688
+t	blk.34.ssm_norm.weight	F32	[128]	b23767edde2e3af21604e8cbdf170b4fba8de460d6a18fc004edc2e72339288f
+t	blk.34.ssm_out.weight	Q4_0	[4096, 2048]	160e4da7c7575c8feaadbe826f0c85f66519fc5eaa83013ca720ee7a750187b7
+t	blk.35.attn_k.weight	Q4_0	[2048, 512]	b8b0a813c713fff653831c4fc8f9246bc5589d74151e6f47f1681bf54c92c0b1
+t	blk.35.attn_k_norm.weight	F32	[256]	91c9c33d749ead02e9b82f4a1ff0343e79528dca12f39d36d4dfc26a9f576341
+t	blk.35.attn_norm.weight	F32	[2048]	6cc3dc2f7520513f04a8732252be75b2bc7857def0c3baf57175f7059603cfa2
+t	blk.35.attn_output.weight	Q4_0	[4096, 2048]	3a7a5066ef3c8195af7d5ef16d47bce9b0ae488c0ac00dca81a7a0a8a8fe192c
+t	blk.35.attn_q.weight	Q4_0	[2048, 8192]	9f0501fd38f0af8a8ea66e002b42e09822b6c87e831af983c651388ab0f0f277
+t	blk.35.attn_q_norm.weight	F32	[256]	d1d2c986babcf169d40a1db6efbac3b7d326cf82f33142ef81b9f0a1b6d41dd4
+t	blk.35.attn_v.weight	Q4_0	[2048, 512]	0c6dd7d9c9edf60fc069f40e57dafe337f9a613b393c9f73204a2f3bbaff7d03
+t	blk.35.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	c09c602b29eefdb607dae5971b081fc8a05e151d0c9fab85c5a20661499283d6
+t	blk.35.ffn_down_shexp.weight	Q4_0	[512, 2048]	999414a769d87dbbfbeea0f69c6456fb420fc62b224a34ce42eeda5ed1d5aad7
+t	blk.35.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	a132d3dce7971cb2e89b24bf19e49adf5bab6b96d22d2d4154187c6dd4f9fd7a
+t	blk.35.ffn_gate_inp.weight	F32	[2048, 256]	0bdf1ec0bba8ce845cf39e1b0ccd5933633626a197bd3d6c2db778b905cd86d1
+t	blk.35.ffn_gate_inp_shexp.weight	F32	[2048]	c900a1ed6633c5142b1bd3c92fdc9e4d6e639e1d92186221c6e62492c3eb4ed7
+t	blk.35.ffn_gate_shexp.weight	Q4_0	[2048, 512]	e457d539e000ab515ca086cfa221ff5c60ec58b21c34449c854b69639a9e4164
+t	blk.35.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	9302b93892e2e352175bd99578380ec65fbcf0df3cc2caaf07bb59a41d7f6d7c
+t	blk.35.ffn_up_shexp.weight	Q4_0	[2048, 512]	d2e891e838c2ebf11456a7adafe186a4e346d80f88aa37defc171f06df043319
+t	blk.35.post_attention_norm.weight	F32	[2048]	9a555775495e6c997d8c5323f9579a9968c9749aadf8b71e2b37668a06420fed
+t	blk.36.attn_gate.weight	Q4_0	[2048, 4096]	20d4a1f213c48830d67287a082703f88d5ec82bbad58d4c65b500fad3732300c
+t	blk.36.attn_norm.weight	F32	[2048]	b5bd56cf6a60f813b9826c28882bc16ec64273e54d78834a1f5dd0f51a4fd3bb
+t	blk.36.attn_qkv.weight	Q4_0	[2048, 8192]	b0af0cb6c0b9fa7c62d354c31db0b11f6346e0c8032a54e4e892fc7f62c20fb1
+t	blk.36.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	3effe0cb41a65bd372f795dede9be69b2072f380ff0a3c780c0f409e0f2dd678
+t	blk.36.ffn_down_shexp.weight	Q4_0	[512, 2048]	5842aa04b812cbcaf181f3fae8df530bc768a94927582025baeae6cb96125474
+t	blk.36.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	06841efe797e4d226eff38e1eb250af49770f27f0413e35731f2154d94d26455
+t	blk.36.ffn_gate_inp.weight	F32	[2048, 256]	62ee27fa2dd06d769be07e400ad870a3b992e2e9ff34ada5e73c8ca27e679c93
+t	blk.36.ffn_gate_inp_shexp.weight	F32	[2048]	2b3c177774786689e605a1761f4c21d2cb8e8c081dad2e010f4a2fde40d9b1c3
+t	blk.36.ffn_gate_shexp.weight	Q4_0	[2048, 512]	7933752120f3f48ab23eb69182554736ae2716d68a81ce899fbd576debaac4bf
+t	blk.36.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	ef5c7ca16ab237a514b1fa71e12b2fd32ec3662623e680da5fd527d90a27620d
+t	blk.36.ffn_up_shexp.weight	Q4_0	[2048, 512]	32d036a9540ad4a9e04fa24cfe1961e85ca0af59b5b97ffcd054fa44c751676d
+t	blk.36.post_attention_norm.weight	F32	[2048]	12eb94d4dbb4877a551f92ac744c1b845ca18c3bca7ceb861a9a54425ecb64fe
+t	blk.36.ssm_a	F32	[32]	47c4422a5b3851ac8f99bbde9e85925a59189a82fb3b1b401e62952a8d22cf2b
+t	blk.36.ssm_alpha.weight	Q4_0	[2048, 32]	e8f61cbd6e8e4681ab244e7edf07adc2777de53f8723eaa721842e49173a93f5
+t	blk.36.ssm_beta.weight	Q4_0	[2048, 32]	f8f6bd87947ce72f5f0b22b8a485fb32e4d242d29fc01f5c700e7adb802e2642
+t	blk.36.ssm_conv1d.weight	F32	[4, 8192]	176226da81fcf67f381531072d36bc19ea9aff6f22134f7aae197a0eb25d3d5a
+t	blk.36.ssm_dt.bias	F32	[32]	1499ac11c60ff973a8daa89b4589a5267130da2abe9c77735f4a3e15fc47cc9e
+t	blk.36.ssm_norm.weight	F32	[128]	511c15a9342f181c56e4519f6363709d19fdf67dc7991407e54bd11ba8f39003
+t	blk.36.ssm_out.weight	Q4_0	[4096, 2048]	405b503c1c66fa3728c64e07adfc3edb40d8576a549a354f89c511029dc3c2f4
+t	blk.37.attn_gate.weight	Q4_0	[2048, 4096]	496f47251c0888823e3194c6693244834f4733e6c067933a8af679cd1240c003
+t	blk.37.attn_norm.weight	F32	[2048]	3d1ae1558d4f8dc420998a8f34eb2d95c02238f9824cabafb21a59c950d83920
+t	blk.37.attn_qkv.weight	Q4_0	[2048, 8192]	192a8a08444f02374b25f797c47307d431ca9b81e7e685492432f3d082d4f86a
+t	blk.37.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	6c81197bc367e10e0431b03d437518e5fb53041574fc21cf096c0e4f0ba1464a
+t	blk.37.ffn_down_shexp.weight	Q4_0	[512, 2048]	a059a91e2607cb69c1873d85fecfc87c3d37264ced4afa73629a69e9337c83c6
+t	blk.37.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	44d46d760e4520997ff12584d6d69f9162c91a93edb1e72c3931d0f1a750b8bb
+t	blk.37.ffn_gate_inp.weight	F32	[2048, 256]	62eafed4f5378466b5ec55fc8b13715fa77f4bd8bb78e77e7eae8a716c59b900
+t	blk.37.ffn_gate_inp_shexp.weight	F32	[2048]	8e9d89619c205fb543fccc48c8b98b815a204c86ae49ee48f13587edaca06ad8
+t	blk.37.ffn_gate_shexp.weight	Q4_0	[2048, 512]	ce8f0901bfdda5081c8959e0b14969a96a956e900a1b9c289ae04c8a5f8643bf
+t	blk.37.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	69fa2757bb345405a7ee02a330d8562ca710973171620b69b5f01f2743b27088
+t	blk.37.ffn_up_shexp.weight	Q4_0	[2048, 512]	6aee642ad96d3b0cc95a887f04134c91116fab354e48b9b890e08cf126067abb
+t	blk.37.post_attention_norm.weight	F32	[2048]	23ea6cb37e5e97178b38805ef9bce20454a2b077eedf4225b005e27fcfc888e7
+t	blk.37.ssm_a	F32	[32]	ee66c24aea71b2db3f518ba1fe3ba375748bc42ab38b67ff4f5327c6656b23f5
+t	blk.37.ssm_alpha.weight	Q4_0	[2048, 32]	5d5d3113e6cb606bd4413ffb77e15157e22093faa97a13f09c5107604dd0a343
+t	blk.37.ssm_beta.weight	Q4_0	[2048, 32]	c3d44d21eb2e45c8154dcb9a4fc0e451860fada75e7eab563501ca9b44929045
+t	blk.37.ssm_conv1d.weight	F32	[4, 8192]	0de89cf2b2f9d2fa4a272eab00c1116ec4da6bcd8bf36b8cd2f18537248881c8
+t	blk.37.ssm_dt.bias	F32	[32]	792dfe9fb79cd5974336f42e6e878132e04891ae1334907ebdea2113288a6614
+t	blk.37.ssm_norm.weight	F32	[128]	8f049e08b70261c505840c4ca5b9a70df6c4ceb8e290c3e357c0e63baf5da485
+t	blk.37.ssm_out.weight	Q4_0	[4096, 2048]	331c2f71ac4173e06e84a202e8818ba5a0077d35f420d8fef3c59d1e57527984
+t	blk.38.attn_gate.weight	Q4_0	[2048, 4096]	d667ef64b84823ff3f7c7cbe99402a8f6d668a032dde2a0ca37d3093dd26b626
+t	blk.38.attn_norm.weight	F32	[2048]	819b9daf6ac24e89b18b43e3dc5a2debc620d86ac52c6c7b5a263e94dd351a73
+t	blk.38.attn_qkv.weight	Q4_0	[2048, 8192]	ca82fa90050b42b6a7985f0f1c604e48a5e2c54a9e379d49dadcb7a75c22cbe1
+t	blk.38.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	857ec5fc02e825981d0f0fb976f90e5cc6693d1c698a19c66532618610417878
+t	blk.38.ffn_down_shexp.weight	Q4_0	[512, 2048]	b77b383039488ef7ef021c1c148e0664a81b8b9b7f9c7bd69acb85bf22849a42
+t	blk.38.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	97adfae35de88953051cd7ee41509708b21331057f0d8872b314786c564c1c6c
+t	blk.38.ffn_gate_inp.weight	F32	[2048, 256]	db0fe2b31ba6371ce96f2ff46a615de4643ff2ee80e4053fe6330dcde2fedeb2
+t	blk.38.ffn_gate_inp_shexp.weight	F32	[2048]	dd1ce588dafa7a62ca7221ce5ef68f48f7857b876c065f0d6c6ff8afb69de04b
+t	blk.38.ffn_gate_shexp.weight	Q4_0	[2048, 512]	e7d89839fcbdf5fe87c961826cb21c0b78319cd30d1431eb40e4f5ba2e5e4848
+t	blk.38.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	f5eb514d4db73e31d195dc90953ddd1ee97c4d83b8a757dc934e11f54adf1a55
+t	blk.38.ffn_up_shexp.weight	Q4_0	[2048, 512]	626af644fd1b0b7b2b356447cff545b890807af77a213a399ea730422c606e92
+t	blk.38.post_attention_norm.weight	F32	[2048]	236dc643d91585096a5fffd5e39f0ee4c0ef90b87b2a4fb8d91d68f25a9ee79a
+t	blk.38.ssm_a	F32	[32]	b1779e2fbb8404c0a2d6f91cbfbc188965fb5d735de4a367560e4a7edab6155f
+t	blk.38.ssm_alpha.weight	Q4_0	[2048, 32]	ebb03e6ea55974db5b714e0c4a6627bd2810377aa3388baeaf452d3710982479
+t	blk.38.ssm_beta.weight	Q4_0	[2048, 32]	9278f3f85393f5793342cc768c53b6be309955de77a131b10b043f846845a662
+t	blk.38.ssm_conv1d.weight	F32	[4, 8192]	0e29e621a6b520063e2d80d65899c87f27a00a082e3a597eae8f9ee5d93722cd
+t	blk.38.ssm_dt.bias	F32	[32]	b1bab280f5529895de9781c50f64ed5dbe984d424a8e6cf9839092f6f62d0e45
+t	blk.38.ssm_norm.weight	F32	[128]	49b1debdf429f43b3fcff911a362836f569d429cb8d8f84a2be7f0a57694e344
+t	blk.38.ssm_out.weight	Q4_0	[4096, 2048]	88db0425f58dce83a0b5d736af6364b39071cd18f4535f95b7fdbbc3f5787c32
+t	blk.39.attn_k.weight	Q4_0	[2048, 512]	1257f5773b35bf436d434ec3fcb1bf0d60487e0687c290d246612cae28914d03
+t	blk.39.attn_k_norm.weight	F32	[256]	9bc90a9ed4b4b142e6491e374c28581a400e0b840e69d34e0bd1abd7fe96261b
+t	blk.39.attn_norm.weight	F32	[2048]	c2c98f1b4a8fe834188e67411c3e957ac1e28f6eba254c351d68981dbb236193
+t	blk.39.attn_output.weight	Q4_0	[4096, 2048]	b78a0df806109b9129b6732a6693e1060717af3c89afb921b7c0dc1c835efc77
+t	blk.39.attn_q.weight	Q4_0	[2048, 8192]	35894ee7d05faf0e6aff062fd8f2a7afb6b858e448ac00560e9701fdea8f3561
+t	blk.39.attn_q_norm.weight	F32	[256]	46cd77c4b2e27d7e0c0a35986c5a1d7fb21d6f0dc9558f08a2559ebe96813460
+t	blk.39.attn_v.weight	Q4_0	[2048, 512]	76e0c2b0401b158b5d01ce4527c936887ddf9fc6c215ded29ca3e895f3285d84
+t	blk.39.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	4a487fa617850071543992528cdc9cd5b56e6987def4d8161335ef5fba825968
+t	blk.39.ffn_down_shexp.weight	Q4_0	[512, 2048]	3fe183a0a1b980ffff501f29a73caa5ae3835c1515eadedfc51f2b4a37404ead
+t	blk.39.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	590667d1392d5b94273f6850095c208fb0f1be7ced0a6dbd41b765b15e7d9052
+t	blk.39.ffn_gate_inp.weight	F32	[2048, 256]	638777347c51049bc8529b4e88b6d60fc3ff54a6a328fb10ce836f2d59925254
+t	blk.39.ffn_gate_inp_shexp.weight	F32	[2048]	39902429cba0b3c06944afb1e7e0fd347c2e75db717112e270064cfd3b7bfc33
+t	blk.39.ffn_gate_shexp.weight	Q4_0	[2048, 512]	f638d560436b42054d2832e12ff37631a686d4bb7b1a4ae9018c3901ca672330
+t	blk.39.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	b50091b5b6ba22063d5a8b2f436f66ee271bd3602698a2c81edb26a4880d7a57
+t	blk.39.ffn_up_shexp.weight	Q4_0	[2048, 512]	f3b1f049880eba40e7cea8a58e631587f6a646991304c59bc0f5bcd553127c13
+t	blk.39.post_attention_norm.weight	F32	[2048]	1fabea44acda7dc3728597eb7d51ad44f45deabacb31b99359a368a2ff7a521e
+t	blk.40.attn_k.weight	Q4_0	[2048, 512]	34c6d8deda4b652907bd1e0ed77d08bd5bb08279f2819d472d6f37e8b658c0b1
+t	blk.40.attn_k_norm.weight	F32	[256]	ff4dcaa69c46276d3d4de2438de42aefc2ac4636332376d22c7f9c94064bc597
+t	blk.40.attn_norm.weight	F32	[2048]	d19fb0a43d49e4a2690091b383e16e3b005dc11e308cc8ca5f9fdb4f17909a6a
+t	blk.40.attn_output.weight	Q4_0	[4096, 2048]	3027467101956eee8ba8c553e2b8eb08533f8c2d6996dd35edaa14a326defbe4
+t	blk.40.attn_q.weight	Q4_0	[2048, 8192]	f7980e82d5a56a0818a816dbc87f2e92b1d739bd6943cd62f579cc7d328b2109
+t	blk.40.attn_q_norm.weight	F32	[256]	b4e21f652c5ab87f50be67a49ee984f3d67f7742c1ada7660822cb31f57db13b
+t	blk.40.attn_v.weight	Q4_0	[2048, 512]	837a841d894ed1303d9c491587c52003023cfcb9f6f60872819b20ba611f0f3b
+t	blk.40.ffn_down_exps.weight	Q4_0	[512, 2048, 256]	32c9bdbe34dc69f8ca92be05823c32d6c26956bc033fd1a2f6eeeba15868ea4d
+t	blk.40.ffn_down_shexp.weight	Q4_0	[512, 2048]	45360ba3e380c3fadbaeb147bcd6c1a1cd426d344c22163fc36010a327cbe853
+t	blk.40.ffn_gate_exps.weight	Q4_0	[2048, 512, 256]	aea7f887cd13275f027a313fa22f9e18889ef6f5cc47ad5331668bc0b717af43
+t	blk.40.ffn_gate_inp.weight	F32	[2048, 256]	269de2d38c44fff4028c7a77b6a73405ec408b818302fbf2b4f79a9cd81c7937
+t	blk.40.ffn_gate_inp_shexp.weight	F32	[2048]	0102b46c26a03653712f4f5e6ed47f156cf83ec6eed2c9f85458c71b14b78708
+t	blk.40.ffn_gate_shexp.weight	Q4_0	[2048, 512]	1aefcd3d965e1e529b4c017cf9002bed1ef3cf1b0cb6f4ce1b2323e5b23fd102
+t	blk.40.ffn_up_exps.weight	Q4_0	[2048, 512, 256]	06eae88c42118744888bc70801db9ab02837e190b053b71f15dcc8250a4165c7
+t	blk.40.ffn_up_shexp.weight	Q4_0	[2048, 512]	c1195867c970f45250eefcf6b7d6d70183038713f1444eee39e1a450f02d64b5
+t	blk.40.nextn.eh_proj.weight	Q4_0	[4096, 2048]	8d4e8bc3686ec313cd3dec26f36cce733d33358f80850b25ab177db3c5a1d528
+t	blk.40.nextn.enorm.weight	F32	[2048]	0a4310389073ed444876ec823dd27ca3029dc30aeb84487a13b6de4b90ed7717
+t	blk.40.nextn.hnorm.weight	F32	[2048]	6dda2c53989ed9a86757bdccf4427ac84f38c85a1850f5fe04ba5fbdfcb20a1b
+t	blk.40.nextn.shared_head_norm.weight	F32	[2048]	5fb1b8b3a994fa6a2adb1fd56d660d2ce2cf317e842a311db19e01ded3d27e1b
+t	blk.40.post_attention_norm.weight	F32	[2048]	c0eb303e03d76e7f7636fc7f178f9d5d4d61297d086e90e26d5eadb89700622c

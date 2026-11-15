@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-thinking-wiki.kld",
+ "test": "out/q3vl-thinking-wiki-herbert-q4g8.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact"
+ },
+ "ppl_ref": 7.395473739961304,
+ "ppl_test": 8.010463695008442,
+ "nll_ref": 2.0008681563098274,
+ "nll_test": 2.080748648918897,
+ "dnll": 0.07988049260906967,
+ "dnll_se": 0.0061643997416725655,
+ "dnll_se_chunk": 0.006567174359442446,
+ "kl_mean": 0.09204718282266727,
+ "kl_se": 0.001628503251690916,
+ "kl_median": 0.06391676732277002,
+ "kl_p99": 0.5509817206335293,
+ "kl_p999": 1.2155300206220285,
+ "kl_max": 2.7154063727366506,
+ "top1": 0.8458005249343832,
+ "top1_n": 5156,
+ "ref_nll_exact_minus_compressed": 0.001301730508252292
+}

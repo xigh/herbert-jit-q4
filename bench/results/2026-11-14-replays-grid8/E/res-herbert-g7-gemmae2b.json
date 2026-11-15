@@ -1,0 +1,39 @@
+{
+ "label": "herbert-g7-gemmae2b",
+ "text": [
+  {
+   "words": 380,
+   "rep": 0,
+   "wall_s": 4.4031190341338515,
+   "prompt_n": 626,
+   "prompt_ms": 773.0726119999999,
+   "prompt_per_second": 809.755759398187,
+   "predicted_n": 128,
+   "predicted_ms": 3628.939063,
+   "predicted_per_second": 35.27201691124126
+  },
+  {
+   "words": 380,
+   "rep": 1,
+   "wall_s": 4.408486302010715,
+   "prompt_n": 626,
+   "prompt_ms": 778.6603319999999,
+   "prompt_per_second": 803.9448964763753,
+   "predicted_n": 128,
+   "predicted_ms": 3628.806275,
+   "predicted_per_second": 35.27330761133012
+  },
+  {
+   "words": 380,
+   "rep": 2,
+   "wall_s": 4.409629979170859,
+   "prompt_n": 626,
+   "prompt_ms": 779.602852,
+   "prompt_per_second": 802.9729475643323,
+   "predicted_n": 128,
+   "predicted_ms": 3629.009508,
+   "predicted_per_second": 35.271332223800826
+  }
+ ],
+ "image": []
+}

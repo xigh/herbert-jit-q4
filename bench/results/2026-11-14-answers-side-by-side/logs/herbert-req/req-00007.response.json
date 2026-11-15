@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-7",
+  "object": "chat.completion",
+  "created": 1794676028,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "La lumière du soleil, bien que blanche, est composée de toutes les couleurs de l'arc-en-ciel. En traversant l'atmosphère terrestre, les molécles d'air dispersent davantage les courtes longueurs d'onde, comme le bleu, que les autres couleurs. C'est cette diffusion sélective, appelée diffusion de Rayleigh, qui donne au ciel sa couleur bleue caractéristique."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 23,
+    "completion_tokens": 87,
+    "total_tokens": 110,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 23,
+    "prompt_ms": 268.94804100000005,
+    "prompt_per_token_ms": 11.693393086956524,
+    "prompt_per_second": 85.51837713515823,
+    "predicted_n": 87,
+    "predicted_ms": 5213.527196,
+    "predicted_per_token_ms": 59.925599954022985,
+    "predicted_per_second": 16.687359004619644
+  }
+}

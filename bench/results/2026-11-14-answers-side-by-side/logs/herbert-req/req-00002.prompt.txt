@@ -1,0 +1,7 @@
+<|im_start|>user
+En quelle année a eu lieu la prise de la Bastille, et quelle fête en garde le souvenir ? Réponds en une phrase.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

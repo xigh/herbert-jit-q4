@@ -1,0 +1,7 @@
+<|im_start|>user
+Quelle est la capitale de l'Australie ? Réponds en une phrase.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

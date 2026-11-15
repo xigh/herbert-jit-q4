@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-9",
+  "object": "chat.completion",
+  "created": 1794678219,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Artist R.M. Harringay becomes frustrated with his static portrait of an organ-grinder, which suddenly animates into a devilish figure that critiques his lack of true artistic inspiration. After a physical struggle in which Harringay paints over the demon with enamel, he claims the canvas is now blank, though his friends remain skeptical of his tale given his history of never producing a masterpiece."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2731,
+    "completion_tokens": 79,
+    "total_tokens": 2810,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 2731,
+    "prompt_ms": 6842.146331,
+    "prompt_per_token_ms": 2.5053629919443425,
+    "prompt_per_second": 399.14375809627796,
+    "predicted_n": 79,
+    "predicted_ms": 5035.542886,
+    "predicted_per_token_ms": 63.74104918987342,
+    "predicted_per_second": 15.688477248329804
+  }
+}

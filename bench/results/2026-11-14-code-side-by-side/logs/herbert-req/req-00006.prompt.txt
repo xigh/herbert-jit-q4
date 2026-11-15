@@ -1,0 +1,19 @@
+<|im_start|>user
+Qu'affiche ce programme Python ?
+
+```python
+def f(xs, acc=[]):
+    acc.append(len(xs))
+    return acc
+
+f("ab")
+f([1, 2, 3])
+print(f(""))
+```
+
+Réponds par la sortie exacte seule, dans un seul bloc de code, sans explication.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

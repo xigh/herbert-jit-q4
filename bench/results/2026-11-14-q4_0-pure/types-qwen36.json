@@ -1,0 +1,208 @@
+{
+ "file": "Qwen3.6-35B-A3B-Q4_0-pure.gguf",
+ "bytes": 19583940640,
+ "sha256": "11d3f9d55709f352088823f6cb10917652443deac0cabcf3b9177dfc093a0886",
+ "n": 733,
+ "count": {
+  "Q4_0": 432,
+  "F32": 301
+ },
+ "families": [
+  {
+   "family": "output.weight",
+   "n": 1,
+   "gguf": "Q4_0×1",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) — tête ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "output_norm.weight",
+   "n": 1,
+   "gguf": "F32×1",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "token_embd.weight",
+   "n": 1,
+   "gguf": "Q4_0×1",
+   "herbert": "bf16 (table lue, non quantifiée)",
+   "same": false
+  },
+  {
+   "family": "blk.*.attn_gate.weight",
+   "n": 30,
+   "gguf": "Q4_0×30",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_norm.weight",
+   "n": 40,
+   "gguf": "F32×40",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_qkv.weight",
+   "n": 30,
+   "gguf": "Q4_0×30",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_down_exps.weight",
+   "n": 40,
+   "gguf": "Q4_0×40",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_down_shexp.weight",
+   "n": 40,
+   "gguf": "Q4_0×40",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_gate_exps.weight",
+   "n": 40,
+   "gguf": "Q4_0×40",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_gate_inp.weight",
+   "n": 40,
+   "gguf": "F32×40",
+   "herbert": "bf16 (routeur, blocs de 16 experts) ; F32 dans le GGUF = valeurs bf16 exactes",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_gate_inp_shexp.weight",
+   "n": 40,
+   "gguf": "F32×40",
+   "herbert": "bf16 (shared_expert_gate) ; F32 dans le GGUF = valeurs bf16 exactes",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_gate_shexp.weight",
+   "n": 40,
+   "gguf": "Q4_0×40",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_up_exps.weight",
+   "n": 40,
+   "gguf": "Q4_0×40",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.ffn_up_shexp.weight",
+   "n": 40,
+   "gguf": "Q4_0×40",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.post_attention_norm.weight",
+   "n": 40,
+   "gguf": "F32×40",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "blk.*.ssm_a",
+   "n": 30,
+   "gguf": "F32×30",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "blk.*.ssm_alpha.weight",
+   "n": 30,
+   "gguf": "Q4_0×30",
+   "herbert": "f32 (in_proj_a / in_proj_b)",
+   "same": false
+  },
+  {
+   "family": "blk.*.ssm_beta.weight",
+   "n": 30,
+   "gguf": "Q4_0×30",
+   "herbert": "f32 (in_proj_a / in_proj_b)",
+   "same": false
+  },
+  {
+   "family": "blk.*.ssm_conv1d.weight",
+   "n": 30,
+   "gguf": "F32×30",
+   "herbert": "f32 (conv1d)",
+   "same": true
+  },
+  {
+   "family": "blk.*.ssm_dt.bias",
+   "n": 30,
+   "gguf": "F32×30",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "blk.*.ssm_norm.weight",
+   "n": 30,
+   "gguf": "F32×30",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "blk.*.ssm_out.weight",
+   "n": 30,
+   "gguf": "Q4_0×30",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_k.weight",
+   "n": 10,
+   "gguf": "Q4_0×10",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_k_norm.weight",
+   "n": 10,
+   "gguf": "F32×10",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_output.weight",
+   "n": 10,
+   "gguf": "Q4_0×10",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_q.weight",
+   "n": 10,
+   "gguf": "Q4_0×10",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_q_norm.weight",
+   "n": 10,
+   "gguf": "F32×10",
+   "herbert": "f32 (petit vecteur ou norme)",
+   "same": true
+  },
+  {
+   "family": "blk.*.attn_v.weight",
+   "n": 10,
+   "gguf": "Q4_0×10",
+   "herbert": "Q4, groupes de 32, échelle f32 (grid8 : règle Q4_0) ; Q4_0 : échelle f16",
+   "same": true
+  }
+ ]
+}

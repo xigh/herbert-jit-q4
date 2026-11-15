@@ -1,0 +1,10 @@
+[package]
+name = "hkld"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "bench/quality: herbert's log-probabilities in llama-perplexity's KL format, greedy ids and last-position logits, on given tokens"
+publish = false
+
+[dependencies]
+herbert-jit-q4 = { path = "../../.." }

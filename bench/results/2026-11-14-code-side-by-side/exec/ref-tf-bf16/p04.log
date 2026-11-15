@@ -1,0 +1,2 @@
+
+@@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "ok", "test_deux": "ok", "test_un": "ok", "test_vide": "ok", "test_non_modifiee": "ok", "test_flottants": "ok"}, "erreur": null}

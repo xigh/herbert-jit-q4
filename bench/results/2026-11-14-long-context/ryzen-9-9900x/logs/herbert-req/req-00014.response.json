@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-14",
+  "object": "chat.completion",
+  "created": 1794678305,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "D'après le texte, Hapley remarque l'étrange papillon le **troisième jour** de son étude des diatomées.\n\nLe passage pertinent est le suivant :\n> \"It was on the **third day** of the diatoms that Hapley became aware of a novel addition to the local fauna.\""
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5316,
+    "completion_tokens": 70,
+    "total_tokens": 5386,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 5316,
+    "prompt_ms": 13351.530528,
+    "prompt_per_token_ms": 2.511574591422122,
+    "prompt_per_second": 398.15660001313074,
+    "predicted_n": 70,
+    "predicted_ms": 4612.316197,
+    "predicted_per_token_ms": 65.89023138571429,
+    "predicted_per_second": 15.176756538402607
+  }
+}

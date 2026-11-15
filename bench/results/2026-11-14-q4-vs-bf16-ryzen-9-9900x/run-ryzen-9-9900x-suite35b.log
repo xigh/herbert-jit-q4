@@ -1,0 +1,58 @@
+SUITE 35B 22:32:49 : en attente du verrou
+SEGMENT 35b-suite 22:32:49 ;  22:32:49 up 7 days, 23:35,  5 users,  load average: 4.11, 7.12, 9.79 ; code 68c3a96 ; 1483ab97efb6328c28da8cb3fd44fd288738211b0784e8a7ce53d324d364fa2f  ~/publication-jit-q4-rejeu/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ; client 367da85c2e5f448b6e59ec1182612bd7  ~/banc-q40/throughput.py
+REPOS? 8620 absent ; autres >5 % : aucun ; FPGA oui ; charge 3.86 7.02 9.74
+=== q4-qwen36-35b-r2 22:32:52 : ~/publication-jit-q4-rejeu/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/Qwen3.6-35B-A3B --threads 12 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 22:32:52 up 7 days, 23:35,  5 users,  load average: 3.86, 7.02, 9.74
+Mem:          190854       72765       41750       63233      141075      118089
+MemAvailable:   120923336 kB
+P8620-AVANT q4-qwen36-35b-r2 absent
+FPGA-AVANT q4-qwen36-35b-r2 oui
+    PID %CPU   RSS     ELAPSED COMMAND
+3358954  110 1859996     19:56 ld-linux-x86-64
+    422  2.4  3444  7-23:35:40 plymouthd
+3358953  0.2 12496       19:56 python3
+3337654  0.2 12628       33:10 python3
+3301165  0.2 24924       57:18 postgres
+LOAD q4-qwen36-35b-r2 32.766461003 s
+REST q4-qwen36-35b-r2 VmHWM: 27334164 kB;VmRSS: 24468964 kB;RssAnon: 24458996 kB;RssFile: 9968 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET q4-qwen36-35b-r2 VmHWM: 24468964 kB;VmRSS: 24468964 kB;RssAnon: 24458996 kB;RssFile: 9968 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+P8620-BANC-DEBUT q4-qwen36-35b-r2 absent
+q4-qwen36-35b-r2 text {"words": 380, "rep": 0, "wall_s": 8.008978288038634, "prompt_n": 627, "prompt_ms": 1820.2378270000002, "prompt_per_second": 344.4604824158508, "predicted_n": 128, "predicted_ms": 6185.290254, "predicted_per_second": 20.694259241467766}
+q4-qwen36-35b-r2 text {"words": 380, "rep": 1, "wall_s": 7.93873723805882, "prompt_n": 627, "prompt_ms": 1765.991202, "prompt_per_second": 355.0414063727595, "predicted_n": 128, "predicted_ms": 6170.1230909999995, "predicted_per_second": 20.74512908611275}
+q4-qwen36-35b-r2 text {"words": 380, "rep": 2, "wall_s": 8.03933334897738, "prompt_n": 627, "prompt_ms": 1837.363209, "prompt_per_second": 341.2498938308718, "predicted_n": 128, "predicted_ms": 6197.83608, "predicted_per_second": 20.652369366954925}
+q4-qwen36-35b-r2 text {"words": 4240, "rep": 0, "wall_s": 23.611539723002352, "prompt_n": 6131, "prompt_ms": 16730.673466, "prompt_per_second": 366.4526722405641, "predicted_n": 128, "predicted_ms": 6870.571592, "predicted_per_second": 18.630182116003486}
+q4-qwen36-35b-r2 text {"words": 4240, "rep": 1, "wall_s": 23.233758733957075, "prompt_n": 6131, "prompt_ms": 16355.182584000002, "prompt_per_second": 374.86588538594816, "predicted_n": 128, "predicted_ms": 6871.293147, "predicted_per_second": 18.628225759205844}
+q4-qwen36-35b-r2 text {"words": 4240, "rep": 2, "wall_s": 23.303072596085258, "prompt_n": 6131, "prompt_ms": 16424.80747, "prompt_per_second": 373.27682599618316, "predicted_n": 128, "predicted_ms": 6872.043795, "predicted_per_second": 18.626190958377034}
+BANC DONE q4-qwen36-35b-r2
+P8620-BANC-FIN q4-qwen36-35b-r2 absent
+FPGA-FIN q4-qwen36-35b-r2 oui
+END q4-qwen36-35b-r2 VmHWM: 24469420 kB;VmRSS: 24469420 kB;RssAnon: 24459196 kB;RssFile: 10224 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+REPOS? 8620 absent ; autres >5 % : aucun ; FPGA oui ; charge 12.45 11.23 11.08
+=== bf16-qwen36-35b-r2 22:35:10 : ~/publication-jit-q4-rejeu/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/Qwen3.6-35B-A3B --threads 12 --host 127.0.0.1 --port PORTX --ctx 8192
+ 22:35:10 up 7 days, 23:38,  5 users,  load average: 12.45, 11.23, 11.08
+Mem:          190854       72771       41519       63233      141299      118082
+MemAvailable:   120916400 kB
+P8620-AVANT bf16-qwen36-35b-r2 absent
+FPGA-AVANT bf16-qwen36-35b-r2 oui
+    PID %CPU   RSS     ELAPSED COMMAND
+3358954  109 1859996     22:14 ld-linux-x86-64
+    422  2.4  3444  7-23:37:58 plymouthd
+3358953  0.2 12496       22:14 python3
+3337654  0.2 12628       35:28 python3
+3301165  0.2 24920       59:36 postgres
+LOAD bf16-qwen36-35b-r2 45.475791777 s
+REST bf16-qwen36-35b-r2 VmHWM: 72318696 kB;VmRSS: 69740092 kB;RssAnon: 69730440 kB;RssFile: 9652 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+HWM-RESET bf16-qwen36-35b-r2 VmHWM: 69740092 kB;VmRSS: 69740092 kB;RssAnon: 69730440 kB;RssFile: 9652 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+P8620-BANC-DEBUT bf16-qwen36-35b-r2 absent
+bf16-qwen36-35b-r2 text {"words": 380, "rep": 0, "wall_s": 91.00958211091347, "prompt_n": 627, "prompt_ms": 73166.446838, "prompt_per_second": 8.56950182900448, "predicted_n": 128, "predicted_ms": 17835.369673999998, "predicted_per_second": 7.176750599489705}
+bf16-qwen36-35b-r2 text {"words": 380, "rep": 1, "wall_s": 90.62117138993926, "prompt_n": 627, "prompt_ms": 72978.303423, "prompt_per_second": 8.591594632801415, "predicted_n": 128, "predicted_ms": 17640.0892, "predicted_per_second": 7.256199135319566}
+bf16-qwen36-35b-r2 text {"words": 380, "rep": 2, "wall_s": 90.25476977403741, "prompt_n": 627, "prompt_ms": 72526.569314, "prompt_per_second": 8.645107660965406, "predicted_n": 128, "predicted_ms": 17726.748354000003, "predicted_per_second": 7.220726409822198}
+bf16-qwen36-35b-r2 text {"words": 4240, "rep": 0, "wall_s": 753.5465588730294, "prompt_n": 6131, "prompt_ms": 734822.5196839999, "prompt_per_second": 8.343511304793095, "predicted_n": 128, "predicted_ms": 18710.209233, "predicted_per_second": 6.8411848529326384}
+bf16-qwen36-35b-r2 text {"words": 4240, "rep": 1, "wall_s": 751.7808936809888, "prompt_n": 6131, "prompt_ms": 733206.031264, "prompt_per_second": 8.361906119935417, "predicted_n": 128, "predicted_ms": 18567.343270999998, "predicted_per_second": 6.893824180001073}
+bf16-qwen36-35b-r2 text {"words": 4240, "rep": 2, "wall_s": 751.6767290110001, "prompt_n": 6131, "prompt_ms": 733114.035807, "prompt_per_second": 8.362955421050007, "predicted_n": 128, "predicted_ms": 18556.136318, "predicted_per_second": 6.897987695630163}
+BANC DONE bf16-qwen36-35b-r2
+P8620-BANC-FIN bf16-qwen36-35b-r2 absent
+FPGA-FIN bf16-qwen36-35b-r2 oui
+END bf16-qwen36-35b-r2 VmHWM: 69771136 kB;VmRSS: 69771136 kB;RssAnon: 69761292 kB;RssFile: 9844 kB;RssShmem: 0 kB;VmSwap: 0 kB;
+SEGMENT 35b-suite FINI 23:18:14
+VERROU RENDU 35b-suite 23:18:14

@@ -1,0 +1,7 @@
+<|im_start|>user
+Explique en trois phrases pourquoi le ciel est bleu.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

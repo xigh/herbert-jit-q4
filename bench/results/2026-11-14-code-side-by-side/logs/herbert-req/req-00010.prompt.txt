@@ -1,0 +1,18 @@
+<|im_start|>user
+Complète cette fonction Rust. Elle découpe le texte sur les blancs (`split_whitespace`), met chaque mot en minuscules (`to_lowercase`) et rend les couples (mot, nombre d'occurrences), triés par nombre décroissant, puis par ordre alphabétique du mot (ordre des `String`) en cas d'égalité. Garde son nom et sa signature.
+
+```rust
+use std::collections::HashMap;
+
+pub fn compter_mots(texte: &str) -> Vec<(String, usize)> {
+    let mut compte: HashMap<String, usize> = HashMap::new();
+    // à compléter
+}
+```
+
+Réponds par le code seul, dans un seul bloc ```rust, sans explication ni fonction main.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

@@ -1,0 +1,20 @@
+<|im_start|>user
+Cette fonction Python doit rendre la médiane d'une liste de nombres (la moyenne des deux valeurs du milieu si la longueur est paire), sans modifier la liste, et lever `ValueError` si la liste est vide. Elle a un bogue. Corrige-la en gardant son nom et sa signature.
+
+```python
+def mediane(nombres: list[float]) -> float:
+    if not nombres:
+        raise ValueError("liste vide")
+    s = sorted(nombres)
+    n = len(s)
+    if n % 2 == 1:
+        return s[n // 2]
+    return (s[n // 2] + s[n // 2 + 1]) / 2
+```
+
+Réponds par le code seul, dans un seul bloc ```python, sans explication.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

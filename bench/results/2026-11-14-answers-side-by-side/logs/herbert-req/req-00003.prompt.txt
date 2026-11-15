@@ -1,0 +1,7 @@
+<|im_start|>user
+Quel est le symbole chimique du tungstène, et quel est son numéro atomique ?<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

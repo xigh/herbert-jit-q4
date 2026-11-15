@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-instruct-fr.kld",
+ "test": "out/q3vl-instruct-fr-herbert-q4.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact"
+ },
+ "ppl_ref": 6.166351139133403,
+ "ppl_test": 6.539281424034496,
+ "nll_ref": 1.8191072754800972,
+ "nll_test": 1.8778272854316755,
+ "dnll": 0.05872000995157841,
+ "dnll_se": 0.008080642744294089,
+ "dnll_se_chunk": 0.007137177177088339,
+ "kl_mean": 0.0821126490032298,
+ "kl_se": 0.0019349071831804847,
+ "kl_median": 0.05882943626665746,
+ "kl_p99": 0.45545231274351206,
+ "kl_p999": 0.979344279867204,
+ "kl_max": 2.2137398512380777,
+ "top1": 0.84251968503937,
+ "top1_n": 2568,
+ "ref_nll_exact_minus_compressed": -1.421389455911082e-05
+}

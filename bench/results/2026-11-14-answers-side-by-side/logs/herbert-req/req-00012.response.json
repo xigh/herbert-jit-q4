@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-12",
+  "object": "chat.completion",
+  "created": 1794676051,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "L'auberge de la Croix-de-Colbas à Digne, tenue par Jacquin Labarre, était liée par rumeur à l'auberge des Trois-Dauphins de Grenoble.\nCes bruits circulaient lors du débarquement de l'empereur, évoquant des visites déguisées du général Bertrand.\nEn réalité, Napoléon s'est rendu aux Trois-Dauphins à Grenoble après avoir refusé l'hôtel de la préfecture."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 257,
+    "completion_tokens": 104,
+    "total_tokens": 361,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 257,
+    "prompt_ms": 663.335812,
+    "prompt_per_token_ms": 2.5810731984435797,
+    "prompt_per_second": 387.4357382049501,
+    "predicted_n": 104,
+    "predicted_ms": 6275.709102000001,
+    "predicted_per_token_ms": 60.343356750000005,
+    "predicted_per_second": 16.5718324909063
+  }
+}

@@ -1,0 +1,2 @@
+
+@@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_exemple": "ok", "test_accents": "ok", "test_cedille_trema": "ok", "test_vide": "ok", "test_que_ponctuation": "ok", "test_bords": "ok", "test_majuscules": "ok", "test_chiffres": "ok"}, "erreur": null}

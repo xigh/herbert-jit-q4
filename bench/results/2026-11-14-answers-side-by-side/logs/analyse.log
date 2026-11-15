@@ -1,0 +1,192 @@
+
+### q01 (fait) réf 10 jetons, fin eos
+RÉF: La capitale de l'Australie est Canberra.
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### q02 (fait) réf 37 jetons, fin eos
+RÉF: La prise de la Bastille a eu lieu en 1789 et sa mémoire est commémorée chaque année par la fête nationale française, le 14 juillet.
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    dévie au jeton 19 : réf ' comm' / bras ' célébr' (fin eos, 36 j.)
+      bras→ ' célébrée chaque année lors de la fête nationale française, le 14 juillet.'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### q03 (fait) réf 35 jetons, fin eos
+RÉF: Le symbole chimique du tungstène est **W** (provenant de son nom allemand *Wolfram*).⏎⏎Son numéro atomique est **74**.
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### q04 (calcul) réf 3 jetons, fin eos
+RÉF: 408
+  herbert-q40   identique
+  llama-q40pur  identique
+  ik-q40pur     identique
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### q05 (calcul) réf 200 jetons, fin coupe
+RÉF: Pour déterminer l'heure d'arrivée, il faut d'abord calculer la durée du trajet.⏎⏎La formule pour calculer le temps est :⏎$$ \text{Temps} = \frac{\text{Distance}}{\text{Vitesse}} $$⏎⏎En remplaçant par les valeurs données :⏎$$ \text{Temps} = \frac{189 \text{ km}}{84 \text{ km/h}} = 2,25 \text{ heures} $$⏎⏎Il faut maintenant convertir 0,25 heure en minutes :⏎$$ 0,25 \times 60 \text{ minutes} = 15 \text{ minutes} $$⏎⏎Donc, la durée du trajet est de **2 heures et 15 minutes**.⏎⏎En ajoutant cette durée au départ à 14 h 10 :⏎*   14 h 10 + 2 heures = 16 h
+  herbert-q40   dévie au jeton 55 : réf 'En' / bras 'I' (fin coupe, 200 j.)
+      bras→ 'Ici :\n*   Distance = 189 km\n*   Vitesse = 84 km/h\n\n$$ \\text{Temps} = \\frac{189}{84} = 2,25 \\text{ heures} $$\n\nConvertissons 0,25 heure en minutes :\n$$ 0,25 \\times 60 = 15 \\text{ minutes} $$\n\nLe trajet dure donc **2 heures et 15 minutes**.\n\nLe train part à **14 h 10**.\n*   Ajout de 2 heures : 16 h 10\n*   Ajout de 15 minutes :'
+  llama-q40pur  dévie au jeton 55 : réf 'En' / bras 'I' (fin coupe, 200 j.)
+      bras→ 'Ici :\n*   Distance = 189 km\n*   Vitesse = 84 km/h\n\n$$ \\text{Temps} = \\frac{189}{84} = 2,25 \\text{ heures} $$\n\nConvertissons 0,25 heure en minutes :\n$$ 0,25 \\times 60 = 15 \\text{ minutes} $$\n\nLe trajet dure donc **2 heures et 15 minutes**.\n\nLe train part à **14 h 10**.\n*   Ajout de 2 heures : 16 h 10\n*   Ajout de 15 minutes :'
+  ik-q40pur     dévie au jeton 55 : réf 'En' / bras 'I' (fin coupe, 200 j.)
+      bras→ 'Ici :\n$$ \\text{Temps} = \\frac{189 \\text{ km}}{84 \\text{ km/h}} $$\n\nEffectuons la division :\n$$ 189 \\div 84 = 2,25 \\text{ heures} $$\n\nConvertissons 0,25 heure en minutes :\n$$ 0,25 \\times 60 \\text{ minutes} = 15 \\text{ minutes} $$\n\nLe trajet dure donc **2 heures et 15 minutes**.\n\nLe train part à **14 h 10**.\nAjoutons 2 heures : 14 h 10'
+  llama-q4km    dévie au jeton 55 : réf 'En' / bras '1' (fin coupe, 200 j.)
+      bras→ "1.  **Calcul de la durée :**\n    $$ \\text{Temps} = \\frac{189 \\text{ km}}{84 \\text{ km/h}} = 2,25 \\text{ heures} $$\n\n2.  **Conversion en heures et minutes :**\n    $0,25$ heure correspond à un quart d'heure, soit $15$ minutes.\n    Donc, $2,25$ heures = **2 heures et 15 minutes**.\n\n3.  **Calcul de l'heure d'arrivée :**\n    Le train part à **14 h 10**.\n    On ajoute 2 heures : $1"
+  paire herbert-q40|llama-q40pur: identique jusqu'à la coupe
+  paire llama-q40pur|ik-q40pur: dévie au jeton 59
+  paire herbert-q40|ik-q40pur: dévie au jeton 59
+
+### q06 (calcul) réf 84 jetons, fin eos
+RÉF: Le prix final est de **75 €**.⏎⏎En effet, une baisse de 25 % ramène le prix à 60 € (80 × 0,75), et une hausse de 25 % appliquée à ce nouveau montant (60 × 1,25) donne 75 €, car les pourcentages s'appliquent à des bases différentes.
+  herbert-q40   dévie au jeton 2 : réf ' final' / bras ' passe' (fin eos, 67 j.)
+      bras→ " passe d'abord à 60 € après la baisse de 25 %, puis augmente de 25 % de cette nouvelle base, soit 15 €, pour atteindre 75 €. Le prix final est donc de 75 € car les pourcentages s'appliquent à des valeurs différentes."
+  llama-q40pur  dévie au jeton 2 : réf ' final' / bras ' passe' (fin eos, 67 j.)
+      bras→ " passe d'abord à 60 € après la baisse de 25 %, puis augmente de 25 % de cette nouvelle base, soit 15 €, pour atteindre 75 €. Le prix final est donc de 75 € car les pourcentages s'appliquent à des valeurs différentes."
+  ik-q40pur     dévie au jeton 2 : réf ' final' / bras ' passe' (fin eos, 67 j.)
+      bras→ " passe d'abord à 60 € après la baisse de 25 %, puis augmente de 15 € (25 % de 60 €) pour atteindre 75 €. Le prix final est donc de 75 € car les pourcentages s'appliquent à des bases différentes."
+  llama-q4km    dévie au jeton 14 : réf ' une' / bras ' après' (fin eos, 82 j.)
+      bras→ " après une baisse de 25 %, le prix passe à 60 € (80 × 0,75), puis une augmentation de 25 % sur ce nouveau montant (60 × 1,25) donne 75 €, car les pourcentages s'appliquent à des bases différentes."
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: dévie au jeton 23
+  paire herbert-q40|ik-q40pur: dévie au jeton 23
+
+### q07 (explication) réf 89 jetons, fin eos
+RÉF: La lumière du soleil, qui semble blanche, est en réalité composée de toutes les couleurs de l'arc-en-ciel. Lorsque cette lumière atteint l'atmosphère terrestre, les molécules de gaz dispersent davantage les courtes longueurs d'onde, comme le bleu, que les autres couleurs. C'est cette diffusion préférentielle de la lumière bleue dans toutes les directions qui donne au ciel sa couleur caractéristique.
+  herbert-q40   dévie au jeton 5 : réf ' qui' / bras ' bien' (fin eos, 86 j.)
+      bras→ " bien que blanche, est composée de toutes les couleurs de l'arc-en-ciel. En traversant l'atmosphère terrestre, les molécles d'air dispersent davantage les courtes longueurs d'onde, comme le bleu, que les autres couleurs. C'est cette diffusion sélective, appelée diffusion de Rayleigh, qui donne au ciel sa couleur bleue caractéristique."
+  llama-q40pur  dévie au jeton 5 : réf ' qui' / bras ' bien' (fin eos, 106 j.)
+      bras→ " bien qu'apparaissant blanche, est en réalité composée de toutes les couleurs de l'arc-en-ciel. En traversant l'atmosphère terrestre, ces ondes lumineuses entrent en collision avec les molécules de gaz qui composent l'air. Comme la lumière bleue possède une longueur d'onde plus courte, elle est diffusée dans toutes les directions par ces molécules beaucoup plus efficacement que les autres couleurs"
+  ik-q40pur     dévie au jeton 5 : réf ' qui' / bras ' bien' (fin eos, 104 j.)
+      bras→ " bien qu'apparaissant blanche, est en réalité composée de toutes les couleurs de l'arc-en-ciel. En traversant l'atmosphère terrestre, ces ondes lumineuses entrent en collision avec les molécules de gaz qui la composent. Comme la lumière bleue possède une longueur d'onde plus courte, elle est diffusée dans toutes les directions par ces molécules beaucoup plus efficacement que les autres couleurs, c"
+  llama-q4km    dévie au jeton 25 : réf ' Lorsque' / bras ' Lorsqu' (fin eos, 100 j.)
+      bras→ " Lorsqu'elle pénètre dans l'atmosphère terrestre, elle entre en collision avec les molécules de gaz qui composent l'air. Ces collisions diffusent préférentiellement les courtes longueurs d'onde, c'est-à-dire la lumière bleue, dans toutes les directions, ce qui donne à notre ciel cette couleur caractéristique."
+  paire herbert-q40|llama-q40pur: dévie au jeton 6
+  paire llama-q40pur|ik-q40pur: dévie au jeton 54
+  paire herbert-q40|ik-q40pur: dévie au jeton 6
+
+### q08 (explication) réf 78 jetons, fin eos
+RÉF: L'inflation est une augmentation générale et durable des prix des biens et services au fil du temps. Elle entraîne une baisse du pouvoir d'achat de la monnaie, car il faut dépenser davantage pour acquérir les mêmes produits. Ce phénomène est généralement mesuré par l'indice des prix à la consommation et est surveillé de près par les banques centrales pour maintenir la stabilité économique.
+  herbert-q40   dévie au jeton 29 : réf ' de' / bras ' des' (fin eos, 70 j.)
+      bras→ " des consommateurs, car il faut dépenser davantage pour acquérir les mêmes biens. Ce phénomène est généralement mesuré par l'augmentation du taux d'augmentation des prix, souvent exprimé en pourcentage."
+  llama-q40pur  dévie au jeton 29 : réf ' de' / bras ' des' (fin eos, 70 j.)
+      bras→ " des consommateurs, car il faut dépenser davantage pour acquérir les mêmes biens. Ce phénomène est généralement mesuré par l'augmentation du taux d'augmentation des prix, souvent exprimé en pourcentage."
+  ik-q40pur     dévie au jeton 4 : réf ' une' / bras ' l' (fin eos, 87 j.)
+      bras→ " l'augmentation générale et durable des prix des biens et services au fil du temps. Elle entraîne une baisse du pouvoir d'achat des consommateurs, car il faut dépenser davantage pour acquérir les mêmes biens. Ce phénomène est généralement mesuré par l'indice des prix à la consommation et peut être influencé par divers facteurs économiques, tels que la demande, les coûts de production ou la politiq"
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: dévie au jeton 4
+  paire herbert-q40|ik-q40pur: dévie au jeton 4
+
+### q09 (liste) réf 15 jetons, fin eos
+RÉF: La Seine⏎La Loire⏎Le Rhône⏎La Garonne⏎La Loire
+  herbert-q40   dévie au jeton 13 : réf 'La' / bras 'Le' (fin eos, 16 j.)
+      bras→ 'Le Rhin'
+  llama-q40pur  dévie au jeton 13 : réf 'La' / bras 'Le' (fin eos, 16 j.)
+      bras→ 'Le Rhin'
+  ik-q40pur     dévie au jeton 13 : réf 'La' / bras 'Le' (fin eos, 16 j.)
+      bras→ 'Le Rhin'
+  llama-q4km    dévie au jeton 14 : réf ' Loire' / bras ' Som' (fin eos, 16 j.)
+      bras→ ' Somme'
+  paire herbert-q40|llama-q40pur: identique
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: identique
+
+### q10 (format) réf 84 jetons, fin eos
+RÉF: * Maintenez un horaire de sommeil régulier en vous couchant et en vous levant à la même heure chaque jour, même le week-end.⏎* Assurez-vous que votre chambre est sombre, silencieuse et fraîche pour optimiser les conditions de repos.⏎* Évitez les écrans et les stimulants comme la caféine au moins une heure avant le coucher pour faciliter l'endormissement.
+  herbert-q40   dévie au jeton 1 : réf ' Maint' / bras '  ' (fin eos, 126 j.)
+      bras→ '   Maintenez un horaire de sommeil régulier en vous couchant et en vous réveillant à la même heure chaque jour, même le week-end, pour réguler votre horloge biologique.\n*   Créez un environnement de sommeil optimal en assombrissant la chambre, en réduisant le bruit et en maintenant une température fraîche (entre 18 et 20°C).\n*   Évitez les écrans lumineux au moins une heure avant le coucher, car l'
+  llama-q40pur  dévie au jeton 1 : réf ' Maint' / bras '  ' (fin eos, 78 j.)
+      bras→ '   Maintenez un horaire de coucher et de lever régulier, même les week-ends, pour réguler votre horloge biologique.\n*   Créez un environnement de sommeil optimal en assurant une chambre sombre, fraîche et silencieuse.\n*   Évitez les écrans lumineux et les stimulants comme la caféine au moins une heure avant le coucher.'
+  ik-q40pur     dévie au jeton 1 : réf ' Maint' / bras '  ' (fin eos, 77 j.)
+      bras→ '   Maintenez un horaire de coucher et de lever régulier, même le week-end, pour réguler votre horloge biologique.\n*   Créez un environnement de sommeil optimal en assurant une chambre sombre, fraîche et silencieuse.\n*   Évitez les écrans lumineux et les stimulants comme la caféine au moins une heure avant le coucher.'
+  llama-q4km    dévie au jeton 62 : réf ' les' / bras ' la' (fin eos, 80 j.)
+      bras→ " la caféine au moins une heure avant le coucher pour faciliter l'endormissement."
+  paire herbert-q40|llama-q40pur: dévie au jeton 8
+  paire llama-q40pur|ik-q40pur: dévie au jeton 16
+  paire herbert-q40|ik-q40pur: dévie au jeton 8
+
+### q11 (résumé) réf 52 jetons, fin eos
+RÉF: Arrivé à Digne avec sa sœur Baptistine, M. Myriel vit entouré de deux femmes âgées, Baptistine et sa servante Magloire. Cette dernière incarne l'idéal de respectabilité par sa douceur et sa dignité.
+  herbert-q40   dévie au jeton 12 : réf ' M' / bras ' le' (fin eos, 53 j.)
+      bras→ " le prélat Myriel est assisté par la servante Magloire.\nBaptistine, décrite comme douce et mince, incarne l'idéal de la respectabilité féminine."
+  llama-q40pur  dévie au jeton 12 : réf ' M' / bras ' le' (fin eos, 59 j.)
+      bras→ " le prélat Myriel est assisté par madame Magloire, ancienne servante du curé.\nBaptistine, décrite comme douce et mince, incarne l'idéal de la respectabilité féminine."
+  ik-q40pur     dévie au jeton 12 : réf ' M' / bras ' le' (fin eos, 59 j.)
+      bras→ " le prélat Myriel est assisté par madame Magloire, ancienne servante du curé.\nBaptistine, décrite comme douce et mince, incarne l'idéal de la respectabilité féminine."
+  llama-q4km    dévie au jeton 17 : réf ' entour' / bras ' avec' (fin eos, 48 j.)
+      bras→ " avec une seule servante, madame Magloire.\nBaptistine, douce et mince, incarne l'idéal de respectabilité."
+  paire herbert-q40|llama-q40pur: dévie au jeton 21
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 21
+
+### q12 (résumé) réf 106 jetons, fin eos
+RÉF: L'auberge grenobloise des Trois-Dauphins, tenue par Jacquin Labarre, était au centre de rumeurs sur les visites du général Bertrand avant le débarquement impérial.⏎En réalité, Napoléon y séjourna personnellement après avoir refusé l'hôtel de la préfecture, préférant l'hospitalité d'un homme qu'il connaissait.⏎Ces événements ont contribué à la réputation locale de l'établissement et de son propriétaire à Digne.
+  herbert-q40   dévie au jeton 4 : réf ' gren' / bras ' de' (fin eos, 103 j.)
+      bras→ " de la Croix-de-Colbas à Digne, tenue par Jacquin Labarre, était liée par rumeur à l'auberge des Trois-Dauphins de Grenoble.\nCes bruits circulaient lors du débarquement de l'empereur, évoquant des visites déguisées du général Bertrand.\nEn réalité, Napoléon s'est rendu aux Trois-Dauphins à Grenoble après avoir refusé l'hôtel de la préfecture."
+  llama-q40pur  dévie au jeton 4 : réf ' gren' / bras ' de' (fin eos, 99 j.)
+      bras→ " de la Croix-de-Colbas à Digne, tenue par Jacquin Labarre, était liée par parenté à celle des Trois-Dauphins à Grenoble.\nDes rumeurs circulaient sur des visites déguisées du général Bertrand et des distributions de récompenses à Grenoble.\nEn réalité, l'empereur s'y rendit après avoir refusé la préfecture, choisissant cet établissement pour sa connaissance personnelle avec l'hôtelier."
+  ik-q40pur     dévie au jeton 4 : réf ' gren' / bras ' de' (fin eos, 98 j.)
+      bras→ " de la Croix-de-Colbas à Digne, tenue par Jacquin Labarre, était liée par parenté à celle des Trois-Dauphins à Grenoble.\nDes rumeurs circulaient sur des visites déguisées du général Bertrand et des distributions de récompenses dans cette dernière.\nEn réalité, l'empereur s'y est installé après avoir refusé la préfecture, préférant loger chez un homme qu'il connaissait."
+  llama-q4km    dévie au jeton 4 : réf ' gren' / bras ' de' (fin eos, 108 j.)
+      bras→ " de la Croix-de-Colbas à Digne, tenue par Jacquin Labarre, était liée aux rumeurs entourant l'auberge des Trois-Dauphins à Grenoble.\nCes bruits faisaient état de passages secrets du général Bertrand et de distributions de récompenses avant l'arrivée de Napoléon.\nEn réalité, l'empereur avait choisi d'aller directement aux Trois-Dauphins à Grenoble, refusant l'hôtel de la préfecture."
+  paire herbert-q40|llama-q40pur: dévie au jeton 25
+  paire llama-q40pur|ik-q40pur: dévie au jeton 60
+  paire herbert-q40|ik-q40pur: dévie au jeton 25
+
+### q13 (json) réf 34 jetons, fin eos
+RÉF: {⏎  "ville": "Toronto",⏎  "pays": "Canada",⏎  "population_approx": 2930000⏎}
+  herbert-q40   dévie au jeton 7 : réf 'Toronto' / bras 'Mon' (fin eos, 35 j.)
+      bras→ 'Montréal",\n  "pays": "Canada",\n  "population_approx": 2100000\n}'
+  llama-q40pur  dévie au jeton 7 : réf 'Toronto' / bras 'Mon' (fin eos, 35 j.)
+      bras→ 'Montréal",\n  "pays": "Canada",\n  "population_approx": 2115893\n}'
+  ik-q40pur     dévie au jeton 0 : réf '{' / bras '```' (fin eos, 40 j.)
+      bras→ '```json\n{\n  "ville": "Montréal",\n  "pays": "Canada",\n  "population_approx": 2115893\n}\n```'
+  llama-q4km    dévie au jeton 7 : réf 'Toronto' / bras 'Mon' (fin eos, 35 j.)
+      bras→ 'Montréal",\n  "pays": "Canada",\n  "population_approx": 4200000\n}'
+  paire herbert-q40|llama-q40pur: dévie au jeton 28
+  paire llama-q40pur|ik-q40pur: dévie au jeton 0
+  paire herbert-q40|ik-q40pur: dévie au jeton 0
+
+### q14 (json) réf 68 jetons, fin eos
+RÉF: ```json⏎{⏎  "nom": "Charles-François-Bienvenu Myriel",⏎  "fonction": "évêque",⏎  "ville": "Digne",⏎  "age_approx": 75,⏎  "en_poste_depuis": 1806⏎}⏎```
+  herbert-q40   dévie au jeton 30 : réf '",' / bras ' de' (fin eos, 71 j.)
+      bras→ ' de Digne",\n  "ville": "Digne",\n  "age_approx": 75,\n  "en_poste_depuis": 1806\n}\n```'
+  llama-q40pur  dévie au jeton 0 : réf '```' / bras '{' (fin eos, 63 j.)
+      bras→ '{\n  "nom": "Charles-François-Bienvenu Myriel",\n  "fonction": "évêque",\n  "ville": "Digne",\n  "age_approx": 75,\n  "en_poste_depuis": 1806\n}'
+  ik-q40pur     dévie au jeton 30 : réf '",' / bras ' de' (fin eos, 71 j.)
+      bras→ ' de Digne",\n  "ville": "Digne",\n  "age_approx": 75,\n  "en_poste_depuis": 1806\n}\n```'
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: dévie au jeton 0
+  paire llama-q40pur|ik-q40pur: dévie au jeton 0
+  paire herbert-q40|ik-q40pur: identique
+
+### q15 (traduction) réf 22 jetons, fin eos
+RÉF: The old fisherman looked at the sea without saying anything, as one looks at a friend who is leaving.
+  herbert-q40   dévie au jeton 4 : réf ' looked' / bras ' watched' (fin eos, 20 j.)
+      bras→ ' watched the sea without saying anything, as one watches a friend who is leaving.'
+  llama-q40pur  dévie au jeton 4 : réf ' looked' / bras ' watched' (fin eos, 22 j.)
+      bras→ ' watched the sea without saying anything, as one watches a friend who is about to leave.'
+  ik-q40pur     dévie au jeton 4 : réf ' looked' / bras ' watched' (fin eos, 22 j.)
+      bras→ ' watched the sea without saying anything, as one watches a friend who is about to leave.'
+  llama-q4km    identique
+  paire herbert-q40|llama-q40pur: dévie au jeton 18
+  paire llama-q40pur|ik-q40pur: identique
+  paire herbert-q40|ik-q40pur: dévie au jeton 18

@@ -1,0 +1,23 @@
+@@COMPILE@@non
+   Compiling sol v0.1.0 (/work/crate)
+error[E0308]: mismatched types
+ --> src/lib.rs:3:37
+  |
+3 | pub fn compter_mots(texte: &str) -> Vec<(String, usize)> {
+  |        ------------                 ^^^^^^^^^^^^^^^^^^^^ expected `Vec<(String, usize)>`, found `()`
+  |        |
+  |        implicitly returns `()` as its body has no tail or `return` expression
+  |
+  = note: expected struct `Vec<(String, usize)>`
+          found unit type `()`
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `sol` (lib) due to 1 previous error
+warning: build
+12
+code=137
+uid 65534 home [] root ['bin', 'boot', 'dev', 'etc', 'home', 'lib', 'lib64', 'media', 'mnt', 'opt', 'proc', 'root', 'run', 'sbin', 'srv', 'sys', 'tmp', 'usr', 'var']
+reseau: [Errno 101] Network is unreachable
+ecriture: [Errno 30] Read-only file system: '/etc/x'
+allocation de 2 Go...
+code=137

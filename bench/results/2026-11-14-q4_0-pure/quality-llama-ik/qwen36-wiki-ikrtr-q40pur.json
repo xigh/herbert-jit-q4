@@ -1,0 +1,28 @@
+{
+ "ref": "ref/qwen36-wiki.kld",
+ "test": "out/qwen36-wiki-ikrtr-q40pur.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 248320,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 7.049681597277328,
+ "ppl_test": 7.457155241016783,
+ "nll_ref": 1.9529824522975134,
+ "nll_test": 2.0091740065046495,
+ "dnll": 0.05619155420713623,
+ "dnll_se": 0.005725899979786798,
+ "dnll_se_chunk": 0.0058843168997916384,
+ "kl_mean": 0.07300728265802077,
+ "kl_se": 0.00204172816195166,
+ "kl_median": 0.03818517650856061,
+ "kl_p99": 0.6154021529197073,
+ "kl_p999": 2.0027135854470446,
+ "kl_max": 5.084423896930886,
+ "top1": 0.8741797900262467,
+ "top1_n": 5329,
+ "ref_nll_exact_minus_compressed": 0.0005375161071359508
+}

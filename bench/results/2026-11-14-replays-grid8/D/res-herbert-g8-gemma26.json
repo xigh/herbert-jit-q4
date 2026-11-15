@@ -1,0 +1,72 @@
+{
+ "label": "herbert-g8-gemma26",
+ "text": [
+  {
+   "words": 78,
+   "rep": 0,
+   "wall_s": 7.2942840196192265,
+   "prompt_n": 218,
+   "prompt_ms": 1135.017194,
+   "prompt_per_second": 192.06757496926517,
+   "predicted_n": 128,
+   "predicted_ms": 6158.392904,
+   "predicted_per_second": 20.7846433307075
+  },
+  {
+   "words": 78,
+   "rep": 1,
+   "wall_s": 6.734600602649152,
+   "prompt_n": 218,
+   "prompt_ms": 611.452873,
+   "prompt_per_second": 356.5278856740281,
+   "predicted_n": 128,
+   "predicted_ms": 6122.377753000001,
+   "predicted_per_second": 20.906909890896436
+  },
+  {
+   "words": 78,
+   "rep": 2,
+   "wall_s": 6.732352457009256,
+   "prompt_n": 218,
+   "prompt_ms": 612.0836889999999,
+   "prompt_per_second": 356.16044654965475,
+   "predicted_n": 128,
+   "predicted_ms": 6119.500417,
+   "predicted_per_second": 20.91674013852755
+  },
+  {
+   "words": 380,
+   "rep": 0,
+   "wall_s": 8.19691136199981,
+   "prompt_n": 626,
+   "prompt_ms": 1814.25703,
+   "prompt_per_second": 345.04482531893507,
+   "predicted_n": 128,
+   "predicted_ms": 6381.7013830000005,
+   "predicted_per_second": 20.05734714271885
+  },
+  {
+   "words": 380,
+   "rep": 1,
+   "wall_s": 8.171757189556956,
+   "prompt_n": 626,
+   "prompt_ms": 1794.852777,
+   "prompt_per_second": 348.77512407804574,
+   "predicted_n": 128,
+   "predicted_ms": 6375.926536999999,
+   "predicted_per_second": 20.075513614720307
+  },
+  {
+   "words": 380,
+   "rep": 2,
+   "wall_s": 8.171131231822073,
+   "prompt_n": 626,
+   "prompt_ms": 1794.762279,
+   "prompt_per_second": 348.79271050246984,
+   "predicted_n": 128,
+   "predicted_ms": 6375.3984120000005,
+   "predicted_per_second": 20.077176629318394
+  }
+ ],
+ "image": []
+}

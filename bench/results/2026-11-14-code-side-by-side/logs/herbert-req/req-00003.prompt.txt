@@ -1,0 +1,23 @@
+<|im_start|>user
+Cette fonction Python doit rendre l'indice de `x` dans la liste triée `liste`, ou -1 si `x` n'y est pas. Elle a un bogue. Corrige-la en gardant son nom et sa signature.
+
+```python
+def recherche_dichotomique(liste: list[int], x: int) -> int:
+    lo, hi = 0, len(liste) - 1
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if liste[mid] == x:
+            return mid
+        elif liste[mid] < x:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return -1
+```
+
+Réponds par le code seul, dans un seul bloc ```python, sans explication.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

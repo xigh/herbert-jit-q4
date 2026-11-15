@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nÉcris en Rust une fonction `pub fn moyenne_entiere(v: &[i32]) -> Option<i32>` qui rend la moyenne des valeurs, arrondie vers zéro (comme la division entière de Rust), ou `None` si la tranche est vide. Elle ne doit jamais déborder ni paniquer, même pour des valeurs proches de `i32::MAX` ou `i32::MIN`. Bibliothèque standard seulement. Réponds par le code seul, dans un seul bloc ```rust, sans explication ni fonction main.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 500,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

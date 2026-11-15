@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-thinking-fr.kld",
+ "test": "out/q3vl-thinking-fr-ik-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 6.129255068067422,
+ "ppl_test": 6.159230298220814,
+ "nll_ref": 1.8130732202255784,
+ "nll_test": 1.8179518181507983,
+ "dnll": 0.004878597925220048,
+ "dnll_se": 0.004076014487388109,
+ "dnll_se_chunk": 0.00474957010559462,
+ "kl_mean": 0.019955193172955923,
+ "kl_se": 0.0005270667019570762,
+ "kl_median": 0.012432532750518243,
+ "kl_p99": 0.13010617271316488,
+ "kl_p999": 0.2865921157602479,
+ "kl_max": 0.4764449814364198,
+ "top1": 0.9202755905511811,
+ "top1_n": 2805,
+ "ref_nll_exact_minus_compressed": -1.3693413900990715e-05
+}

@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nComplète cette fonction Rust. Elle découpe le texte sur les blancs (`split_whitespace`), met chaque mot en minuscules (`to_lowercase`) et rend les couples (mot, nombre d'occurrences), triés par nombre décroissant, puis par ordre alphabétique du mot (ordre des `String`) en cas d'égalité. Garde son nom et sa signature.\n\n```rust\nuse std::collections::HashMap;\n\npub fn compter_mots(texte: &str) -> Vec<(String, usize)> {\n    let mut compte: HashMap<String, usize> = HashMap::new();\n    // à compléter\n}\n```\n\nRéponds par le code seul, dans un seul bloc ```rust, sans explication ni fonction main.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 500,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-instruct-fr.kld",
+ "test": "out/q3vl-instruct-fr-ikrtr-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 6.166351139133403,
+ "ppl_test": 6.246464565699215,
+ "nll_ref": 1.8191072754800972,
+ "nll_test": 1.8320156342088394,
+ "dnll": 0.01290835872874213,
+ "dnll_se": 0.004925361433248247,
+ "dnll_se_chunk": 0.004997663121453766,
+ "kl_mean": 0.025103342467473172,
+ "kl_se": 0.0007362563639638339,
+ "kl_median": 0.015808579335225607,
+ "kl_p99": 0.17214519985964188,
+ "kl_p999": 0.5272563033426226,
+ "kl_max": 0.7378380615293869,
+ "top1": 0.9104330708661418,
+ "top1_n": 2775,
+ "ref_nll_exact_minus_compressed": -1.421389455911082e-05
+}

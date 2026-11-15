@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-3",
+  "object": "chat.completion",
+  "created": 1794684328,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```python\ndef recherche_dichotomique(liste: list[int], x: int) -> int:\n    lo, hi = 0, len(liste) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if liste[mid] == x:\n            return mid\n        elif liste[mid] < x:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 190,
+    "completion_tokens": 108,
+    "total_tokens": 298,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 190,
+    "prompt_ms": 630.277067,
+    "prompt_per_token_ms": 3.3172477210526314,
+    "prompt_per_second": 301.45472514867816,
+    "predicted_n": 108,
+    "predicted_ms": 6457.8494009999995,
+    "predicted_per_token_ms": 59.79490186111111,
+    "predicted_per_second": 16.723833786411337
+  }
+}

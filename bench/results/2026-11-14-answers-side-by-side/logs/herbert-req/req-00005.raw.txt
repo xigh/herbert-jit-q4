@@ -1,0 +1,19 @@
+Pour déterminer l'heure d'arrivée, il faut d'abord calculer la durée du trajet.
+
+La formule pour calculer le temps est :
+$$ \text{Temps} = \frac{\text{Distance}}{\text{Vitesse}} $$
+
+Ici :
+*   Distance = 189 km
+*   Vitesse = 84 km/h
+
+$$ \text{Temps} = \frac{189}{84} = 2,25 \text{ heures} $$
+
+Convertissons 0,25 heure en minutes :
+$$ 0,25 \times 60 = 15 \text{ minutes} $$
+
+Le trajet dure donc **2 heures et 15 minutes**.
+
+Le train part à **14 h 10**.
+*   Ajout de 2 heures : 16 h 10
+*   Ajout de 15 minutes :

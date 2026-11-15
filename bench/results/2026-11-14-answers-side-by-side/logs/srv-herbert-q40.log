@@ -1,0 +1,72 @@
+[serve] listening on http://127.0.0.1:32471
+[loader] qwen3_5_moe_text — hidden 2048, 40 layers, 16 heads / 2 kv heads × 256, intermediate 512, vocab 248320, rotary 64 dims, rope_theta 10000000, tied head false
+[loader] shard 1/26: 22 tensors, 3.72 GiB mapped, 1.3 s
+[loader] shard 2/26: 348 tensors, 1.20 GiB mapped, 0.3 s
+[loader] shard 3/26: 33 tensors, 3.13 GiB mapped, 1.8 s
+[loader] shard 4/26: 36 tensors, 3.14 GiB mapped, 1.5 s
+[loader] shard 5/26: 33 tensors, 3.13 GiB mapped, 1.9 s
+[loader] shard 6/26: 14 tensors, 3.69 GiB mapped, 1.3 s
+[loader] shard 7/26: 40 tensors, 1.02 GiB mapped, 0.5 s
+[loader] shard 8/26: 14 tensors, 3.68 GiB mapped, 1.5 s
+[loader] shard 9/26: 37 tensors, 1.02 GiB mapped, 0.5 s
+[loader] shard 10/26: 14 tensors, 3.68 GiB mapped, 2.0 s
+[loader] shard 11/26: 37 tensors, 1.02 GiB mapped, 1.0 s
+[loader] shard 12/26: 14 tensors, 3.18 GiB mapped, 1.8 s
+[loader] shard 13/26: 37 tensors, 1.52 GiB mapped, 0.8 s
+[loader] shard 14/26: 13 tensors, 3.19 GiB mapped, 1.5 s
+[loader] shard 15/26: 41 tensors, 1.52 GiB mapped, 0.6 s
+[loader] shard 16/26: 15 tensors, 3.68 GiB mapped, 1.3 s
+[loader] shard 17/26: 36 tensors, 1.02 GiB mapped, 0.5 s
+[loader] shard 18/26: 14 tensors, 3.68 GiB mapped, 2.0 s
+[loader] shard 19/26: 37 tensors, 1.02 GiB mapped, 0.4 s
+[loader] shard 20/26: 14 tensors, 3.18 GiB mapped, 1.1 s
+[loader] shard 21/26: 37 tensors, 1.52 GiB mapped, 0.6 s
+[loader] shard 22/26: 36 tensors, 3.14 GiB mapped, 3.6 s
+[loader] shard 23/26: 33 tensors, 3.13 GiB mapped, 12.6 s
+[loader] shard 24/26: 36 tensors, 3.14 GiB mapped, 23.7 s
+[loader] shard 25/26: 20 tensors, 3.57 GiB mapped, 18.1 s
+[loader] shard 26/26: 34 tensors, 2.08 GiB mapped, 11.8 s
+[loader] skipped, not used by the engine: model.visual.* ×333, mtp.fc.* ×1, mtp.layers.* ×15, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] 40 layers assembled, RoPE tables built, 99.2 s in all
+[loader] read as bf16: 21371 matrices packed R16 (63.60 GiB), 10 gated q_proj permuted (the int8 / Q4 copies, if asked, are made at mount) — linear_attn.in_proj_qkv.weight×30, linear_attn.in_proj_z.weight×30, linear_attn.out_proj.weight×30, lm_head.weight×1, mlp.experts.down_proj×10240, mlp.experts.gate_up_proj×10240, mlp.gate.weight×640, mlp.shared_expert.down_proj.weight×40, mlp.shared_expert.gate_proj.weight×40, mlp.shared_expert.up_proj.weight×40, self_attn.k_proj.weight×10, self_attn.o_proj.weight×10, self_attn.q_proj.weight×10, self_attn.v_proj.weight×10
+[pool] 2 CCDs, 12 cores, worker order [0, 6, 1, 7, 2, 8, 3, 9, 4, 10, 5, 11]…
+[pool] 12 workers on cpus [0,6,1,7,2,8,3,9,4,10,5,11] · caller = worker 0: yes · spin 500 µs · coordinator spins: yes
+[pool] qos: n/a on a worker (inherited, not set)
+[pool] qos: n/a on a worker (inherited, not set)
+[engine] 19.91 GiB of weights touched in 0.013 s
+[engine] loaded in 99.4 s, mounted in 4.00 s — 4096 positions reserved, prefill program Some((198226545, 15298637, 15299844)), decode program Some((7329495, 1609037, 1610244))
+[engine] avx2=yes fma=yes avxvnni=yes avx512f=yes avx512bf16=yes → GEMM lanes zmm: loaded in 99.4 s, mounted in 4.0 s, n_ctx 4096
+[engine] language model
+[engine] 2 lanes (0.08 GiB for the K/V copies), 12 snapshots of 34.2 MiB (allocated on first use)
+[serve] worker ready · stops [248046, 248044] · markers Markers { think_open: 248068, think_close: 248069, call_open: 248058, call_close: 248059 } · capacity 4096
+[serve] 2 lanes · 12 snapshots of 34.2 MiB
+[req 1] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676004, max_tokens 200 · prompt 29 tokens, 0 reused from the cache (cache_prompt false, lane 0), 29 to feed
+[req 1] stop: prompt 29 tokens in 0.29 s (100.3 tok/s), 11 generated in 0.65 s (16.81 tok/s), 0 tool calls, content 40 chars, reasoning 0 chars · cache now 39 tokens
+[req 2] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676005, max_tokens 200 · prompt 40 tokens, 0 reused from the cache (cache_prompt false, lane 0), 40 to feed
+[req 2] stop: prompt 40 tokens in 0.32 s (124.6 tok/s), 38 generated in 2.24 s (16.96 tok/s), 0 tool calls, content 137 chars, reasoning 0 chars · cache now 77 tokens
+[req 3] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676008, max_tokens 200 · prompt 32 tokens, 0 reused from the cache (cache_prompt false, lane 0), 32 to feed
+[req 3] stop: prompt 32 tokens in 0.29 s (109.7 tok/s), 36 generated in 2.13 s (16.93 tok/s), 0 tool calls, content 120 chars, reasoning 0 chars · cache now 67 tokens
+[req 4] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676010, max_tokens 200 · prompt 28 tokens, 0 reused from the cache (cache_prompt false, lane 0), 28 to feed
+[req 4] stop: prompt 28 tokens in 0.27 s (101.9 tok/s), 4 generated in 0.19 s (20.82 tok/s), 0 tool calls, content 3 chars, reasoning 0 chars · cache now 31 tokens
+[req 5] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676011, max_tokens 200 · prompt 52 tokens, 0 reused from the cache (cache_prompt false, lane 0), 52 to feed
+[req 5] length: prompt 52 tokens in 0.33 s (155.3 tok/s), 200 generated in 12.03 s (16.63 tok/s), 0 tool calls, content 512 chars, reasoning 0 chars · cache now 251 tokens
+[req 6] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676023, max_tokens 200 · prompt 46 tokens, 0 reused from the cache (cache_prompt false, lane 0), 46 to feed
+[req 6] stop: prompt 46 tokens in 0.32 s (142.8 tok/s), 68 generated in 4.05 s (16.79 tok/s), 0 tool calls, content 235 chars, reasoning 0 chars · cache now 113 tokens
+[req 7] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676027, max_tokens 200 · prompt 23 tokens, 0 reused from the cache (cache_prompt false, lane 0), 23 to feed
+[req 7] stop: prompt 23 tokens in 0.27 s (85.5 tok/s), 87 generated in 5.21 s (16.69 tok/s), 0 tool calls, content 364 chars, reasoning 0 chars · cache now 109 tokens
+[req 8] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676033, max_tokens 200 · prompt 24 tokens, 0 reused from the cache (cache_prompt false, lane 0), 24 to feed
+[req 8] stop: prompt 24 tokens in 0.27 s (88.7 tok/s), 71 generated in 4.25 s (16.70 tok/s), 0 tool calls, content 358 chars, reasoning 0 chars · cache now 94 tokens
+[req 9] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676037, max_tokens 200 · prompt 27 tokens, 0 reused from the cache (cache_prompt false, lane 0), 27 to feed
+[req 9] stop: prompt 27 tokens in 0.28 s (96.1 tok/s), 17 generated in 0.98 s (17.37 tok/s), 0 tool calls, content 46 chars, reasoning 0 chars · cache now 43 tokens
+[req 10] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676039, max_tokens 200 · prompt 26 tokens, 0 reused from the cache (cache_prompt false, lane 0), 26 to feed
+[req 10] stop: prompt 26 tokens in 0.28 s (94.2 tok/s), 127 generated in 7.66 s (16.58 tok/s), 0 tool calls, content 510 chars, reasoning 0 chars · cache now 152 tokens
+[req 11] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676047, max_tokens 200 · prompt 182 tokens, 0 reused from the cache (cache_prompt false, lane 0), 182 to feed
+[req 11] stop: prompt 182 tokens in 0.56 s (325.6 tok/s), 54 generated in 3.23 s (16.71 tok/s), 0 tool calls, content 192 chars, reasoning 0 chars · cache now 235 tokens
+[req 12] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676050, max_tokens 200 · prompt 257 tokens, 0 reused from the cache (cache_prompt false, lane 0), 257 to feed
+[req 12] stop: prompt 257 tokens in 0.66 s (387.4 tok/s), 104 generated in 6.28 s (16.57 tok/s), 0 tool calls, content 370 chars, reasoning 0 chars · cache now 360 tokens
+[req 13] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676057, max_tokens 200 · prompt 45 tokens, 0 reused from the cache (cache_prompt false, lane 0), 45 to feed
+[req 13] stop: prompt 45 tokens in 0.33 s (136.0 tok/s), 36 generated in 2.13 s (16.91 tok/s), 0 tool calls, content 78 chars, reasoning 0 chars · cache now 80 tokens
+[req 14] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676060, max_tokens 200 · prompt 109 tokens, 0 reused from the cache (cache_prompt false, lane 0), 109 to feed
+[req 14] stop: prompt 109 tokens in 0.47 s (229.6 tok/s), 72 generated in 4.31 s (16.69 tok/s), 0 tool calls, content 162 chars, reasoning 0 chars · cache now 180 tokens
+[req 15] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 1 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794676065, max_tokens 200 · prompt 44 tokens, 0 reused from the cache (cache_prompt false, lane 0), 44 to feed
+[req 15] stop: prompt 44 tokens in 0.33 s (132.3 tok/s), 21 generated in 1.21 s (17.29 tok/s), 0 tool calls, content 98 chars, reasoning 0 chars · cache now 64 tokens

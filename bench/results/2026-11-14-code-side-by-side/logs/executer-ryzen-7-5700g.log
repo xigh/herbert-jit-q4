@@ -1,0 +1,44 @@
+ 20:36:42 up 7 days, 21:37,  2 users,  load average: 0.00, 0.02, 0.00
+== 2026-11-14 20:36:42 CET Ryzen 7 5700G podman 4.9.3
+ref-tf-bf16 p01 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_vide": "ok", "test_un": "ok", "test_desordre": "ok", "test_touchent": "ok", "test_inclus": "ok", "test_disjoints": "ok", "test_negatifs": 
+ref-tf-bf16 p02 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_exemple": "ok", "test_accents": "ok", "test_cedille_trema": "ok", "test_vide": "ok", "test_que_ponctuation": "ok", "test_bords": "ok", "te
+ref-tf-bf16 p03 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_milieu": "ok", "test_premier": "ok", "test_dernier": "ok", "test_un_seul": "ok", "test_vide": "ok", "test_absent": "ok", "test_absent_bord
+ref-tf-bf16 p04 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "ok", "test_deux": "ok", "test_un": "ok", "test_vide": "ok", "test_non_modifiee": "ok", "test_flottants": "ok"
+ref-tf-bf16 p05 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_4": "ok", "test_1994": "ok", "test_1": "ok", "test_3999": "ok", "test_ix_xl": "ok", "test_tous": "ok"}, "erreur": null}
+ref-tf-bf16 r01 code=0 8 
+ref-tf-bf16 r02 code=0 6 
+ref-tf-bf16 r03 code=0 5 
+herbert-q40 p01 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_vide": "ok", "test_un": "ok", "test_desordre": "ok", "test_touchent": "ok", "test_inclus": "ok", "test_disjoints": "ok", "test_negatifs": 
+herbert-q40 p02 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_exemple": "ok", "test_accents": "ok", "test_cedille_trema": "ok", "test_vide": "ok", "test_que_ponctuation": "ok", "test_bords": "ok", "te
+herbert-q40 p03 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_milieu": "ok", "test_premier": "ok", "test_dernier": "ok", "test_un_seul": "ok", "test_vide": "ok", "test_absent": "ok", "test_absent_bord
+herbert-q40 p04 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "ok", "test_deux": "ok", "test_un": "ok", "test_vide": "ok", "test_non_modifiee": "ok", "test_flottants": "ok"
+herbert-q40 p05 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_4": "ok", "test_1994": "ok", "test_1": "ok", "test_3999": "ok", "test_ix_xl": "ok", "test_tous": "ok"}, "erreur": null}
+herbert-q40 r01 code=0 8 
+herbert-q40 r02 code=0 6 
+herbert-q40 r03 code=0 5 
+llama-q40pur p01 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_vide": "ok", "test_un": "ok", "test_desordre": "ok", "test_touchent": "ok", "test_inclus": "ok", "test_disjoints": "ok", "test_negatifs": 
+llama-q40pur p02 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_exemple": "ok", "test_accents": "ok", "test_cedille_trema": "ok", "test_vide": "ok", "test_que_ponctuation": "ok", "test_bords": "ok", "te
+llama-q40pur p03 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_milieu": "ok", "test_premier": "ok", "test_dernier": "ok", "test_un_seul": "ok", "test_vide": "ok", "test_absent": "ok", "test_absent_bord
+llama-q40pur p04 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "ok", "test_deux": "ok", "test_un": "ok", "test_vide": "ok", "test_non_modifiee": "ok", "test_flottants": "ok"
+llama-q40pur p05 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_4": "ok", "test_1994": "ok", "test_1": "ok", "test_3999": "ok", "test_ix_xl": "ok", "test_tous": "ok"}, "erreur": null}
+llama-q40pur r01 code=0 8 
+llama-q40pur r02 code=0 6 
+llama-q40pur r03 code=0 5 
+ik-q40pur p01 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_vide": "ok", "test_un": "ok", "test_desordre": "ok", "test_touchent": "ok", "test_inclus": "ok", "test_disjoints": "ok", "test_negatifs": 
+ik-q40pur p02 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_exemple": "ok", "test_accents": "ok", "test_cedille_trema": "ok", "test_vide": "ok", "test_que_ponctuation": "ok", "test_bords": "ok", "te
+ik-q40pur p03 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_milieu": "ok", "test_premier": "ok", "test_dernier": "ok", "test_un_seul": "ok", "test_vide": "ok", "test_absent": "ok", "test_absent_bord
+ik-q40pur p04 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "ok", "test_deux": "ok", "test_un": "ok", "test_vide": "ok", "test_non_modifiee": "ok", "test_flottants": "ok"
+ik-q40pur p05 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_4": "ok", "test_1994": "ok", "test_1": "ok", "test_3999": "ok", "test_ix_xl": "ok", "test_tous": "ok"}, "erreur": null}
+ik-q40pur r01 code=0 8 
+ik-q40pur r02 code=0 6 
+ik-q40pur r03 code=0 5 
+llama-q4km p01 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_vide": "ok", "test_un": "ok", "test_desordre": "ok", "test_touchent": "ok", "test_inclus": "ok", "test_disjoints": "ok", "test_negatifs": 
+llama-q4km p02 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_exemple": "ok", "test_accents": "ok", "test_cedille_trema": "ok", "test_vide": "ok", "test_que_ponctuation": "ok", "test_bords": "ok", "te
+llama-q4km p03 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_milieu": "ok", "test_premier": "ok", "test_dernier": "ok", "test_un_seul": "ok", "test_vide": "ok", "test_absent": "ok", "test_absent_bord
+llama-q4km p04 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_impair": "ok", "test_pair": "ok", "test_deux": "ok", "test_un": "ok", "test_vide": "ok", "test_non_modifiee": "ok", "test_flottants": "ok"
+llama-q4km p05 code=0 0 @@RESULTAT@@{"compile": true, "charge": true, "tests": {"test_4": "ok", "test_1994": "ok", "test_1": "ok", "test_3999": "ok", "test_ix_xl": "ok", "test_tous": "ok"}, "erreur": null}
+llama-q4km r01 code=0 8 
+llama-q4km r02 code=0 6 
+llama-q4km r03 code=0 5 
+== FIN 20:36:56
+CONTAINER ID  IMAGE       COMMAND     CREATED     STATUS      PORTS       NAMES

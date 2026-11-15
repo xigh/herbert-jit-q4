@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-20",
+  "object": "chat.completion",
+  "created": 1794678410,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Après avoir poussé son rival scientifique à la mort lors d'une polémique acharnée, l'entomologiste Hapley sombre dans la folie et développe une hallucination persistante d'un papillon inconnu, qu'il poursuit avec une obsession morbide. Il finit ses jours enfermé dans un asile, convaincu que cette créature est l'esprit de son défunt ennemi Pawkins, alors que les médecins ne voient qu'une simple illusion."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5298,
+    "completion_tokens": 101,
+    "total_tokens": 5399,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 5298,
+    "prompt_ms": 13262.466584,
+    "prompt_per_token_ms": 2.5032968259720647,
+    "prompt_per_second": 399.4732025482779,
+    "predicted_n": 101,
+    "predicted_ms": 6696.305891,
+    "predicted_per_token_ms": 66.30005832673267,
+    "predicted_per_second": 15.082942990365254
+  }
+}

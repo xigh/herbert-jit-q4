@@ -1,0 +1,28 @@
+{
+ "ref": "ref/lfm25-wiki.kld",
+ "test": "out/lfm25-wiki-ikrtr-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 128000,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 32.52566944056158,
+ "ppl_test": 31.039377565714574,
+ "nll_ref": 3.482029606525313,
+ "nll_test": 3.435256642463013,
+ "dnll": -0.04677296406229994,
+ "dnll_se": 0.009844164460776223,
+ "dnll_se_chunk": 0.015379643773859262,
+ "kl_mean": 0.18450745707415658,
+ "kl_se": 0.0034704968807666562,
+ "kl_median": 0.10855802314240663,
+ "kl_p99": 1.3424142142995243,
+ "kl_p999": 2.678160191010576,
+ "kl_max": 5.332505815586477,
+ "top1": 0.7918307086614174,
+ "top1_n": 4827,
+ "ref_nll_exact_minus_compressed": 0.0019321485632270076
+}

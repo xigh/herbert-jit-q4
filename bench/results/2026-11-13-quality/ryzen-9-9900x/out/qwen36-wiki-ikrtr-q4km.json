@@ -1,0 +1,28 @@
+{
+ "ref": "ref/qwen36-wiki.kld",
+ "test": "out/qwen36-wiki-ikrtr-q4km.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 248320,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 7.049681597277328,
+ "ppl_test": 7.093552684923059,
+ "nll_ref": 1.9529824522975134,
+ "nll_test": 1.9591862989535795,
+ "dnll": 0.006203846656066146,
+ "dnll_se": 0.002935272748379759,
+ "dnll_se_chunk": 0.003052262438333601,
+ "kl_mean": 0.019417190128403077,
+ "kl_se": 0.0007064989779291446,
+ "kl_median": 0.006933994036142017,
+ "kl_p99": 0.20952081007089057,
+ "kl_p999": 0.7283537644094649,
+ "kl_max": 1.5395269782176244,
+ "top1": 0.9399606299212598,
+ "top1_n": 5730,
+ "ref_nll_exact_minus_compressed": 0.0005375161071359508
+}

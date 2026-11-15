@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-16",
+  "object": "chat.completion",
+  "created": 1794678339,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "À la fin de l'histoire, Hapley passe le reste de ses jours dans une **chambre capitonnée** (un *padded room*) d'un asile psychiatrique.\n\nConcernant le papillon, bien que le médecin de l'asile le qualifie d'hallucination, Hapley affirme qu'il s'agit du **fantôme de Pawkins** (le \"ghost of Pawkins\"). Il considère par conséquent ce papillon comme un spécimen unique et intéressant à capturer."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5320,
+    "completion_tokens": 110,
+    "total_tokens": 5430,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 5320,
+    "prompt_ms": 13163.974115,
+    "prompt_per_token_ms": 2.4744312246240603,
+    "prompt_per_second": 404.13327719461256,
+    "predicted_n": 110,
+    "predicted_ms": 7341.843433,
+    "predicted_per_token_ms": 66.7440312090909,
+    "predicted_per_second": 14.982613154834352
+  }
+}

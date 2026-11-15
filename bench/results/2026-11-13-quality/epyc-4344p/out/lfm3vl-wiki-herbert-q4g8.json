@@ -1,0 +1,28 @@
+{
+ "ref": "ref/lfm3vl-wiki.kld",
+ "test": "out/lfm3vl-wiki-herbert-q4g8.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 128000,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact"
+ },
+ "ppl_ref": 154.23878151845273,
+ "ppl_test": 165.045467403735,
+ "nll_ref": 5.038501930924734,
+ "nll_test": 5.106220995963527,
+ "dnll": 0.06771906503879363,
+ "dnll_se": 0.01224921201207705,
+ "dnll_se_chunk": 0.01896077809207595,
+ "kl_mean": 0.27252646374637296,
+ "kl_se": 0.004032197320512271,
+ "kl_median": 0.19124797354505807,
+ "kl_p99": 1.5521800511397559,
+ "kl_p999": 2.8227577410857365,
+ "kl_max": 6.002251598324785,
+ "top1": 0.7278543307086615,
+ "top1_n": 4437,
+ "ref_nll_exact_minus_compressed": 0.004181706310453025
+}

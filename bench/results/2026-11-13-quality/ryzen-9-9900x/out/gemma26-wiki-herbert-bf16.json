@@ -1,0 +1,28 @@
+{
+ "ref": "ref/gemma26-wiki.kld",
+ "test": "out/gemma26-wiki-herbert-bf16.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 262144,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact"
+ },
+ "ppl_ref": 1041.2122396325913,
+ "ppl_test": 1008.2122278641575,
+ "nll_ref": 6.948140928364985,
+ "nll_test": 6.915933969986168,
+ "dnll": -0.03220695837881757,
+ "dnll_se": 0.00825372057634608,
+ "dnll_se_chunk": 0.02053063725818214,
+ "kl_mean": 0.10072006440097407,
+ "kl_se": 0.0033264869573773675,
+ "kl_median": 0.025696332088285083,
+ "kl_p99": 1.3335709636016613,
+ "kl_p999": 2.7764697064965675,
+ "kl_max": 5.981964323863409,
+ "top1": 0.8571194225721784,
+ "top1_n": 5225,
+ "ref_nll_exact_minus_compressed": 0.1569873051582632
+}

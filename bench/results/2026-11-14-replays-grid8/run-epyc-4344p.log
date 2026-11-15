@@ -1,0 +1,140 @@
+REJEU EPYC 4344P 14:03:20 ;  14:03:20 up 73 days, 15:40,  1 user,  load average: 0.09, 0.41, 0.23 ; 5676dfbe0 chat : accept </ifm|think> as K2 Horizon closer at medium/low effort (#30335) ; 7aa7e014 dsv4 : clear the single-stream cache on the device on sequence reset (#2911) ; 68c3a96
+=== herbert-g8-qwen36 A 14:03:20 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/qwen/Qwen3.6-35B-A3B --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 14:03:20 up 73 days, 15:40,  1 user,  load average: 0.09, 0.41, 0.23
+herbert-g8-qwen36 text {"words": 380, "rep": 0, "wall_s": 6.8079890655353665, "prompt_n": 627, "prompt_ms": 1864.103788, "prompt_per_second": 336.35466224373124, "predicted_n": 128, "predicted_ms": 4936.6664550000005, "predicted_per_second": 25.92842785040862}
+herbert-g8-qwen36 text {"words": 380, "rep": 1, "wall_s": 6.817378975450993, "prompt_n": 627, "prompt_ms": 1872.889862, "prompt_per_second": 334.77676008692066, "predicted_n": 128, "predicted_ms": 4937.8940330000005, "predicted_per_second": 25.92198195112625}
+herbert-g8-qwen36 text {"words": 380, "rep": 2, "wall_s": 6.833141488023102, "prompt_n": 627, "prompt_ms": 1896.006529, "prompt_per_second": 330.69506376156573, "predicted_n": 128, "predicted_ms": 4935.85145, "predicted_per_second": 25.932709137751704}
+herbert-g8-qwen36 text {"words": 4240, "rep": 0, "wall_s": 25.420265855267644, "prompt_n": 6131, "prompt_ms": 20047.62517, "prompt_per_second": 305.82175933609597, "predicted_n": 128, "predicted_ms": 5366.781064999999, "predicted_per_second": 23.850423270433897}
+herbert-g8-qwen36 text {"words": 4240, "rep": 1, "wall_s": 25.424972590059042, "prompt_n": 6131, "prompt_ms": 20043.265787, "prompt_per_second": 305.8882751520737, "predicted_n": 128, "predicted_ms": 5370.796571999999, "predicted_per_second": 23.83259136406554}
+herbert-g8-qwen36 text {"words": 4240, "rep": 2, "wall_s": 25.425449583679438, "prompt_n": 6131, "prompt_ms": 20054.207557, "prompt_per_second": 305.72137954461084, "predicted_n": 128, "predicted_ms": 5365.676308, "predicted_per_second": 23.855333913668503}
+BANC DONE herbert-g8-qwen36
+=== llama-q40pur-qwen36 A 14:06:01 : ~/bench-engines/llama.cpp-latest/build/bin/llama-server -m ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:06:01 up 73 days, 15:42,  1 user,  load average: 7.18, 4.00, 1.68
+llama-q40pur-qwen36 text {"words": 380, "rep": 0, "wall_s": 8.973331032320857, "prompt_n": 627, "prompt_ms": 3647.772, "prompt_per_second": 171.8857428589287, "predicted_n": 128, "predicted_ms": 5300.904, "predicted_per_second": 23.958177699501817}
+llama-q40pur-qwen36 text {"words": 380, "rep": 1, "wall_s": 8.989705435931683, "prompt_n": 627, "prompt_ms": 3670.104, "prompt_per_second": 170.8398454103753, "predicted_n": 128, "predicted_ms": 5317.822, "predicted_per_second": 23.881957688692854}
+llama-q40pur-qwen36 text {"words": 380, "rep": 2, "wall_s": 8.988507140427828, "prompt_n": 627, "prompt_ms": 3674.002, "prompt_per_second": 170.65858973402845, "predicted_n": 128, "predicted_ms": 5312.684, "predicted_per_second": 23.905054394351332}
+llama-q40pur-qwen36 text {"words": 4240, "rep": 0, "wall_s": 45.428704200312495, "prompt_n": 6131, "prompt_ms": 39292.106, "prompt_per_second": 156.03643133814208, "predicted_n": 128, "predicted_ms": 6100.57, "predicted_per_second": 20.817726868145108}
+llama-q40pur-qwen36 text {"words": 4240, "rep": 1, "wall_s": 45.42864769604057, "prompt_n": 6131, "prompt_ms": 39303.597, "prompt_per_second": 155.99081173155727, "predicted_n": 128, "predicted_ms": 6118.419, "predicted_per_second": 20.756996210949268}
+llama-q40pur-qwen36 text {"words": 4240, "rep": 2, "wall_s": 45.58640090189874, "prompt_n": 6131, "prompt_ms": 39446.9, "prompt_per_second": 155.42412711772027, "predicted_n": 128, "predicted_ms": 6132.445, "predicted_per_second": 20.709521243158317}
+BANC DONE llama-q40pur-qwen36
+=== ik-q40pur-qwen36 A 14:09:07 : ~/bench-engines/ik_llama.cpp/build/bin/llama-server -m ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:09:07 up 73 days, 15:45,  1 user,  load average: 6.76, 5.39, 2.65
+ik-q40pur-qwen36 text {"words": 380, "rep": 0, "wall_s": 6.835448966361582, "prompt_n": 627, "prompt_ms": 1999.911, "prompt_per_second": 313.513951370836, "predicted_n": 128, "predicted_ms": 4802.287, "predicted_per_second": 26.653967161895988}
+ik-q40pur-qwen36 text {"words": 380, "rep": 1, "wall_s": 6.847387318499386, "prompt_n": 627, "prompt_ms": 2012.833, "prompt_per_second": 311.5012522151614, "predicted_n": 128, "predicted_ms": 4804.887, "predicted_per_second": 26.639544280645936}
+ik-q40pur-qwen36 text {"words": 380, "rep": 2, "wall_s": 6.851692515425384, "prompt_n": 627, "prompt_ms": 2016.687, "prompt_per_second": 310.90595615482226, "predicted_n": 128, "predicted_ms": 4805.208, "predicted_per_second": 26.637764691975875}
+ik-q40pur-qwen36 text {"words": 4240, "rep": 0, "wall_s": 25.426427140831947, "prompt_n": 6131, "prompt_ms": 20222.504, "prompt_per_second": 303.17709419169853, "predicted_n": 128, "predicted_ms": 5176.235, "predicted_per_second": 24.728398150393097}
+ik-q40pur-qwen36 text {"words": 4240, "rep": 1, "wall_s": 25.44155502039939, "prompt_n": 6131, "prompt_ms": 20234.007, "prompt_per_second": 303.00473850780025, "predicted_n": 128, "predicted_ms": 5178.126, "predicted_per_second": 24.719367585879525}
+ik-q40pur-qwen36 text {"words": 4240, "rep": 2, "wall_s": 25.4469261392951, "prompt_n": 6131, "prompt_ms": 20239.037, "prompt_per_second": 302.9294328578973, "predicted_n": 128, "predicted_ms": 5177.046, "predicted_per_second": 24.72452437162042}
+BANC DONE ik-q40pur-qwen36
+=== ikrtr-q40pur-qwen36 A 14:10:52 : ~/bench-engines/ik_llama.cpp/build/bin/llama-server -m ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf -rtr -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:10:52 up 73 days, 15:47,  1 user,  load average: 7.13, 6.00, 3.16
+ikrtr-q40pur-qwen36 text {"words": 380, "rep": 0, "wall_s": 6.514133690856397, "prompt_n": 627, "prompt_ms": 1701.442, "prompt_per_second": 368.5109454215895, "predicted_n": 128, "predicted_ms": 4783.928, "predicted_per_second": 26.756255528929366}
+ikrtr-q40pur-qwen36 text {"words": 380, "rep": 1, "wall_s": 6.509474256075919, "prompt_n": 627, "prompt_ms": 1702.378, "prompt_per_second": 368.3083310522105, "predicted_n": 128, "predicted_ms": 4780.539, "predicted_per_second": 26.775223463295667}
+ikrtr-q40pur-qwen36 text {"words": 380, "rep": 2, "wall_s": 6.50993621442467, "prompt_n": 627, "prompt_ms": 1703.534, "prompt_per_second": 368.05840094767694, "predicted_n": 128, "predicted_ms": 4780.182, "predicted_per_second": 26.777223126650828}
+ikrtr-q40pur-qwen36 text {"words": 4240, "rep": 0, "wall_s": 22.65140805579722, "prompt_n": 6131, "prompt_ms": 17478.088, "prompt_per_second": 350.78207639187997, "predicted_n": 128, "predicted_ms": 5149.305, "predicted_per_second": 24.85772351802816}
+ikrtr-q40pur-qwen36 text {"words": 4240, "rep": 1, "wall_s": 22.6709836255759, "prompt_n": 6131, "prompt_ms": 17494.286, "prompt_per_second": 350.4572864534168, "predicted_n": 128, "predicted_ms": 5148.81, "predicted_per_second": 24.860113307735183}
+ikrtr-q40pur-qwen36 text {"words": 4240, "rep": 2, "wall_s": 22.67182656750083, "prompt_n": 6131, "prompt_ms": 17494.495, "prompt_per_second": 350.4530996750692, "predicted_n": 128, "predicted_ms": 5150.212, "predicted_per_second": 24.85334584285074}
+BANC DONE ikrtr-q40pur-qwen36
+=== herbert-g7-qwen36 A 14:12:29 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/qwen/Qwen3.6-35B-A3B --threads 8 --q4 --q4-grid7 --host 127.0.0.1 --port PORTX --ctx 8192
+ 14:12:29 up 73 days, 15:49,  1 user,  load average: 7.08, 6.36, 3.58
+herbert-g7-qwen36 text {"words": 380, "rep": 0, "wall_s": 6.817389254458249, "prompt_n": 627, "prompt_ms": 1870.0875720000001, "prompt_per_second": 335.27841657673986, "predicted_n": 128, "predicted_ms": 4940.34805, "predicted_per_second": 25.9091057359815}
+herbert-g7-qwen36 text {"words": 380, "rep": 1, "wall_s": 6.8471972569823265, "prompt_n": 627, "prompt_ms": 1876.537809, "prompt_per_second": 334.12596164749056, "predicted_n": 128, "predicted_ms": 4964.041995, "predicted_per_second": 25.78543858591994}
+herbert-g7-qwen36 text {"words": 380, "rep": 2, "wall_s": 6.871685526333749, "prompt_n": 627, "prompt_ms": 1922.487866, "prompt_per_second": 326.13989980834555, "predicted_n": 128, "predicted_ms": 4947.832217, "predicted_per_second": 25.869915224734466}
+herbert-g7-qwen36 text {"words": 4240, "rep": 0, "wall_s": 25.36456037312746, "prompt_n": 6131, "prompt_ms": 19984.963252, "prompt_per_second": 306.78064916563903, "predicted_n": 128, "predicted_ms": 5373.948277, "predicted_per_second": 23.818614062183688}
+herbert-g7-qwen36 text {"words": 4240, "rep": 1, "wall_s": 25.371942838653922, "prompt_n": 6131, "prompt_ms": 19985.809726, "prompt_per_second": 306.7676558545457, "predicted_n": 128, "predicted_ms": 5375.292133, "predicted_per_second": 23.812659262588213}
+herbert-g7-qwen36 text {"words": 4240, "rep": 2, "wall_s": 25.38012781366706, "prompt_n": 6131, "prompt_ms": 19997.953281000002, "prompt_per_second": 306.5813742961909, "predicted_n": 128, "predicted_ms": 5376.578829, "predicted_per_second": 23.806960535870534}
+BANC DONE herbert-g7-qwen36
+=== llama-q4km-qwen36 A 14:15:10 : ~/bench-engines/llama.cpp-latest/build/bin/llama-server -m ~/models/gguf/Qwen3.6-35B-A3B-Q4_K_M.gguf -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:15:10 up 73 days, 15:51,  2 users,  load average: 8.00, 7.87, 4.67
+llama-q4km-qwen36 text {"words": 380, "rep": 0, "wall_s": 11.60828436538577, "prompt_n": 627, "prompt_ms": 3980.235, "prompt_per_second": 157.5283871429702, "predicted_n": 128, "predicted_ms": 7602.394, "predicted_per_second": 16.705264157579833}
+llama-q4km-qwen36 text {"words": 380, "rep": 1, "wall_s": 11.653262114152312, "prompt_n": 627, "prompt_ms": 3994.036, "prompt_per_second": 156.9840632382883, "predicted_n": 128, "predicted_ms": 7657.617, "predicted_per_second": 16.584793937852993}
+llama-q4km-qwen36 text {"words": 380, "rep": 2, "wall_s": 11.646413997747004, "prompt_n": 627, "prompt_ms": 3988.205, "prompt_per_second": 157.21358355450636, "predicted_n": 128, "predicted_ms": 7656.377, "predicted_per_second": 16.587479952985596}
+llama-q4km-qwen36 text {"words": 4240, "rep": 0, "wall_s": 52.16412996407598, "prompt_n": 6131, "prompt_ms": 43419.871, "prompt_per_second": 141.20263047303848, "predicted_n": 128, "predicted_ms": 8707.075, "predicted_per_second": 14.585839676355146}
+llama-q4km-qwen36 text {"words": 4240, "rep": 1, "wall_s": 52.30185027234256, "prompt_n": 6131, "prompt_ms": 43559.668, "prompt_per_second": 140.74946576727814, "predicted_n": 128, "predicted_ms": 8735.081, "predicted_per_second": 14.53907525299422}
+llama-q4km-qwen36 text {"words": 4240, "rep": 2, "wall_s": 52.15062533970922, "prompt_n": 6131, "prompt_ms": 43579.376, "prompt_per_second": 140.6858143173046, "predicted_n": 128, "predicted_ms": 8564.693, "predicted_per_second": 14.828319006880925}
+BANC DONE llama-q4km-qwen36
+=== herbert-g8-gemma26 D 14:18:49 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-26B-A4B-it-qat-q4_0-unquantized --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 14:18:49 up 73 days, 15:55,  2 users,  load average: 7.29, 7.58, 5.22
+herbert-g8-gemma26 text {"words": 78, "rep": 0, "wall_s": 7.2942840196192265, "prompt_n": 218, "prompt_ms": 1135.017194, "prompt_per_second": 192.06757496926517, "predicted_n": 128, "predicted_ms": 6158.392904, "predicted_per_second": 20.7846433307075}
+herbert-g8-gemma26 text {"words": 78, "rep": 1, "wall_s": 6.734600602649152, "prompt_n": 218, "prompt_ms": 611.452873, "prompt_per_second": 356.5278856740281, "predicted_n": 128, "predicted_ms": 6122.377753000001, "predicted_per_second": 20.906909890896436}
+herbert-g8-gemma26 text {"words": 78, "rep": 2, "wall_s": 6.732352457009256, "prompt_n": 218, "prompt_ms": 612.0836889999999, "prompt_per_second": 356.16044654965475, "predicted_n": 128, "predicted_ms": 6119.500417, "predicted_per_second": 20.91674013852755}
+herbert-g8-gemma26 text {"words": 380, "rep": 0, "wall_s": 8.19691136199981, "prompt_n": 626, "prompt_ms": 1814.25703, "prompt_per_second": 345.04482531893507, "predicted_n": 128, "predicted_ms": 6381.7013830000005, "predicted_per_second": 20.05734714271885}
+herbert-g8-gemma26 text {"words": 380, "rep": 1, "wall_s": 8.171757189556956, "prompt_n": 626, "prompt_ms": 1794.852777, "prompt_per_second": 348.77512407804574, "predicted_n": 128, "predicted_ms": 6375.926536999999, "predicted_per_second": 20.075513614720307}
+herbert-g8-gemma26 text {"words": 380, "rep": 2, "wall_s": 8.171131231822073, "prompt_n": 626, "prompt_ms": 1794.762279, "prompt_per_second": 348.79271050246984, "predicted_n": 128, "predicted_ms": 6375.3984120000005, "predicted_per_second": 20.077176629318394}
+BANC DONE herbert-g8-gemma26
+=== llama-gemma26 D 14:20:23 : ~/bench-engines/llama.cpp-latest/build/bin/llama-server -m ~/models/gguf/gemma-4-26B_q4_0-it.gguf -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:20:23 up 73 days, 15:57,  2 users,  load average: 6.80, 7.60, 5.48
+llama-gemma26 text {"words": 78, "rep": 0, "wall_s": 8.180232022888958, "prompt_n": 219, "prompt_ms": 1587.936, "prompt_per_second": 137.91487818148843, "predicted_n": 128, "predicted_ms": 6590.356, "predicted_per_second": 19.270582651377257}
+llama-gemma26 text {"words": 78, "rep": 1, "wall_s": 8.161469578742981, "prompt_n": 219, "prompt_ms": 1554.859, "prompt_per_second": 140.84878435922488, "predicted_n": 128, "predicted_ms": 6605.091, "predicted_per_second": 19.22759277654161}
+llama-gemma26 text {"words": 78, "rep": 2, "wall_s": 8.139304488897324, "prompt_n": 219, "prompt_ms": 1540.806, "prompt_per_second": 142.13340290730955, "predicted_n": 128, "predicted_ms": 6596.894, "predicted_per_second": 19.251484107520902}
+llama-gemma26 text {"words": 380, "rep": 0, "wall_s": 11.272455270402133, "prompt_n": 627, "prompt_ms": 4464.804, "prompt_per_second": 140.4316964417699, "predicted_n": 128, "predicted_ms": 6804.997, "predicted_per_second": 18.66275620694616}
+llama-gemma26 text {"words": 380, "rep": 1, "wall_s": 11.293689535930753, "prompt_n": 627, "prompt_ms": 4491.092, "prompt_per_second": 139.60969848758387, "predicted_n": 128, "predicted_ms": 6800.088, "predicted_per_second": 18.67622889586135}
+llama-gemma26 text {"words": 380, "rep": 2, "wall_s": 11.2701571630314, "prompt_n": 627, "prompt_ms": 4468.32, "prompt_per_second": 140.32119454291546, "predicted_n": 128, "predicted_ms": 6799.531, "predicted_per_second": 18.67775880424694}
+BANC DONE llama-gemma26
+=== ikrtr-gemma26 D 14:21:40 : ~/bench-engines/ik_llama.cpp/build/bin/llama-server -m ~/models/gguf/gemma-4-26B_q4_0-it.gguf -rtr -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:21:40 up 73 days, 15:58,  2 users,  load average: 6.71, 7.39, 5.57
+ikrtr-gemma26 text {"words": 78, "rep": 0, "wall_s": 6.745500389486551, "prompt_n": 219, "prompt_ms": 620.983, "prompt_per_second": 352.66665915169983, "predicted_n": 128, "predicted_ms": 6122.612, "predicted_per_second": 20.906110006644223}
+ikrtr-gemma26 text {"words": 78, "rep": 1, "wall_s": 6.737235798500478, "prompt_n": 219, "prompt_ms": 615.095, "prompt_per_second": 356.0425625309911, "predicted_n": 128, "predicted_ms": 6120.455, "predicted_per_second": 20.91347783784049}
+ikrtr-gemma26 text {"words": 78, "rep": 2, "wall_s": 6.741699653677642, "prompt_n": 219, "prompt_ms": 615.165, "prompt_per_second": 356.00204823096243, "predicted_n": 128, "predicted_ms": 6124.901, "predicted_per_second": 20.898296968391815}
+ikrtr-gemma26 text {"words": 380, "rep": 0, "wall_s": 8.195731794461608, "prompt_n": 627, "prompt_ms": 1765.299, "prompt_per_second": 355.1806237923434, "predicted_n": 128, "predicted_ms": 6427.814, "predicted_per_second": 19.913457358909266}
+ikrtr-gemma26 text {"words": 380, "rep": 1, "wall_s": 8.181685782968998, "prompt_n": 627, "prompt_ms": 1749.3, "prompt_per_second": 358.4290859200823, "predicted_n": 128, "predicted_ms": 6429.869, "predicted_per_second": 19.907092974989073}
+ikrtr-gemma26 text {"words": 380, "rep": 2, "wall_s": 8.177702873013914, "prompt_n": 627, "prompt_ms": 1748.077, "prompt_per_second": 358.67985220330684, "predicted_n": 128, "predicted_ms": 6427.074, "predicted_per_second": 19.915750153180127}
+BANC DONE ikrtr-gemma26
+=== ik-gemma26 D 14:22:34 : ~/bench-engines/ik_llama.cpp/build/bin/llama-server -m ~/models/gguf/gemma-4-26B_q4_0-it.gguf -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:22:34 up 73 days, 15:59,  2 users,  load average: 6.84, 7.36, 5.67
+ik-gemma26 text {"words": 78, "rep": 0, "wall_s": 6.925904656760395, "prompt_n": 219, "prompt_ms": 776.875, "prompt_per_second": 281.8986323411102, "predicted_n": 128, "predicted_ms": 6147.245, "predicted_per_second": 20.822335859397178}
+ik-gemma26 text {"words": 78, "rep": 1, "wall_s": 6.9239282310009, "prompt_n": 219, "prompt_ms": 778.32, "prompt_per_second": 281.3752698119025, "predicted_n": 128, "predicted_ms": 6143.994, "predicted_per_second": 20.833353678405285}
+ik-gemma26 text {"words": 78, "rep": 2, "wall_s": 6.922752058133483, "prompt_n": 219, "prompt_ms": 778.454, "prompt_per_second": 281.32683498318465, "predicted_n": 128, "predicted_ms": 6142.687, "predicted_per_second": 20.83778646055057}
+ik-gemma26 text {"words": 380, "rep": 0, "wall_s": 8.541829737834632, "prompt_n": 627, "prompt_ms": 2085.992, "prompt_per_second": 300.57641640044636, "predicted_n": 128, "predicted_ms": 6453.243, "predicted_per_second": 19.834988392657767}
+ik-gemma26 text {"words": 380, "rep": 1, "wall_s": 8.536321194842458, "prompt_n": 627, "prompt_ms": 2079.926, "prompt_per_second": 301.45303246365495, "predicted_n": 128, "predicted_ms": 6453.83, "predicted_per_second": 19.8331843262063}
+ik-gemma26 text {"words": 380, "rep": 2, "wall_s": 8.532973888330162, "prompt_n": 627, "prompt_ms": 2080.145, "prompt_per_second": 301.4212951500977, "predicted_n": 128, "predicted_ms": 6450.217, "predicted_per_second": 19.844293610587055}
+BANC DONE ik-gemma26
+=== herbert-g8-gemmae4b C 14:23:28 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-E4B-it-qat-q4_0-unquantized --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 14:23:28 up 73 days, 16:00,  2 users,  load average: 6.90, 7.34, 5.76
+herbert-g8-gemmae4b text {"words": 78, "rep": 0, "wall_s": 7.769656456075609, "prompt_n": 218, "prompt_ms": 543.151163, "prompt_per_second": 401.3615635027187, "predicted_n": 128, "predicted_ms": 7225.637884, "predicted_per_second": 17.714698972589698}
+herbert-g8-gemmae4b text {"words": 78, "rep": 1, "wall_s": 7.759141874499619, "prompt_n": 218, "prompt_ms": 533.02759, "prompt_per_second": 408.98445800901226, "predicted_n": 128, "predicted_ms": 7225.324011, "predicted_per_second": 17.71546851118785}
+herbert-g8-gemmae4b text {"words": 78, "rep": 2, "wall_s": 7.758237169124186, "prompt_n": 218, "prompt_ms": 532.7184990000001, "prompt_per_second": 409.22175672371384, "predicted_n": 128, "predicted_ms": 7224.713237999999, "predicted_per_second": 17.716966166457002}
+herbert-g8-gemmae4b text {"words": 380, "rep": 0, "wall_s": 8.87138656899333, "prompt_n": 626, "prompt_ms": 1571.995762, "prompt_per_second": 398.2199030890263, "predicted_n": 128, "predicted_ms": 7298.378978, "predicted_per_second": 17.53814105650571}
+herbert-g8-gemmae4b text {"words": 380, "rep": 1, "wall_s": 8.871791636571288, "prompt_n": 626, "prompt_ms": 1572.800314, "prompt_per_second": 398.01619724244284, "predicted_n": 128, "predicted_ms": 7297.964293999999, "predicted_per_second": 17.53913760652883}
+herbert-g8-gemmae4b text {"words": 380, "rep": 2, "wall_s": 8.872594048269093, "prompt_n": 626, "prompt_ms": 1572.813049, "prompt_per_second": 398.012974522314, "predicted_n": 128, "predicted_ms": 7298.775361999999, "predicted_per_second": 17.53718859007679}
+BANC DONE herbert-g8-gemmae4b
+=== llama-gemmae4b C 14:24:36 : ~/bench-engines/llama.cpp-latest/build/bin/llama-server -m ~/models/gguf/gemma-4-E4B_q4_0-it.gguf -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:24:36 up 73 days, 16:01,  2 users,  load average: 6.56, 7.15, 5.80
+llama-gemmae4b text {"words": 78, "rep": 0, "wall_s": 8.421168573200703, "prompt_n": 219, "prompt_ms": 791.388, "prompt_per_second": 276.72898755098635, "predicted_n": 128, "predicted_ms": 7628.019, "predicted_per_second": 16.64914573495425}
+llama-gemmae4b text {"words": 78, "rep": 1, "wall_s": 8.49482005648315, "prompt_n": 219, "prompt_ms": 792.247, "prompt_per_second": 276.42894198400245, "predicted_n": 128, "predicted_ms": 7700.866, "predicted_per_second": 16.49165171813144}
+llama-gemmae4b text {"words": 78, "rep": 2, "wall_s": 8.421002029441297, "prompt_n": 219, "prompt_ms": 797.5, "prompt_per_second": 274.60815047021947, "predicted_n": 128, "predicted_ms": 7621.947, "predicted_per_second": 16.662409224309748}
+llama-gemmae4b text {"words": 380, "rep": 0, "wall_s": 10.031092608347535, "prompt_n": 627, "prompt_ms": 2256.318, "prompt_per_second": 277.8863617628366, "predicted_n": 128, "predicted_ms": 7772.52, "predicted_per_second": 16.339617009669965}
+llama-gemmae4b text {"words": 380, "rep": 1, "wall_s": 10.026382502168417, "prompt_n": 627, "prompt_ms": 2251.069, "prompt_per_second": 278.53433191075, "predicted_n": 128, "predicted_ms": 7772.804, "predicted_per_second": 16.339019998445863}
+llama-gemmae4b text {"words": 380, "rep": 2, "wall_s": 10.102298257872462, "prompt_n": 627, "prompt_ms": 2246.921, "prompt_per_second": 279.04852907601116, "predicted_n": 128, "predicted_ms": 7852.841, "predicted_per_second": 16.172490949453834}
+BANC DONE llama-gemmae4b
+=== herbert-g8-gemmae2b E 14:25:41 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-E2B-it-qat-q4_0-unquantized --threads 8 --q4 --host 127.0.0.1 --port PORTX --ctx 8192
+ 14:25:41 up 73 days, 16:02,  2 users,  load average: 6.67, 7.09, 5.87
+herbert-g8-gemmae2b text {"words": 380, "rep": 0, "wall_s": 4.4012881657108665, "prompt_n": 626, "prompt_ms": 790.8280490000001, "prompt_per_second": 791.5753630534164, "predicted_n": 128, "predicted_ms": 3609.413613, "predicted_per_second": 35.46282408283253}
+herbert-g8-gemmae2b text {"words": 380, "rep": 1, "wall_s": 4.39331151265651, "prompt_n": 626, "prompt_ms": 782.679002, "prompt_per_second": 799.8170366144562, "predicted_n": 128, "predicted_ms": 3609.66248, "predicted_per_second": 35.46037911001585}
+herbert-g8-gemmae2b text {"words": 380, "rep": 2, "wall_s": 4.3941368740051985, "prompt_n": 626, "prompt_ms": 784.357764, "prompt_per_second": 798.1051871120383, "predicted_n": 128, "predicted_ms": 3608.8334250000003, "predicted_per_second": 35.468525400282225}
+BANC DONE herbert-g8-gemmae2b
+=== llama-gemmae2b E 14:26:08 : ~/bench-engines/llama.cpp-latest/build/bin/llama-server -m ~/models/gguf/gemma-4-E2B_q4_0-it.gguf --mmproj ~/models/gguf/gemma-4-E2B-it-mmproj.gguf --image-min-tokens 250 --image-max-tokens 280 -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:26:08 up 73 days, 16:02,  2 users,  load average: 5.85, 6.88, 5.84
+llama-gemmae2b text {"words": 380, "rep": 0, "wall_s": 4.755009330809116, "prompt_n": 627, "prompt_ms": 646.776, "prompt_per_second": 969.4237262978219, "predicted_n": 128, "predicted_ms": 4105.484, "predicted_per_second": 30.934233332781222}
+llama-gemmae2b text {"words": 380, "rep": 1, "wall_s": 4.75134227797389, "prompt_n": 627, "prompt_ms": 645.318, "prompt_per_second": 971.613994960624, "predicted_n": 128, "predicted_ms": 4103.863, "predicted_per_second": 30.94645215983087}
+llama-gemmae2b text {"words": 380, "rep": 2, "wall_s": 4.759277136065066, "prompt_n": 627, "prompt_ms": 653.684, "prompt_per_second": 959.1790528757014, "predicted_n": 128, "predicted_ms": 4103.147, "predicted_per_second": 30.951852322132257}
+BANC DONE llama-gemmae2b
+=== ik-gemmae2b E 14:26:31 : ~/bench-engines/ik_llama.cpp/build/bin/llama-server -m ~/models/gguf/gemma-4-E2B_q4_0-it.gguf -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:26:31 up 73 days, 16:03,  2 users,  load average: 5.82, 6.82, 5.85
+ik-gemmae2b text {"words": 380, "rep": 0, "wall_s": 3.977271681651473, "prompt_n": 627, "prompt_ms": 328.29, "prompt_per_second": 1909.8967376405005, "predicted_n": 128, "predicted_ms": 3646.332, "predicted_per_second": 35.1037700352025}
+ik-gemmae2b text {"words": 380, "rep": 1, "wall_s": 3.979789637029171, "prompt_n": 627, "prompt_ms": 328.625, "prompt_per_second": 1907.949790794979, "predicted_n": 128, "predicted_ms": 3648.601, "predicted_per_second": 35.08193962562637}
+ik-gemmae2b text {"words": 380, "rep": 2, "wall_s": 3.9809751324355602, "prompt_n": 627, "prompt_ms": 328.776, "prompt_per_second": 1907.0735090152566, "predicted_n": 128, "predicted_ms": 3649.852, "predicted_per_second": 35.06991516368335}
+BANC DONE ik-gemmae2b
+=== ikrtr-gemmae2b E 14:26:49 : ~/bench-engines/ik_llama.cpp/build/bin/llama-server -m ~/models/gguf/gemma-4-E2B_q4_0-it.gguf -rtr -t 8 -c 8192 -np 1 --host 127.0.0.1 --port PORTX
+ 14:26:49 up 73 days, 16:03,  2 users,  load average: 5.80, 6.76, 5.85
+ikrtr-gemmae2b text {"words": 380, "rep": 0, "wall_s": 3.9909968180581927, "prompt_n": 627, "prompt_ms": 333.261, "prompt_per_second": 1881.4082655936338, "predicted_n": 128, "predicted_ms": 3655.133, "predicted_per_second": 35.01924553771368}
+ikrtr-gemmae2b text {"words": 380, "rep": 1, "wall_s": 3.970265311188996, "prompt_n": 627, "prompt_ms": 312.759, "prompt_per_second": 2004.7384727537815, "predicted_n": 128, "predicted_ms": 3654.965, "predicted_per_second": 35.020855192867785}
+ikrtr-gemmae2b text {"words": 380, "rep": 2, "wall_s": 3.971137600019574, "prompt_n": 627, "prompt_ms": 312.881, "prompt_per_second": 2003.9567758988242, "predicted_n": 128, "predicted_ms": 3655.738, "predicted_per_second": 35.01345008860044}
+BANC DONE ikrtr-gemmae2b
+=== herbert-g7-gemmae2b E 14:27:08 : ~/publication-jit-q4/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ~/models/gemma/gemma-4-E2B-it-qat-q4_0-unquantized --threads 8 --q4 --q4-grid7 --host 127.0.0.1 --port PORTX --ctx 8192
+ 14:27:08 up 73 days, 16:03,  2 users,  load average: 5.78, 6.71, 5.85
+herbert-g7-gemmae2b text {"words": 380, "rep": 0, "wall_s": 4.4031190341338515, "prompt_n": 626, "prompt_ms": 773.0726119999999, "prompt_per_second": 809.755759398187, "predicted_n": 128, "predicted_ms": 3628.939063, "predicted_per_second": 35.27201691124126}
+herbert-g7-gemmae2b text {"words": 380, "rep": 1, "wall_s": 4.408486302010715, "prompt_n": 626, "prompt_ms": 778.6603319999999, "prompt_per_second": 803.9448964763753, "predicted_n": 128, "predicted_ms": 3628.806275, "predicted_per_second": 35.27330761133012}
+herbert-g7-gemmae2b text {"words": 380, "rep": 2, "wall_s": 4.409629979170859, "prompt_n": 626, "prompt_ms": 779.602852, "prompt_per_second": 802.9729475643323, "predicted_n": 128, "predicted_ms": 3629.009508, "predicted_per_second": 35.271332223800826}
+BANC DONE herbert-g7-gemmae2b
+REJEU EPYC 4344P FINI 14:27:35

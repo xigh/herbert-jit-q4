@@ -1,0 +1,4 @@
+D'après le texte, Hapley remarque l'étrange papillon le **troisième jour** de son étude des diatomées.
+
+Le passage pertinent est le suivant :
+> "It was on the **third day** of the diatoms that Hapley became aware of a novel addition to the local fauna."<|im_end|>

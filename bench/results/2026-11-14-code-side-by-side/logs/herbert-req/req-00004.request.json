@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nCette fonction Python doit rendre la médiane d'une liste de nombres (la moyenne des deux valeurs du milieu si la longueur est paire), sans modifier la liste, et lever `ValueError` si la liste est vide. Elle a un bogue. Corrige-la en gardant son nom et sa signature.\n\n```python\ndef mediane(nombres: list[float]) -> float:\n    if not nombres:\n        raise ValueError(\"liste vide\")\n    s = sorted(nombres)\n    n = len(s)\n    if n % 2 == 1:\n        return s[n // 2]\n    return (s[n // 2] + s[n // 2 + 1]) / 2\n```\n\nRéponds par le code seul, dans un seul bloc ```python, sans explication.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 500,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

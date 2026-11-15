@@ -1,0 +1,84 @@
+{
+ "intro": "Les sections précédentes notent des positions une à une sur un texte imposé. Ici, le modèle répond lui-même : quinze questions courtes en français (faits, calculs, explications en trois phrases, listes, résumés de deux extraits des <i>Misérables</i>, consignes de format JSON ou à puces, une traduction), décodage glouton, gabarit de conversation de Qwen3.6 sans réflexion (<code>enable_thinking=False</code>), 200 jetons au plus, arrêt à la fin de séquence. Cinq bras : la référence 16 bits (transformers 5.22 bf16), herbert 68c3a96 <code>--q4</code> (grille 8, les poids du Q4_0), llama.cpp 5676dfbe0 sur le Q4_0 pur, ik_llama.cpp 7aa7e014 sur le même fichier, et llama.cpp sur le Q4_K_M. Tous ont reçu <b>exactement les mêmes jetons d'entrée</b> (ids comparés un à un, pour les quinze questions) et tous ont tourné sur <b>Ryzen 9 9900X</b> (Zen 5, AVX-512, 12 fils). La référence a été rejouée une seconde fois : mêmes jetons, au bit, sur les quinze. Les questions et les prédictions ont été écrites avant toute génération : copiées sur Ryzen 9 9900X à 18:04:51 avec le même sha256 (2087847e…), neuf secondes avant le lancement de la chaîne, puis commitées pendant le chargement du premier serveur (<code>PREDICTIONS.md</code>). Dans les colonnes, le texte commun avec la référence est en clair ; ce qui suit le premier jeton différent est surligné, et ce premier jeton est souligné. Le jugement « fond » ou « formulation » est le mien, à lire comme tel.",
+ "exemples": [
+  {
+   "id": "q08",
+   "titre": "Les deux Q4_0 dévient ensemble, le Q4_K_M suit la référence (q08)",
+   "commentaire": "herbert et llama.cpp en Q4_0 pur rendent <b>la même réponse, jeton pour jeton</b> (70 jetons). Elle quitte la référence au 30<sup>e</sup> jeton (« du pouvoir d'achat <i>des consommateurs</i> » au lieu de « <i>de la monnaie</i> ») et la troisième phrase y perd l'indice des prix à la consommation au profit d'une formule circulaire (« mesuré par l'augmentation du taux d'augmentation des prix ») : à mon jugement, le fond s'appauvrit. Le Q4_K_M rend la réponse de la référence au jeton près. ik_llama.cpp, sur le même fichier Q4_0 que llama.cpp, s'en écarte dès le 5<sup>e</sup> jeton (« l'augmentation » au lieu de « une augmentation ») et garde l'indice des prix. Ce cas n'est pas la règle : sur les quinze, il n'y en a que deux où les deux Q4_0 quittent ensemble la référence (même rang, même jeton) alors que le Q4_K_M la suit jusqu'au bout : q08 et q15, la traduction, où les Q4_0 écrivent « watched » au lieu de « looked ». Au 30<sup>e</sup> jeton, la référence donnait 74,0 % à « de » et 16,5 % à « des » : les deux Q4_0 prennent son second choix, sans qu'elle hésite vraiment."
+  },
+  {
+   "id": "q03",
+   "titre": "Tout le monde dit la même chose (q03)",
+   "commentaire": "Les cinq bras rendent les mêmes 35 jetons. C'est le cas de 3 questions sur 15 (q01, q03, q04), trois réponses de 3 à 35 jetons. Une réponse courte ne garantit rien pour autant : la liste des fleuves (15 jetons), le JSON du Canada (34) et la traduction (22) dévient."
+  },
+  {
+   "id": "q13",
+   "titre": "Le fond change (q13)",
+   "commentaire": "La référence répond Toronto ; herbert, llama.cpp Q4_0 et <b>aussi le Q4_K_M</b> passent à Montréal au 8<sup>e</sup> jeton, avec trois populations différentes (2 100 000, 2 115 893, 4 200 000 ; la référence dit 2 930 000) ; ik écrit Montréal lui aussi et ajoute une clôture <code>```json</code> que les autres n'ont pas. C'est la seule question où une réponse quantifiée devient fausse sur un fait. Elle ne distingue pas le Q4_0 du Q4_K_M. Au 8<sup>e</sup> jeton, la référence elle-même hésitait : 54,7 % pour « Toronto », 42,6 % pour « Mon(tréal) ». Le fond change aussi, à mon jugement, sur trois autres questions, mais dans l'autre sens : la référence s'y trompe et les quatre bras quantifiés non. Elle cite deux fois la Loire parmi « cinq fleuves » (q09). Dans q11, elle attribue l'idéal de respectabilité à la servante plutôt qu'à Baptistine (là, les Q4_0 partent d'un ex aequo exact de la référence : deux jetons à 39,85 % chacun ; elle prend l'un, eux l'autre). Dans q12, elle fait de Jacquin Labarre le tenancier de l'auberge de Grenoble, alors qu'il tient celle de Digne. S'écarter de la référence n'est donc pas toujours se tromper."
+  }
+ ],
+ "questions": {
+  "q01": {
+   "court": "capitale de l'Australie",
+   "fond": "identique partout"
+  },
+  "q02": {
+   "court": "prise de la Bastille",
+   "fond": "Q4_K_M : formulation (« célébrée » pour « commémorée ») ; à un ex aequo exact de la référence (deux jetons à 41,3 %)"
+  },
+  "q03": {
+   "court": "tungstène",
+   "fond": "identique partout"
+  },
+  "q04": {
+   "court": "17 × 24",
+   "fond": "identique partout (408)"
+  },
+  "q05": {
+   "court": "train, 189 km à 84 km/h",
+   "fond": "formulation : même calcul (2,25 h = 2 h 15), tous coupés à 200 jetons avant l'heure d'arrivée, référence comprise"
+  },
+  "q06": {
+   "court": "−25 % puis +25 %",
+   "fond": "formulation : 75 € partout"
+  },
+  "q07": {
+   "court": "ciel bleu, trois phrases",
+   "fond": "formulation ; herbert écrit « molécles » (faute) et nomme la diffusion de Rayleigh"
+  },
+  "q08": {
+   "court": "inflation, trois phrases",
+   "fond": "<b>fond</b> pour herbert et llama Q4_0 (l'indice des prix devient une formule circulaire) ; ik : formulation ; Q4_K_M identique"
+  },
+  "q09": {
+   "court": "cinq fleuves",
+   "fond": "<b>fond</b>, en mieux : la référence cite deux fois la Loire ; Rhin (Q4_0), Somme (Q4_K_M)"
+  },
+  "q10": {
+   "court": "sommeil, trois puces",
+   "fond": "formulation : les trois mêmes conseils ; puces « *␣␣␣ » pour les Q4_0"
+  },
+  "q11": {
+   "court": "résumé Myriel, deux lignes",
+   "fond": "<b>fond</b>, en mieux : la référence attribue la respectabilité à la servante, les quatre bras quantifiés à Baptistine ; les Q4_0 partent d'un ex aequo exact de la référence (deux jetons à 39,85 %)"
+  },
+  "q12": {
+   "court": "résumé de l'auberge, trois lignes",
+   "fond": "<b>fond</b>, en mieux : la référence place Labarre à Grenoble, les quatre bras quantifiés à Digne (Croix-de-Colbas)"
+  },
+  "q13": {
+   "court": "JSON, plus grande ville du Canada",
+   "fond": "<b>fond</b>, en pire : Montréal au lieu de Toronto, pour les quatre bras quantifiés"
+  },
+  "q14": {
+   "court": "JSON extrait de l'incipit",
+   "fond": "formulation : « évêque de Digne » (herbert, ik) ; llama Q4_0 sans clôture <code>```json</code>"
+  },
+  "q15": {
+   "court": "traduction",
+   "fond": "formulation : « watched » pour « looked » (Q4_0)"
+  }
+ },
+ "tableau_intro": "Les quinze questions. Pour chaque bras : « identique », ou le rang du premier jeton qui diffère de la référence (fins de séquence retirées) ; « ex aequo » : à ce rang, les deux premiers jetons de la référence ont exactement la même probabilité, la référence prend l'un, le bras l'autre. L'avant-dernière colonne compare herbert et llama.cpp en Q4_0 pur entre eux.",
+ "comptes": "<b>Comptes, sur les quinze.</b> herbert, llama.cpp et ik_llama.cpp en Q4_0 pur s'écartent de la référence sur 11 questions chacun (dont q11, à un ex aequo exact de la référence) et lui restent identiques sur 4. Le Q4_K_M s'en écarte sur 9 (dont q02, à un ex aequo) et lui reste identique sur 6. Les cinq bras sont identiques sur 3 questions (q01, q03, q04). Les deux Q4_0 dévient ensemble alors que le Q4_K_M suit la référence jusqu'au bout sur 2 questions (q08, q15) ; sur q14, le Q4_K_M suit aussi la référence mais les deux Q4_0 dévient chacun ailleurs. herbert et llama.cpp en Q4_0 pur rendent la même réponse jusqu'au bout sur 8 questions (q05 jusqu'à la coupe des 200 jetons). Quand ils quittent la référence, c'est 10 fois sur 11 au même rang et avec le même jeton. llama.cpp et ik, sur le même fichier, ne sont identiques jusqu'au bout que sur 7. Le premier écart vient tôt : après le 10<sup>e</sup> jeton dans 5 cas sur 11 pour herbert, 4 sur 11 pour llama.cpp et ik en Q4_0, 7 sur 9 pour le Q4_K_M. Au rang de l'écart, et hors ex aequo, le jeton du bras est l'un des deux premiers de la référence dans 32 cas sur 38. Les 6 autres sont q05 et q06, pour les trois Q4_0. Fond changé, à mon jugement, sur 5 questions. Le changement est en pire sur 2 : q08 pour les deux Q4_0 seulement, et q13 pour les quatre bras quantifiés, Q4_K_M compris. Il est en mieux sur 3, où c'est la référence qui se trompe (q09, q11, q12, pour les quatre bras quantifiés). Sur les autres questions, seule la formulation change. Les différences de présentation ne sont pas comptées dans le fond : clôture <code>```json</code> en plus (q13, ik) ou en moins (q14, llama.cpp Q4_0), saut de ligne entre les deux phrases du résumé q11. Ma prédiction 4 rangeait pourtant « consigne de format non tenue » dans le fond ; en comptant ces cas, q14 s'ajouterait (6 questions). Quinze questions, c'est peu : ces comptes décrivent cet échantillon, pas une loi."
+}

@@ -1,0 +1,28 @@
+{
+ "ref": "ref/gemma26-fr.kld",
+ "test": "out/gemma26-fr-ikrtr-q40.kld",
+ "n_ctx": 256,
+ "chunks": 24,
+ "positions": 3048,
+ "vocab": 262144,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 1006.2625106960571,
+ "ppl_test": 951.8925640609814,
+ "nll_ref": 6.913998261645355,
+ "nll_test": 6.85845217554588,
+ "dnll": -0.05554608609947464,
+ "dnll_se": 0.023829507541396407,
+ "dnll_se_chunk": 0.052746058183127886,
+ "kl_mean": 0.3976641659373129,
+ "kl_se": 0.009093219104136206,
+ "kl_median": 0.2554529712345641,
+ "kl_p99": 2.427309452117809,
+ "kl_p999": 4.978923892808936,
+ "kl_max": 6.9153927840256255,
+ "top1": 0.6663385826771654,
+ "top1_n": 2031,
+ "ref_nll_exact_minus_compressed": 0.08395233066278011
+}

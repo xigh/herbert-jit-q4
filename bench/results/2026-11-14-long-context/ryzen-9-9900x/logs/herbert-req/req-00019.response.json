@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-19",
+  "object": "chat.completion",
+  "created": 1794678391,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "After a bitter, decades-long scientific feud ends with the death of his rival Professor Pawkins, celebrated entomologist Hapley retreats to the countryside to recover, only to become obsessed with a mysterious moth that only he can see. This hallucination, which he interprets as the ghost of Pawkins, drives him to madness, resulting in his confinement in an asylum where he spends his remaining days trying to catch the invisible insect."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5291,
+    "completion_tokens": 89,
+    "total_tokens": 5380,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 5291,
+    "prompt_ms": 13281.181304,
+    "prompt_per_token_ms": 2.5101457766017767,
+    "prompt_per_second": 398.3832370699184,
+    "predicted_n": 89,
+    "predicted_ms": 5872.892919,
+    "predicted_per_token_ms": 65.98756088764044,
+    "predicted_per_second": 15.154371317084115
+  }
+}

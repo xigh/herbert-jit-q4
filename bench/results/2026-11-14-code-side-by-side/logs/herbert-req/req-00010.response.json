@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-10",
+  "object": "chat.completion",
+  "created": 1794684369,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```rust\nuse std::collections::HashMap;\n\npub fn compter_mots(texte: &str) -> Vec<(String, usize)> {\n    let mut compte: HashMap<String, usize> = HashMap::new();\n    for mot in texte.split_whitespace() {\n        let mot_min = mot.to_lowercase();\n        *compte.entry(mot_min).or_insert(0) += 1;\n    }\n    let mut resultat: Vec<(String, usize)> = compte.into_iter().collect();\n    resultat.sort_by(|a, b| {\n        b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0))\n    });\n    resultat\n}\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 171,
+    "completion_tokens": 154,
+    "total_tokens": 325,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 171,
+    "prompt_ms": 564.135767,
+    "prompt_per_token_ms": 3.299039573099415,
+    "prompt_per_second": 303.1185221765951,
+    "predicted_n": 154,
+    "predicted_ms": 9309.150959,
+    "predicted_per_token_ms": 60.44903220129871,
+    "predicted_per_second": 16.542862037392812
+  }
+}

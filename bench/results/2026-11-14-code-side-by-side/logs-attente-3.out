@@ -1,0 +1,105 @@
+== attente 2026-11-14 20:10:18 CET
+20:11:18 8620 1190% (repos 0/3), verrou libre
+20:12:18 8620 1093% (repos 0/3), verrou libre
+20:13:18 8620 1131% (repos 0/3), verrou libre
+20:14:18 8620 1145% (repos 0/3), verrou libre
+20:15:18 8620 1071% (repos 0/3), verrou libre
+20:16:18 8620 1130% (repos 0/3), verrou libre
+20:17:18 8620 1161% (repos 0/3), verrou libre
+20:18:18 8620 1062% (repos 0/3), verrou libre
+20:19:18 8620 1191% (repos 0/3), verrou libre
+20:20:18 8620 1094% (repos 0/3), verrou libre
+20:21:18 8620 1072% (repos 0/3), verrou libre
+20:22:18 8620 1186% (repos 0/3), verrou libre
+20:23:18 8620 1120% (repos 0/3), verrou libre
+20:24:18 8620 parti
+== 20:24:18 flock
+== début 2026-11-14 20:24:18 CET, Ryzen 9 9900X, model name	: AMD Ryzen 9 9900X 12-Core Processor, avx512f: 24
+               total        used        free      shared  buff/cache   available
+Mem:             186          69          38          61         142         117
+Swap:              1           1           0
+    PID %CPU     ELAPSED COMMAND
+== 20:25:05 herbert-q40 prêt (pid 3226928, port 32481)
+[herbert] p01 prompt_ok=True tokenize_matches=True -> 185 tokens
+[herbert] p02 prompt_ok=True tokenize_matches=True -> 173 tokens
+[herbert] p03 prompt_ok=True tokenize_matches=True -> 108 tokens
+[herbert] p04 prompt_ok=True tokenize_matches=True -> 90 tokens
+[herbert] p05 prompt_ok=True tokenize_matches=True -> 151 tokens
+[herbert] p06 prompt_ok=True tokenize_matches=True -> 15 tokens
+[herbert] p07 prompt_ok=True tokenize_matches=True -> 14 tokens
+[herbert] r01 prompt_ok=True tokenize_matches=True -> 215 tokens
+[herbert] r02 prompt_ok=True tokenize_matches=True -> 29 tokens
+[herbert] r03 prompt_ok=True tokenize_matches=True -> 154 tokens
+== 20:26:21 herbert-q40 fini
+== 20:26:37 llama-q40pur prêt (pid 3229503, port 32482)
+[llama] p01 prompt_ok=True tokenize_matches=True -> 185 tokens
+[llama] p02 prompt_ok=True tokenize_matches=True -> 261 tokens
+[llama] p03 prompt_ok=True tokenize_matches=True -> 108 tokens
+[llama] p04 prompt_ok=True tokenize_matches=True -> 90 tokens
+[llama] p05 prompt_ok=True tokenize_matches=True -> 151 tokens
+[llama] p06 prompt_ok=True tokenize_matches=True -> 15 tokens
+[llama] p07 prompt_ok=True tokenize_matches=True -> 14 tokens
+[llama] r01 prompt_ok=True tokenize_matches=True -> 121 tokens
+[llama] r02 prompt_ok=True tokenize_matches=True -> 29 tokens
+[llama] r03 prompt_ok=True tokenize_matches=True -> 158 tokens
+== 20:27:50 llama-q40pur fini
+== 20:28:04 llama-q4km prêt (pid 3229636, port 32483)
+[llama] p01 prompt_ok=True tokenize_matches=True -> 181 tokens
+[llama] p02 prompt_ok=True tokenize_matches=True -> 183 tokens
+[llama] p03 prompt_ok=True tokenize_matches=True -> 108 tokens
+[llama] p04 prompt_ok=True tokenize_matches=True -> 90 tokens
+[llama] p05 prompt_ok=True tokenize_matches=True -> 151 tokens
+[llama] p06 prompt_ok=True tokenize_matches=True -> 15 tokens
+[llama] p07 prompt_ok=True tokenize_matches=True -> 14 tokens
+[llama] r01 prompt_ok=True tokenize_matches=True -> 131 tokens
+[llama] r02 prompt_ok=True tokenize_matches=True -> 29 tokens
+[llama] r03 prompt_ok=True tokenize_matches=True -> 154 tokens
+== 20:29:34 llama-q4km fini
+== 20:29:36 ik-q40pur.raw prêt (pid 3229759, port 32484)
+[ik] p01 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] p02 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] p03 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] p04 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] p05 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] p06 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] p07 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] r01 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] r02 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] r03 prompt_ok=True tokenize_matches=True -> 0 tokens
+== 20:30:41 ik-q40pur.raw fini
+p01 194 illisibles [] texte_ok True
+p02 261 illisibles [] texte_ok True
+p03 108 illisibles [] texte_ok True
+p04 90 illisibles [] texte_ok True
+p05 151 illisibles [] texte_ok True
+p06 15 illisibles [] texte_ok True
+p07 14 illisibles [] texte_ok True
+r01 201 illisibles [] texte_ok True
+r02 29 illisibles [] texte_ok True
+r03 158 illisibles [] texte_ok True
+               total        used        free      shared  buff/cache   available
+Mem:             186          69          19          61         160         116
+Swap:              1           1           0
+
+Loading weights:   0%|          | 0/693 [00:00<?, ?it/s]
+Loading weights:  17%|█▋        | 115/693 [00:00<00:00, 1007.60it/s]
+Loading weights:  31%|███       | 216/693 [00:00<00:02, 188.30it/s] 
+Loading weights:  38%|███▊      | 265/693 [00:01<00:02, 156.13it/s]
+Loading weights: 100%|██████████| 693/693 [00:01<00:00, 447.81it/s]
+loaded Qwen3_5MoeForCausalLM in 2 s, transformers 5.22.1, torch 2.9.1+cpu
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[ref] p01 149 -> 181 tokens in 81 s
+[ref] p02 160 -> 186 tokens in 47 s
+[ref] p03 190 -> 108 tokens in 27 s
+[ref] p04 184 -> 90 tokens in 22 s
+[ref] p05 215 -> 151 tokens in 37 s
+[ref] p06 85 -> 15 tokens in 5 s
+[ref] p07 89 -> 14 tokens in 4 s
+[ref] r01 127 -> 155 tokens in 36 s
+[ref] r02 124 -> 29 tokens in 8 s
+[ref] r03 171 -> 154 tokens in 37 s
+== FIN 20:35:51
+== chaîne rendue 20:35:51

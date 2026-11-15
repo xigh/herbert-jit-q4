@@ -1,0 +1,617 @@
+{
+ "templates": {
+  "gemma-4-e2b-e4b": {
+   "family": "gemma",
+   "models": [
+    "gemma-4-e2b",
+    "gemma-4-e4b"
+   ]
+  },
+  "gemma-4-12b-26b-31b": {
+   "family": "gemma",
+   "models": [
+    "gemma-4-12b",
+    "gemma-4-26b-a4b",
+    "gemma-4-31b"
+   ]
+  },
+  "qwen3.5-0.8b-2b": {
+   "family": "qwen",
+   "models": [
+    "qwen3.5-0.8b",
+    "qwen3.5-2b"
+   ]
+  },
+  "qwen3.5-4b-9b": {
+   "family": "qwen",
+   "models": [
+    "qwen3.5-4b",
+    "qwen3.5-9b"
+   ]
+  },
+  "qwen3.8-27b": {
+   "family": "qwen",
+   "models": [
+    "qwen3.8-27b"
+   ]
+  },
+  "qwen3.6-35b-a3b": {
+   "family": "qwen",
+   "models": [
+    "qwen3.6-35b-a3b"
+   ]
+  },
+  "qwen2.5-instruct": {
+   "family": "qwen2",
+   "models": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen2.5-14b",
+    "qwen2.5-32b"
+   ]
+  },
+  "granite-3.1-moe": {
+   "family": "granite",
+   "models": [
+    "granite-3.1-1b-a400m",
+    "granite-3.1-3b-a800m"
+   ]
+  },
+  "granite-4.1": {
+   "family": "granite",
+   "models": [
+    "granite-4.1-3b",
+    "granite-4.1-8b",
+    "granite-4.1-30b"
+   ]
+  },
+  "granite-4.0-h": {
+   "family": "granite",
+   "models": [
+    "granite-4.0-h-micro",
+    "granite-4.0-h-tiny"
+   ]
+  },
+  "ministral-3-instruct": {
+   "family": "mistral",
+   "models": [
+    "ministral-3-3b-instruct"
+   ]
+  },
+  "ministral-3-reasoning": {
+   "family": "mistral",
+   "models": [
+    "ministral-3-3b-reasoning"
+   ]
+  },
+  "lfm2-8b-a1b": {
+   "family": "lfm2",
+   "models": [
+    "lfm2-8b-a1b"
+   ]
+  },
+  "lfm2.5-1.2b-instruct": {
+   "family": "lfm2",
+   "models": [
+    "lfm2.5-1.2b-instruct"
+   ]
+  },
+  "lfm2.5-24b-a2b": {
+   "family": "lfm2",
+   "models": [
+    "lfm2.5-24b-a2b"
+   ]
+  },
+  "lfm3-1.7b": {
+   "family": "lfm3",
+   "models": [
+    "lfm3-1.7b"
+   ]
+  },
+  "chocolatine-2-4b": {
+   "family": "qwen",
+   "models": [
+    "chocolatine-2-4b-instruct-dpo-v2.1"
+   ]
+  },
+  "smollm3-3b": {
+   "family": "smol",
+   "models": [
+    "smollm3-3b"
+   ]
+  }
+ },
+ "tools": {
+  "weather": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_weather",
+     "description": "Current weather of a city",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "city": {
+        "type": "string",
+        "description": "The city, e.g. Lyon"
+       },
+       "unit": {
+        "type": "string",
+        "enum": [
+         "celsius",
+         "fahrenheit"
+        ]
+       }
+      },
+      "required": [
+       "city"
+      ]
+     }
+    }
+   }
+  ],
+  "two": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_weather",
+     "description": "Current weather of a city",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "city": {
+        "type": "string"
+       },
+       "unit": {
+        "type": "string",
+        "enum": [
+         "celsius",
+         "fahrenheit"
+        ]
+       }
+      },
+      "required": [
+       "city"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "web_search",
+     "description": "Search the web: « l'actualité » included",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "query": {
+        "type": "string",
+        "description": "What to look for"
+       },
+       "options": {
+        "type": "object",
+        "properties": {
+         "max_results": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+         },
+         "lang": {
+          "type": "string"
+         },
+         "safe": {
+          "type": "boolean"
+         }
+        }
+       },
+       "domains": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      },
+      "required": [
+       "query"
+      ]
+     }
+    }
+   }
+  ]
+ },
+ "cases": [
+  {
+   "id": "user",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Bonjour"
+    }
+   ]
+  },
+  {
+   "id": "system-user",
+   "messages": [
+    {
+     "role": "system",
+     "content": "Tu es un assistant concis. Réponds en français."
+    },
+    {
+     "role": "user",
+     "content": "Combien font 17 × 23 ?"
+    }
+   ]
+  },
+  {
+   "id": "empty-system",
+   "messages": [
+    {
+     "role": "system",
+     "content": ""
+    },
+    {
+     "role": "user",
+     "content": "Salut"
+    }
+   ]
+  },
+  {
+   "id": "turns",
+   "messages": [
+    {
+     "role": "system",
+     "content": "Sois bref."
+    },
+    {
+     "role": "user",
+     "content": "Capitale de la France ?"
+    },
+    {
+     "role": "assistant",
+     "content": "Paris."
+    },
+    {
+     "role": "user",
+     "content": "Et de l'Italie ?"
+    }
+   ]
+  },
+  {
+   "id": "turns-reasoning",
+   "messages": [
+    {
+     "role": "user",
+     "content": "2+2 ?"
+    },
+    {
+     "role": "assistant",
+     "content": "4",
+     "reasoning_content": "Simple addition: 2 plus 2 is 4."
+    },
+    {
+     "role": "user",
+     "content": "Et 3+3 ?"
+    }
+   ]
+  },
+  {
+   "id": "inline-think",
+   "messages": [
+    {
+     "role": "user",
+     "content": "2+2 ?"
+    },
+    {
+     "role": "assistant",
+     "content": "<think>\nAddition.\n</think>\n\n4"
+    },
+    {
+     "role": "user",
+     "content": "Merci"
+    }
+   ]
+  },
+  {
+   "id": "unicode",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Écris « été » et \"guillemets\", un saut\nde ligne, une tabulation\tet un emoji 🌦️ ; puis \\n littéral."
+    }
+   ]
+  },
+  {
+   "id": "list-content",
+   "messages": [
+    {
+     "role": "system",
+     "content": [
+      {
+       "type": "text",
+       "text": "Consignes en parties."
+      }
+     ]
+    },
+    {
+     "role": "user",
+     "content": [
+      {
+       "type": "text",
+       "text": "Première partie. "
+      },
+      {
+       "type": "text",
+       "text": "Seconde partie."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tools-user",
+   "tools": "weather",
+   "messages": [
+    {
+     "role": "system",
+     "content": "Tu as des outils."
+    },
+    {
+     "role": "user",
+     "content": "Quel temps à Lyon ?"
+    }
+   ]
+  },
+  {
+   "id": "tools-no-system",
+   "tools": "two",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Cherche les nouvelles du jour."
+    }
+   ]
+  },
+  {
+   "id": "tool-call-result",
+   "tools": "weather",
+   "messages": [
+    {
+     "role": "system",
+     "content": "Tu as des outils."
+    },
+    {
+     "role": "user",
+     "content": "Quel temps à Lyon ?"
+    },
+    {
+     "role": "assistant",
+     "content": "",
+     "tool_calls": [
+      {
+       "id": "call_1",
+       "type": "function",
+       "function": {
+        "name": "get_weather",
+        "arguments": {
+         "city": "Lyon",
+         "unit": "celsius"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_1",
+     "content": "{\"temperature\": 14, \"sky\": \"couvert\"}"
+    }
+   ]
+  },
+  {
+   "id": "tool-call-string-args",
+   "tools": "weather",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Quel temps à Lyon ?"
+    },
+    {
+     "role": "assistant",
+     "content": null,
+     "tool_calls": [
+      {
+       "id": "call_1",
+       "type": "function",
+       "function": {
+        "name": "get_weather",
+        "arguments": "{\"city\": \"Lyon\"}"
+       }
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_1",
+     "content": "14 °C, couvert"
+    }
+   ]
+  },
+  {
+   "id": "tool-calls-two",
+   "tools": "two",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Météo à Lyon et à Paris, puis cherche les nouvelles."
+    },
+    {
+     "role": "assistant",
+     "content": "Je regarde.",
+     "tool_calls": [
+      {
+       "id": "a",
+       "type": "function",
+       "function": {
+        "name": "get_weather",
+        "arguments": {
+         "city": "Lyon"
+        }
+       }
+      },
+      {
+       "id": "b",
+       "type": "function",
+       "function": {
+        "name": "get_weather",
+        "arguments": {
+         "city": "Paris"
+        }
+       }
+      },
+      {
+       "id": "c",
+       "type": "function",
+       "function": {
+        "name": "web_search",
+        "arguments": {
+         "query": "actualité",
+         "options": {
+          "max_results": 3,
+          "safe": true
+         },
+         "domains": [
+          "lemonde.fr"
+         ]
+        }
+       }
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "a",
+     "content": "14 °C"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "b",
+     "content": "17 °C"
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "c",
+     "content": "[{\"title\": \"Titre\", \"url\": \"https://example.org\"}]"
+    }
+   ]
+  },
+  {
+   "id": "tool-then-answer-then-user",
+   "tools": "weather",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Quel temps à Lyon ?"
+    },
+    {
+     "role": "assistant",
+     "content": "",
+     "tool_calls": [
+      {
+       "id": "call_1",
+       "type": "function",
+       "function": {
+        "name": "get_weather",
+        "arguments": {
+         "city": "Lyon"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "role": "tool",
+     "tool_call_id": "call_1",
+     "content": "14 °C, couvert"
+    },
+    {
+     "role": "assistant",
+     "content": "Il fait 14 °C et le ciel est couvert à Lyon.",
+     "reasoning_content": "The tool says 14 °C."
+    },
+    {
+     "role": "user",
+     "content": "Et demain ?"
+    }
+   ]
+  },
+  {
+   "id": "final-assistant",
+   "generation_prompt": false,
+   "messages": [
+    {
+     "role": "user",
+     "content": "Bonjour"
+    },
+    {
+     "role": "assistant",
+     "content": "Bonjour ! Que puis-je faire pour vous ?"
+    }
+   ]
+  },
+  {
+   "id": "long-system",
+   "messages": [
+    {
+     "role": "system",
+     "content": "Règle 1 : réponds en français.\n\nRègle 2 : cite tes sources.\n\n- point a\n- point b\n\n```json\n{\"clé\": [1, 2, 3]}\n```"
+    },
+    {
+     "role": "user",
+     "content": "Ok"
+    }
+   ]
+  },
+  {
+   "id": "system-only",
+   "messages": [
+    {
+     "role": "system",
+     "content": "Seulement un système."
+    }
+   ]
+  },
+  {
+   "id": "tool-first",
+   "messages": [
+    {
+     "role": "tool",
+     "tool_call_id": "x",
+     "content": "orphelin"
+    },
+    {
+     "role": "user",
+     "content": "Et alors ?"
+    }
+   ]
+  },
+  {
+   "id": "assistant-first",
+   "messages": [
+    {
+     "role": "assistant",
+     "content": "Je commence."
+    },
+    {
+     "role": "user",
+     "content": "D'accord."
+    }
+   ]
+  }
+ ],
+ "thinking": [
+  false,
+  true
+ ]
+}

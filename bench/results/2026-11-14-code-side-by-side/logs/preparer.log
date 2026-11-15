@@ -1,0 +1,5 @@
+ref-tf-bf16 {'p01': 'fermé', 'p02': 'fermé', 'p03': 'fermé', 'p04': 'fermé', 'p05': 'fermé', 'p06': 'fermé', 'p07': 'fermé', 'r01': 'fermé', 'r02': 'fermé', 'r03': 'fermé'}
+herbert-q40 {'p01': 'fermé', 'p02': 'fermé', 'p03': 'fermé', 'p04': 'fermé', 'p05': 'fermé', 'p06': 'fermé', 'p07': 'fermé', 'r01': 'fermé', 'r02': 'fermé', 'r03': 'fermé'}
+llama-q40pur {'p01': 'fermé', 'p02': 'fermé', 'p03': 'fermé', 'p04': 'fermé', 'p05': 'fermé', 'p06': 'fermé', 'p07': 'fermé', 'r01': 'fermé', 'r02': 'fermé', 'r03': 'fermé'}
+ik-q40pur {'p01': 'fermé', 'p02': 'fermé', 'p03': 'fermé', 'p04': 'fermé', 'p05': 'fermé', 'p06': 'fermé', 'p07': 'fermé', 'r01': 'fermé', 'r02': 'fermé', 'r03': 'fermé'}
+llama-q4km {'p01': 'fermé', 'p02': 'fermé', 'p03': 'fermé', 'p04': 'fermé', 'p05': 'fermé', 'p06': 'fermé', 'p07': 'fermé', 'r01': 'fermé', 'r02': 'fermé', 'r03': 'fermé'}

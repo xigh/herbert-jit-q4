@@ -1,0 +1,8 @@
+def test_exemple(m): assert m.slug("Les Misérables, tome 1 !") == "les-miserables-tome-1"
+def test_accents(m): assert m.slug("Été 2026 : à Paris") == "ete-2026-a-paris"
+def test_cedille_trema(m): assert m.slug("Ça, c'est naïf") == "ca-c-est-naif"
+def test_vide(m): assert m.slug("") == ""
+def test_que_ponctuation(m): assert m.slug("--- !!! ---") == ""
+def test_bords(m): assert m.slug("  ¿Où ? ") == "ou"
+def test_majuscules(m): assert m.slug("ÉCOLE Normale") == "ecole-normale"
+def test_chiffres(m): assert m.slug("a1__b2") == "a1-b2"

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  herbert-jit-llama-serve as a LaunchAgent (`herbert-jit-llama-serve service install` writes the same, with absolute
+  paths, and loads it).
+
+    cp packaging/launchd/herbert-jit-q4.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/herbert-jit-q4.plist
+    launchctl bootout gui/$(id -u)/herbert-jit-q4        (to stop it)
+    tail -f ~/Library/Logs/herbert-jit-q4.log
+
+  The binary is expected in ~/.local/bin; launchd has no %h, so the command goes through /bin/sh for $HOME. The model is
+  a directory or a repository of Hugging Face (org/name[@revision]) already in ~/.cache/huggingface/hub: herbert
+  downloads nothing, so `hf download` it first (README.md); a missing model fails the start. It listens on 127.0.0.1
+  only.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>herbert-jit-q4</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/sh</string>
+    <string>-c</string>
+    <string>mkdir -p "$HOME/Library/Logs"; exec "$HOME/.local/bin/herbert-jit-llama-serve" Qwen/Qwen3.5-0.8B --q4 --host 127.0.0.1 --port 8000 --ctx 8192 &gt;&gt; "$HOME/Library/Logs/herbert-jit-q4.log" 2&gt;&amp;1</string>
+  </array>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><dict><key>SuccessfulExit</key><false/></dict>
+  <key>ProcessType</key><string>Interactive</string>
+</dict>
+</plist>

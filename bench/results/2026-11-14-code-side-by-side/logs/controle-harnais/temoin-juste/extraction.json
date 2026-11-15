@@ -1,0 +1,42 @@
+{
+ "p01": {
+  "bloc": "fermé",
+  "code": "def fusionner_intervalles(intervalles):\n    r = []\n    for a, b in sorted(intervalles):\n        if r and a <= r[-1][1]:\n            r[-1] = (r[-1][0], max(r[-1][1], b))\n        else:\n            r.append((a, b))\n    return r\n"
+ },
+ "p02": {
+  "bloc": "fermé",
+  "code": "import re, unicodedata\ndef slug(titre):\n    s = unicodedata.normalize(\"NFKD\", titre.lower()).encode(\"ascii\", \"ignore\").decode()\n    return re.sub(r\"[^a-z0-9]+\", \"-\", s).strip(\"-\")\n"
+ },
+ "p03": {
+  "bloc": "fermé",
+  "code": "def recherche_dichotomique(liste, x):\n    lo, hi = 0, len(liste) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if liste[mid] == x:\n            return mid\n        elif liste[mid] < x:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n"
+ },
+ "p04": {
+  "bloc": "fermé",
+  "code": "def mediane(nombres):\n    if not nombres:\n        raise ValueError(\"liste vide\")\n    s = sorted(nombres); n = len(s)\n    if n % 2 == 1:\n        return s[n // 2]\n    return (s[n // 2 - 1] + s[n // 2]) / 2\n"
+ },
+ "p05": {
+  "bloc": "fermé",
+  "code": "def en_romain(n):\n    table = [(1000, \"M\"), (900, \"CM\"), (500, \"D\"), (400, \"CD\"), (100, \"C\"), (90, \"XC\"), (50, \"L\"), (40, \"XL\"), (10, \"X\"), (9, \"IX\"), (5, \"V\"), (4, \"IV\"), (1, \"I\")]\n    resultat = \"\"\n    for v, s in table:\n        while n >= v:\n            resultat += s; n -= v\n    return resultat\n"
+ },
+ "p06": {
+  "bloc": "fermé",
+  "code": "[2, 3, 0]\n"
+ },
+ "p07": {
+  "bloc": "fermé",
+  "code": "2 4 -4 2 False\n"
+ },
+ "r01": {
+  "bloc": "fermé",
+  "code": "pub fn moyenne_entiere(v: &[i32]) -> Option<i32> {\n    if v.is_empty() { return None; }\n    let s: i64 = v.iter().map(|&x| x as i64).sum();\n    Some((s / v.len() as i64) as i32)\n}\n"
+ },
+ "r02": {
+  "bloc": "fermé",
+  "code": "pub fn inverser(s: &str) -> String { s.chars().rev().collect() }\n"
+ },
+ "r03": {
+  "bloc": "fermé",
+  "code": "use std::collections::HashMap;\npub fn compter_mots(texte: &str) -> Vec<(String, usize)> {\n    let mut compte: HashMap<String, usize> = HashMap::new();\n    for m in texte.split_whitespace() { *compte.entry(m.to_lowercase()).or_insert(0) += 1; }\n    let mut v: Vec<(String, usize)> = compte.into_iter().collect();\n    v.sort_by(|a, b| b.1.cmp(&a.1).then(a.0.cmp(&b.0)));\n    v\n}\n"
+ }
+}

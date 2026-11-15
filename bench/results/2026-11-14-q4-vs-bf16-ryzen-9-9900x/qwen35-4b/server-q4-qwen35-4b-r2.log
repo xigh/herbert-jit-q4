@@ -1,0 +1,33 @@
+[serve] listening on http://127.0.0.1:34103
+[loader] qwen3_5_text — hidden 2560, 32 layers, 16 heads / 4 kv heads × 256, intermediate 9216, vocab 248320, rotary 64 dims, rope_theta 10000000, tied head true
+[loader] shard 1/2: 87 tensors, 4.96 GiB mapped, 1.5 s
+[loader] shard 2/2: 651 tensors, 3.72 GiB mapped, 1.5 s
+[loader] skipped, not used by the engine: model.visual.* ×297, mtp.fc.* ×1, mtp.layers.* ×11, mtp.norm.* ×1, mtp.pre_fc_norm_embedding.* ×1, mtp.pre_fc_norm_hidden.* ×1
+[loader] 32 layers assembled, RoPE tables built, 8.8 s in all
+[loader] read as bf16: 201 matrices packed R16 (7.82 GiB), 8 gated q_proj permuted (the int8 / Q4 copies, if asked, are made at mount) — linear_attn.in_proj_qkv.weight×24, linear_attn.in_proj_z.weight×24, linear_attn.out_proj.weight×24, lm_head.weight (tied)×1, mlp.down_proj.weight×32, mlp.gate_proj.weight×32, mlp.up_proj.weight×32, self_attn.k_proj.weight×8, self_attn.o_proj.weight×8, self_attn.q_proj.weight×8, self_attn.v_proj.weight×8
+[pool] 2 CCDs, 12 cores, worker order [0, 6, 1, 7, 2, 8, 3, 9, 4, 10, 5, 11]…
+[pool] warning: cpu2 busy at 100 % for 300 ms before the first work — another process or an interrupt storm; what is measured there is suspicious (see /proc/interrupts; PoolSettings::cpus picks other cores)
+[pool] 12 workers on cpus [0,6,1,7,2,8,3,9,4,10,5,11] · caller = worker 0: yes · spin 500 µs · coordinator spins: yes
+[pool] qos: n/a on a worker (inherited, not set)
+[pool] qos: n/a on a worker (inherited, not set)
+[engine] 2.45 GiB of weights touched in 0.002 s
+[engine] loaded in 9.1 s, mounted in 0.49 s — 8192 positions reserved, prefill program Some((4660179, 493469, 494452)), decode program Some((3242579, 493469, 494452))
+[engine] avx2=yes fma=yes avxvnni=yes avx512f=yes avx512bf16=yes → GEMM lanes zmm: loaded in 9.1 s, mounted in 0.5 s, n_ctx 8192
+[engine] language model
+[engine] 2 lanes (0.25 GiB for the K/V copies), 12 snapshots of 27.5 MiB (allocated on first use)
+[serve] worker ready · stops [248046, 248044] · markers Markers { think_open: 248068, think_close: 248069, call_open: 248058, call_close: 248059 } · capacity 8192
+[serve] 2 lanes · 12 snapshots of 27.5 MiB
+[req 1] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 40 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794685681, max_tokens 4 · prompt 1 tokens, 0 reused from the cache (cache_prompt false, lane 0), 1 to feed
+[req 1] length: prompt 1 tokens in 0.06 s (15.7 tok/s), 4 generated in 0.19 s (21.51 tok/s), 0 tool calls, content 12 chars, reasoning 0 chars · cache now 4 tokens
+[req 2] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 40 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794685681, max_tokens 128 · prompt 627 tokens, 0 reused from the cache (cache_prompt false, lane 0), 627 to feed
+[req 2] length: prompt 627 tokens in 0.79 s (792.5 tok/s), 128 generated in 8.02 s (15.97 tok/s), 0 tool calls, content 493 chars, reasoning 0 chars · cache now 754 tokens
+[req 3] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 40 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794685690, max_tokens 128 · prompt 627 tokens, 0 reused from the cache (cache_prompt false, lane 0), 627 to feed
+[req 3] length: prompt 627 tokens in 0.79 s (798.4 tok/s), 128 generated in 8.01 s (15.97 tok/s), 0 tool calls, content 493 chars, reasoning 0 chars · cache now 754 tokens
+[req 4] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 40 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794685699, max_tokens 128 · prompt 627 tokens, 0 reused from the cache (cache_prompt false, lane 0), 627 to feed
+[req 4] length: prompt 627 tokens in 0.79 s (797.4 tok/s), 128 generated in 8.01 s (15.98 tok/s), 0 tool calls, content 493 chars, reasoning 0 chars · cache now 754 tokens
+[req 5] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 40 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794685708, max_tokens 128 · prompt 6131 tokens, 0 reused from the cache (cache_prompt false, lane 0), 6131 to feed
+[req 5] length: prompt 6131 tokens in 8.43 s (727.3 tok/s), 128 generated in 9.28 s (13.79 tok/s), 0 tool calls, content 433 chars, reasoning 47 chars · cache now 6258 tokens
+[req 6] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 40 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794685725, max_tokens 128 · prompt 6131 tokens, 0 reused from the cache (cache_prompt false, lane 0), 6131 to feed
+[req 6] length: prompt 6131 tokens in 8.42 s (728.6 tok/s), 128 generated in 9.23 s (13.88 tok/s), 0 tool calls, content 433 chars, reasoning 47 chars · cache now 6258 tokens
+[req 7] 0 messages, 0 tools, thinking true, stream false, temperature 0 top_k 40 top_p 0.95 min_p 0.05 presence 0 frequency 0 seed 1794685743, max_tokens 128 · prompt 6131 tokens, 0 reused from the cache (cache_prompt false, lane 0), 6131 to feed
+[req 7] length: prompt 6131 tokens in 8.56 s (716.6 tok/s), 128 generated in 9.24 s (13.86 tok/s), 0 tool calls, content 433 chars, reasoning 47 chars · cache now 6258 tokens

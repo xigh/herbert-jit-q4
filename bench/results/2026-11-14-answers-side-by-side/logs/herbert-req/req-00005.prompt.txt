@@ -1,0 +1,7 @@
+<|im_start|>user
+Un train part à 14 h 10 et roule à 84 km/h. À quelle heure aura-t-il parcouru 189 km ? Explique brièvement.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

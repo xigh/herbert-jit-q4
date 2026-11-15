@@ -1,0 +1,61 @@
+CHAINE Ryzen 9 9900X 18:43:46 ;  18:43:46 up 7 days, 19:46,  5 users,  load average: 11.20, 9.71, 8.82
+ATTENTE emballage/cargo : 3208397 3208146 18:43:47
+ATTENTE emballage/cargo : 3208397 3208146 18:44:17
+ATTENTE emballage/cargo : 3208397 3208146 18:44:47
+ATTENTE emballage/cargo : 3208397 3208146 18:45:17
+ATTENTE emballage/cargo : 3208397 3208146 18:45:47
+ATTENTE emballage/cargo : 3208397 3208146 18:46:17
+ATTENTE emballage/cargo : 3208397 3208146 18:46:47
+ATTENTE emballage/cargo : 3208397 3208146 18:47:17
+ATTENTE emballage/cargo : 3208397 3208146 18:47:47
+ATTENTE emballage/cargo : 3208397 3208146 18:48:17
+ATTENTE emballage/cargo : 3208397 3208146 18:48:47
+ATTENTE emballage/cargo : 3208397 3208146 18:49:17
+ATTENTE emballage/cargo : 3208397 3208146 18:49:47
+ATTENTE emballage/cargo : 3208397 3208146 18:50:17
+ATTENTE emballage/cargo : 3208397 3208146 18:50:47
+ATTENTE emballage/cargo : 3208397 3208146 18:51:17
+ATTENTE emballage/cargo : 3208397 3208146 18:51:47
+ATTENTE emballage/cargo : 3208397 3208146 18:52:17
+ATTENTE emballage/cargo : 3208397 3208146 18:52:47
+ATTENTE emballage/cargo : 3208397 3208146 18:53:17
+ATTENTE emballage/cargo : 3208397 3208146 18:53:47
+ATTENTE emballage/cargo : 3208397 3208146 18:54:17
+ATTENTE emballage/cargo : 3208397 3208146 18:54:47
+ATTENTE emballage/cargo : 3208397 3208146 18:55:17
+ATTENTE emballage/cargo : 3208397 3208146 18:55:47
+ATTENTE emballage/cargo : 3208397 3208146 18:56:17
+ATTENTE emballage/cargo : 3208397 3208146 18:56:47
+ATTENTE emballage/cargo : 3208397 3208146 18:57:17
+ATTENTE emballage/cargo : 3208397 3208146 18:57:47
+ATTENTE emballage/cargo : 3208397 3208146 18:58:17
+ATTENTE emballage/cargo : 3208397 3208146 18:58:47
+ATTENTE emballage/cargo : 3208397 3208146 18:59:17
+ATTENTE emballage/cargo : 3208397 3208146 18:59:47
+ATTENTE emballage/cargo : 3208397 3208146 19:00:18
+ATTENTE emballage/cargo : 3208397 3208146 19:00:48
+ATTENTE emballage/cargo : 3208397 3208146 19:01:18
+ATTENTE emballage/cargo : 3208397 3208146 19:01:48
+ATTENTE emballage/cargo : 3208397 3208146 19:02:18
+ATTENTE emballage/cargo : 3208397 3208146 19:02:48
+ATTENTE emballage/cargo : 3208397 3208146 19:03:18
+ATTENTE emballage/cargo : 3208397 3208146 19:03:48
+ATTENTE emballage/cargo : 3208397 3208146 19:04:18
+ATTENTE emballage/cargo : 3208397 3208146 19:04:48
+ATTENTE emballage/cargo : 3208397 3208146 19:05:18
+ATTENTE emballage/cargo : 3208397 3208146 19:05:48
+ATTENTE emballage/cargo : 3208397 3208146 19:06:18
+ATTENTE emballage/cargo : 3208397 3208146 19:06:48
+ATTENTE emballage/cargo : 3208397 3208146 19:07:18
+ATTENTE emballage/cargo : 3208397 3208146 19:07:48
+ATTENTE emballage/cargo : 3208397 3208146 19:08:18
+ATTENTE emballage/cargo : 3208397 3208146 19:08:48
+ATTENTE emballage/cargo : 3208397 3208146 19:09:18
+ATTENTE emballage/cargo : 3208397 3208146 19:09:48
+ATTENTE emballage/cargo : 3208397 3208146 19:10:18
+ATTENTE emballage/cargo : 3208397 3208146 19:10:48
+ATTENTE emballage/cargo : 3208397 19:11:18
+ATTENTE emballage/cargo : 3208397 19:11:48
+FILE 4b 19:12:18 : en attente du verrou
+SEGMENT 4b 19:41:29 ;  19:41:29 up 7 days, 20:44,  3 users,  load average: 22.71, 22.45, 19.48 ; code 68c3a96 ; 1483ab97efb6328c28da8cb3fd44fd288738211b0784e8a7ce53d324d364fa2f  ~/publication-jit-q4-rejeu/engines/herbert-jit-q4/target/release/herbert-jit-llama-serve ; client 367da85c2e5f448b6e59ec1182612bd7  ~/banc-q40/throughput.py
+ARRET 19:41:58 : chaîne arrêtée avant le premier bras (serveur 8620 à ~900 % de CPU, charge 22), relancée avec une garde de repos

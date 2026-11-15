@@ -1,0 +1,7 @@
+<|im_start|>user
+Un article coûte 80 €. Son prix baisse de 25 %, puis augmente de 25 %. Quel est son prix final ? Justifie en deux phrases.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

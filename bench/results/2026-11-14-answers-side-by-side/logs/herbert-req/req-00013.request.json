@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nRéponds uniquement en JSON, avec les clés \"ville\", \"pays\" et \"population_approx\", pour la ville la plus peuplée du Canada.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 200,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

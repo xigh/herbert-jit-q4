@@ -1,0 +1,24 @@
+{
+ "intro": "Le seul cas où « juste ou faux » ne dépend pas d'un juge : on exécute. Dix petites tâches, consignes en français (sept en Python, trois en Rust) : écrire une fonction, corriger un bogue fourni, compléter une fonction, dire ce qu'affiche un bout de code ; plusieurs ont un piège de bord (liste vide, dépassement d'entier, accents et caractères sur plusieurs octets). La consigne impose le nom et la signature, et demande le code seul dans un bloc. Mêmes bras et même protocole que les réponses entières (glouton, réflexion coupée, mêmes ids d'entrée vérifiés), 500 jetons au plus. Tests cachés, attendus et prédictions écrits et hachés avant toute génération. Le premier bloc de chaque réponse est exécuté sur Ryzen 7 5700G dans un conteneur podman jetable : sans réseau, sans le home, dossier de la tâche en lecture seule, 1 Go, 128 processus, utilisateur nobody, 10 s par test ; Rust par <code>cargo test --offline</code> dans un crate sans dépendance.",
+ "tableau_intro": "Tests cachés passés sur le total (en vert : tout passe), puis le rang du premier jeton où le bras quitte la référence (« identique » : la même réponse au jeton près). Dernière colonne : herbert contre llama.cpp, tous deux en Q4_0.",
+ "comptes": "<b>Les cinq bras réussissent les dix tâches</b> : 50 cases sur 50, tous les blocs extraits et fermés, tout compile, aucun test raté. Aucune version 4 bits ne casse un code que la référence réussit, et l'inverse n'arrive pas non plus. Au jeton près, herbert Q4_0 quitte la référence sur 4 tâches, llama.cpp Q4_0 sur 4, ik_llama.cpp Q4_0 sur 4, le Q4_K_M sur 2 ; les écarts sont des noms de variables (<code>valeur</code> pour <code>value</code>), des commentaires, une normalisation NFD au lieu de NFKD, une vérification de bornes en plus. herbert et llama.cpp Q4_0 rendent la même réponse jusqu'au bout sur 6 tâches ; sur 2 des 3 où les deux quittent la référence, ils le font au même jeton avec le même jeton. Les deux tâches « prédire » (défaut mutable, <code>round(2.5)</code> et la division des négatifs) sont justes et identiques partout. Dix tâches ne font pas une statistique : ce tableau dit seulement que, sur des fonctions courtes, la quantification change la forme du code et pas son comportement ; il ne dit rien des programmes plus longs.",
+ "court": {
+  "p01": "fusionner des intervalles",
+  "p02": "slug d'URL, accents",
+  "p03": "corriger une dichotomie",
+  "p04": "corriger une médiane paire",
+  "p05": "compléter les chiffres romains",
+  "p06": "prédire : défaut mutable",
+  "p07": "prédire : round, //, %, 0.1 + 0.2",
+  "r01": "moyenne entière sans débordement",
+  "r02": "corriger une inversion par octets",
+  "r03": "compléter un compte de mots"
+ },
+ "exemples": [
+  {
+   "id": "p02",
+   "titre": "Quatre codes différents, le même comportement : le slug d'URL (p02)",
+   "commentaire": "Aucune version 4 bits ne casse de code ici, donc pas d'exemple de casse à montrer. Celui-ci est la tâche où les bras s'écartent le plus : herbert quitte la référence dès la ligne vide après les imports (11e jeton), llama.cpp et ik Q4_0 au 25e (un commentaire numéroté), le Q4_K_M au 70e (« accents » pour « diacritiques », puis le même code). La référence normalise en NFKD et filtre <code>unicodedata.combining</code> ; herbert, llama.cpp et ik passent en NFD et filtrent la catégorie <code>Mn</code>. Les huit tests cachés (accents, cédille, tréma, majuscules accentuées, chaîne vide, ponctuation seule) passent pour les cinq."
+  }
+ ]
+}

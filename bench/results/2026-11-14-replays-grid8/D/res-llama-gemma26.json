@@ -1,0 +1,72 @@
+{
+ "label": "llama-gemma26",
+ "text": [
+  {
+   "words": 78,
+   "rep": 0,
+   "wall_s": 8.180232022888958,
+   "prompt_n": 219,
+   "prompt_ms": 1587.936,
+   "prompt_per_second": 137.91487818148843,
+   "predicted_n": 128,
+   "predicted_ms": 6590.356,
+   "predicted_per_second": 19.270582651377257
+  },
+  {
+   "words": 78,
+   "rep": 1,
+   "wall_s": 8.161469578742981,
+   "prompt_n": 219,
+   "prompt_ms": 1554.859,
+   "prompt_per_second": 140.84878435922488,
+   "predicted_n": 128,
+   "predicted_ms": 6605.091,
+   "predicted_per_second": 19.22759277654161
+  },
+  {
+   "words": 78,
+   "rep": 2,
+   "wall_s": 8.139304488897324,
+   "prompt_n": 219,
+   "prompt_ms": 1540.806,
+   "prompt_per_second": 142.13340290730955,
+   "predicted_n": 128,
+   "predicted_ms": 6596.894,
+   "predicted_per_second": 19.251484107520902
+  },
+  {
+   "words": 380,
+   "rep": 0,
+   "wall_s": 11.272455270402133,
+   "prompt_n": 627,
+   "prompt_ms": 4464.804,
+   "prompt_per_second": 140.4316964417699,
+   "predicted_n": 128,
+   "predicted_ms": 6804.997,
+   "predicted_per_second": 18.66275620694616
+  },
+  {
+   "words": 380,
+   "rep": 1,
+   "wall_s": 11.293689535930753,
+   "prompt_n": 627,
+   "prompt_ms": 4491.092,
+   "prompt_per_second": 139.60969848758387,
+   "predicted_n": 128,
+   "predicted_ms": 6800.088,
+   "predicted_per_second": 18.67622889586135
+  },
+  {
+   "words": 380,
+   "rep": 2,
+   "wall_s": 11.2701571630314,
+   "prompt_n": 627,
+   "prompt_ms": 4468.32,
+   "prompt_per_second": 140.32119454291546,
+   "predicted_n": 128,
+   "predicted_ms": 6799.531,
+   "predicted_per_second": 18.67775880424694
+  }
+ ],
+ "image": []
+}

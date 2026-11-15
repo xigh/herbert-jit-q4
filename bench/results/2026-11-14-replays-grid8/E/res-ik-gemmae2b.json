@@ -1,0 +1,39 @@
+{
+ "label": "ik-gemmae2b",
+ "text": [
+  {
+   "words": 380,
+   "rep": 0,
+   "wall_s": 3.977271681651473,
+   "prompt_n": 627,
+   "prompt_ms": 328.29,
+   "prompt_per_second": 1909.8967376405005,
+   "predicted_n": 128,
+   "predicted_ms": 3646.332,
+   "predicted_per_second": 35.1037700352025
+  },
+  {
+   "words": 380,
+   "rep": 1,
+   "wall_s": 3.979789637029171,
+   "prompt_n": 627,
+   "prompt_ms": 328.625,
+   "prompt_per_second": 1907.949790794979,
+   "predicted_n": 128,
+   "predicted_ms": 3648.601,
+   "predicted_per_second": 35.08193962562637
+  },
+  {
+   "words": 380,
+   "rep": 2,
+   "wall_s": 3.9809751324355602,
+   "prompt_n": 627,
+   "prompt_ms": 328.776,
+   "prompt_per_second": 1907.0735090152566,
+   "predicted_n": 128,
+   "predicted_ms": 3649.852,
+   "predicted_per_second": 35.06991516368335
+  }
+ ],
+ "image": []
+}

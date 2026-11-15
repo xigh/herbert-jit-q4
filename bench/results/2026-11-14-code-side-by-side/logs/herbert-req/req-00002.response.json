@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-2",
+  "object": "chat.completion",
+  "created": 1794684317,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```python\nimport unicodedata\nimport re\n\n\ndef slug(titre: str) -> str:\n    # Normaliser la chaîne pour décomposer les caractères accentués\n    normalized = unicodedata.normalize('NFD', titre.lower())\n    \n    # Ne garder que les caractères de base (enlever les diacritiques)\n    ascii_str = ''.join(c for c in normalized if unicodedata.category(c) != 'Mn')\n    \n    # Remplacer toute séquence de caractères non alphanumériques par un tiret\n    slugified = re.sub(r'[^a-z0-9]+', '-', ascii_str)\n    \n    # Enlever les tirets au début et à la fin\n    slugified = slugified.strip('-')\n    \n    return slugified\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 160,
+    "completion_tokens": 173,
+    "total_tokens": 333,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 160,
+    "prompt_ms": 551.985679,
+    "prompt_per_token_ms": 3.44991049375,
+    "prompt_per_second": 289.86259261266093,
+    "predicted_n": 173,
+    "predicted_ms": 10449.297183,
+    "predicted_per_token_ms": 60.40056175144509,
+    "predicted_per_second": 16.556137410031205
+  }
+}

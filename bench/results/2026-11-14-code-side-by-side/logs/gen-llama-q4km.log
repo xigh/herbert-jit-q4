@@ -1,0 +1,10 @@
+[llama] p01 prompt_ok=True tokenize_matches=True -> 181 tokens
+[llama] p02 prompt_ok=True tokenize_matches=True -> 183 tokens
+[llama] p03 prompt_ok=True tokenize_matches=True -> 108 tokens
+[llama] p04 prompt_ok=True tokenize_matches=True -> 90 tokens
+[llama] p05 prompt_ok=True tokenize_matches=True -> 151 tokens
+[llama] p06 prompt_ok=True tokenize_matches=True -> 15 tokens
+[llama] p07 prompt_ok=True tokenize_matches=True -> 14 tokens
+[llama] r01 prompt_ok=True tokenize_matches=True -> 131 tokens
+[llama] r02 prompt_ok=True tokenize_matches=True -> 29 tokens
+[llama] r03 prompt_ok=True tokenize_matches=True -> 154 tokens

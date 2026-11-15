@@ -1,0 +1,1 @@
+Le prix passe d'abord à 60 € après la baisse de 25 %, puis augmente de 25 % de cette nouvelle base, soit 15 €, pour atteindre 75 €. Le prix final est donc de 75 € car les pourcentages s'appliquent à des valeurs différentes.<|im_end|>

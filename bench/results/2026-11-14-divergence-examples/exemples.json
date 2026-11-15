@@ -1,0 +1,7261 @@
+{
+ "criteres": "Exemples de divergence lisibles, tirés des mesures de justesse Q4 (justesse-1113, Ryzen 9 9900X).\n\n_exemples.py OUT.json [TOP.npz-prefix]\n\n1. Comptes (wiki et fr), depuis les .npz des passages d'origine (out/NOM-K-BRAS.npz : same = accord top-1, kl)\n   et l'esquisse de la référence (ref/NOM-K.npz : top_lp, pour l'écart p1 − p2 de la référence).\n2. Reproduction : les bras fr refaits avec KEEP=1 (étiquette BRAS-re) comparés aux passages d'origine (.json et .npz).\n3. Lecture des logits fr (ref/NOM-fr.kld et out/NOM-fr-BRAS-re.kld) : top-10 de la référence et de chaque bras à\n   chaque position, probabilité que chaque bras donne au premier choix de la référence. Gardés dans PREFIX-NOM-fr.npz.\n4. Choix d'un exemple par catégorie (fr), le plus « typique » : celui dont la statistique de la catégorie est la\n   plus proche de sa médiane sur la catégorie, parmi les positions lisibles. Les 5 suivants sont écrits aussi.\n\nCatégories (définitions exactes, appliquées aux deux corpus) :\n C1 quasi-égalité : écart p1 − p2 de la référence < 0,10 et tous les bras Q4_0 ont un top-1 différent de la référence.\n    Sur fr seulement (logits disponibles) : C1s = C1 et tous les bras Q4_0 choisissent le même jeton.\n    Statistique de typicité : l'écart p1 − p2.\n C2 grille 7 seule : herbert --q4 (grille 7) change le top-1, tous les autres bras gardent celui de la référence.\n    Comptes aussi : grille 7 change et grille 8 garde (quels que soient les autres), et l'inverse.\n    Statistique : KL de herbert --q4.\n C3 (Qwen) Q4_K_M seul juste : llama Q4_K_M garde le top-1 de la référence, tous les bras Q4_0 le changent.\n    Compte aussi l'inverse (Q4_K_M change, tous les Q4_0 gardent). Statistique : KL moyenne des bras Q4_0.\n C4 KL haute, choix gardé : tous les bras gardent le top-1 de la référence, et la KL de chaque bras Q4_0 est\n    au-dessus de son propre 90e centile sur le corpus. Statistique : KL moyenne des bras Q4_0.\nRecouvrement : C1 et C3 exigent tous deux que tous les Q4_0 basculent. Pour Qwen, l'exemple C1 est choisi parmi\nles C1s où Q4_K_M bascule aussi (vivier), l'exemple C3 parmi les C3 dont l'écart de la référence est ≥ 0,10 (hors C1).\nLes comptes donnent la catégorie entière, le vivier et C1 ∩ C3.\nEx aequo : positions où les deux meilleures log-probabilités de la référence sont égales (quantification 16 bits du\nfichier) ; le premier choix y est un départage d'argmax. Comptées (clés __dont_ex_aequo) et exclues du vivier.\nLisible : contexte (200 derniers caractères) sans chiffre ni mot de 4 majuscules ou plus (titres), au moins 70 %\nde lettres hors espaces ; premier choix de la référence et jetons montrés sans caractère de remplacement (UTF-8\ncoupé) ; premier choix de la référence avec au moins une lettre ; aucun jeton montré vide une fois décodé ; chaque jeton\nmontré (deux premiers de la référence, premier choix de chaque bras) est de la ponctuation ou un mot entier qui\napparaît dans le corpus français (pas un morceau de mot comme « accomp » ; une lettre seule : a, à, y).\nLe contexte est le texte détokenisé du morceau jusqu'à la position, coupé aux 28 derniers mots, fin exacte gardée.\n",
+ "seuils": {
+  "C1_marge": 0.1,
+  "C4_centile": 90
+ },
+ "modeles": {
+  "qwen36": {
+   "nom": "Qwen3.6-35B-A3B",
+   "bras": [
+    "herbert-q4",
+    "herbert-q4g8",
+    "llama-q40pur",
+    "ik-q40pur",
+    "llama-q4km"
+   ],
+   "comptes": {
+    "fr": {
+     "positions": 3048,
+     "C1": 138,
+     "C2": 180,
+     "C2_g7flip_g8keep": 248,
+     "C2_inverse_g8flip_g7keep": 218,
+     "C3": 115,
+     "C3_inverse_km_flip_q40_keep": 46,
+     "C4": 29,
+     "all_q40_flip": 169,
+     "ref_margin_lt_0.10": 667,
+     "all_keep": 2263,
+     "ex_aequo_ref": 70,
+     "C1__dont_ex_aequo": 14,
+     "C2__dont_ex_aequo": 5,
+     "C2_g7flip_g8keep__dont_ex_aequo": 17,
+     "C2_inverse_g8flip_g7keep__dont_ex_aequo": 20,
+     "C3__dont_ex_aequo": 4,
+     "C3_inverse_km_flip_q40_keep__dont_ex_aequo": 5,
+     "C4__dont_ex_aequo": 0,
+     "all_q40_flip__dont_ex_aequo": 14,
+     "ref_margin_lt_0.10__dont_ex_aequo": 70,
+     "all_keep__dont_ex_aequo": 8,
+     "kl_p90": {
+      "herbert-q4": 0.2219998447953561,
+      "herbert-q4g8": 0.17548836103350662,
+      "llama-q40pur": 0.1782800780733059,
+      "ik-q40pur": 0.1764497331242844
+     },
+     "top1": {
+      "herbert-q4": 0.8530183727034121,
+      "herbert-q4g8": 0.8628608923884514,
+      "llama-q40pur": 0.8599081364829396,
+      "ik-q40pur": 0.8559711286089239,
+      "llama-q4km": 0.9324146981627297
+     },
+     "C1_inter_C3": 87,
+     "C3_hors_C1_marge_ge_0.10": 28,
+     "C1_et_km_bascule": 51,
+     "C1s_meme_jeton": 61,
+     "C1s_jeton_commun_est_le_2e_de_la_ref": 54,
+     "C1s__dont_ex_aequo": 7,
+     "C1s_et_km_bascule": 19
+    },
+    "wiki": {
+     "positions": 6096,
+     "C1": 270,
+     "C2": 336,
+     "C2_g7flip_g8keep": 459,
+     "C2_inverse_g8flip_g7keep": 356,
+     "C3": 222,
+     "C3_inverse_km_flip_q40_keep": 59,
+     "C4": 83,
+     "all_q40_flip": 335,
+     "ref_margin_lt_0.10": 1293,
+     "all_keep": 4735,
+     "ex_aequo_ref": 189,
+     "C1__dont_ex_aequo": 63,
+     "C2__dont_ex_aequo": 18,
+     "C2_g7flip_g8keep__dont_ex_aequo": 52,
+     "C2_inverse_g8flip_g7keep__dont_ex_aequo": 34,
+     "C3__dont_ex_aequo": 19,
+     "C3_inverse_km_flip_q40_keep__dont_ex_aequo": 10,
+     "C4__dont_ex_aequo": 1,
+     "all_q40_flip__dont_ex_aequo": 63,
+     "ref_margin_lt_0.10__dont_ex_aequo": 189,
+     "all_keep__dont_ex_aequo": 19,
+     "kl_p90": {
+      "herbert-q4": 0.1861669760103958,
+      "herbert-q4g8": 0.1523462458851713,
+      "llama-q40pur": 0.15385322412927907,
+      "ik-q40pur": 0.15468803583559648
+     },
+     "top1": {
+      "herbert-q4": 0.8612204724409449,
+      "herbert-q4g8": 0.8781167979002624,
+      "llama-q40pur": 0.8764763779527559,
+      "ik-q40pur": 0.8756561679790026,
+      "llama-q4km": 0.9420931758530183
+     },
+     "C1_inter_C3": 170,
+     "C3_hors_C1_marge_ge_0.10": 52,
+     "C1_et_km_bascule": 100
+    }
+   },
+   "reproduction": {
+    "herbert-q4": {
+     "ancien": {
+      "ppl_test": 5.402593509201588,
+      "dnll": 0.06596106286580626,
+      "kl_mean": 0.09841429667019627,
+      "kl_median": 0.05852366217519547,
+      "kl_p99": 0.6703560020867392,
+      "kl_max": 5.589702809244696,
+      "top1_n": 2600
+     },
+     "refait": {
+      "ppl_test": 5.402593509201588,
+      "dnll": 0.06596106286580626,
+      "kl_mean": 0.09841429667019627,
+      "kl_median": 0.05852366217519547,
+      "kl_p99": 0.6703560020867392,
+      "kl_max": 5.589702809244696,
+      "top1_n": 2600
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    },
+    "herbert-q4g8": {
+     "ancien": {
+      "ppl_test": 5.3919495259167105,
+      "dnll": 0.06398895775677797,
+      "kl_mean": 0.07587493769903857,
+      "kl_median": 0.04398473156292644,
+      "kl_p99": 0.4696203270474999,
+      "kl_max": 6.277280326565659,
+      "top1_n": 2630
+     },
+     "refait": {
+      "ppl_test": 5.3919495259167105,
+      "dnll": 0.06398895775677797,
+      "kl_mean": 0.07587493769903857,
+      "kl_median": 0.04398473156292644,
+      "kl_p99": 0.4696203270474999,
+      "kl_max": 6.277280326565659,
+      "top1_n": 2630
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    },
+    "llama-q40pur": {
+     "ancien": {
+      "ppl_test": 5.388000000000001,
+      "dnll": 0.06325620365919482,
+      "kl_mean": 0.07666612002518516,
+      "kl_median": 0.04507368618365962,
+      "kl_p99": 0.4733793085207401,
+      "kl_max": 6.514376308857874,
+      "top1_n": 2621
+     },
+     "refait": {
+      "ppl_test": 5.388000000000001,
+      "dnll": 0.06325620365919482,
+      "kl_mean": 0.07666612002518516,
+      "kl_median": 0.04507368618365962,
+      "kl_p99": 0.4733793085207401,
+      "kl_max": 6.514376308857874,
+      "top1_n": 2621
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    },
+    "ik-q40pur": {
+     "ancien": {
+      "ppl_test": 5.424853082622412,
+      "dnll": 0.07007276262663295,
+      "kl_mean": 0.07673759643391478,
+      "kl_median": 0.04465894826449845,
+      "kl_p99": 0.5140291923627613,
+      "kl_max": 6.530148011381668,
+      "top1_n": 2609
+     },
+     "refait": {
+      "ppl_test": 5.424853082622412,
+      "dnll": 0.07007276262663295,
+      "kl_mean": 0.07673759643391478,
+      "kl_median": 0.04465894826449845,
+      "kl_p99": 0.5140291923627613,
+      "kl_max": 6.530148011381668,
+      "top1_n": 2609
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    },
+    "llama-q4km": {
+     "ancien": {
+      "ppl_test": 5.0975,
+      "dnll": 0.007832168577550425,
+      "kl_mean": 0.019760997981796626,
+      "kl_median": 0.00943823748815472,
+      "kl_p99": 0.15745817308936805,
+      "kl_max": 0.531045028802906,
+      "top1_n": 2842
+     },
+     "refait": {
+      "ppl_test": 5.0975,
+      "dnll": 0.007832168577550425,
+      "kl_mean": 0.019760997981796626,
+      "kl_median": 0.00943823748815472,
+      "kl_p99": 0.15745817308936805,
+      "kl_max": 0.531045028802906,
+      "top1_n": 2842
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    }
+   },
+   "exemples": [
+    {
+     "categorie": "C1",
+     "rang": 0,
+     "retenu": true,
+     "position": 583,
+     "morceau": 4,
+     "ligne": 75,
+     "contexte": "… soeur et qui avait dix ans de\nmoins que lui.\n\nIls avaient pour tout domestique une servante du même âge que\nmademoiselle Baptistine, et appelée madame Magloire, laquelle",
+     "texte_suivant": ",",
+     "texte_suivant_id": 11,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.033134137724140506,
+     "stat_mediane_categorie": 0.032683217161804945,
+     "stat_rang_dans_categorie": 0.5789473684210527,
+     "n_categorie_fr": 138,
+     "n_vivier_fr": 19,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 41470,
+        "texte": " était",
+        "p": 0.2819811999797821
+       },
+       {
+        "id": 11,
+        "texte": ",",
+        "p": 0.24884703755378723
+       },
+       {
+        "id": 47826,
+        "texte": " avait",
+        "p": 0.07129451632499695
+       },
+       {
+        "id": 198,
+        "texte": "\n",
+        "p": 0.0669749304652214
+       },
+       {
+        "id": 500,
+        "texte": " se",
+        "p": 0.038160841912031174
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": ",",
+       "choix_id": 11,
+       "p_choix": 0.20304107666015625,
+       "p_choix_ref": 0.179182767868042,
+       "kl": 0.10283007259788461,
+       "top": [
+        {
+         "texte": ",",
+         "p": 0.20304107666015625
+        },
+        {
+         "texte": " était",
+         "p": 0.179182767868042
+        },
+        {
+         "texte": "\n",
+         "p": 0.0795108824968338
+        },
+        {
+         "texte": " serv",
+         "p": 0.06591665744781494
+        },
+        {
+         "texte": " avait",
+         "p": 0.06192290782928467
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": ",",
+       "choix_id": 11,
+       "p_choix": 0.26544809341430664,
+       "p_choix_ref": 0.15124648809432983,
+       "kl": 0.13000395674765483,
+       "top": [
+        {
+         "texte": ",",
+         "p": 0.26544809341430664
+        },
+        {
+         "texte": " était",
+         "p": 0.15124648809432983
+        },
+        {
+         "texte": "\n",
+         "p": 0.0809556320309639
+        },
+        {
+         "texte": " serv",
+         "p": 0.07605070620775223
+        },
+        {
+         "texte": " avait",
+         "p": 0.05922812968492508
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": ",",
+       "choix_id": 11,
+       "p_choix": 0.2726198732852936,
+       "p_choix_ref": 0.1768769770860672,
+       "kl": 0.10033043736505257,
+       "top": [
+        {
+         "texte": ",",
+         "p": 0.2726198732852936
+        },
+        {
+         "texte": " était",
+         "p": 0.1768769770860672
+        },
+        {
+         "texte": " serv",
+         "p": 0.07028712332248688
+        },
+        {
+         "texte": "\n",
+         "p": 0.06751200556755066
+        },
+        {
+         "texte": " avait",
+         "p": 0.05770362913608551
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": ",",
+       "choix_id": 11,
+       "p_choix": 0.26515665650367737,
+       "p_choix_ref": 0.1965184509754181,
+       "kl": 0.08633679569549642,
+       "top": [
+        {
+         "texte": ",",
+         "p": 0.26515665650367737
+        },
+        {
+         "texte": " était",
+         "p": 0.1965184509754181
+        },
+        {
+         "texte": " serv",
+         "p": 0.07454334199428558
+        },
+        {
+         "texte": "\n",
+         "p": 0.06264141947031021
+        },
+        {
+         "texte": " avait",
+         "p": 0.05862390249967575
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": ",",
+       "choix_id": 11,
+       "p_choix": 0.2713007628917694,
+       "p_choix_ref": 0.2603980302810669,
+       "kl": 0.016707209334662944,
+       "top": [
+        {
+         "texte": ",",
+         "p": 0.2713007628917694
+        },
+        {
+         "texte": " était",
+         "p": 0.2603980302810669
+        },
+        {
+         "texte": " avait",
+         "p": 0.06787779927253723
+        },
+        {
+         "texte": "\n",
+         "p": 0.061727918684482574
+        },
+        {
+         "texte": " serv",
+         "p": 0.0399419404566288
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 1,
+     "retenu": false,
+     "position": 2128,
+     "morceau": 16,
+     "ligne": 96,
+     "contexte": "… uns venant\nchercher l'aumône que les autres venaient y déposer. L'évêque, en moins\nd'un an, devint le trésorier de tous les bienfaits et le caissier de\ntoutes les",
+     "texte_suivant": " dét",
+     "texte_suivant_id": 81852,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.01994525821829482,
+     "stat_mediane_categorie": 0.032683217161804945,
+     "stat_rang_dans_categorie": 0.42105263157894735,
+     "n_categorie_fr": 138,
+     "n_vivier_fr": 19,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 303,
+        "texte": " in",
+        "p": 0.11665718257427216
+       },
+       {
+        "id": 5605,
+        "texte": " mis",
+        "p": 0.09671191871166229
+       },
+       {
+        "id": 264,
+        "texte": " a",
+        "p": 0.08534781634807587
+       },
+       {
+        "id": 1122,
+        "texte": " char",
+        "p": 0.07075561583042145
+       },
+       {
+        "id": 183794,
+        "texte": " bonnes",
+        "p": 0.06646868586540222
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " mis",
+       "choix_id": 5605,
+       "p_choix": 0.2323002815246582,
+       "p_choix_ref": 0.055174946784973145,
+       "kl": 0.17044575161187775,
+       "top": [
+        {
+         "texte": " mis",
+         "p": 0.2323002815246582
+        },
+        {
+         "texte": " a",
+         "p": 0.14089615643024445
+        },
+        {
+         "texte": " char",
+         "p": 0.06252151727676392
+        },
+        {
+         "texte": " in",
+         "p": 0.055174946784973145
+        },
+        {
+         "texte": " bonnes",
+         "p": 0.045741502195596695
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " mis",
+       "choix_id": 5605,
+       "p_choix": 0.1726207137107849,
+       "p_choix_ref": 0.11145155876874924,
+       "kl": 0.15580450447742666,
+       "top": [
+        {
+         "texte": " mis",
+         "p": 0.1726207137107849
+        },
+        {
+         "texte": " in",
+         "p": 0.11145155876874924
+        },
+        {
+         "texte": " nécess",
+         "p": 0.07195805013179779
+        },
+        {
+         "texte": " souff",
+         "p": 0.07195805013179779
+        },
+        {
+         "texte": " bonnes",
+         "p": 0.06759827584028244
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " mis",
+       "choix_id": 5605,
+       "p_choix": 0.16139474511146545,
+       "p_choix_ref": 0.11073483526706696,
+       "kl": 0.18094598393293504,
+       "top": [
+        {
+         "texte": " mis",
+         "p": 0.16139474511146545
+        },
+        {
+         "texte": " in",
+         "p": 0.11073483526706696
+        },
+        {
+         "texte": " souff",
+         "p": 0.07919622212648392
+        },
+        {
+         "texte": " nécess",
+         "p": 0.07625521719455719
+        },
+        {
+         "texte": " a",
+         "p": 0.0630788654088974
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " mis",
+       "choix_id": 5605,
+       "p_choix": 0.1946086585521698,
+       "p_choix_ref": 0.14125269651412964,
+       "kl": 0.20483815744750503,
+       "top": [
+        {
+         "texte": " mis",
+         "p": 0.1946086585521698
+        },
+        {
+         "texte": " in",
+         "p": 0.14125269651412964
+        },
+        {
+         "texte": " souff",
+         "p": 0.08170028775930405
+        },
+        {
+         "texte": " a",
+         "p": 0.05947456508874893
+        },
+        {
+         "texte": " nécess",
+         "p": 0.05419177934527397
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " mis",
+       "choix_id": 5605,
+       "p_choix": 0.12015979737043381,
+       "p_choix_ref": 0.0878889188170433,
+       "kl": 0.03555106443038872,
+       "top": [
+        {
+         "texte": " mis",
+         "p": 0.12015979737043381
+        },
+        {
+         "texte": " char",
+         "p": 0.10416731238365173
+        },
+        {
+         "texte": " in",
+         "p": 0.0878889188170433
+        },
+        {
+         "texte": " a",
+         "p": 0.0845012366771698
+        },
+        {
+         "texte": " bonnes",
+         "p": 0.07429933547973633
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 2,
+     "retenu": false,
+     "position": 1569,
+     "morceau": 12,
+     "ligne": 45,
+     "contexte": "… selon la nature et son supérieur selon\nl'église. Elle l'aimait et elle le vénérait tout simplement. Quand il\nparlait, elle s'inclinait; quand il agissait, elle adhérait. La servante\n",
+     "texte_suivant": "se",
+     "texte_suivant_id": 323,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.008591255801544115,
+     "stat_mediane_categorie": 0.032683217161804945,
+     "stat_rang_dans_categorie": 0.3157894736842105,
+     "n_categorie_fr": 138,
+     "n_vivier_fr": 19,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 442,
+        "texte": "de",
+        "p": 0.07311410456895828
+       },
+       {
+        "id": 172385,
+        "texte": "était",
+        "p": 0.06452284008264542
+       },
+       {
+        "id": 1019,
+        "texte": "du",
+        "p": 0.04434559866786003
+       },
+       {
+        "id": 82,
+        "texte": "s",
+        "p": 0.036763690412044525
+       },
+       {
+        "id": 57,
+        "texte": "Z",
+        "p": 0.032443780452013016
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "était",
+       "choix_id": 172385,
+       "p_choix": 0.08896775543689728,
+       "p_choix_ref": 0.05396125838160515,
+       "kl": 0.17069579754035452,
+       "top": [
+        {
+         "texte": "était",
+         "p": 0.08896775543689728
+        },
+        {
+         "texte": "s",
+         "p": 0.06114623695611954
+        },
+        {
+         "texte": "de",
+         "p": 0.05396125838160515
+        },
+        {
+         "texte": "n",
+         "p": 0.039478711783885956
+        },
+        {
+         "texte": "et",
+         "p": 0.039478711783885956
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "était",
+       "choix_id": 172385,
+       "p_choix": 0.11802352219820023,
+       "p_choix_ref": 0.038315966725349426,
+       "kl": 0.23613212219305102,
+       "top": [
+        {
+         "texte": "était",
+         "p": 0.11802352219820023
+        },
+        {
+         "texte": "s",
+         "p": 0.0631728395819664
+        },
+        {
+         "texte": "et",
+         "p": 0.04341776296496391
+        },
+        {
+         "texte": "de",
+         "p": 0.038315966725349426
+        },
+        {
+         "texte": "G",
+         "p": 0.03176496550440788
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": "était",
+       "choix_id": 172385,
+       "p_choix": 0.12285502254962921,
+       "p_choix_ref": 0.04774729162454605,
+       "kl": 0.32543193623271305,
+       "top": [
+        {
+         "texte": "était",
+         "p": 0.12285502254962921
+        },
+        {
+         "texte": "G",
+         "p": 0.06604854762554169
+        },
+        {
+         "texte": "s",
+         "p": 0.05710434541106224
+        },
+        {
+         "texte": "de",
+         "p": 0.04774729162454605
+        },
+        {
+         "texte": "et",
+         "p": 0.038742419332265854
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": "était",
+       "choix_id": 172385,
+       "p_choix": 0.11812711507081985,
+       "p_choix_ref": 0.05345836281776428,
+       "kl": 0.2556383899309746,
+       "top": [
+        {
+         "texte": "était",
+         "p": 0.11812711507081985
+        },
+        {
+         "texte": "s",
+         "p": 0.05522942915558815
+        },
+        {
+         "texte": "de",
+         "p": 0.05345836281776428
+        },
+        {
+         "texte": "G",
+         "p": 0.045769866555929184
+        },
+        {
+         "texte": "du",
+         "p": 0.04274039715528488
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": "était",
+       "choix_id": 172385,
+       "p_choix": 0.08306019753217697,
+       "p_choix_ref": 0.05243624001741409,
+       "kl": 0.06710146737297878,
+       "top": [
+        {
+         "texte": "était",
+         "p": 0.08306019753217697
+        },
+        {
+         "texte": "de",
+         "p": 0.05243624001741409
+        },
+        {
+         "texte": "s",
+         "p": 0.03998870775103569
+        },
+        {
+         "texte": "F",
+         "p": 0.03896712139248848
+        },
+        {
+         "texte": "Z",
+         "p": 0.03712822496891022
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 3,
+     "retenu": false,
+     "position": 2091,
+     "morceau": 16,
+     "ligne": 59,
+     "contexte": "… temps, les offrandes d'argent affluèrent. Ceux qui ont\net ceux qui manquent frappaient à la porte de M. Myriel, les uns venant\nchercher l'aumône que les autres venaient",
+     "texte_suivant": " y",
+     "texte_suivant_id": 374,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.0750457882957822,
+     "stat_mediane_categorie": 0.032683217161804945,
+     "stat_rang_dans_categorie": 0.8947368421052632,
+     "n_categorie_fr": 138,
+     "n_vivier_fr": 19,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 374,
+        "texte": " y",
+        "p": 0.23998168110847473
+       },
+       {
+        "id": 23625,
+        "texte": " lui",
+        "p": 0.164935901761055
+       },
+       {
+        "id": 84179,
+        "texte": " porter",
+        "p": 0.164935901761055
+       },
+       {
+        "id": 195407,
+        "texte": " chercher",
+        "p": 0.10648991167545319
+       },
+       {
+        "id": 231559,
+        "texte": " déposer",
+        "p": 0.10003791749477386
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " lui",
+       "choix_id": 23625,
+       "p_choix": 0.36117228865623474,
+       "p_choix_ref": 0.21906039118766785,
+       "kl": 0.31612656091191726,
+       "top": [
+        {
+         "texte": " lui",
+         "p": 0.36117228865623474
+        },
+        {
+         "texte": " y",
+         "p": 0.21906039118766785
+        },
+        {
+         "texte": " porter",
+         "p": 0.11725345999002457
+        },
+        {
+         "texte": " faire",
+         "p": 0.08058658987283707
+        },
+        {
+         "texte": " offrir",
+         "p": 0.04887785762548447
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " lui",
+       "choix_id": 23625,
+       "p_choix": 0.4624541997909546,
+       "p_choix_ref": 0.21844537556171417,
+       "kl": 0.27246879874544144,
+       "top": [
+        {
+         "texte": " lui",
+         "p": 0.4624541997909546
+        },
+        {
+         "texte": " y",
+         "p": 0.21844537556171417
+        },
+        {
+         "texte": " porter",
+         "p": 0.0587926022708416
+        },
+        {
+         "texte": " apporter",
+         "p": 0.05523048713803291
+        },
+        {
+         "texte": " chercher",
+         "p": 0.04874063655734062
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " lui",
+       "choix_id": 23625,
+       "p_choix": 0.4980722963809967,
+       "p_choix_ref": 0.21626496315002441,
+       "kl": 0.35701149922540026,
+       "top": [
+        {
+         "texte": " lui",
+         "p": 0.4980722963809967
+        },
+        {
+         "texte": " y",
+         "p": 0.21626496315002441
+        },
+        {
+         "texte": " porter",
+         "p": 0.05500052124261856
+        },
+        {
+         "texte": " apporter",
+         "p": 0.049798037856817245
+        },
+        {
+         "texte": " chercher",
+         "p": 0.03280997648835182
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " lui",
+       "choix_id": 23625,
+       "p_choix": 0.46073997020721436,
+       "p_choix_ref": 0.2325507402420044,
+       "kl": 0.3282012342862709,
+       "top": [
+        {
+         "texte": " lui",
+         "p": 0.46073997020721436
+        },
+        {
+         "texte": " y",
+         "p": 0.2325507402420044
+        },
+        {
+         "texte": " porter",
+         "p": 0.06934738904237747
+        },
+        {
+         "texte": " apporter",
+         "p": 0.052730757743120193
+        },
+        {
+         "texte": " déposer",
+         "p": 0.03892373666167259
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " porter",
+       "choix_id": 84179,
+       "p_choix": 0.22691601514816284,
+       "p_choix_ref": 0.20772190392017365,
+       "kl": 0.02845754966152815,
+       "top": [
+        {
+         "texte": " porter",
+         "p": 0.22691601514816284
+        },
+        {
+         "texte": " y",
+         "p": 0.20772190392017365
+        },
+        {
+         "texte": " lui",
+         "p": 0.16272403299808502
+        },
+        {
+         "texte": " apporter",
+         "p": 0.08425451815128326
+        },
+        {
+         "texte": " déposer",
+         "p": 0.0821421667933464
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 0,
+     "retenu": true,
+     "position": 448,
+     "morceau": 3,
+     "ligne": 67,
+     "contexte": "… de la vie de M. Myriel? Personne ne le savait. Peu de\nfamilles avaient connu la famille Myriel avant la révolution.\n\nM. Myriel devait subir le sort de",
+     "texte_suivant": " tout",
+     "texte_suivant_id": 16071,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.15763228273436625,
+     "stat_mediane_categorie": 0.1574938504865817,
+     "stat_rang_dans_categorie": 0.5055555555555555,
+     "n_categorie_fr": 180,
+     "n_vivier_fr": 180,
+     "n_lisibles": 54,
+     "ref": {
+      "top": [
+       {
+        "id": 24825,
+        "texte": " tous",
+        "p": 0.22232428193092346
+       },
+       {
+        "id": 35316,
+        "texte": " tant",
+        "p": 0.19620011746883392
+       },
+       {
+        "id": 1147,
+        "texte": " la",
+        "p": 0.09267731010913849
+       },
+       {
+        "id": 45809,
+        "texte": " beaucoup",
+        "p": 0.08178728073835373
+       },
+       {
+        "id": 180768,
+        "texte": " presque",
+        "p": 0.08178728073835373
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " tant",
+       "choix_id": 35316,
+       "p_choix": 0.18522147834300995,
+       "p_choix_ref": 0.12730000913143158,
+       "kl": 0.15763228273436625,
+       "top": [
+        {
+         "texte": " tant",
+         "p": 0.18522147834300995
+        },
+        {
+         "texte": " la",
+         "p": 0.16345708072185516
+        },
+        {
+         "texte": " beaucoup",
+         "p": 0.16345708072185516
+        },
+        {
+         "texte": " tous",
+         "p": 0.12730000913143158
+        },
+        {
+         "texte": " presque",
+         "p": 0.11234164237976074
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " tous",
+       "choix_id": 24825,
+       "p_choix": 0.31284114718437195,
+       "p_choix_ref": 0.31284114718437195,
+       "kl": 0.07295998356671557,
+       "top": [
+        {
+         "texte": " tous",
+         "p": 0.31284114718437195
+        },
+        {
+         "texte": " la",
+         "p": 0.11508606374263763
+        },
+        {
+         "texte": " tant",
+         "p": 0.10156290233135223
+        },
+        {
+         "texte": " beaucoup",
+         "p": 0.08962877094745636
+        },
+        {
+         "texte": " presque",
+         "p": 0.06980268657207489
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " tous",
+       "choix_id": 24825,
+       "p_choix": 0.26684460043907166,
+       "p_choix_ref": 0.26684460043907166,
+       "kl": 0.06491297562216844,
+       "top": [
+        {
+         "texte": " tous",
+         "p": 0.26684460043907166
+        },
+        {
+         "texte": " la",
+         "p": 0.12273697555065155
+        },
+        {
+         "texte": " tant",
+         "p": 0.09915269166231155
+        },
+        {
+         "texte": " beaucoup",
+         "p": 0.09568067640066147
+        },
+        {
+         "texte": " presque",
+         "p": 0.07592996209859848
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " tous",
+       "choix_id": 24825,
+       "p_choix": 0.2632085978984833,
+       "p_choix_ref": 0.2632085978984833,
+       "kl": 0.04245594674808459,
+       "top": [
+        {
+         "texte": " tous",
+         "p": 0.2632085978984833
+        },
+        {
+         "texte": " tant",
+         "p": 0.11172047257423401
+        },
+        {
+         "texte": " la",
+         "p": 0.10821712017059326
+        },
+        {
+         "texte": " beaucoup",
+         "p": 0.09107217192649841
+        },
+        {
+         "texte": " presque",
+         "p": 0.07151801884174347
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " tous",
+       "choix_id": 24825,
+       "p_choix": 0.22312507033348083,
+       "p_choix_ref": 0.22312507033348083,
+       "kl": 0.01769718828188082,
+       "top": [
+        {
+         "texte": " tous",
+         "p": 0.22312507033348083
+        },
+        {
+         "texte": " tant",
+         "p": 0.16805316507816315
+        },
+        {
+         "texte": " la",
+         "p": 0.10983527451753616
+        },
+        {
+         "texte": " presque",
+         "p": 0.09695276618003845
+        },
+        {
+         "texte": " beaucoup",
+         "p": 0.09101192653179169
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 1,
+     "retenu": false,
+     "position": 2605,
+     "morceau": 20,
+     "ligne": 65,
+     "contexte": "… les gens du village, hommes, femmes,\nenfants, vont dans le champ du pauvre homme lui faire sa moisson, et lui\nrapportent paille et grain dans son grenier.\n\nAux",
+     "texte_suivant": " familles",
+     "texte_suivant_id": 183033,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.1534424639951578,
+     "stat_mediane_categorie": 0.1574938504865817,
+     "stat_rang_dans_categorie": 0.48333333333333334,
+     "n_categorie_fr": 180,
+     "n_vivier_fr": 180,
+     "n_lisibles": 54,
+     "ref": {
+      "top": [
+       {
+        "id": 44467,
+        "texte": " gens",
+        "p": 0.07228489965200424
+       },
+       {
+        "id": 20589,
+        "texte": " pays",
+        "p": 0.041186340153217316
+       },
+       {
+        "id": 29558,
+        "texte": " femmes",
+        "p": 0.032075829803943634
+       },
+       {
+        "id": 57300,
+        "texte": " enfants",
+        "p": 0.03013242781162262
+       },
+       {
+        "id": 57025,
+        "texte": " jeunes",
+        "p": 0.026591723784804344
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.0443650558590889,
+       "p_choix_ref": 0.041677076369524,
+       "kl": 0.1534424639951578,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.0443650558590889
+        },
+        {
+         "texte": " gens",
+         "p": 0.041677076369524
+        },
+        {
+         "texte": " pays",
+         "p": 0.041677076369524
+        },
+        {
+         "texte": " enfants",
+         "p": 0.025278231129050255
+        },
+        {
+         "texte": " pauv",
+         "p": 0.017373358830809593
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " gens",
+       "choix_id": 44467,
+       "p_choix": 0.12436794489622116,
+       "p_choix_ref": 0.12436794489622116,
+       "kl": 0.10189021568339071,
+       "top": [
+        {
+         "texte": " gens",
+         "p": 0.12436794489622116
+        },
+        {
+         "texte": " pays",
+         "p": 0.03563133254647255
+        },
+        {
+         "texte": " villages",
+         "p": 0.0314444825053215
+        },
+        {
+         "texte": " enfants",
+         "p": 0.027749603614211082
+        },
+        {
+         "texte": " jeunes",
+         "p": 0.023005163297057152
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " gens",
+       "choix_id": 44467,
+       "p_choix": 0.12223423272371292,
+       "p_choix_ref": 0.12223423272371292,
+       "kl": 0.09470873887239119,
+       "top": [
+        {
+         "texte": " gens",
+         "p": 0.12223423272371292
+        },
+        {
+         "texte": " pays",
+         "p": 0.03842446580529213
+        },
+        {
+         "texte": " ouv",
+         "p": 0.02893347293138504
+        },
+        {
+         "texte": " enfants",
+         "p": 0.022566355764865875
+        },
+        {
+         "texte": " jeunes",
+         "p": 0.022368889302015305
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " gens",
+       "choix_id": 44467,
+       "p_choix": 0.1282152682542801,
+       "p_choix_ref": 0.1282152682542801,
+       "kl": 0.09345429105650956,
+       "top": [
+        {
+         "texte": " gens",
+         "p": 0.1282152682542801
+        },
+        {
+         "texte": " pays",
+         "p": 0.03112209588289261
+        },
+        {
+         "texte": " ouv",
+         "p": 0.026655809953808784
+        },
+        {
+         "texte": " enfants",
+         "p": 0.024323774501681328
+        },
+        {
+         "texte": " villages",
+         "p": 0.023569613695144653
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " gens",
+       "choix_id": 44467,
+       "p_choix": 0.06488369405269623,
+       "p_choix_ref": 0.06488369405269623,
+       "kl": 0.053795230765913395,
+       "top": [
+        {
+         "texte": " gens",
+         "p": 0.06488369405269623
+        },
+        {
+         "texte": " pays",
+         "p": 0.034216027706861496
+        },
+        {
+         "texte": " villages",
+         "p": 0.02712654136121273
+        },
+        {
+         "texte": " femmes",
+         "p": 0.02651757001876831
+        },
+        {
+         "texte": " enfants",
+         "p": 0.023117681965231895
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 2,
+     "retenu": false,
+     "position": 2885,
+     "morceau": 22,
+     "ligne": 91,
+     "contexte": "… au but, avec peu de phrases et\nbeaucoup d'images, ce qui était l'éloquence même de Jésus-Christ,\nconvaincu et persuadant.\n\n\n\n\nChapitre IV\n\nLes oeuvres semblables aux paroles\n\n\nSa conversation",
+     "texte_suivant": " était",
+     "texte_suivant_id": 41470,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.14679831963435763,
+     "stat_mediane_categorie": 0.1574938504865817,
+     "stat_rang_dans_categorie": 0.4722222222222222,
+     "n_categorie_fr": 180,
+     "n_vivier_fr": 180,
+     "n_lisibles": 54,
+     "ref": {
+      "top": [
+       {
+        "id": 41470,
+        "texte": " était",
+        "p": 0.19489321112632751
+       },
+       {
+        "id": 9462,
+        "texte": " avec",
+        "p": 0.09799743443727493
+       },
+       {
+        "id": 11,
+        "texte": ",",
+        "p": 0.08648226410150528
+       },
+       {
+        "id": 307,
+        "texte": " n",
+        "p": 0.04085085913538933
+       },
+       {
+        "id": 47826,
+        "texte": " avait",
+        "p": 0.038375794887542725
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " avec",
+       "choix_id": 9462,
+       "p_choix": 0.09838350862264633,
+       "p_choix_ref": 0.0868229866027832,
+       "kl": 0.14679831963435763,
+       "top": [
+        {
+         "texte": " avec",
+         "p": 0.09838350862264633
+        },
+        {
+         "texte": " était",
+         "p": 0.0868229866027832
+        },
+        {
+         "texte": ",",
+         "p": 0.05266040191054344
+        },
+        {
+         "texte": " avait",
+         "p": 0.043656881898641586
+        },
+        {
+         "texte": " n",
+         "p": 0.036192718893289566
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.15822117030620575,
+       "p_choix_ref": 0.15822117030620575,
+       "kl": 0.07393021305844687,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.15822117030620575
+        },
+        {
+         "texte": ",",
+         "p": 0.10215457528829575
+        },
+        {
+         "texte": " avec",
+         "p": 0.07955776154994965
+        },
+        {
+         "texte": " avait",
+         "p": 0.0482538565993309
+        },
+        {
+         "texte": " et",
+         "p": 0.031154822558164597
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.17456991970539093,
+       "p_choix_ref": 0.17456991970539093,
+       "kl": 0.08459182776619943,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.17456991970539093
+        },
+        {
+         "texte": ",",
+         "p": 0.11401081085205078
+        },
+        {
+         "texte": " avec",
+         "p": 0.09514310956001282
+        },
+        {
+         "texte": " avait",
+         "p": 0.03710373118519783
+        },
+        {
+         "texte": " et",
+         "p": 0.031168196350336075
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.1716243177652359,
+       "p_choix_ref": 0.1716243177652359,
+       "kl": 0.08341621197613419,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.1716243177652359
+        },
+        {
+         "texte": ",",
+         "p": 0.11756674945354462
+        },
+        {
+         "texte": " avec",
+         "p": 0.10051089525222778
+        },
+        {
+         "texte": " avait",
+         "p": 0.038518719375133514
+        },
+        {
+         "texte": " et",
+         "p": 0.03471384570002556
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.170648992061615,
+       "p_choix_ref": 0.170648992061615,
+       "kl": 0.010276216112103494,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.170648992061615
+        },
+        {
+         "texte": " avec",
+         "p": 0.10749495774507523
+        },
+        {
+         "texte": ",",
+         "p": 0.0804310292005539
+        },
+        {
+         "texte": " avait",
+         "p": 0.039208076894283295
+        },
+        {
+         "texte": " n",
+         "p": 0.03678761050105095
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 3,
+     "retenu": false,
+     "position": 2399,
+     "morceau": 18,
+     "ligne": 113,
+     "contexte": "… le trajet\nétait trop pénible pour elles, il allait seul.\n\nUn jour, il arriva à Senez, qui est une ancienne ville épiscopale, monté\nsur un âne. Sa bourse",
+     "texte_suivant": ",",
+     "texte_suivant_id": 11,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.168933539573662,
+     "stat_mediane_categorie": 0.1574938504865817,
+     "stat_rang_dans_categorie": 0.5277777777777778,
+     "n_categorie_fr": 180,
+     "n_vivier_fr": 180,
+     "n_lisibles": 54,
+     "ref": {
+      "top": [
+       {
+        "id": 41470,
+        "texte": " était",
+        "p": 0.3950905203819275
+       },
+       {
+        "id": 808,
+        "texte": " ne",
+        "p": 0.14534346759319305
+       },
+       {
+        "id": 307,
+        "texte": " n",
+        "p": 0.09989243745803833
+       },
+       {
+        "id": 11,
+        "texte": ",",
+        "p": 0.08815459161996841
+       },
+       {
+        "id": 274,
+        "texte": " s",
+        "p": 0.0268851425498724
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " ne",
+       "choix_id": 808,
+       "p_choix": 0.28189459443092346,
+       "p_choix_ref": 0.21953891217708588,
+       "kl": 0.168933539573662,
+       "top": [
+        {
+         "texte": " ne",
+         "p": 0.28189459443092346
+        },
+        {
+         "texte": " était",
+         "p": 0.21953891217708588
+        },
+        {
+         "texte": " n",
+         "p": 0.11038993299007416
+        },
+        {
+         "texte": ",",
+         "p": 0.07127262651920319
+        },
+        {
+         "texte": " lui",
+         "p": 0.05214391648769379
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.3481438159942627,
+       "p_choix_ref": 0.3481438159942627,
+       "kl": 0.03995975579818804,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.3481438159942627
+        },
+        {
+         "texte": " ne",
+         "p": 0.12807300686836243
+        },
+        {
+         "texte": " n",
+         "p": 0.09974298626184464
+        },
+        {
+         "texte": ",",
+         "p": 0.07767961919307709
+        },
+        {
+         "texte": " s",
+         "p": 0.04711470752954483
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.38723525404930115,
+       "p_choix_ref": 0.38723525404930115,
+       "kl": 0.03574063189852155,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.38723525404930115
+        },
+        {
+         "texte": " ne",
+         "p": 0.10956984013319016
+        },
+        {
+         "texte": " n",
+         "p": 0.09123639762401581
+        },
+        {
+         "texte": ",",
+         "p": 0.07969430088996887
+        },
+        {
+         "texte": " s",
+         "p": 0.04231458529829979
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.41566550731658936,
+       "p_choix_ref": 0.41566550731658936,
+       "kl": 0.04276193113455127,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.41566550731658936
+        },
+        {
+         "texte": " ne",
+         "p": 0.09529311954975128
+        },
+        {
+         "texte": " n",
+         "p": 0.0862898975610733
+        },
+        {
+         "texte": ",",
+         "p": 0.0736904889345169
+        },
+        {
+         "texte": " s",
+         "p": 0.04260683059692383
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " était",
+       "choix_id": 41470,
+       "p_choix": 0.36801350116729736,
+       "p_choix_ref": 0.36801350116729736,
+       "kl": 0.008084509058433595,
+       "top": [
+        {
+         "texte": " était",
+         "p": 0.36801350116729736
+        },
+        {
+         "texte": " ne",
+         "p": 0.1800115704536438
+        },
+        {
+         "texte": " n",
+         "p": 0.09813285619020462
+        },
+        {
+         "texte": ",",
+         "p": 0.08403976261615753
+        },
+        {
+         "texte": " s",
+         "p": 0.02942834608256817
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 4,
+     "retenu": false,
+     "position": 1657,
+     "morceau": 13,
+     "ligne": 6,
+     "contexte": "… dit:\n\n--Avec tout cela je suis bien gêné!\n\n--Je le crois bien! s'écria madame Magloire, Monseigneur n'a seulement\npas réclamé la rente que le département lui doit pour",
+     "texte_suivant": " ses",
+     "texte_suivant_id": 15081,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.16906451932347588,
+     "stat_mediane_categorie": 0.1574938504865817,
+     "stat_rang_dans_categorie": 0.5333333333333333,
+     "n_categorie_fr": 180,
+     "n_vivier_fr": 180,
+     "n_lisibles": 54,
+     "ref": {
+      "top": [
+       {
+        "id": 4292,
+        "texte": " son",
+        "p": 0.3133242428302765
+       },
+       {
+        "id": 15081,
+        "texte": " ses",
+        "p": 0.13061122596263885
+       },
+       {
+        "id": 501,
+        "texte": " le",
+        "p": 0.10171973705291748
+       },
+       {
+        "id": 3424,
+        "texte": " les",
+        "p": 0.07921911031007767
+       },
+       {
+        "id": 796,
+        "texte": " sa",
+        "p": 0.06991048157215118
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " le",
+       "choix_id": 501,
+       "p_choix": 0.1997765600681305,
+       "p_choix_ref": 0.17630188167095184,
+       "kl": 0.16906451932347588,
+       "top": [
+        {
+         "texte": " le",
+         "p": 0.1997765600681305
+        },
+        {
+         "texte": " son",
+         "p": 0.17630188167095184
+        },
+        {
+         "texte": " ses",
+         "p": 0.10045291483402252
+        },
+        {
+         "texte": " les",
+         "p": 0.0886492133140564
+        },
+        {
+         "texte": " sa",
+         "p": 0.07349257171154022
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " son",
+       "choix_id": 4292,
+       "p_choix": 0.3680626153945923,
+       "p_choix_ref": 0.3680626153945923,
+       "kl": 0.08902963984947933,
+       "top": [
+        {
+         "texte": " son",
+         "p": 0.3680626153945923
+        },
+        {
+         "texte": " ses",
+         "p": 0.19700784981250763
+        },
+        {
+         "texte": " le",
+         "p": 0.08212399482727051
+        },
+        {
+         "texte": " sa",
+         "p": 0.08212399482727051
+        },
+        {
+         "texte": " la",
+         "p": 0.04129410535097122
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " son",
+       "choix_id": 4292,
+       "p_choix": 0.3190850019454956,
+       "p_choix_ref": 0.3190850019454956,
+       "kl": 0.07113833423107672,
+       "top": [
+        {
+         "texte": " son",
+         "p": 0.3190850019454956
+        },
+        {
+         "texte": " ses",
+         "p": 0.1907656341791153
+        },
+        {
+         "texte": " le",
+         "p": 0.09870143979787827
+        },
+        {
+         "texte": " sa",
+         "p": 0.08283111453056335
+        },
+        {
+         "texte": " la",
+         "p": 0.050312869250774384
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " son",
+       "choix_id": 4292,
+       "p_choix": 0.3850852847099304,
+       "p_choix_ref": 0.3850852847099304,
+       "kl": 0.08125971221373553,
+       "top": [
+        {
+         "texte": " son",
+         "p": 0.3850852847099304
+        },
+        {
+         "texte": " ses",
+         "p": 0.16261591017246246
+        },
+        {
+         "texte": " le",
+         "p": 0.07706701755523682
+        },
+        {
+         "texte": " sa",
+         "p": 0.0764206200838089
+        },
+        {
+         "texte": " l",
+         "p": 0.04723068326711655
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " son",
+       "choix_id": 4292,
+       "p_choix": 0.410991370677948,
+       "p_choix_ref": 0.410991370677948,
+       "kl": 0.09507719253220669,
+       "top": [
+        {
+         "texte": " son",
+         "p": 0.410991370677948
+        },
+        {
+         "texte": " ses",
+         "p": 0.1367914378643036
+        },
+        {
+         "texte": " sa",
+         "p": 0.10235166549682617
+        },
+        {
+         "texte": " le",
+         "p": 0.06854763627052307
+        },
+        {
+         "texte": " les",
+         "p": 0.05503908544778824
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 5,
+     "retenu": false,
+     "position": 1151,
+     "morceau": 9,
+     "ligne": 8,
+     "contexte": "… lieu dans la salle à manger-galerie du\nrez-de-chaussée. L'évêque garda un moment le silence, puis il se tourna\nbrusquement vers le directeur de l'hôpital:\n\n--Monsieur, dit-il, combien pensez-vous",
+     "texte_suivant": " qu",
+     "texte_suivant_id": 893,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.17198323950650762,
+     "stat_mediane_categorie": 0.1574938504865817,
+     "stat_rang_dans_categorie": 0.55,
+     "n_categorie_fr": 180,
+     "n_vivier_fr": 180,
+     "n_lisibles": 54,
+     "ref": {
+      "top": [
+       {
+        "id": 1649,
+        "texte": " que",
+        "p": 0.5015605092048645
+       },
+       {
+        "id": 893,
+        "texte": " qu",
+        "p": 0.3447151780128479
+       },
+       {
+        "id": 185831,
+        "texte": " gagner",
+        "p": 0.0320623442530632
+       },
+       {
+        "id": 64858,
+        "texte": " pouvoir",
+        "p": 0.020700868219137192
+       },
+       {
+        "id": 37544,
+        "texte": " avoir",
+        "p": 0.01422740239650011
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " qu",
+       "choix_id": 893,
+       "p_choix": 0.5362485647201538,
+       "p_choix_ref": 0.25330299139022827,
+       "kl": 0.17198323950650762,
+       "top": [
+        {
+         "texte": " qu",
+         "p": 0.5362485647201538
+        },
+        {
+         "texte": " que",
+         "p": 0.25330299139022827
+        },
+        {
+         "texte": " pouvoir",
+         "p": 0.044016283005476
+        },
+        {
+         "texte": " avoir",
+         "p": 0.028418857604265213
+        },
+        {
+         "texte": " gagner",
+         "p": 0.017236776649951935
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " que",
+       "choix_id": 1649,
+       "p_choix": 0.45216813683509827,
+       "p_choix_ref": 0.45216813683509827,
+       "kl": 0.038528748761305076,
+       "top": [
+        {
+         "texte": " que",
+         "p": 0.45216813683509827
+        },
+        {
+         "texte": " qu",
+         "p": 0.3990361988544464
+        },
+        {
+         "texte": " pouvoir",
+         "p": 0.028904929757118225
+        },
+        {
+         "texte": " devoir",
+         "p": 0.021147197112441063
+        },
+        {
+         "texte": " avoir",
+         "p": 0.015471545979380608
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " que",
+       "choix_id": 1649,
+       "p_choix": 0.4599839448928833,
+       "p_choix_ref": 0.4599839448928833,
+       "kl": 0.037111465929298454,
+       "top": [
+        {
+         "texte": " que",
+         "p": 0.4599839448928833
+        },
+        {
+         "texte": " qu",
+         "p": 0.39009639620780945
+        },
+        {
+         "texte": " pouvoir",
+         "p": 0.035668496042490005
+        },
+        {
+         "texte": " devoir",
+         "p": 0.01856321655213833
+        },
+        {
+         "texte": " avoir",
+         "p": 0.014825145713984966
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " que",
+       "choix_id": 1649,
+       "p_choix": 0.44789010286331177,
+       "p_choix_ref": 0.44789010286331177,
+       "kl": 0.033790314808241184,
+       "top": [
+        {
+         "texte": " que",
+         "p": 0.44789010286331177
+        },
+        {
+         "texte": " qu",
+         "p": 0.3979234993457794
+        },
+        {
+         "texte": " pouvoir",
+         "p": 0.033950988203287125
+        },
+        {
+         "texte": " devoir",
+         "p": 0.018903348594903946
+        },
+        {
+         "texte": " avoir",
+         "p": 0.01463945023715496
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " que",
+       "choix_id": 1649,
+       "p_choix": 0.5103916525840759,
+       "p_choix_ref": 0.5103916525840759,
+       "kl": 0.004251374846391549,
+       "top": [
+        {
+         "texte": " que",
+         "p": 0.5103916525840759
+        },
+        {
+         "texte": " qu",
+         "p": 0.33472076058387756
+        },
+        {
+         "texte": " gagner",
+         "p": 0.03426792100071907
+        },
+        {
+         "texte": " avoir",
+         "p": 0.01757494919002056
+        },
+        {
+         "texte": " pouvoir",
+         "p": 0.015265624038875103
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C3",
+     "rang": 0,
+     "retenu": true,
+     "position": 1646,
+     "morceau": 12,
+     "ligne": 122,
+     "contexte": "… s'était réservé que mille livres, ce qui, joint à la\npension de mademoiselle Baptistine, faisait quinze cents francs par an.\nAvec ces quinze cents francs, ces deux vieilles",
+     "texte_suivant": " femmes",
+     "texte_suivant_id": 29558,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.28306541037419447,
+     "stat_mediane_categorie": 0.20989054042120947,
+     "stat_rang_dans_categorie": 0.6785714285714286,
+     "n_categorie_fr": 115,
+     "n_vivier_fr": 28,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 45894,
+        "texte": " personnes",
+        "p": 0.4894038438796997
+       },
+       {
+        "id": 29558,
+        "texte": " femmes",
+        "p": 0.20401117205619812
+       },
+       {
+        "id": 53178,
+        "texte": " filles",
+        "p": 0.1588834524154663
+       },
+       {
+        "id": 16171,
+        "texte": " demo",
+        "p": 0.04845583438873291
+       },
+       {
+        "id": 81313,
+        "texte": " dames",
+        "p": 0.045520003885030746
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.35419535636901855,
+       "p_choix_ref": 0.35419535636901855,
+       "kl": 0.11690063658872943,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.35419535636901855
+        },
+        {
+         "texte": " personnes",
+         "p": 0.35419535636901855
+        },
+        {
+         "texte": " filles",
+         "p": 0.11498842388391495
+        },
+        {
+         "texte": " dames",
+         "p": 0.0655178651213646
+        },
+        {
+         "texte": " demo",
+         "p": 0.018770823255181313
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.5921041965484619,
+       "p_choix_ref": 0.19222478568553925,
+       "kl": 0.4057901511370359,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.5921041965484619
+        },
+        {
+         "texte": " personnes",
+         "p": 0.19222478568553925
+        },
+        {
+         "texte": " filles",
+         "p": 0.09079951047897339
+        },
+        {
+         "texte": " dames",
+         "p": 0.06643003225326538
+        },
+        {
+         "texte": " demo",
+         "p": 0.009569870308041573
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.4531610310077667,
+       "p_choix_ref": 0.19879227876663208,
+       "kl": 0.2702103737619872,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.4531610310077667
+        },
+        {
+         "texte": " personnes",
+         "p": 0.19879227876663208
+        },
+        {
+         "texte": " filles",
+         "p": 0.1938081830739975
+        },
+        {
+         "texte": " dames",
+         "p": 0.06901908665895462
+        },
+        {
+         "texte": " demo",
+         "p": 0.022151188924908638
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.5442736744880676,
+       "p_choix_ref": 0.1982298493385315,
+       "kl": 0.33936048000902536,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.5442736744880676
+        },
+        {
+         "texte": " personnes",
+         "p": 0.1982298493385315
+        },
+        {
+         "texte": " filles",
+         "p": 0.11053268611431122
+        },
+        {
+         "texte": " dames",
+         "p": 0.07497254014015198
+        },
+        {
+         "texte": " demo",
+         "p": 0.015956366434693336
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " personnes",
+       "choix_id": 45894,
+       "p_choix": 0.37022271752357483,
+       "p_choix_ref": 0.37022271752357483,
+       "kl": 0.03560864771256946,
+       "top": [
+        {
+         "texte": " personnes",
+         "p": 0.37022271752357483
+        },
+        {
+         "texte": " femmes",
+         "p": 0.24350875616073608
+        },
+        {
+         "texte": " filles",
+         "p": 0.21918745338916779
+        },
+        {
+         "texte": " demo",
+         "p": 0.07103702425956726
+        },
+        {
+         "texte": " dames",
+         "p": 0.04170920327305794
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C3",
+     "rang": 1,
+     "retenu": false,
+     "position": 105,
+     "morceau": 0,
+     "ligne": 105,
+     "contexte": "… M.\nMyriel était fils d'un conseiller au parlement d'Aix; noblesse de robe.\nOn contait de lui que son père, le réservant pour hériter de sa charge,\nl'avait marié",
+     "texte_suivant": " de",
+     "texte_suivant_id": 401,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.287307168473926,
+     "stat_mediane_categorie": 0.20989054042120947,
+     "stat_rang_dans_categorie": 0.7142857142857143,
+     "n_categorie_fr": 115,
+     "n_vivier_fr": 28,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 24111,
+        "texte": " très",
+        "p": 0.2932235598564148
+       },
+       {
+        "id": 11506,
+        "texte": " fort",
+        "p": 0.1385074108839035
+       },
+       {
+        "id": 83367,
+        "texte": " dès",
+        "p": 0.12223212420940399
+       },
+       {
+        "id": 401,
+        "texte": " de",
+        "p": 0.10786926001310349
+       },
+       {
+        "id": 34673,
+        "texte": " jeune",
+        "p": 0.0840083509683609
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.15233665704727173,
+       "p_choix_ref": 0.11863944679498672,
+       "kl": 0.2069586124499928,
+       "top": [
+        {
+         "texte": " jeune",
+         "p": 0.15233665704727173
+        },
+        {
+         "texte": " de",
+         "p": 0.15233665704727173
+        },
+        {
+         "texte": " dès",
+         "p": 0.13443636894226074
+        },
+        {
+         "texte": " très",
+         "p": 0.11863944679498672
+        },
+        {
+         "texte": ",",
+         "p": 0.10469876229763031
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " fort",
+       "choix_id": 11506,
+       "p_choix": 0.36336612701416016,
+       "p_choix_ref": 0.1179656833410263,
+       "kl": 0.36406912186622714,
+       "top": [
+        {
+         "texte": " fort",
+         "p": 0.36336612701416016
+        },
+        {
+         "texte": " à",
+         "p": 0.1716400384902954
+        },
+        {
+         "texte": " très",
+         "p": 0.1179656833410263
+        },
+        {
+         "texte": " de",
+         "p": 0.0761638656258583
+        },
+        {
+         "texte": " tout",
+         "p": 0.0593162439763546
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " fort",
+       "choix_id": 11506,
+       "p_choix": 0.288704514503479,
+       "p_choix_ref": 0.15959219634532928,
+       "kl": 0.2857376229012909,
+       "top": [
+        {
+         "texte": " fort",
+         "p": 0.288704514503479
+        },
+        {
+         "texte": " très",
+         "p": 0.15959219634532928
+        },
+        {
+         "texte": " de",
+         "p": 0.12344319373369217
+        },
+        {
+         "texte": " dès",
+         "p": 0.10745876282453537
+        },
+        {
+         "texte": " à",
+         "p": 0.09372702986001968
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " fort",
+       "choix_id": 11506,
+       "p_choix": 0.3406692445278168,
+       "p_choix_ref": 0.1543956845998764,
+       "kl": 0.2924633166781932,
+       "top": [
+        {
+         "texte": " fort",
+         "p": 0.3406692445278168
+        },
+        {
+         "texte": " très",
+         "p": 0.1543956845998764
+        },
+        {
+         "texte": " de",
+         "p": 0.10878955572843552
+        },
+        {
+         "texte": " à",
+         "p": 0.09178891777992249
+        },
+        {
+         "texte": " dès",
+         "p": 0.09105221182107925
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " très",
+       "choix_id": 24111,
+       "p_choix": 0.22467397153377533,
+       "p_choix_ref": 0.22467397153377533,
+       "kl": 0.05300945275844553,
+       "top": [
+        {
+         "texte": " très",
+         "p": 0.22467397153377533
+        },
+        {
+         "texte": " de",
+         "p": 0.20115037262439728
+        },
+        {
+         "texte": " fort",
+         "p": 0.129428431391716
+        },
+        {
+         "texte": " dès",
+         "p": 0.12386369705200195
+        },
+        {
+         "texte": " à",
+         "p": 0.10769329965114594
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C3",
+     "rang": 2,
+     "retenu": false,
+     "position": 83,
+     "morceau": 0,
+     "ligne": 83,
+     "contexte": "… de\nplace dans leur vie et surtout dans leur destinée que ce qu'ils font. M.\nMyriel était fils d'un conseiller au parlement d'Aix; noblesse de robe.\nOn contait",
+     "texte_suivant": " de",
+     "texte_suivant_id": 401,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.4621774270162183,
+     "stat_mediane_categorie": 0.20989054042120947,
+     "stat_rang_dans_categorie": 0.8571428571428571,
+     "n_categorie_fr": 115,
+     "n_vivier_fr": 28,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 893,
+        "texte": " qu",
+        "p": 0.3243931233882904
+       },
+       {
+        "id": 401,
+        "texte": " de",
+        "p": 0.22295062243938446
+       },
+       {
+        "id": 1649,
+        "texte": " que",
+        "p": 0.1967528760433197
+       },
+       {
+        "id": 11,
+        "texte": ",",
+        "p": 0.08201770484447479
+       },
+       {
+        "id": 3656,
+        "texte": " à",
+        "p": 0.04673187434673309
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.28339168429374695,
+       "p_choix_ref": 0.2500918209552765,
+       "kl": 0.1038980628499781,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.28339168429374695
+        },
+        {
+         "texte": " qu",
+         "p": 0.2500918209552765
+        },
+        {
+         "texte": " que",
+         "p": 0.13386322557926178
+        },
+        {
+         "texte": " à",
+         "p": 0.10425237566232681
+        },
+        {
+         "texte": " sur",
+         "p": 0.0811915323138237
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.35687801241874695,
+       "p_choix_ref": 0.09023100137710571,
+       "kl": 0.6066323894195665,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.35687801241874695
+        },
+        {
+         "texte": " sur",
+         "p": 0.3149431645870209
+        },
+        {
+         "texte": " qu",
+         "p": 0.09023100137710571
+        },
+        {
+         "texte": " à",
+         "p": 0.05825712904334068
+        },
+        {
+         "texte": " que",
+         "p": 0.04829671233892441
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.36489197611808777,
+       "p_choix_ref": 0.1026194617152214,
+       "kl": 0.6336772286769407,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.36489197611808777
+        },
+        {
+         "texte": " sur",
+         "p": 0.3323998749256134
+        },
+        {
+         "texte": " qu",
+         "p": 0.1026194617152214
+        },
+        {
+         "texte": " à",
+         "p": 0.043909791857004166
+        },
+        {
+         "texte": ",",
+         "p": 0.04387764260172844
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.3443104028701782,
+       "p_choix_ref": 0.13433896005153656,
+       "kl": 0.5045020271183878,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.3443104028701782
+        },
+        {
+         "texte": " sur",
+         "p": 0.2834630310535431
+        },
+        {
+         "texte": " qu",
+         "p": 0.13433896005153656
+        },
+        {
+         "texte": " à",
+         "p": 0.06633172184228897
+        },
+        {
+         "texte": ",",
+         "p": 0.043357934802770615
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " qu",
+       "choix_id": 893,
+       "p_choix": 0.42339757084846497,
+       "p_choix_ref": 0.42339757084846497,
+       "kl": 0.05029880438957613,
+       "top": [
+        {
+         "texte": " qu",
+         "p": 0.42339757084846497
+        },
+        {
+         "texte": " que",
+         "p": 0.18912175297737122
+        },
+        {
+         "texte": " de",
+         "p": 0.13151277601718903
+        },
+        {
+         "texte": ",",
+         "p": 0.0864163190126419
+        },
+        {
+         "texte": " à",
+         "p": 0.04092948138713837
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C3",
+     "rang": 3,
+     "retenu": false,
+     "position": 1644,
+     "morceau": 12,
+     "ligne": 120,
+     "contexte": "… ne s'était réservé que mille livres, ce qui, joint à la\npension de mademoiselle Baptistine, faisait quinze cents francs par an.\nAvec ces quinze cents francs, ces deux",
+     "texte_suivant": " vie",
+     "texte_suivant_id": 16595,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.4816997431614841,
+     "stat_mediane_categorie": 0.20989054042120947,
+     "stat_rang_dans_categorie": 0.8928571428571429,
+     "n_categorie_fr": 115,
+     "n_vivier_fr": 28,
+     "n_lisibles": 4,
+     "ref": {
+      "top": [
+       {
+        "id": 45894,
+        "texte": " personnes",
+        "p": 0.24811244010925293
+       },
+       {
+        "id": 29558,
+        "texte": " femmes",
+        "p": 0.10342727601528168
+       },
+       {
+        "id": 34670,
+        "texte": " saint",
+        "p": 0.0857439860701561
+       },
+       {
+        "id": 81313,
+        "texte": " dames",
+        "p": 0.08054893463850021
+       },
+       {
+        "id": 207037,
+        "texte": " pauv",
+        "p": 0.06677722185850143
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " mille",
+       "choix_id": 178599,
+       "p_choix": 0.227822408080101,
+       "p_choix_ref": 0.05083288252353668,
+       "kl": 0.8849018381878294,
+       "top": [
+        {
+         "texte": " mille",
+         "p": 0.227822408080101
+        },
+        {
+         "texte": " pauv",
+         "p": 0.07873204350471497
+        },
+        {
+         "texte": " personnes",
+         "p": 0.05083288252353668
+        },
+        {
+         "texte": " s",
+         "p": 0.04485977441072464
+        },
+        {
+         "texte": " cents",
+         "p": 0.03958853706717491
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.18878459930419922,
+       "p_choix_ref": 0.08917450159788132,
+       "kl": 0.2219656707525681,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.18878459930419922
+        },
+        {
+         "texte": " pauv",
+         "p": 0.1297488808631897
+        },
+        {
+         "texte": " dames",
+         "p": 0.09492585808038712
+        },
+        {
+         "texte": " personnes",
+         "p": 0.08917450159788132
+        },
+        {
+         "texte": " bonnes",
+         "p": 0.06524115055799484
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.216991126537323,
+       "p_choix_ref": 0.0516899973154068,
+       "kl": 0.3981530335551269,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.216991126537323
+        },
+        {
+         "texte": " dames",
+         "p": 0.11465268582105637
+        },
+        {
+         "texte": " bonnes",
+         "p": 0.10363046824932098
+        },
+        {
+         "texte": " pauv",
+         "p": 0.10130403935909271
+        },
+        {
+         "texte": " saint",
+         "p": 0.09123039245605469
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " femmes",
+       "choix_id": 29558,
+       "p_choix": 0.23380672931671143,
+       "p_choix_ref": 0.05243629217147827,
+       "kl": 0.4217784301504122,
+       "top": [
+        {
+         "texte": " femmes",
+         "p": 0.23380672931671143
+        },
+        {
+         "texte": " dames",
+         "p": 0.13753075897693634
+        },
+        {
+         "texte": " pauv",
+         "p": 0.10780386626720428
+        },
+        {
+         "texte": " bonnes",
+         "p": 0.09297794848680496
+        },
+        {
+         "texte": " saint",
+         "p": 0.07841933518648148
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " personnes",
+       "choix_id": 45894,
+       "p_choix": 0.2218625396490097,
+       "p_choix_ref": 0.2218625396490097,
+       "kl": 0.057382123914448926,
+       "top": [
+        {
+         "texte": " personnes",
+         "p": 0.2218625396490097
+        },
+        {
+         "texte": " femmes",
+         "p": 0.1221645325422287
+        },
+        {
+         "texte": " dames",
+         "p": 0.09246225655078888
+        },
+        {
+         "texte": " s",
+         "p": 0.06641913950443268
+        },
+        {
+         "texte": " pauv",
+         "p": 0.06601498275995255
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 0,
+     "retenu": true,
+     "position": 36,
+     "morceau": 0,
+     "ligne": 36,
+     "contexte": "… les bruits et les propos qui\navaient couru sur son compte au moment où il était arrivé dans le\ndiocèse. Vrai ou faux, ce qu'on dit des hommes",
+     "texte_suivant": " tient",
+     "texte_suivant_id": 190955,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.32089179180249777,
+     "stat_mediane_categorie": 0.32089179180249777,
+     "stat_rang_dans_categorie": 0.5172413793103449,
+     "n_categorie_fr": 29,
+     "n_vivier_fr": 29,
+     "n_lisibles": 10,
+     "ref": {
+      "top": [
+       {
+        "id": 264,
+        "texte": " a",
+        "p": 0.35686439275741577
+       },
+       {
+        "id": 1725,
+        "texte": " est",
+        "p": 0.1583556830883026
+       },
+       {
+        "id": 307,
+        "texte": " n",
+        "p": 0.1583556830883026
+       },
+       {
+        "id": 11,
+        "texte": ",",
+        "p": 0.0376119427382946
+       },
+       {
+        "id": 89277,
+        "texte": " laisse",
+        "p": 0.027517352253198624
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " a",
+       "choix_id": 264,
+       "p_choix": 0.582889974117279,
+       "p_choix_ref": 0.582889974117279,
+       "kl": 0.25056693018700965,
+       "top": [
+        {
+         "texte": " a",
+         "p": 0.582889974117279
+        },
+        {
+         "texte": " n",
+         "p": 0.09515154361724854
+        },
+        {
+         "texte": " est",
+         "p": 0.07410381734371185
+        },
+        {
+         "texte": " fin",
+         "p": 0.04494589567184448
+        },
+        {
+         "texte": " vaut",
+         "p": 0.027260854840278625
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " a",
+       "choix_id": 264,
+       "p_choix": 0.4376875162124634,
+       "p_choix_ref": 0.4376875162124634,
+       "kl": 0.3114168179836847,
+       "top": [
+        {
+         "texte": " a",
+         "p": 0.4376875162124634
+        },
+        {
+         "texte": " est",
+         "p": 0.26546886563301086
+        },
+        {
+         "texte": " vaut",
+         "p": 0.0359262079000473
+        },
+        {
+         "texte": ",",
+         "p": 0.03374951705336571
+        },
+        {
+         "texte": " n",
+         "p": 0.027979250997304916
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " a",
+       "choix_id": 264,
+       "p_choix": 0.3264451026916504,
+       "p_choix_ref": 0.3264451026916504,
+       "kl": 0.3495674712284539,
+       "top": [
+        {
+         "texte": " a",
+         "p": 0.3264451026916504
+        },
+        {
+         "texte": " est",
+         "p": 0.3130204975605011
+        },
+        {
+         "texte": " au",
+         "p": 0.04159282147884369
+        },
+        {
+         "texte": ",",
+         "p": 0.038298361003398895
+        },
+        {
+         "texte": " n",
+         "p": 0.0313728041946888
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " a",
+       "choix_id": 264,
+       "p_choix": 0.37077322602272034,
+       "p_choix_ref": 0.37077322602272034,
+       "kl": 0.3720159478108428,
+       "top": [
+        {
+         "texte": " a",
+         "p": 0.37077322602272034
+        },
+        {
+         "texte": " est",
+         "p": 0.32784533500671387
+        },
+        {
+         "texte": ",",
+         "p": 0.03153042495250702
+        },
+        {
+         "texte": " n",
+         "p": 0.027646007016301155
+        },
+        {
+         "texte": " au",
+         "p": 0.024824058637022972
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " a",
+       "choix_id": 264,
+       "p_choix": 0.3521972894668579,
+       "p_choix_ref": 0.3521972894668579,
+       "kl": 0.03543849550505414,
+       "top": [
+        {
+         "texte": " a",
+         "p": 0.3521972894668579
+        },
+        {
+         "texte": " est",
+         "p": 0.14170914888381958
+        },
+        {
+         "texte": " n",
+         "p": 0.14119113981723785
+        },
+        {
+         "texte": ",",
+         "p": 0.03299906849861145
+        },
+        {
+         "texte": " vaut",
+         "p": 0.025920147076249123
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 1,
+     "retenu": false,
+     "position": 1664,
+     "morceau": 13,
+     "ligne": 13,
+     "contexte": "… suis bien gêné!\n\n--Je le crois bien! s'écria madame Magloire, Monseigneur n'a seulement\npas réclamé la rente que le département lui doit pour ses frais de\ncarrosse en",
+     "texte_suivant": " ville",
+     "texte_suivant_id": 37587,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.3439607818604651,
+     "stat_mediane_categorie": 0.32089179180249777,
+     "stat_rang_dans_categorie": 0.5862068965517241,
+     "n_categorie_fr": 29,
+     "n_vivier_fr": 29,
+     "n_lisibles": 10,
+     "ref": {
+      "top": [
+       {
+        "id": 5832,
+        "texte": " route",
+        "p": 0.2751571536064148
+       },
+       {
+        "id": 43062,
+        "texte": " voyage",
+        "p": 0.1383562535047531
+       },
+       {
+        "id": 220,
+        "texte": " ",
+        "p": 0.0695691630244255
+       },
+       {
+        "id": 37587,
+        "texte": " ville",
+        "p": 0.03723733499646187
+       },
+       {
+        "id": 25213,
+        "texte": " temps",
+        "p": 0.030870744958519936
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " route",
+       "choix_id": 5832,
+       "p_choix": 0.390279084444046,
+       "p_choix_ref": 0.390279084444046,
+       "kl": 0.2362631860473692,
+       "top": [
+        {
+         "texte": " route",
+         "p": 0.390279084444046
+        },
+        {
+         "texte": " ",
+         "p": 0.10504008829593658
+        },
+        {
+         "texte": " ville",
+         "p": 0.08708104491233826
+        },
+        {
+         "texte": " voyage",
+         "p": 0.03630029410123825
+        },
+        {
+         "texte": " temps",
+         "p": 0.03203483670949936
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " route",
+       "choix_id": 5832,
+       "p_choix": 0.4503468871116638,
+       "p_choix_ref": 0.4503468871116638,
+       "kl": 0.4436109645760927,
+       "top": [
+        {
+         "texte": " route",
+         "p": 0.4503468871116638
+        },
+        {
+         "texte": " ",
+         "p": 0.050525832921266556
+        },
+        {
+         "texte": " province",
+         "p": 0.047464579343795776
+        },
+        {
+         "texte": " France",
+         "p": 0.030645234510302544
+        },
+        {
+         "texte": " voyage",
+         "p": 0.02386643923819065
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " route",
+       "choix_id": 5832,
+       "p_choix": 0.440079927444458,
+       "p_choix_ref": 0.440079927444458,
+       "kl": 0.3396577772131609,
+       "top": [
+        {
+         "texte": " route",
+         "p": 0.440079927444458
+        },
+        {
+         "texte": " ",
+         "p": 0.052609700709581375
+        },
+        {
+         "texte": " temps",
+         "p": 0.034789640456438065
+        },
+        {
+         "texte": " province",
+         "p": 0.02945353090763092
+        },
+        {
+         "texte": " voyage",
+         "p": 0.029267162084579468
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " route",
+       "choix_id": 5832,
+       "p_choix": 0.42851918935775757,
+       "p_choix_ref": 0.42851918935775757,
+       "kl": 0.3563111996052375,
+       "top": [
+        {
+         "texte": " route",
+         "p": 0.42851918935775757
+        },
+        {
+         "texte": " ",
+         "p": 0.07981956750154495
+        },
+        {
+         "texte": " province",
+         "p": 0.03697885200381279
+        },
+        {
+         "texte": " voyage",
+         "p": 0.030254974961280823
+        },
+        {
+         "texte": " temps",
+         "p": 0.025790102779865265
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " route",
+       "choix_id": 5832,
+       "p_choix": 0.4787777066230774,
+       "p_choix_ref": 0.4787777066230774,
+       "kl": 0.15631136226927544,
+       "top": [
+        {
+         "texte": " route",
+         "p": 0.4787777066230774
+        },
+        {
+         "texte": " voyage",
+         "p": 0.11542339622974396
+        },
+        {
+         "texte": " cas",
+         "p": 0.030936498194932938
+        },
+        {
+         "texte": " vertu",
+         "p": 0.027155067771673203
+        },
+        {
+         "texte": " ",
+         "p": 0.02624259516596794
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 2,
+     "retenu": false,
+     "position": 1077,
+     "morceau": 8,
+     "ligne": 61,
+     "contexte": "… que j'avais compté, dit l'évêque.\n\n--Les lits, reprit le directeur, sont bien serrés les uns contre les\nautres.\n\n--C'est ce que j'avais remarqué.\n\n--Les salles ne sont que",
+     "texte_suivant": " des",
+     "texte_suivant_id": 909,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.2778367321647923,
+     "stat_mediane_categorie": 0.32089179180249777,
+     "stat_rang_dans_categorie": 0.41379310344827586,
+     "n_categorie_fr": 29,
+     "n_vivier_fr": 29,
+     "n_lisibles": 10,
+     "ref": {
+      "top": [
+       {
+        "id": 401,
+        "texte": " de",
+        "p": 0.23927369713783264
+       },
+       {
+        "id": 909,
+        "texte": " des",
+        "p": 0.1203131154179573
+       },
+       {
+        "id": 293,
+        "texte": " d",
+        "p": 0.09974279254674911
+       },
+       {
+        "id": 8377,
+        "texte": " mal",
+        "p": 0.07767946273088455
+       },
+       {
+        "id": 24111,
+        "texte": " très",
+        "p": 0.07767946273088455
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.4994250237941742,
+       "p_choix_ref": 0.4994250237941742,
+       "kl": 0.3500573212196556,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.4994250237941742
+        },
+        {
+         "texte": " d",
+         "p": 0.13441573083400726
+        },
+        {
+         "texte": " des",
+         "p": 0.08152664452791214
+        },
+        {
+         "texte": " trop",
+         "p": 0.03398490697145462
+        },
+        {
+         "texte": " fort",
+         "p": 0.02194215916097164
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.4879200756549835,
+       "p_choix_ref": 0.4879200756549835,
+       "kl": 0.3194060681303987,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.4879200756549835
+        },
+        {
+         "texte": " des",
+         "p": 0.13978876173496246
+        },
+        {
+         "texte": " d",
+         "p": 0.06603078544139862
+        },
+        {
+         "texte": " très",
+         "p": 0.025857657194137573
+        },
+        {
+         "texte": " mal",
+         "p": 0.02429099753499031
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.43577075004577637,
+       "p_choix_ref": 0.43577075004577637,
+       "kl": 0.24934479851113653,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.43577075004577637
+        },
+        {
+         "texte": " des",
+         "p": 0.16771532595157623
+        },
+        {
+         "texte": " d",
+         "p": 0.07032407075166702
+        },
+        {
+         "texte": " très",
+         "p": 0.028825344517827034
+        },
+        {
+         "texte": " mal",
+         "p": 0.02851036563515663
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.43543678522109985,
+       "p_choix_ref": 0.43543678522109985,
+       "kl": 0.1925387407979784,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.43543678522109985
+        },
+        {
+         "texte": " des",
+         "p": 0.1332205981016159
+        },
+        {
+         "texte": " d",
+         "p": 0.07568401843309402
+        },
+        {
+         "texte": " mal",
+         "p": 0.03488369658589363
+        },
+        {
+         "texte": " très",
+         "p": 0.034705303609371185
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " de",
+       "choix_id": 401,
+       "p_choix": 0.18623781204223633,
+       "p_choix_ref": 0.18623781204223633,
+       "kl": 0.02687190840129041,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.18623781204223633
+        },
+        {
+         "texte": " des",
+         "p": 0.13306502997875214
+        },
+        {
+         "texte": " d",
+         "p": 0.10603651404380798
+        },
+        {
+         "texte": " mal",
+         "p": 0.0829649567604065
+        },
+        {
+         "texte": " très",
+         "p": 0.07480620592832565
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 3,
+     "retenu": false,
+     "position": 2759,
+     "morceau": 21,
+     "ligne": 92,
+     "contexte": "… des hommes simples.\n\nAux villages où il ne trouvait pas de maître d'école, il citait encore\nceux de Queyras:\n\n--Savez-vous comment ils font? disait-il. Comme un petit pays",
+     "texte_suivant": " de",
+     "texte_suivant_id": 401,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.2597616875767705,
+     "stat_mediane_categorie": 0.32089179180249777,
+     "stat_rang_dans_categorie": 0.3448275862068966,
+     "n_categorie_fr": 29,
+     "n_vivier_fr": 29,
+     "n_lisibles": 10,
+     "ref": {
+      "top": [
+       {
+        "id": 276,
+        "texte": "an",
+        "p": 0.47308698296546936
+       },
+       {
+        "id": 11,
+        "texte": ",",
+        "p": 0.07722719013690948
+       },
+       {
+        "id": 37341,
+        "texte": " où",
+        "p": 0.060144368559122086
+       },
+       {
+        "id": 80324,
+        "texte": " pau",
+        "p": 0.05650034546852112
+       },
+       {
+        "id": 401,
+        "texte": " de",
+        "p": 0.05307711660861969
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "an",
+       "choix_id": 276,
+       "p_choix": 0.2274138629436493,
+       "p_choix_ref": 0.2274138629436493,
+       "kl": 0.24452683377483264,
+       "top": [
+        {
+         "texte": "an",
+         "p": 0.2274138629436493
+        },
+        {
+         "texte": ",",
+         "p": 0.14682844281196594
+        },
+        {
+         "texte": " où",
+         "p": 0.10742148011922836
+        },
+        {
+         "texte": " de",
+         "p": 0.08365960419178009
+        },
+        {
+         "texte": " comme",
+         "p": 0.0574980229139328
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "an",
+       "choix_id": 276,
+       "p_choix": 0.16811712086200714,
+       "p_choix_ref": 0.16811712086200714,
+       "kl": 0.31994764382612695,
+       "top": [
+        {
+         "texte": "an",
+         "p": 0.16811712086200714
+        },
+        {
+         "texte": " où",
+         "p": 0.15793126821517944
+        },
+        {
+         "texte": ",",
+         "p": 0.13937360048294067
+        },
+        {
+         "texte": " sans",
+         "p": 0.06184588745236397
+        },
+        {
+         "texte": " de",
+         "p": 0.04250577464699745
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": "an",
+       "choix_id": 276,
+       "p_choix": 0.18731188774108887,
+       "p_choix_ref": 0.18731188774108887,
+       "kl": 0.2786926232120988,
+       "top": [
+        {
+         "texte": "an",
+         "p": 0.18731188774108887
+        },
+        {
+         "texte": ",",
+         "p": 0.1407010704278946
+        },
+        {
+         "texte": " où",
+         "p": 0.12933526933193207
+        },
+        {
+         "texte": " sans",
+         "p": 0.06397806107997894
+        },
+        {
+         "texte": " pau",
+         "p": 0.04499194771051407
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": "an",
+       "choix_id": 276,
+       "p_choix": 0.2350555956363678,
+       "p_choix_ref": 0.2350555956363678,
+       "kl": 0.19587964949402353,
+       "top": [
+        {
+         "texte": "an",
+         "p": 0.2350555956363678
+        },
+        {
+         "texte": ",",
+         "p": 0.14253254234790802
+        },
+        {
+         "texte": " où",
+         "p": 0.10478904843330383
+        },
+        {
+         "texte": " sans",
+         "p": 0.05200689658522606
+        },
+        {
+         "texte": " pau",
+         "p": 0.03951634466648102
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": "an",
+       "choix_id": 276,
+       "p_choix": 0.3503340482711792,
+       "p_choix_ref": 0.3503340482711792,
+       "kl": 0.0410427128457108,
+       "top": [
+        {
+         "texte": "an",
+         "p": 0.3503340482711792
+        },
+        {
+         "texte": ",",
+         "p": 0.09246551990509033
+        },
+        {
+         "texte": " où",
+         "p": 0.0765254944562912
+        },
+        {
+         "texte": " pau",
+         "p": 0.06891582161188126
+        },
+        {
+         "texte": " de",
+         "p": 0.05474342778325081
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 4,
+     "retenu": false,
+     "position": 73,
+     "morceau": 0,
+     "ligne": 73,
+     "contexte": "… des hommes tient souvent autant de\nplace dans leur vie et surtout dans leur destinée que ce qu'ils font. M.\nMyriel était fils d'un conseiller au parlement d'Aix;",
+     "texte_suivant": " nob",
+     "texte_suivant_id": 12676,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.22971290209566023,
+     "stat_mediane_categorie": 0.32089179180249777,
+     "stat_rang_dans_categorie": 0.13793103448275862,
+     "n_categorie_fr": 29,
+     "n_vivier_fr": 29,
+     "n_lisibles": 10,
+     "ref": {
+      "top": [
+       {
+        "id": 3687,
+        "texte": " il",
+        "p": 0.6052917838096619
+       },
+       {
+        "id": 1147,
+        "texte": " la",
+        "p": 0.0679095908999443
+       },
+       {
+        "id": 3474,
+        "texte": " mar",
+        "p": 0.0386933870613575
+       },
+       {
+        "id": 383,
+        "texte": " on",
+        "p": 0.0386933870613575
+       },
+       {
+        "id": 4292,
+        "texte": " son",
+        "p": 0.03414672613143921
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " il",
+       "choix_id": 3687,
+       "p_choix": 0.517763078212738,
+       "p_choix_ref": 0.517763078212738,
+       "kl": 0.25769564108319315,
+       "top": [
+        {
+         "texte": " il",
+         "p": 0.517763078212738
+        },
+        {
+         "texte": " on",
+         "p": 0.11552592366933823
+        },
+        {
+         "texte": " pair",
+         "p": 0.042498961091041565
+        },
+        {
+         "texte": " son",
+         "p": 0.03309809789061546
+        },
+        {
+         "texte": " nommé",
+         "p": 0.025776728987693787
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " il",
+       "choix_id": 3687,
+       "p_choix": 0.6057895421981812,
+       "p_choix_ref": 0.6057895421981812,
+       "kl": 0.22974135341151702,
+       "top": [
+        {
+         "texte": " il",
+         "p": 0.6057895421981812
+        },
+        {
+         "texte": " on",
+         "p": 0.0928981751203537
+        },
+        {
+         "texte": " la",
+         "p": 0.05634516477584839
+        },
+        {
+         "texte": " son",
+         "p": 0.046711646020412445
+        },
+        {
+         "texte": " noble",
+         "p": 0.026615265756845474
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": " il",
+       "choix_id": 3687,
+       "p_choix": 0.6509842276573181,
+       "p_choix_ref": 0.6509842276573181,
+       "kl": 0.2106597396786225,
+       "top": [
+        {
+         "texte": " il",
+         "p": 0.6509842276573181
+        },
+        {
+         "texte": " on",
+         "p": 0.07155341655015945
+        },
+        {
+         "texte": " son",
+         "p": 0.05472786724567413
+        },
+        {
+         "texte": " la",
+         "p": 0.029051288962364197
+        },
+        {
+         "texte": " le",
+         "p": 0.027938351035118103
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": " il",
+       "choix_id": 3687,
+       "p_choix": 0.6322277188301086,
+       "p_choix_ref": 0.6322277188301086,
+       "kl": 0.22075487420930828,
+       "top": [
+        {
+         "texte": " il",
+         "p": 0.6322277188301086
+        },
+        {
+         "texte": " on",
+         "p": 0.09023720026016235
+        },
+        {
+         "texte": " son",
+         "p": 0.050648998469114304
+        },
+        {
+         "texte": " la",
+         "p": 0.03555760532617569
+        },
+        {
+         "texte": " le",
+         "p": 0.02901761792600155
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": " il",
+       "choix_id": 3687,
+       "p_choix": 0.6688911318778992,
+       "p_choix_ref": 0.6688911318778992,
+       "kl": 0.05851335600644128,
+       "top": [
+        {
+         "texte": " il",
+         "p": 0.6688911318778992
+        },
+        {
+         "texte": " mar",
+         "p": 0.04193195328116417
+        },
+        {
+         "texte": " pair",
+         "p": 0.0354829765856266
+        },
+        {
+         "texte": " la",
+         "p": 0.028734909370541573
+        },
+        {
+         "texte": " noble",
+         "p": 0.026497652754187584
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 5,
+     "retenu": false,
+     "position": 321,
+     "morceau": 2,
+     "ligne": 67,
+     "contexte": "… dans une retraite profonde.\n\nVers l'époque du couronnement, une petite affaire de sa cure, on ne sait\nplus trop quoi, l'amena à Paris. Entre autres personnes puissantes, il\n",
+     "texte_suivant": "alla",
+     "texte_suivant_id": 20267,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.22331793405452222,
+     "stat_mediane_categorie": 0.32089179180249777,
+     "stat_rang_dans_categorie": 0.034482758620689655,
+     "n_categorie_fr": 29,
+     "n_vivier_fr": 29,
+     "n_lisibles": 10,
+     "ref": {
+      "top": [
+       {
+        "id": 20267,
+        "texte": "alla",
+        "p": 0.411396861076355
+       },
+       {
+        "id": 245580,
+        "texte": "fut",
+        "p": 0.09179294854402542
+       },
+       {
+        "id": 1569,
+        "texte": "fr",
+        "p": 0.0461559072136879
+       },
+       {
+        "id": 52967,
+        "texte": "vit",
+        "p": 0.0461559072136879
+       },
+       {
+        "id": 85,
+        "texte": "v",
+        "p": 0.03594611957669258
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "alla",
+       "choix_id": 20267,
+       "p_choix": 0.27048954367637634,
+       "p_choix_ref": 0.27048954367637634,
+       "kl": 0.2903140314415078,
+       "top": [
+        {
+         "texte": "alla",
+         "p": 0.27048954367637634
+        },
+        {
+         "texte": "fr",
+         "p": 0.06424549221992493
+        },
+        {
+         "texte": "vit",
+         "p": 0.06035299971699715
+        },
+        {
+         "texte": "s",
+         "p": 0.0566963367164135
+        },
+        {
+         "texte": "conn",
+         "p": 0.0566963367164135
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "alla",
+       "choix_id": 20267,
+       "p_choix": 0.29909586906433105,
+       "p_choix_ref": 0.29909586906433105,
+       "kl": 0.1778408180927158,
+       "top": [
+        {
+         "texte": "alla",
+         "p": 0.29909586906433105
+        },
+        {
+         "texte": "eut",
+         "p": 0.09121742844581604
+        },
+        {
+         "texte": "fut",
+         "p": 0.05532574653625488
+        },
+        {
+         "texte": "fr",
+         "p": 0.04882470518350601
+        },
+        {
+         "texte": "avait",
+         "p": 0.04586651921272278
+        }
+       ]
+      },
+      "llama-q40pur": {
+       "choix": "alla",
+       "choix_id": 20267,
+       "p_choix": 0.25205233693122864,
+       "p_choix_ref": 0.25205233693122864,
+       "kl": 0.21032617783116941,
+       "top": [
+        {
+         "texte": "alla",
+         "p": 0.25205233693122864
+        },
+        {
+         "texte": "eut",
+         "p": 0.09884839504957199
+        },
+        {
+         "texte": "fut",
+         "p": 0.08138968050479889
+        },
+        {
+         "texte": "fr",
+         "p": 0.041095081716775894
+        },
+        {
+         "texte": "s",
+         "p": 0.04056675732135773
+        }
+       ]
+      },
+      "ik-q40pur": {
+       "choix": "alla",
+       "choix_id": 20267,
+       "p_choix": 0.2577364146709442,
+       "p_choix_ref": 0.2577364146709442,
+       "kl": 0.21479070885269586,
+       "top": [
+        {
+         "texte": "alla",
+         "p": 0.2577364146709442
+        },
+        {
+         "texte": "eut",
+         "p": 0.08797839283943176
+        },
+        {
+         "texte": "fut",
+         "p": 0.060421984642744064
+        },
+        {
+         "texte": "fr",
+         "p": 0.04691312462091446
+        },
+        {
+         "texte": "avait",
+         "p": 0.04539211839437485
+        }
+       ]
+      },
+      "llama-q4km": {
+       "choix": "alla",
+       "choix_id": 20267,
+       "p_choix": 0.2937183678150177,
+       "p_choix_ref": 0.2937183678150177,
+       "kl": 0.05417431200562252,
+       "top": [
+        {
+         "texte": "alla",
+         "p": 0.2937183678150177
+        },
+        {
+         "texte": "fut",
+         "p": 0.10726279020309448
+        },
+        {
+         "texte": "v",
+         "p": 0.058803312480449677
+        },
+        {
+         "texte": "fr",
+         "p": 0.05553804710507393
+        },
+        {
+         "texte": "vit",
+         "p": 0.050679147243499756
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "controle_same_depuis_logits": {
+    "herbert-q4": true,
+    "herbert-q4g8": true,
+    "llama-q40pur": true,
+    "ik-q40pur": true,
+    "llama-q4km": true
+   }
+  },
+  "e4b": {
+   "nom": "Gemma 4 E4B",
+   "bras": [
+    "herbert-q4",
+    "herbert-q4g8",
+    "llama-q40",
+    "ik-q40"
+   ],
+   "comptes": {
+    "fr": {
+     "positions": 3048,
+     "C1": 107,
+     "C2": 275,
+     "C2_g7flip_g8keep": 296,
+     "C2_inverse_g8flip_g7keep": 173,
+     "C4": 22,
+     "all_q40_flip": 125,
+     "ref_margin_lt_0.10": 647,
+     "all_keep": 2396,
+     "ex_aequo_ref": 119,
+     "C1__dont_ex_aequo": 38,
+     "C2__dont_ex_aequo": 25,
+     "C2_g7flip_g8keep__dont_ex_aequo": 32,
+     "C2_inverse_g8flip_g7keep__dont_ex_aequo": 16,
+     "C4__dont_ex_aequo": 4,
+     "all_q40_flip__dont_ex_aequo": 38,
+     "ref_margin_lt_0.10__dont_ex_aequo": 119,
+     "all_keep__dont_ex_aequo": 26,
+     "kl_p90": {
+      "herbert-q4": 0.21336257754356835,
+      "herbert-q4g8": 0.11409886882105093,
+      "llama-q40": 0.10495748094111274,
+      "ik-q40": 0.10528685393933808
+     },
+     "top1": {
+      "herbert-q4": 0.8530183727034121,
+      "herbert-q4g8": 0.8933727034120735,
+      "llama-q40": 0.8986220472440944,
+      "ik-q40": 0.8982939632545932
+     },
+     "C1s_meme_jeton": 59,
+     "C1s_jeton_commun_est_le_2e_de_la_ref": 51,
+     "C1s__dont_ex_aequo": 23
+    },
+    "wiki": {
+     "positions": 6096,
+     "C1": 187,
+     "C2": 458,
+     "C2_g7flip_g8keep": 511,
+     "C2_inverse_g8flip_g7keep": 329,
+     "C4": 66,
+     "all_q40_flip": 217,
+     "ref_margin_lt_0.10": 1283,
+     "all_keep": 4922,
+     "ex_aequo_ref": 219,
+     "C1__dont_ex_aequo": 54,
+     "C2__dont_ex_aequo": 31,
+     "C2_g7flip_g8keep__dont_ex_aequo": 41,
+     "C2_inverse_g8flip_g7keep__dont_ex_aequo": 59,
+     "C4__dont_ex_aequo": 2,
+     "all_q40_flip__dont_ex_aequo": 54,
+     "ref_margin_lt_0.10__dont_ex_aequo": 219,
+     "all_keep__dont_ex_aequo": 48,
+     "kl_p90": {
+      "herbert-q4": 0.1712026044953363,
+      "herbert-q4g8": 0.08801338399917961,
+      "llama-q40": 0.08246808022608865,
+      "ik-q40": 0.08463594011753993
+     },
+     "top1": {
+      "herbert-q4": 0.8718832020997376,
+      "herbert-q4g8": 0.901738845144357,
+      "llama-q40": 0.9025590551181102,
+      "ik-q40": 0.9033792650918635
+     }
+    }
+   },
+   "reproduction": {
+    "herbert-q4": {
+     "ancien": {
+      "ppl_test": 30.385297993785453,
+      "dnll": 0.0404407003031095,
+      "kl_mean": 0.09676663588887384,
+      "kl_median": 0.053822071098922786,
+      "kl_p99": 0.7643356943987737,
+      "kl_max": 5.410285737456705,
+      "top1_n": 2600
+     },
+     "refait": {
+      "ppl_test": 30.385297993785453,
+      "dnll": 0.0404407003031095,
+      "kl_mean": 0.09676663588887384,
+      "kl_median": 0.053822071098922786,
+      "kl_p99": 0.7643356943987737,
+      "kl_max": 5.410285737456705,
+      "top1_n": 2600
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    },
+    "herbert-q4g8": {
+     "ancien": {
+      "ppl_test": 29.35770063196709,
+      "dnll": 0.00603671182715163,
+      "kl_mean": 0.052854976055468385,
+      "kl_median": 0.026418500193228334,
+      "kl_p99": 0.3982433722940183,
+      "kl_max": 3.3806760806913947,
+      "top1_n": 2723
+     },
+     "refait": {
+      "ppl_test": 29.35770063196709,
+      "dnll": 0.00603671182715163,
+      "kl_mean": 0.052854976055468385,
+      "kl_median": 0.026418500193228334,
+      "kl_p99": 0.3982433722940183,
+      "kl_max": 3.3806760806913947,
+      "top1_n": 2723
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    },
+    "llama-q40": {
+     "ancien": {
+      "ppl_test": 29.292700000000004,
+      "dnll": 0.0038201657207501682,
+      "kl_mean": 0.050405290561169616,
+      "kl_median": 0.02464496164769574,
+      "kl_p99": 0.40506492615843837,
+      "kl_max": 3.1575620356879734,
+      "top1_n": 2739
+     },
+     "refait": {
+      "ppl_test": 29.292700000000004,
+      "dnll": 0.0038201657207501682,
+      "kl_mean": 0.050405290561169616,
+      "kl_median": 0.02464496164769574,
+      "kl_p99": 0.40506492615843837,
+      "kl_max": 3.1575620356879734,
+      "top1_n": 2739
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    },
+    "ik-q40": {
+     "ancien": {
+      "ppl_test": 29.345898545144024,
+      "dnll": 0.005634621081524164,
+      "kl_mean": 0.049004305255173713,
+      "kl_median": 0.02433732816739565,
+      "kl_p99": 0.41558684510915483,
+      "kl_max": 3.3996136912600328,
+      "top1_n": 2738
+     },
+     "refait": {
+      "ppl_test": 29.345898545144024,
+      "dnll": 0.005634621081524164,
+      "kl_mean": 0.049004305255173713,
+      "kl_median": 0.02433732816739565,
+      "kl_p99": 0.41558684510915483,
+      "kl_max": 3.3996136912600328,
+      "top1_n": 2738
+     },
+     "same_identique": true,
+     "kl_ecart_max": 0.0,
+     "nll_test_ecart_max": 0.0
+    }
+   },
+   "exemples": [
+    {
+     "categorie": "C1",
+     "rang": 0,
+     "retenu": true,
+     "position": 1635,
+     "morceau": 12,
+     "ligne": 111,
+     "contexte": "… M. l'évêque, on l'a pu\nremarquer, ne s'était réservé que mille livres, ce qui, joint à la\npension de mademoiselle Baptistine, faisait quinze cents francs par an.\nAvec",
+     "texte_suivant": " ces",
+     "texte_suivant_id": 10053,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.021544228046169456,
+     "stat_mediane_categorie": 0.021544228046169456,
+     "stat_rang_dans_categorie": 0.5084745762711864,
+     "n_categorie_fr": 107,
+     "n_vivier_fr": 59,
+     "n_lisibles": 16,
+     "ref": {
+      "top": [
+       {
+        "id": 8416,
+        "texte": " cette",
+        "p": 0.1833476573228836
+       },
+       {
+        "id": 2534,
+        "texte": " ce",
+        "p": 0.1618034541606903
+       },
+       {
+        "id": 10053,
+        "texte": " ces",
+        "p": 0.08660631626844406
+       },
+       {
+        "id": 3037,
+        "texte": " une",
+        "p": 0.06744880974292755
+       },
+       {
+        "id": 1640,
+        "texte": " les",
+        "p": 0.06744880974292755
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " ce",
+       "choix_id": 2534,
+       "p_choix": 0.1449887752532959,
+       "p_choix_ref": 0.12795190513134003,
+       "kl": 0.04848724882888711,
+       "top": [
+        {
+         "texte": " ce",
+         "p": 0.1449887752532959
+        },
+        {
+         "texte": " cette",
+         "p": 0.12795190513134003
+        },
+        {
+         "texte": " les",
+         "p": 0.09964866936206818
+        },
+        {
+         "texte": " le",
+         "p": 0.08793947100639343
+        },
+        {
+         "texte": " la",
+         "p": 0.08793947100639343
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " ce",
+       "choix_id": 2534,
+       "p_choix": 0.173559308052063,
+       "p_choix_ref": 0.173559308052063,
+       "kl": 0.03189602938069869,
+       "top": [
+        {
+         "texte": " cette",
+         "p": 0.173559308052063
+        },
+        {
+         "texte": " ce",
+         "p": 0.173559308052063
+        },
+        {
+         "texte": " ces",
+         "p": 0.09289871156215668
+        },
+        {
+         "texte": " une",
+         "p": 0.09289871156215668
+        },
+        {
+         "texte": " le",
+         "p": 0.07234931737184525
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " ce",
+       "choix_id": 2534,
+       "p_choix": 0.17836031317710876,
+       "p_choix_ref": 0.1691155582666397,
+       "kl": 0.029306860932280257,
+       "top": [
+        {
+         "texte": " ce",
+         "p": 0.17836031317710876
+        },
+        {
+         "texte": " cette",
+         "p": 0.1691155582666397
+        },
+        {
+         "texte": " ces",
+         "p": 0.09898120909929276
+        },
+        {
+         "texte": " une",
+         "p": 0.094333216547966
+        },
+        {
+         "texte": " le",
+         "p": 0.06247193366289139
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " ce",
+       "choix_id": 2534,
+       "p_choix": 0.17153270542621613,
+       "p_choix_ref": 0.1678047627210617,
+       "kl": 0.026203978689289566,
+       "top": [
+        {
+         "texte": " ce",
+         "p": 0.17153270542621613
+        },
+        {
+         "texte": " cette",
+         "p": 0.1678047627210617
+        },
+        {
+         "texte": " ces",
+         "p": 0.09809421002864838
+        },
+        {
+         "texte": " une",
+         "p": 0.09213955700397491
+        },
+        {
+         "texte": " le",
+         "p": 0.06668195873498917
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 1,
+     "retenu": false,
+     "position": 2387,
+     "morceau": 18,
+     "ligne": 101,
+     "contexte": "… Quand le trajet\nétait trop pénible pour elles, il allait seul.\n\nUn jour, il arriva à Senez, qui est une ancienne ville épiscopale, monté\nsur un âne. Sa",
+     "texte_suivant": " bourse",
+     "texte_suivant_id": 212181,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.02059398711204563,
+     "stat_mediane_categorie": 0.021544228046169456,
+     "stat_rang_dans_categorie": 0.4745762711864407,
+     "n_categorie_fr": 107,
+     "n_vivier_fr": 59,
+     "n_lisibles": 16,
+     "ref": {
+      "top": [
+       {
+        "id": 50230,
+        "texte": " visite",
+        "p": 0.17526085674762726
+       },
+       {
+        "id": 28994,
+        "texte": " fatigue",
+        "p": 0.15466687083244324
+       },
+       {
+        "id": 209635,
+        "texte": " montée",
+        "p": 0.044311948120594025
+       },
+       {
+        "id": 55244,
+        "texte": " présence",
+        "p": 0.0345100499689579
+       },
+       {
+        "id": 5536,
+        "texte": " charge",
+        "p": 0.0345100499689579
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " fatigue",
+       "choix_id": 28994,
+       "p_choix": 0.2169981747865677,
+       "p_choix_ref": 0.05486458167433739,
+       "kl": 0.2843173802865899,
+       "top": [
+        {
+         "texte": " fatigue",
+         "p": 0.2169981747865677
+        },
+        {
+         "texte": " mont",
+         "p": 0.06216983124613762
+        },
+        {
+         "texte": " santé",
+         "p": 0.05486458167433739
+        },
+        {
+         "texte": " visite",
+         "p": 0.05486458167433739
+        },
+        {
+         "texte": " démarche",
+         "p": 0.03770761936903
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " fatigue",
+       "choix_id": 28994,
+       "p_choix": 0.31985706090927124,
+       "p_choix_ref": 0.09163882583379745,
+       "kl": 0.16001524646592968,
+       "top": [
+        {
+         "texte": " fatigue",
+         "p": 0.31985706090927124
+        },
+        {
+         "texte": " visite",
+         "p": 0.09163882583379745
+        },
+        {
+         "texte": " rencontre",
+         "p": 0.03371152654290199
+        },
+        {
+         "texte": " mont",
+         "p": 0.03371152654290199
+        },
+        {
+         "texte": " montée",
+         "p": 0.029750259593129158
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " fatigue",
+       "choix_id": 28994,
+       "p_choix": 0.32569193840026855,
+       "p_choix_ref": 0.0951509103178978,
+       "kl": 0.16383568730676532,
+       "top": [
+        {
+         "texte": " fatigue",
+         "p": 0.32569193840026855
+        },
+        {
+         "texte": " visite",
+         "p": 0.0951509103178978
+        },
+        {
+         "texte": " rencontre",
+         "p": 0.033205434679985046
+        },
+        {
+         "texte": " mont",
+         "p": 0.030411535874009132
+        },
+        {
+         "texte": " montée",
+         "p": 0.03031516820192337
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " fatigue",
+       "choix_id": 28994,
+       "p_choix": 0.2942376136779785,
+       "p_choix_ref": 0.11259541660547256,
+       "kl": 0.1369778393372223,
+       "top": [
+        {
+         "texte": " fatigue",
+         "p": 0.2942376136779785
+        },
+        {
+         "texte": " visite",
+         "p": 0.11259541660547256
+        },
+        {
+         "texte": " rencontre",
+         "p": 0.03991197422146797
+        },
+        {
+         "texte": " montée",
+         "p": 0.03495655953884125
+        },
+        {
+         "texte": " mont",
+         "p": 0.03295503929257393
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 2,
+     "retenu": false,
+     "position": 2731,
+     "morceau": 21,
+     "ligne": 64,
+     "contexte": "… et on lui obéit, parce\nque c'est un homme juste parmi des hommes simples.\n\nAux villages où il ne trouvait pas de maître d'école, il citait encore\nce",
+     "texte_suivant": "ux",
+     "texte_suivant_id": 1939,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.02333509277821938,
+     "stat_mediane_categorie": 0.021544228046169456,
+     "stat_rang_dans_categorie": 0.5423728813559322,
+     "n_categorie_fr": 107,
+     "n_vivier_fr": 59,
+     "n_lisibles": 16,
+     "ref": {
+      "top": [
+       {
+        "id": 3151,
+        "texte": " cas",
+        "p": 0.10549214482307434
+       },
+       {
+        "id": 127482,
+        "texte": " peuple",
+        "p": 0.08215705305337906
+       },
+       {
+        "id": 1939,
+        "texte": "ux",
+        "p": 0.0639837309718132
+       },
+       {
+        "id": 29087,
+        "texte": " petit",
+        "p": 0.05646533891558647
+       },
+       {
+        "id": 7326,
+        "texte": " bon",
+        "p": 0.04397508129477501
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " peuple",
+       "choix_id": 127482,
+       "p_choix": 0.15195998549461365,
+       "p_choix_ref": 0.07177998870611191,
+       "kl": 0.21689267826449632,
+       "top": [
+        {
+         "texte": " peuple",
+         "p": 0.15195998549461365
+        },
+        {
+         "texte": " petit",
+         "p": 0.0921676754951477
+        },
+        {
+         "texte": " bon",
+         "p": 0.07177998870611191
+        },
+        {
+         "texte": " cas",
+         "p": 0.07177998870611191
+        },
+        {
+         "texte": "ux",
+         "p": 0.06334549933671951
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " peuple",
+       "choix_id": 127482,
+       "p_choix": 0.11018388718366623,
+       "p_choix_ref": 0.05204659327864647,
+       "kl": 0.13807472822243216,
+       "top": [
+        {
+         "texte": " peuple",
+         "p": 0.11018388718366623
+        },
+        {
+         "texte": " village",
+         "p": 0.08581098169088364
+        },
+        {
+         "texte": " petit",
+         "p": 0.08581098169088364
+        },
+        {
+         "texte": " cas",
+         "p": 0.05204659327864647
+        },
+        {
+         "texte": " canton",
+         "p": 0.03577085956931114
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " peuple",
+       "choix_id": 127482,
+       "p_choix": 0.10934081673622131,
+       "p_choix_ref": 0.0628960132598877,
+       "kl": 0.08555005350209766,
+       "top": [
+        {
+         "texte": " peuple",
+         "p": 0.10934081673622131
+        },
+        {
+         "texte": " village",
+         "p": 0.07676158845424652
+        },
+        {
+         "texte": " petit",
+         "p": 0.06804008036851883
+        },
+        {
+         "texte": " cas",
+         "p": 0.0628960132598877
+        },
+        {
+         "texte": " bon",
+         "p": 0.044512711465358734
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " peuple",
+       "choix_id": 127482,
+       "p_choix": 0.101778544485569,
+       "p_choix_ref": 0.06560847163200378,
+       "kl": 0.08292599256663492,
+       "top": [
+        {
+         "texte": " peuple",
+         "p": 0.101778544485569
+        },
+        {
+         "texte": " village",
+         "p": 0.07916820794343948
+        },
+        {
+         "texte": " cas",
+         "p": 0.06560847163200378
+        },
+        {
+         "texte": " petit",
+         "p": 0.062283892184495926
+        },
+        {
+         "texte": " bon",
+         "p": 0.045606646686792374
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 3,
+     "retenu": false,
+     "position": 1182,
+     "morceau": 9,
+     "ligne": 39,
+     "contexte": "… il se tourna\nbrusquement vers le directeur de l'hôpital:\n\n--Monsieur, dit-il, combien pensez-vous qu'il tiendrait de lits rien que\ndans cette salle?\n\n--La salle à manger de monseigneur!",
+     "texte_suivant": " s",
+     "texte_suivant_id": 503,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.015562037062512177,
+     "stat_mediane_categorie": 0.021544228046169456,
+     "stat_rang_dans_categorie": 0.423728813559322,
+     "n_categorie_fr": 107,
+     "n_vivier_fr": 59,
+     "n_lisibles": 16,
+     "ref": {
+      "top": [
+       {
+        "id": 26490,
+        "texte": " Elle",
+        "p": 0.13243748247623444
+       },
+       {
+        "id": 19097,
+        "texte": " Mais",
+        "p": 0.11687543988227844
+       },
+       {
+        "id": 565,
+        "texte": " C",
+        "p": 0.06255832314491272
+       },
+       {
+        "id": 6042,
+        "texte": " Il",
+        "p": 0.03794324770569801
+       },
+       {
+        "id": 51501,
+        "texte": " répond",
+        "p": 0.03348473832011223
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " Mais",
+       "choix_id": 19097,
+       "p_choix": 0.13413797318935394,
+       "p_choix_ref": 0.0813581719994545,
+       "kl": 0.15652698315970937,
+       "top": [
+        {
+         "texte": " Mais",
+         "p": 0.13413797318935394
+        },
+        {
+         "texte": " Elle",
+         "p": 0.0813581719994545
+        },
+        {
+         "texte": " C",
+         "p": 0.06336157023906708
+        },
+        {
+         "texte": " Non",
+         "p": 0.04934585094451904
+        },
+        {
+         "texte": " Et",
+         "p": 0.04934585094451904
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " Mais",
+       "choix_id": 19097,
+       "p_choix": 0.1444612741470337,
+       "p_choix_ref": 0.11250611394643784,
+       "kl": 0.11049617476214557,
+       "top": [
+        {
+         "texte": " Mais",
+         "p": 0.1444612741470337
+        },
+        {
+         "texte": " Elle",
+         "p": 0.11250611394643784
+        },
+        {
+         "texte": " Il",
+         "p": 0.06021961197257042
+        },
+        {
+         "texte": " C",
+         "p": 0.04689890146255493
+        },
+        {
+         "texte": " On",
+         "p": 0.04689890146255493
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " Mais",
+       "choix_id": 19097,
+       "p_choix": 0.13127432763576508,
+       "p_choix_ref": 0.11684312671422958,
+       "kl": 0.08440661691717699,
+       "top": [
+        {
+         "texte": " Mais",
+         "p": 0.13127432763576508
+        },
+        {
+         "texte": " Elle",
+         "p": 0.11684312671422958
+        },
+        {
+         "texte": " Il",
+         "p": 0.06315476447343826
+        },
+        {
+         "texte": " On",
+         "p": 0.04690954461693764
+        },
+        {
+         "texte": " C",
+         "p": 0.046317730098962784
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " Mais",
+       "choix_id": 19097,
+       "p_choix": 0.1293984353542328,
+       "p_choix_ref": 0.11370665580034256,
+       "kl": 0.09656291374455594,
+       "top": [
+        {
+         "texte": " Mais",
+         "p": 0.1293984353542328
+        },
+        {
+         "texte": " Elle",
+         "p": 0.11370665580034256
+        },
+        {
+         "texte": " Il",
+         "p": 0.06145947799086571
+        },
+        {
+         "texte": " On",
+         "p": 0.05037634074687958
+        },
+        {
+         "texte": " C",
+         "p": 0.045633621513843536
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 4,
+     "retenu": false,
+     "position": 2441,
+     "morceau": 19,
+     "ligne": 28,
+     "contexte": "… nécessité, je vous assure, non par vanité.\n\nDans ses tournées, il était indulgent et doux, et prêchait moins qu'il\nne causait. Il ne mettait aucune vertu sur un",
+     "texte_suivant": " plateau",
+     "texte_suivant_id": 47454,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.013944053730780823,
+     "stat_mediane_categorie": 0.021544228046169456,
+     "stat_rang_dans_categorie": 0.4067796610169492,
+     "n_categorie_fr": 107,
+     "n_vivier_fr": 59,
+     "n_lisibles": 16,
+     "ref": {
+      "top": [
+       {
+        "id": 116878,
+        "texte": " cheval",
+        "p": 0.11866796761751175
+       },
+       {
+        "id": 3606,
+        "texte": " simple",
+        "p": 0.10472391545772552
+       },
+       {
+        "id": 13050,
+        "texte": " objet",
+        "p": 0.04365484043955803
+       },
+       {
+        "id": 9091,
+        "texte": " habit",
+        "p": 0.03399829566478729
+       },
+       {
+        "id": 139317,
+        "texte": " geste",
+        "p": 0.03000333160161972
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " simple",
+       "choix_id": 3606,
+       "p_choix": 0.21306420862674713,
+       "p_choix_ref": 0.16593395173549652,
+       "kl": 0.1573779485442881,
+       "top": [
+        {
+         "texte": " simple",
+         "p": 0.21306420862674713
+        },
+        {
+         "texte": " cheval",
+         "p": 0.16593395173549652
+        },
+        {
+         "texte": " objet",
+         "p": 0.05386994034051895
+        },
+        {
+         "texte": " animal",
+         "p": 0.03702402114868164
+        },
+        {
+         "texte": " geste",
+         "p": 0.02544606663286686
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " simple",
+       "choix_id": 3606,
+       "p_choix": 0.10082944482564926,
+       "p_choix_ref": 0.06115568056702614,
+       "kl": 0.10124479553676635,
+       "top": [
+        {
+         "texte": " simple",
+         "p": 0.10082944482564926
+        },
+        {
+         "texte": " cheval",
+         "p": 0.06115568056702614
+        },
+        {
+         "texte": " grand",
+         "p": 0.03709251061081886
+        },
+        {
+         "texte": " objet",
+         "p": 0.03709251061081886
+        },
+        {
+         "texte": " habit",
+         "p": 0.03709251061081886
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " simple",
+       "choix_id": 3606,
+       "p_choix": 0.1095690056681633,
+       "p_choix_ref": 0.04962773621082306,
+       "kl": 0.10745666659676081,
+       "top": [
+        {
+         "texte": " simple",
+         "p": 0.1095690056681633
+        },
+        {
+         "texte": " cheval",
+         "p": 0.04962773621082306
+        },
+        {
+         "texte": " objet",
+         "p": 0.046495866030454636
+        },
+        {
+         "texte": " v",
+         "p": 0.04515344649553299
+        },
+        {
+         "texte": " titre",
+         "p": 0.03785618022084236
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " simple",
+       "choix_id": 3606,
+       "p_choix": 0.10917077958583832,
+       "p_choix_ref": 0.051776181906461716,
+       "kl": 0.10014250646165489,
+       "top": [
+        {
+         "texte": " simple",
+         "p": 0.10917077958583832
+        },
+        {
+         "texte": " cheval",
+         "p": 0.051776181906461716
+        },
+        {
+         "texte": " objet",
+         "p": 0.04395788908004761
+        },
+        {
+         "texte": " v",
+         "p": 0.03916853666305542
+        },
+        {
+         "texte": " titre",
+         "p": 0.03555896133184433
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C1",
+     "rang": 5,
+     "retenu": false,
+     "position": 1338,
+     "morceau": 10,
+     "ligne": 68,
+     "contexte": "… cinq cents francs\nqui, au presbytère, suffisait à sa dépense personnelle. M. Myriel\nrecevait de l'état comme évêque un traitement de quinze mille francs. Le\njour même où",
+     "texte_suivant": " il",
+     "texte_suivant_id": 1998,
+     "stat": "écart p1 − p2 de la référence",
+     "stat_valeur": 0.033820661901682425,
+     "stat_mediane_categorie": 0.021544228046169456,
+     "stat_rang_dans_categorie": 0.6440677966101694,
+     "n_categorie_fr": 107,
+     "n_vivier_fr": 59,
+     "n_lisibles": 16,
+     "ref": {
+      "top": [
+       {
+        "id": 1998,
+        "texte": " il",
+        "p": 0.28782370686531067
+       },
+       {
+        "id": 1640,
+        "texte": " les",
+        "p": 0.25400304794311523
+       },
+       {
+        "id": 759,
+        "texte": " la",
+        "p": 0.25400304794311523
+       },
+       {
+        "id": 537,
+        "texte": " l",
+        "p": 0.08246129751205444
+       },
+       {
+        "id": 674,
+        "texte": " le",
+        "p": 0.030335353687405586
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " la",
+       "choix_id": 759,
+       "p_choix": 0.3377300500869751,
+       "p_choix_ref": 0.3377300500869751,
+       "kl": 0.1997390121922753,
+       "top": [
+        {
+         "texte": " il",
+         "p": 0.3377300500869751
+        },
+        {
+         "texte": " la",
+         "p": 0.3377300500869751
+        },
+        {
+         "texte": " les",
+         "p": 0.10964301228523254
+        },
+        {
+         "texte": " sa",
+         "p": 0.05868711322546005
+        },
+        {
+         "texte": " M",
+         "p": 0.051791101694107056
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " la",
+       "choix_id": 759,
+       "p_choix": 0.3978423476219177,
+       "p_choix_ref": 0.2734311819076538,
+       "kl": 0.06893566961418529,
+       "top": [
+        {
+         "texte": " la",
+         "p": 0.3978423476219177
+        },
+        {
+         "texte": " il",
+         "p": 0.2734311819076538
+        },
+        {
+         "texte": " les",
+         "p": 0.18792524933815002
+        },
+        {
+         "texte": " l",
+         "p": 0.04193083196878433
+        },
+        {
+         "texte": " le",
+         "p": 0.02543214149773121
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " la",
+       "choix_id": 759,
+       "p_choix": 0.4234589636325836,
+       "p_choix_ref": 0.26203247904777527,
+       "kl": 0.08362241002817415,
+       "top": [
+        {
+         "texte": " la",
+         "p": 0.4234589636325836
+        },
+        {
+         "texte": " il",
+         "p": 0.26203247904777527
+        },
+        {
+         "texte": " les",
+         "p": 0.17553316056728363
+        },
+        {
+         "texte": " l",
+         "p": 0.0416715145111084
+        },
+        {
+         "texte": " le",
+         "p": 0.027248714119195938
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " la",
+       "choix_id": 759,
+       "p_choix": 0.43124547600746155,
+       "p_choix_ref": 0.26035112142562866,
+       "kl": 0.09116949249361014,
+       "top": [
+        {
+         "texte": " la",
+         "p": 0.43124547600746155
+        },
+        {
+         "texte": " il",
+         "p": 0.26035112142562866
+        },
+        {
+         "texte": " les",
+         "p": 0.16943341493606567
+        },
+        {
+         "texte": " l",
+         "p": 0.04090173542499542
+        },
+        {
+         "texte": " le",
+         "p": 0.026892710477113724
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 0,
+     "retenu": true,
+     "position": 1876,
+     "morceau": 14,
+     "ligne": 98,
+     "contexte": "… de\nla Durance à Château-Arnoux peut à peine porter des charrettes à boeufs.\nCes prêtres sont tous ainsi. Avides et avares. Celui-ci a fait le bon\napôtre en",
+     "texte_suivant": " arriv",
+     "texte_suivant_id": 7939,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.17351200279538345,
+     "stat_mediane_categorie": 0.1751873981987706,
+     "stat_rang_dans_categorie": 0.49818181818181817,
+     "n_categorie_fr": 275,
+     "n_vivier_fr": 275,
+     "n_lisibles": 106,
+     "ref": {
+      "top": [
+       {
+        "id": 12848,
+        "texte": " lui",
+        "p": 0.10770890861749649
+       },
+       {
+        "id": 636,
+        "texte": " se",
+        "p": 0.030858531594276428
+       },
+       {
+        "id": 77087,
+        "texte": " faisant",
+        "p": 0.030858531594276428
+       },
+       {
+        "id": 759,
+        "texte": " la",
+        "p": 0.021208615973591805
+       },
+       {
+        "id": 7653,
+        "texte": " nous",
+        "p": 0.021208615973591805
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " se",
+       "choix_id": 636,
+       "p_choix": 0.05406592786312103,
+       "p_choix_ref": 0.05406592786312103,
+       "kl": 0.17351200279538345,
+       "top": [
+        {
+         "texte": " se",
+         "p": 0.05406592786312103
+        },
+        {
+         "texte": " lui",
+         "p": 0.05406592786312103
+        },
+        {
+         "texte": " faisant",
+         "p": 0.05406592786312103
+        },
+        {
+         "texte": " me",
+         "p": 0.037158723920583725
+        },
+        {
+         "texte": " tant",
+         "p": 0.025538643822073936
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " lui",
+       "choix_id": 12848,
+       "p_choix": 0.09001321345567703,
+       "p_choix_ref": 0.09001321345567703,
+       "kl": 0.06350690416610028,
+       "top": [
+        {
+         "texte": " lui",
+         "p": 0.09001321345567703
+        },
+        {
+         "texte": " faisant",
+         "p": 0.0331135094165802
+        },
+        {
+         "texte": " se",
+         "p": 0.0331135094165802
+        },
+        {
+         "texte": " la",
+         "p": 0.022758428007364273
+        },
+        {
+         "texte": " ce",
+         "p": 0.020084204152226448
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " lui",
+       "choix_id": 12848,
+       "p_choix": 0.0914725810289383,
+       "p_choix_ref": 0.0914725810289383,
+       "kl": 0.05914410219328324,
+       "top": [
+        {
+         "texte": " lui",
+         "p": 0.0914725810289383
+        },
+        {
+         "texte": " faisant",
+         "p": 0.035308390855789185
+        },
+        {
+         "texte": " se",
+         "p": 0.02882482297718525
+        },
+        {
+         "texte": " la",
+         "p": 0.025043368339538574
+        },
+        {
+         "texte": " le",
+         "p": 0.021784592419862747
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " lui",
+       "choix_id": 12848,
+       "p_choix": 0.09404398500919342,
+       "p_choix_ref": 0.09404398500919342,
+       "kl": 0.07012657109430218,
+       "top": [
+        {
+         "texte": " lui",
+         "p": 0.09404398500919342
+        },
+        {
+         "texte": " faisant",
+         "p": 0.03619914501905441
+        },
+        {
+         "texte": " se",
+         "p": 0.03533469885587692
+        },
+        {
+         "texte": " la",
+         "p": 0.023071318864822388
+        },
+        {
+         "texte": " tant",
+         "p": 0.021075984463095665
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 1,
+     "retenu": false,
+     "position": 1077,
+     "morceau": 8,
+     "ligne": 61,
+     "contexte": "… que j'avais compté, dit l'évêque.\n\n--Les lits, reprit le directeur, sont bien serrés les uns contre les\nautres.\n\n--C'est ce que j'avais remarqué.\n\n--Les salles ne sont que",
+     "texte_suivant": " des",
+     "texte_suivant_id": 853,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.17700605518264956,
+     "stat_mediane_categorie": 0.1751873981987706,
+     "stat_rang_dans_categorie": 0.5054545454545455,
+     "n_categorie_fr": 275,
+     "n_vivier_fr": 275,
+     "n_lisibles": 106,
+     "ref": {
+      "top": [
+       {
+        "id": 569,
+        "texte": " de",
+        "p": 0.21339650452136993
+       },
+       {
+        "id": 54176,
+        "texte": " petites",
+        "p": 0.12943053245544434
+       },
+       {
+        "id": 30997,
+        "texte": " modest",
+        "p": 0.10080021619796753
+       },
+       {
+        "id": 853,
+        "texte": " des",
+        "p": 0.08895570039749146
+       },
+       {
+        "id": 513,
+        "texte": " d",
+        "p": 0.053953953087329865
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " des",
+       "choix_id": 853,
+       "p_choix": 0.1744527518749237,
+       "p_choix_ref": 0.10581013560295105,
+       "kl": 0.17700605518264956,
+       "top": [
+        {
+         "texte": " des",
+         "p": 0.1744527518749237
+        },
+        {
+         "texte": " de",
+         "p": 0.10581013560295105
+        },
+        {
+         "texte": " petites",
+         "p": 0.09337693452835083
+        },
+        {
+         "texte": " modest",
+         "p": 0.08240470290184021
+        },
+        {
+         "texte": " d",
+         "p": 0.0566355437040329
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " de",
+       "choix_id": 569,
+       "p_choix": 0.23471733927726746,
+       "p_choix_ref": 0.23471733927726746,
+       "kl": 0.061442656636860216,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.23471733927726746
+        },
+        {
+         "texte": " des",
+         "p": 0.16131781041622162
+        },
+        {
+         "texte": " modest",
+         "p": 0.09784343838691711
+        },
+        {
+         "texte": " petites",
+         "p": 0.09784343838691711
+        },
+        {
+         "texte": "...",
+         "p": 0.04078667238354683
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " de",
+       "choix_id": 569,
+       "p_choix": 0.23802150785923004,
+       "p_choix_ref": 0.23802150785923004,
+       "kl": 0.048296734983202916,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.23802150785923004
+        },
+        {
+         "texte": " des",
+         "p": 0.13886940479278564
+        },
+        {
+         "texte": " petites",
+         "p": 0.11762675642967224
+        },
+        {
+         "texte": " modest",
+         "p": 0.09348268806934357
+        },
+        {
+         "texte": " trois",
+         "p": 0.04146193340420723
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " de",
+       "choix_id": 569,
+       "p_choix": 0.23747867345809937,
+       "p_choix_ref": 0.23747867345809937,
+       "kl": 0.041929421467675136,
+       "top": [
+        {
+         "texte": " de",
+         "p": 0.23747867345809937
+        },
+        {
+         "texte": " des",
+         "p": 0.126353919506073
+        },
+        {
+         "texte": " petites",
+         "p": 0.12433426082134247
+        },
+        {
+         "texte": " modest",
+         "p": 0.09067612141370773
+        },
+        {
+         "texte": " trois",
+         "p": 0.04042390361428261
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 2,
+     "retenu": false,
+     "position": 2680,
+     "morceau": 21,
+     "ligne": 13,
+     "contexte": "… petite république. On n'y connaît\nni le juge, ni l'huissier. Le maire fait tout. Il répartit l'impôt, taxe\nchacun en conscience, juge les querelles gratis, partage les patrimoines\n",
+     "texte_suivant": "sans",
+     "texte_suivant_id": 57006,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.171859725647595,
+     "stat_mediane_categorie": 0.1751873981987706,
+     "stat_rang_dans_categorie": 0.4909090909090909,
+     "n_categorie_fr": 275,
+     "n_vivier_fr": 275,
+     "n_lisibles": 106,
+     "ref": {
+      "top": [
+       {
+        "id": 57006,
+        "texte": "sans",
+        "p": 0.37036824226379395
+       },
+       {
+        "id": 536,
+        "texte": "et",
+        "p": 0.13624878227710724
+       },
+       {
+        "id": 1390,
+        "texte": "...",
+        "p": 0.10611025243997574
+       },
+       {
+        "id": 501,
+        "texte": "en",
+        "p": 0.05012235790491104
+       },
+       {
+        "id": 62587,
+        "texte": "avec",
+        "p": 0.03444836661219597
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "et",
+       "choix_id": 536,
+       "p_choix": 0.2514828145503998,
+       "p_choix_ref": 0.19585426151752472,
+       "kl": 0.171859725647595,
+       "top": [
+        {
+         "texte": "et",
+         "p": 0.2514828145503998
+        },
+        {
+         "texte": "sans",
+         "p": 0.19585426151752472
+        },
+        {
+         "texte": "...",
+         "p": 0.1048322319984436
+        },
+        {
+         "texte": "en",
+         "p": 0.06358347833156586
+        },
+        {
+         "texte": "    ",
+         "p": 0.023390699177980423
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "sans",
+       "choix_id": 57006,
+       "p_choix": 0.2383594959974289,
+       "p_choix_ref": 0.2383594959974289,
+       "kl": 0.08165773620661634,
+       "top": [
+        {
+         "texte": "sans",
+         "p": 0.2383594959974289
+        },
+        {
+         "texte": "et",
+         "p": 0.1638209968805313
+        },
+        {
+         "texte": "...",
+         "p": 0.1445712447166443
+        },
+        {
+         "texte": "comme",
+         "p": 0.06026545912027359
+        },
+        {
+         "texte": "en",
+         "p": 0.04141956567764282
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": "sans",
+       "choix_id": 57006,
+       "p_choix": 0.23957601189613342,
+       "p_choix_ref": 0.23957601189613342,
+       "kl": 0.08032328443789324,
+       "top": [
+        {
+         "texte": "sans",
+         "p": 0.23957601189613342
+        },
+        {
+         "texte": "...",
+         "p": 0.15939626097679138
+        },
+        {
+         "texte": "et",
+         "p": 0.14414308965206146
+        },
+        {
+         "texte": "comme",
+         "p": 0.059765107929706573
+        },
+        {
+         "texte": "en",
+         "p": 0.03928086906671524
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": "sans",
+       "choix_id": 57006,
+       "p_choix": 0.23777194321155548,
+       "p_choix_ref": 0.23777194321155548,
+       "kl": 0.08110177915470529,
+       "top": [
+        {
+         "texte": "sans",
+         "p": 0.23777194321155548
+        },
+        {
+         "texte": "...",
+         "p": 0.15980708599090576
+        },
+        {
+         "texte": "et",
+         "p": 0.1466827541589737
+        },
+        {
+         "texte": "comme",
+         "p": 0.0605957992374897
+        },
+        {
+         "texte": "en",
+         "p": 0.044484447687864304
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 3,
+     "retenu": false,
+     "position": 2564,
+     "morceau": 20,
+     "ligne": 24,
+     "contexte": "… à la ville, et\nqu'il soit malade et empêché, le curé le recommande au prône; et le\ndimanche, après la messe, tous les gens du village, hommes, femmes,\n",
+     "texte_suivant": "enfants",
+     "texte_suivant_id": 165989,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.17898396045399623,
+     "stat_mediane_categorie": 0.1751873981987706,
+     "stat_rang_dans_categorie": 0.509090909090909,
+     "n_categorie_fr": 275,
+     "n_vivier_fr": 275,
+     "n_lisibles": 106,
+     "ref": {
+      "top": [
+       {
+        "id": 1956,
+        "texte": "je",
+        "p": 0.43268731236457825
+       },
+       {
+        "id": 165989,
+        "texte": "enfants",
+        "p": 0.18036848306655884
+       },
+       {
+        "id": 536,
+        "texte": "et",
+        "p": 0.058556072413921356
+       },
+       {
+        "id": 1568,
+        "texte": "gr",
+        "p": 0.031342510133981705
+       },
+       {
+        "id": 236751,
+        "texte": "s",
+        "p": 0.019010046496987343
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "enfants",
+       "choix_id": 165989,
+       "p_choix": 0.37993308901786804,
+       "p_choix_ref": 0.29589107632637024,
+       "kl": 0.17898396045399623,
+       "top": [
+        {
+         "texte": "enfants",
+         "p": 0.37993308901786804
+        },
+        {
+         "texte": "je",
+         "p": 0.29589107632637024
+        },
+        {
+         "texte": "et",
+         "p": 0.0514167845249176
+        },
+        {
+         "texte": "gar",
+         "p": 0.04004327580332756
+        },
+        {
+         "texte": "gr",
+         "p": 0.016692299395799637
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "je",
+       "choix_id": 1956,
+       "p_choix": 0.3561144471168518,
+       "p_choix_ref": 0.3561144471168518,
+       "kl": 0.042410159403984626,
+       "top": [
+        {
+         "texte": "je",
+         "p": 0.3561144471168518
+        },
+        {
+         "texte": "enfants",
+         "p": 0.21599267423152924
+        },
+        {
+         "texte": "et",
+         "p": 0.09003794193267822
+        },
+        {
+         "texte": "les",
+         "p": 0.022764677181839943
+        },
+        {
+         "texte": "gr",
+         "p": 0.02008972130715847
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": "je",
+       "choix_id": 1956,
+       "p_choix": 0.3464758098125458,
+       "p_choix_ref": 0.3464758098125458,
+       "kl": 0.06384855990751807,
+       "top": [
+        {
+         "texte": "je",
+         "p": 0.3464758098125458
+        },
+        {
+         "texte": "enfants",
+         "p": 0.24211403727531433
+        },
+        {
+         "texte": "et",
+         "p": 0.10696503520011902
+        },
+        {
+         "texte": "les",
+         "p": 0.02396583929657936
+        },
+        {
+         "texte": "gr",
+         "p": 0.01963205449283123
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": "je",
+       "choix_id": 1956,
+       "p_choix": 0.36418139934539795,
+       "p_choix_ref": 0.36418139934539795,
+       "kl": 0.051778117002296134,
+       "top": [
+        {
+         "texte": "je",
+         "p": 0.36418139934539795
+        },
+        {
+         "texte": "enfants",
+         "p": 0.23432907462120056
+        },
+        {
+         "texte": "et",
+         "p": 0.08862580358982086
+        },
+        {
+         "texte": "les",
+         "p": 0.02410747855901718
+        },
+        {
+         "texte": "gr",
+         "p": 0.020898932591080666
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 4,
+     "retenu": false,
+     "position": 2990,
+     "morceau": 23,
+     "ligne": 69,
+     "contexte": "… fils. Elle avait plusieurs\nascendants fort vieux et proches de la mort dont ses fils étaient\nnaturellement les héritiers. Le plus jeune des trois avait à recueillir\nd'une",
+     "texte_suivant": " grand",
+     "texte_suivant_id": 4159,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.1699971826361053,
+     "stat_mediane_categorie": 0.1751873981987706,
+     "stat_rang_dans_categorie": 0.48363636363636364,
+     "n_categorie_fr": 275,
+     "n_vivier_fr": 275,
+     "n_lisibles": 106,
+     "ref": {
+      "top": [
+       {
+        "id": 912,
+        "texte": " part",
+        "p": 0.13797006011009216
+       },
+       {
+        "id": 11754,
+        "texte": " grande",
+        "p": 0.08368242532014847
+       },
+       {
+        "id": 97445,
+        "texte": " certaine",
+        "p": 0.08368242532014847
+       },
+       {
+        "id": 31252,
+        "texte": " fortune",
+        "p": 0.07384934276342392
+       },
+       {
+        "id": 33863,
+        "texte": " manière",
+        "p": 0.057513706386089325
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " vie",
+       "choix_id": 12708,
+       "p_choix": 0.1255757361650467,
+       "p_choix_ref": 0.0863063633441925,
+       "kl": 0.1699971826361053,
+       "top": [
+        {
+         "texte": " vie",
+         "p": 0.1255757361650467
+        },
+        {
+         "texte": " part",
+         "p": 0.0863063633441925
+        },
+        {
+         "texte": " certaine",
+         "p": 0.0863063633441925
+        },
+        {
+         "texte": " manière",
+         "p": 0.0863063633441925
+        },
+        {
+         "texte": " grande",
+         "p": 0.07616494596004486
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " part",
+       "choix_id": 912,
+       "p_choix": 0.07947579026222229,
+       "p_choix_ref": 0.07947579026222229,
+       "kl": 0.14807225940078428,
+       "top": [
+        {
+         "texte": " part",
+         "p": 0.07947579026222229
+        },
+        {
+         "texte": " vie",
+         "p": 0.07013700902462006
+        },
+        {
+         "texte": " grande",
+         "p": 0.07013700902462006
+        },
+        {
+         "texte": " certaine",
+         "p": 0.061895567923784256
+        },
+        {
+         "texte": " petite",
+         "p": 0.061895567923784256
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " part",
+       "choix_id": 912,
+       "p_choix": 0.08789318799972534,
+       "p_choix_ref": 0.08789318799972534,
+       "kl": 0.10738005122447068,
+       "top": [
+        {
+         "texte": " part",
+         "p": 0.08789318799972534
+        },
+        {
+         "texte": " grande",
+         "p": 0.06803449988365173
+        },
+        {
+         "texte": " certaine",
+         "p": 0.06161417439579964
+        },
+        {
+         "texte": " vie",
+         "p": 0.05559580400586128
+        },
+        {
+         "texte": " petite",
+         "p": 0.05302394554018974
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " part",
+       "choix_id": 912,
+       "p_choix": 0.09274556487798691,
+       "p_choix_ref": 0.09274556487798691,
+       "kl": 0.164882762841439,
+       "top": [
+        {
+         "texte": " part",
+         "p": 0.09274556487798691
+        },
+        {
+         "texte": " vie",
+         "p": 0.07166794687509537
+        },
+        {
+         "texte": " grande",
+         "p": 0.062243275344371796
+        },
+        {
+         "texte": " petite",
+         "p": 0.05483559891581535
+        },
+        {
+         "texte": " fortune",
+         "p": 0.051923543214797974
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C2",
+     "rang": 5,
+     "retenu": false,
+     "position": 2997,
+     "morceau": 23,
+     "ligne": 76,
+     "contexte": "… ascendants fort vieux et proches de la mort dont ses fils étaient\nnaturellement les héritiers. Le plus jeune des trois avait à recueillir\nd'une grand'tante cent bonnes mille",
+     "texte_suivant": " livres",
+     "texte_suivant_id": 75104,
+     "stat": "KL de herbert --q4",
+     "stat_valeur": 0.16965909024119452,
+     "stat_mediane_categorie": 0.1751873981987706,
+     "stat_rang_dans_categorie": 0.48,
+     "n_categorie_fr": 275,
+     "n_vivier_fr": 275,
+     "n_lisibles": 106,
+     "ref": {
+      "top": [
+       {
+        "id": 75104,
+        "texte": " livres",
+        "p": 0.27191877365112305
+       },
+       {
+        "id": 66770,
+        "texte": " pièces",
+        "p": 0.21176975965499878
+       },
+       {
+        "id": 121338,
+        "texte": " francs",
+        "p": 0.11335109919309616
+       },
+       {
+        "id": 2034,
+        "texte": " den",
+        "p": 0.04169890657067299
+       },
+       {
+        "id": 1559,
+        "texte": " é",
+        "p": 0.02529147081077099
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " pièces",
+       "choix_id": 66770,
+       "p_choix": 0.20871096849441528,
+       "p_choix_ref": 0.1265886276960373,
+       "kl": 0.16965909024119452,
+       "top": [
+        {
+         "texte": " pièces",
+         "p": 0.20871096849441528
+        },
+        {
+         "texte": " livres",
+         "p": 0.1265886276960373
+        },
+        {
+         "texte": " francs",
+         "p": 0.11171387135982513
+        },
+        {
+         "texte": " den",
+         "p": 0.076779305934906
+        },
+        {
+         "texte": " é",
+         "p": 0.028245095163583755
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " livres",
+       "choix_id": 75104,
+       "p_choix": 0.28432291746139526,
+       "p_choix_ref": 0.28432291746139526,
+       "kl": 0.04089250163548952,
+       "top": [
+        {
+         "texte": " livres",
+         "p": 0.28432291746139526
+        },
+        {
+         "texte": " pièces",
+         "p": 0.1724492460489273
+        },
+        {
+         "texte": " francs",
+         "p": 0.13430309295654297
+        },
+        {
+         "texte": " et",
+         "p": 0.029966387897729874
+        },
+        {
+         "texte": " den",
+         "p": 0.029966387897729874
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " livres",
+       "choix_id": 75104,
+       "p_choix": 0.3206756114959717,
+       "p_choix_ref": 0.3206756114959717,
+       "kl": 0.050646329479811465,
+       "top": [
+        {
+         "texte": " livres",
+         "p": 0.3206756114959717
+        },
+        {
+         "texte": " francs",
+         "p": 0.1526627242565155
+        },
+        {
+         "texte": " pièces",
+         "p": 0.14400967955589294
+        },
+        {
+         "texte": " den",
+         "p": 0.03072063997387886
+        },
+        {
+         "texte": " et",
+         "p": 0.027855584397912025
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " livres",
+       "choix_id": 75104,
+       "p_choix": 0.29274407029151917,
+       "p_choix_ref": 0.29274407029151917,
+       "kl": 0.04624807032595244,
+       "top": [
+        {
+         "texte": " livres",
+         "p": 0.29274407029151917
+        },
+        {
+         "texte": " pièces",
+         "p": 0.15120622515678406
+        },
+        {
+         "texte": " francs",
+         "p": 0.14428173005580902
+        },
+        {
+         "texte": " et",
+         "p": 0.03595767170190811
+        },
+        {
+         "texte": " den",
+         "p": 0.033911317586898804
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 0,
+     "retenu": true,
+     "position": 2486,
+     "morceau": 19,
+     "ligne": 73,
+     "contexte": "… plateau inaccessible. Il\nn'allait jamais chercher bien loin ses raisonnements et ses modèles.\nAux habitants d'un pays il citait l'exemple du pays voisin. Dans les\ncantons où l'",
+     "texte_suivant": "on",
+     "texte_suivant_id": 498,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.2334908278559943,
+     "stat_mediane_categorie": 0.2262453708176844,
+     "stat_rang_dans_categorie": 0.5454545454545454,
+     "n_categorie_fr": 22,
+     "n_vivier_fr": 22,
+     "n_lisibles": 7,
+     "ref": {
+      "top": [
+       {
+        "id": 498,
+        "texte": "on",
+        "p": 0.9503977298736572
+       },
+       {
+        "id": 188172,
+        "texte": "Église",
+        "p": 0.0030246421229094267
+       },
+       {
+        "id": 53046,
+        "texte": "histoire",
+        "p": 0.0026692324317991734
+       },
+       {
+        "id": 189321,
+        "texte": "habitude",
+        "p": 0.0023555848747491837
+       },
+       {
+        "id": 22001,
+        "texte": "év",
+        "p": 0.0018345242133364081
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "on",
+       "choix_id": 498,
+       "p_choix": 0.5835863947868347,
+       "p_choix_ref": 0.5835863947868347,
+       "kl": 0.49859150193776314,
+       "top": [
+        {
+         "texte": "on",
+         "p": 0.5835863947868347
+        },
+        {
+         "texte": "il",
+         "p": 0.3123683035373688
+        },
+        {
+         "texte": "était",
+         "p": 0.019968200474977493
+        },
+        {
+         "texte": "autre",
+         "p": 0.007345777936279774
+        },
+        {
+         "texte": "un",
+         "p": 0.005720875691622496
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "on",
+       "choix_id": 498,
+       "p_choix": 0.901541531085968,
+       "p_choix_ref": 0.901541531085968,
+       "kl": 0.15343128598162448,
+       "top": [
+        {
+         "texte": "on",
+         "p": 0.901541531085968
+        },
+        {
+         "texte": "il",
+         "p": 0.05085926502943039
+        },
+        {
+         "texte": "était",
+         "p": 0.024023938924074173
+        },
+        {
+         "texte": "un",
+         "p": 0.0025320176500827074
+        },
+        {
+         "texte": "est",
+         "p": 0.0015357347438111901
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": "on",
+       "choix_id": 498,
+       "p_choix": 0.904731810092926,
+       "p_choix_ref": 0.904731810092926,
+       "kl": 0.15656049347713796,
+       "top": [
+        {
+         "texte": "on",
+         "p": 0.904731810092926
+        },
+        {
+         "texte": "il",
+         "p": 0.05656440183520317
+        },
+        {
+         "texte": "était",
+         "p": 0.01811850629746914
+        },
+        {
+         "texte": "un",
+         "p": 0.002470628824084997
+        },
+        {
+         "texte": "est",
+         "p": 0.0011776189785450697
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": "on",
+       "choix_id": 498,
+       "p_choix": 0.9276207089424133,
+       "p_choix_ref": 0.9276207089424133,
+       "kl": 0.12538003002745157,
+       "top": [
+        {
+         "texte": "on",
+         "p": 0.9276207089424133
+        },
+        {
+         "texte": "il",
+         "p": 0.03334840387105942
+        },
+        {
+         "texte": "était",
+         "p": 0.017828168347477913
+        },
+        {
+         "texte": "un",
+         "p": 0.002362289000302553
+        },
+        {
+         "texte": "étaient",
+         "p": 0.0011901442194357514
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 1,
+     "retenu": false,
+     "position": 3040,
+     "morceau": 23,
+     "ligne": 119,
+     "contexte": "… grand'tante cent bonnes mille livres de rentes; le deuxième était\nsubstitué au titre de duc de son oncle; l'aîné devait succéder à la\npairie de son aïeul. L'",
+     "texte_suivant": "év",
+     "texte_suivant_id": 22001,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.21604747964861232,
+     "stat_mediane_categorie": 0.2262453708176844,
+     "stat_rang_dans_categorie": 0.45454545454545453,
+     "n_categorie_fr": 22,
+     "n_vivier_fr": 22,
+     "n_lisibles": 7,
+     "ref": {
+      "top": [
+       {
+        "id": 236746,
+        "texte": "a",
+        "p": 0.39081019163131714
+       },
+       {
+        "id": 2253,
+        "texte": "une",
+        "p": 0.0679108127951622
+       },
+       {
+        "id": 38906,
+        "texte": "ensemble",
+        "p": 0.05288879573345184
+       },
+       {
+        "id": 191149,
+        "texte": "atmosphère",
+        "p": 0.05288879573345184
+       },
+       {
+        "id": 1525,
+        "texte": "amb",
+        "p": 0.04118967801332474
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "a",
+       "choix_id": 236746,
+       "p_choix": 0.4676342010498047,
+       "p_choix_ref": 0.4676342010498047,
+       "kl": 0.2367136217100655,
+       "top": [
+        {
+         "texte": "a",
+         "p": 0.4676342010498047
+        },
+        {
+         "texte": "atmosphère",
+         "p": 0.17203038930892944
+        },
+        {
+         "texte": "une",
+         "p": 0.03387394919991493
+        },
+        {
+         "texte": "assembl",
+         "p": 0.029893599450588226
+        },
+        {
+         "texte": "amb",
+         "p": 0.023281071335077286
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "a",
+       "choix_id": 236746,
+       "p_choix": 0.39904001355171204,
+       "p_choix_ref": 0.39904001355171204,
+       "kl": 0.1805246004186769,
+       "top": [
+        {
+         "texte": "a",
+         "p": 0.39904001355171204
+        },
+        {
+         "texte": "ensemble",
+         "p": 0.054002545773983
+        },
+        {
+         "texte": "un",
+         "p": 0.03275395184755325
+        },
+        {
+         "texte": "amb",
+         "p": 0.03275395184755325
+        },
+        {
+         "texte": "avait",
+         "p": 0.03275395184755325
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": "a",
+       "choix_id": 236746,
+       "p_choix": 0.4361283481121063,
+       "p_choix_ref": 0.4361283481121063,
+       "kl": 0.22642335123252172,
+       "top": [
+        {
+         "texte": "a",
+         "p": 0.4361283481121063
+        },
+        {
+         "texte": "ensemble",
+         "p": 0.06224820017814636
+        },
+        {
+         "texte": "avait",
+         "p": 0.03487517684698105
+        },
+        {
+         "texte": "un",
+         "p": 0.03157634288072586
+        },
+        {
+         "texte": "une",
+         "p": 0.027920452877879143
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": "a",
+       "choix_id": 236746,
+       "p_choix": 0.42537346482276917,
+       "p_choix_ref": 0.42537346482276917,
+       "kl": 0.2205283452331852,
+       "top": [
+        {
+         "texte": "a",
+         "p": 0.42537346482276917
+        },
+        {
+         "texte": "ensemble",
+         "p": 0.06707227975130081
+        },
+        {
+         "texte": "avait",
+         "p": 0.036923106759786606
+        },
+        {
+         "texte": "un",
+         "p": 0.03359425812959671
+        },
+        {
+         "texte": "une",
+         "p": 0.0330209843814373
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 2,
+     "retenu": false,
+     "position": 365,
+     "morceau": 2,
+     "ligne": 111,
+     "contexte": "… Entre autres personnes puissantes, il\nalla solliciter pour ses paroissiens M. le cardinal Fesch. Un jour que\nl'empereur était venu faire visite à son oncle, le digne curé,",
+     "texte_suivant": " qui",
+     "texte_suivant_id": 2947,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.1951124238638313,
+     "stat_mediane_categorie": 0.2262453708176844,
+     "stat_rang_dans_categorie": 0.2727272727272727,
+     "n_categorie_fr": 22,
+     "n_vivier_fr": 22,
+     "n_lisibles": 7,
+     "ref": {
+      "top": [
+       {
+        "id": 2959,
+        "texte": " fut",
+        "p": 0.395524799823761
+       },
+       {
+        "id": 636,
+        "texte": " se",
+        "p": 0.1000022292137146
+       },
+       {
+        "id": 1998,
+        "texte": " il",
+        "p": 0.04168657958507538
+       },
+       {
+        "id": 587,
+        "texte": " M",
+        "p": 0.04168657958507538
+       },
+       {
+        "id": 696,
+        "texte": " en",
+        "p": 0.028650574386119843
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " fut",
+       "choix_id": 2959,
+       "p_choix": 0.5035677552223206,
+       "p_choix_ref": 0.5035677552223206,
+       "kl": 0.2516502380754311,
+       "top": [
+        {
+         "texte": " fut",
+         "p": 0.5035677552223206
+        },
+        {
+         "texte": " se",
+         "p": 0.05307382717728615
+        },
+        {
+         "texte": " vint",
+         "p": 0.032190654426813126
+        },
+        {
+         "texte": " fit",
+         "p": 0.028408102691173553
+        },
+        {
+         "texte": " s",
+         "p": 0.028408102691173553
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " fut",
+       "choix_id": 2959,
+       "p_choix": 0.31530439853668213,
+       "p_choix_ref": 0.31530439853668213,
+       "kl": 0.1471258420530832,
+       "top": [
+        {
+         "texte": " fut",
+         "p": 0.31530439853668213
+        },
+        {
+         "texte": " se",
+         "p": 0.10236259549856186
+        },
+        {
+         "texte": " en",
+         "p": 0.07971975952386856
+        },
+        {
+         "texte": " M",
+         "p": 0.02932681515812874
+        },
+        {
+         "texte": " pour",
+         "p": 0.02588077448308468
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " fut",
+       "choix_id": 2959,
+       "p_choix": 0.27681636810302734,
+       "p_choix_ref": 0.27681636810302734,
+       "kl": 0.1820773176330358,
+       "top": [
+        {
+         "texte": " fut",
+         "p": 0.27681636810302734
+        },
+        {
+         "texte": " se",
+         "p": 0.10220710933208466
+        },
+        {
+         "texte": " en",
+         "p": 0.09561692178249359
+        },
+        {
+         "texte": " pour",
+         "p": 0.03218390420079231
+        },
+        {
+         "texte": " M",
+         "p": 0.028222396969795227
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " fut",
+       "choix_id": 2959,
+       "p_choix": 0.26910272240638733,
+       "p_choix_ref": 0.26910272240638733,
+       "kl": 0.19959629769377507,
+       "top": [
+        {
+         "texte": " fut",
+         "p": 0.26910272240638733
+        },
+        {
+         "texte": " se",
+         "p": 0.09538950026035309
+        },
+        {
+         "texte": " en",
+         "p": 0.09490169584751129
+        },
+        {
+         "texte": " pour",
+         "p": 0.0340115912258625
+        },
+        {
+         "texte": " par",
+         "p": 0.02626277692615986
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 3,
+     "retenu": false,
+     "position": 1215,
+     "morceau": 9,
+     "ligne": 72,
+     "contexte": "… que\ndans cette salle?\n\n--La salle à manger de monseigneur! s'écria le directeur stupéfait.\n\nL'évêque parcourait la salle du regard et semblait y faire avec les yeux\ndes",
+     "texte_suivant": " mesures",
+     "texte_suivant_id": 61519,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.1850283679335585,
+     "stat_mediane_categorie": 0.2262453708176844,
+     "stat_rang_dans_categorie": 0.18181818181818182,
+     "n_categorie_fr": 22,
+     "n_vivier_fr": 22,
+     "n_lisibles": 7,
+     "ref": {
+      "top": [
+       {
+        "id": 3313,
+        "texte": " calcul",
+        "p": 0.3973281681537628
+       },
+       {
+        "id": 61519,
+        "texte": " mesures",
+        "p": 0.07823660969734192
+       },
+       {
+        "id": 132813,
+        "texte": " comptes",
+        "p": 0.05377087742090225
+       },
+       {
+        "id": 137685,
+        "texte": " estimations",
+        "p": 0.05377087742090225
+       },
+       {
+        "id": 6614,
+        "texte": " plans",
+        "p": 0.047452546656131744
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " calcul",
+       "choix_id": 3313,
+       "p_choix": 0.45781850814819336,
+       "p_choix_ref": 0.45781850814819336,
+       "kl": 0.25010357001295414,
+       "top": [
+        {
+         "texte": " calcul",
+         "p": 0.45781850814819336
+        },
+        {
+         "texte": " mesures",
+         "p": 0.07020673900842667
+        },
+        {
+         "texte": " signes",
+         "p": 0.029266128316521645
+        },
+        {
+         "texte": " yeux",
+         "p": 0.029266128316521645
+        },
+        {
+         "texte": " chiffres",
+         "p": 0.02582721784710884
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " calcul",
+       "choix_id": 3313,
+       "p_choix": 0.2868739068508148,
+       "p_choix_ref": 0.2868739068508148,
+       "kl": 0.1752791383126444,
+       "top": [
+        {
+         "texte": " calcul",
+         "p": 0.2868739068508148
+        },
+        {
+         "texte": " mesures",
+         "p": 0.2234167605638504
+        },
+        {
+         "texte": " plans",
+         "p": 0.03426108881831169
+        },
+        {
+         "texte": " comptes",
+         "p": 0.030235249549150467
+        },
+        {
+         "texte": " estimations",
+         "p": 0.02668246068060398
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " calcul",
+       "choix_id": 3313,
+       "p_choix": 0.2742162048816681,
+       "p_choix_ref": 0.2742162048816681,
+       "kl": 0.18324141607638017,
+       "top": [
+        {
+         "texte": " calcul",
+         "p": 0.2742162048816681
+        },
+        {
+         "texte": " mesures",
+         "p": 0.23719803988933563
+        },
+        {
+         "texte": " plans",
+         "p": 0.036223798990249634
+        },
+        {
+         "texte": " estimations",
+         "p": 0.03574061393737793
+        },
+        {
+         "texte": " comptes",
+         "p": 0.028279975056648254
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " calcul",
+       "choix_id": 3313,
+       "p_choix": 0.2998303771018982,
+       "p_choix_ref": 0.2998303771018982,
+       "kl": 0.13148934733225523,
+       "top": [
+        {
+         "texte": " calcul",
+         "p": 0.2998303771018982
+        },
+        {
+         "texte": " mesures",
+         "p": 0.1913749724626541
+        },
+        {
+         "texte": " plans",
+         "p": 0.03802033141255379
+        },
+        {
+         "texte": " estimations",
+         "p": 0.03757737949490547
+        },
+        {
+         "texte": " comptes",
+         "p": 0.02993365377187729
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 4,
+     "retenu": false,
+     "position": 2878,
+     "morceau": 22,
+     "ligne": 84,
+     "contexte": "… droit au but, avec peu de phrases et\nbeaucoup d'images, ce qui était l'éloquence même de Jésus-Christ,\nconvaincu et persuadant.\n\n\n\n\nChapitre IV\n\nLes oeuvres semblables aux paroles\n\n\nSa",
+     "texte_suivant": " conversation",
+     "texte_suivant_id": 12309,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.17941321094552526,
+     "stat_mediane_categorie": 0.2262453708176844,
+     "stat_rang_dans_categorie": 0.09090909090909091,
+     "n_categorie_fr": 22,
+     "n_vivier_fr": 22,
+     "n_lisibles": 7,
+     "ref": {
+      "top": [
+       {
+        "id": 12708,
+        "texte": " vie",
+        "p": 0.1828133910894394
+       },
+       {
+        "id": 163270,
+        "texte": " pensée",
+        "p": 0.028034541755914688
+       },
+       {
+        "id": 33863,
+        "texte": " manière",
+        "p": 0.024740347638726234
+       },
+       {
+        "id": 40782,
+        "texte": " parole",
+        "p": 0.02183324098587036
+       },
+       {
+        "id": 10631,
+        "texte": " passion",
+        "p": 0.02183324098587036
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": " vie",
+       "choix_id": 12708,
+       "p_choix": 0.07111334055662155,
+       "p_choix_ref": 0.07111334055662155,
+       "kl": 0.29188512259998184,
+       "top": [
+        {
+         "texte": " vie",
+         "p": 0.07111334055662155
+        },
+        {
+         "texte": " personne",
+         "p": 0.03806386888027191
+        },
+        {
+         "texte": " leçon",
+         "p": 0.029644057154655457
+        },
+        {
+         "texte": " passion",
+         "p": 0.023086726665496826
+        },
+        {
+         "texte": " femme",
+         "p": 0.023086726665496826
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": " vie",
+       "choix_id": 12708,
+       "p_choix": 0.12410918623209,
+       "p_choix_ref": 0.12410918623209,
+       "kl": 0.1401467317984676,
+       "top": [
+        {
+         "texte": " vie",
+         "p": 0.12410918623209
+        },
+        {
+         "texte": " pensée",
+         "p": 0.031379055231809616
+        },
+        {
+         "texte": " manière",
+         "p": 0.031379055231809616
+        },
+        {
+         "texte": " parole",
+         "p": 0.02769186906516552
+        },
+        {
+         "texte": " doctrine",
+         "p": 0.02769186906516552
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": " vie",
+       "choix_id": 12708,
+       "p_choix": 0.09510718286037445,
+       "p_choix_ref": 0.09510718286037445,
+       "kl": 0.14399481222829882,
+       "top": [
+        {
+         "texte": " vie",
+         "p": 0.09510718286037445
+        },
+        {
+         "texte": " manière",
+         "p": 0.03595732897520065
+        },
+        {
+         "texte": " pensée",
+         "p": 0.03216902166604996
+        },
+        {
+         "texte": " parole",
+         "p": 0.03112601675093174
+        },
+        {
+         "texte": " main",
+         "p": 0.028051389381289482
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": " vie",
+       "choix_id": 12708,
+       "p_choix": 0.1066119447350502,
+       "p_choix_ref": 0.1066119447350502,
+       "kl": 0.1416261771553527,
+       "top": [
+        {
+         "texte": " vie",
+         "p": 0.1066119447350502
+        },
+        {
+         "texte": " manière",
+         "p": 0.033797092735767365
+        },
+        {
+         "texte": " pensée",
+         "p": 0.03377234563231468
+        },
+        {
+         "texte": " parole",
+         "p": 0.03202573210000992
+        },
+        {
+         "texte": " main",
+         "p": 0.027409732341766357
+        }
+       ]
+      }
+     }
+    },
+    {
+     "categorie": "C4",
+     "rang": 5,
+     "retenu": false,
+     "position": 1072,
+     "morceau": 8,
+     "ligne": 56,
+     "contexte": "… --Vingt-six, monseigneur.\n\n--C'est ce que j'avais compté, dit l'évêque.\n\n--Les lits, reprit le directeur, sont bien serrés les uns contre les\nautres.\n\n--C'est ce que j'avais remarqué.\n\n--",
+     "texte_suivant": "Les",
+     "texte_suivant_id": 15192,
+     "stat": "KL moyenne des bras Q4_0",
+     "stat_valeur": 0.323007051404157,
+     "stat_mediane_categorie": 0.2262453708176844,
+     "stat_rang_dans_categorie": 0.7272727272727273,
+     "n_categorie_fr": 22,
+     "n_vivier_fr": 22,
+     "n_lisibles": 7,
+     "ref": {
+      "top": [
+       {
+        "id": 12834,
+        "texte": "Il",
+        "p": 0.13511861860752106
+       },
+       {
+        "id": 18109,
+        "texte": "Je",
+        "p": 0.10523009300231934
+       },
+       {
+        "id": 236780,
+        "texte": "C",
+        "p": 0.08195296674966812
+       },
+       {
+        "id": 236847,
+        "texte": "V",
+        "p": 0.07232310622930527
+       },
+       {
+        "id": 236863,
+        "texte": "J",
+        "p": 0.05632506683468819
+       }
+      ]
+     },
+     "bras": {
+      "herbert-q4": {
+       "choix": "Il",
+       "choix_id": 12834,
+       "p_choix": 0.1890714466571808,
+       "p_choix_ref": 0.1890714466571808,
+       "kl": 0.6420486313170866,
+       "top": [
+        {
+         "texte": "Il",
+         "p": 0.1890714466571808
+        },
+        {
+         "texte": "V",
+         "p": 0.11467675864696503
+        },
+        {
+         "texte": "Vous",
+         "p": 0.10120168328285217
+        },
+        {
+         "texte": "Je",
+         "p": 0.06138145551085472
+        },
+        {
+         "texte": "J",
+         "p": 0.05416883900761604
+        }
+       ]
+      },
+      "herbert-q4g8": {
+       "choix": "Il",
+       "choix_id": 12834,
+       "p_choix": 0.19796006381511688,
+       "p_choix_ref": 0.19796006381511688,
+       "kl": 0.22066832265594627,
+       "top": [
+        {
+         "texte": "Il",
+         "p": 0.19796006381511688
+        },
+        {
+         "texte": "J",
+         "p": 0.08252093195915222
+        },
+        {
+         "texte": "V",
+         "p": 0.07282433658838272
+        },
+        {
+         "texte": "Je",
+         "p": 0.0642671212553978
+        },
+        {
+         "texte": "Vous",
+         "p": 0.050051093101501465
+        }
+       ]
+      },
+      "llama-q40": {
+       "choix": "Il",
+       "choix_id": 12834,
+       "p_choix": 0.19989967346191406,
+       "p_choix_ref": 0.19989967346191406,
+       "kl": 0.18883335218403458,
+       "top": [
+        {
+         "texte": "Il",
+         "p": 0.19989967346191406
+        },
+        {
+         "texte": "J",
+         "p": 0.08076561987400055
+        },
+        {
+         "texte": "Je",
+         "p": 0.07346608489751816
+        },
+        {
+         "texte": "V",
+         "p": 0.06950529664754868
+        },
+        {
+         "texte": "Les",
+         "p": 0.05233721435070038
+        }
+       ]
+      },
+      "ik-q40": {
+       "choix": "Il",
+       "choix_id": 12834,
+       "p_choix": 0.20779184997081757,
+       "p_choix_ref": 0.20779184997081757,
+       "kl": 0.2404778994595605,
+       "top": [
+        {
+         "texte": "Il",
+         "p": 0.20779184997081757
+        },
+        {
+         "texte": "J",
+         "p": 0.08131163567304611
+        },
+        {
+         "texte": "V",
+         "p": 0.07581853866577148
+        },
+        {
+         "texte": "Je",
+         "p": 0.06832918524742126
+        },
+        {
+         "texte": "Vous",
+         "p": 0.05763021111488342
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "controle_same_depuis_logits": {
+    "herbert-q4": true,
+    "herbert-q4g8": true,
+    "llama-q40": true,
+    "ik-q40": true
+   }
+  }
+ }
+}

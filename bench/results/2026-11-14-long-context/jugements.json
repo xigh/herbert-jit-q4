@@ -1,0 +1,180 @@
+{
+ "notes": {
+  "c1-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "dix heures partout"
+  },
+  "c1-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "en français partout"
+  },
+  "c2-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "vermillon partout (« or bright red » ajouté, même couleur dans le texte)"
+  },
+  "c2-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "vermillon partout"
+  },
+  "c3-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "24 par 20, vert pâle partout"
+  },
+  "c3-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "24 par 20, vert pâle ; unité supposée (pouces, ou centimètres) tolérée"
+  },
+  "c4-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "la phrase exacte, avec son incise « said the picture »"
+  },
+  "c4-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "la phrase anglaise exacte, sans traduction : réponse pas en français, pour les cinq bras"
+  },
+  "c5-en": {
+   "ref": "J",
+   "herbert-q40": "P",
+   "llama-q40pur": "P",
+   "ik-q40pur": "P",
+   "llama-q4km": "J",
+   "remarque": "herbert, llama.cpp et ik Q4_0 omettent le marché (des chefs-d'œuvre contre son âme) ; la référence et Q4_K_M l'ont"
+  },
+  "c5-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "les trois éléments partout"
+  },
+  "l1-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "1891 partout"
+  },
+  "l1-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "1891 partout"
+  },
+  "l2-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "le troisième jour partout"
+  },
+  "l2-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "le troisième jour partout"
+  },
+  "l3-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "chambre capitonnée, fantôme de Pawkins partout"
+  },
+  "l3-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "idem ; Q4_K_M : « chambre matelassée », « l'ombre (ou fantôme) »"
+  },
+  "l4-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "P",
+   "ik-q40pur": "P",
+   "llama-q4km": "J",
+   "remarque": "llama.cpp et ik Q4_0 citent tout le passage (cinq phrases) au lieu de la phrase"
+  },
+  "l4-fr": {
+   "ref": "P",
+   "herbert-q40": "P",
+   "llama-q40pur": "P",
+   "ik-q40pur": "P",
+   "llama-q4km": "P",
+   "remarque": "les cinq bras citent le même passage de cinq phrases, en anglais, sans traduction"
+  },
+  "l5-en": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "les trois éléments partout"
+  },
+  "l5-fr": {
+   "ref": "J",
+   "herbert-q40": "J",
+   "llama-q40pur": "J",
+   "ik-q40pur": "J",
+   "llama-q4km": "J",
+   "remarque": "les trois éléments partout"
+  }
+ },
+ "intro": "Un texte anglais entier dans l'invite, puis une question, posée une fois en anglais et une fois en français. Deux nouvelles peu citées de H. G. Wells, tirées de <i>The Stolen Bacillus and Other Incidents</i> (Project Gutenberg n° 12750) : « The Temptation of Harringay » (2 689 jetons) et « A Moth — Genus Novo » (5 249 jetons) ; invites de 2 731 à 2 759 et de 5 291 à 5 320 jetons avec le gabarit. Cinq questions par texte : un détail du début, un du milieu, un de la fin, une citation exacte, un résumé en deux phrases. Glouton, réflexion coupée, 150 jetons au plus, mêmes ids d'entrée pour les cinq bras (vérifiés), tous sur Ryzen 9 9900X (Zen 5, 12 fils), contexte 8 192. Réponses attendues, règles de jugement et prédictions écrites et hachées avant toute génération (<code>ATTENDUES.md</code> 9fa433f5…, <code>PREDICTIONS.md</code> b111a16b…).",
+ "tableau_intro": "Pour chaque invite et chaque bras : le jeton où il quitte la référence (« identique » s'il la suit jusqu'au bout), puis le jugement du contenu contre la réponse attendue. <b>Le jugement est le mien</b>, fait à la main sur les règles hachées avant génération ; un cas tranché hors de la lettre de ces règles est dit dans le README (citation suivie de son incise « said Hapley » : juste ; passage entier qui contient la phrase : partiel ; « vermilion (or bright red) » : juste). Une citation rendue en anglais seul à une question française est comptée comme une réponse qui n'est pas en français.",
+ "comptes_html": "<p><b>Justesse</b> (juste / partiel / faux, sur 20) : référence bf16 19 / 1 / 0 ; herbert 18 / 2 / 0 ; llama.cpp Q4_0 17 / 3 / 0 ; ik Q4_0 17 / 3 / 0 ; llama.cpp Q4_K_M 19 / 1 / 0. Aucune réponse fausse sous cette lecture ; <b>à la lettre des règles hachées</b>, qui ne prévoyaient ni l'incise « said the picture » / « said Hapley, awkwardly » après la phrase citée, ni un passage entier qui la contient, les quatre citations seraient fausses pour tous les bras : référence 16 / 0 / 4, herbert 15 / 1 / 4, llama.cpp Q4_0 15 / 1 / 4, ik 15 / 1 / 4, Q4_K_M 16 / 0 / 4, et la différence d'herbert avec llama.cpp et ik sur l4-en disparaît. Tous les détails (heure, couleur, dimensions, année, jour, lieu final) sont justes dans les deux langues pour les cinq bras. Les écarts de fond tombent sur le résumé court en anglais (les trois Q4_0 oublient le marché du diable) et sur la citation l4 (llama.cpp et ik Q4_0 rendent le passage entier en anglais). À la question française de citation (c4-fr, l4-fr), les cinq bras répondent en anglais seulement ; toutes les autres réponses aux questions françaises sont en français.</p><p><b>Écart à la référence</b> (invites où le bras la quitte, court puis long, sur 10 ; médiane du rang du premier jeton différent, compté à partir de 1 comme dans le tableau) : herbert 9/10 et 7/10 (médianes 7 et 9) ; llama.cpp Q4_0 8/10 et 9/10 (9 et 9) ; ik Q4_0 8/10 et 8/10 (8 et 6,5) ; Q4_K_M 6/10 et 6/10 (11,5 et 18). Pas de croissance visible de l'écart avec le contexte, avec une réserve : les deux longueurs sont deux récits et deux jeux de questions différents, 10 invites chacun, pour un rapport de longueur de 2 seulement. À 5 300 jetons comme à 2 700, les bras quittent la référence sur à peu près autant d'invites, et souvent au même jeton, dans les premiers mots de la réponse (« Based » contre « According », « studio » contre « atelier ») ; le contenu ne bouge pas. herbert et llama.cpp Q4_0 sont identiques jusqu'au bout sur 5 invites courtes et 3 longues (8 sur 20) ; llama.cpp et ik, même fichier, sur 7 et 5 (12 sur 20).</p>",
+ "temps_html": "<p><b>Temps</b> rendus par les serveurs (médianes, jetons/s, prefill puis decode), court / long : herbert 406 / 15,84 et 399 / 15,21 ; llama.cpp Q4_0 254 / 17,17 et 240 / 16,46 ; ik Q4_0 491 / 21,1 et 475 / 20,5 ; Q4_K_M 226 / 12,87 et 210 / 12,51. Ryzen 9 9900X partagé (le serveur du port 8620 tournait, charge 7 à 12) : ce n'est pas un banc. Référence transformers bf16 (même machine, même environnement que la campagne courte) : prefill de 15 à 39 s sur 2 700 jetons (70 à 188 jetons/s ; 204 s pour la première invite, la première du processus) et de 48 à 83 s sur 5 300 jetons (64 à 110 jetons/s), décodage de 0,25 à 0,91 s par jeton ; 29 minutes pour les 20 invites. Les écarts d'une invite à l'autre à longueur égale (×2 à ×2,5) n'ont pas été expliqués ; Ryzen 9 9900X était chargé par d'autres travaux.</p>",
+ "exemples": [
+  {
+   "id": "c5-en",
+   "titre": "Le résumé court, en anglais : les trois Q4_0 perdent le marché du diable",
+   "commentaire": "La référence et Q4_K_M disent que le tableau propose des chefs-d'œuvre contre l'âme du peintre ; herbert, llama.cpp et ik en Q4_0 parlent d'une critique de son manque d'inspiration et n'en disent rien (partiel, à mon jugement). En français (c5-fr), les cinq bras ont le marché."
+  },
+  {
+   "id": "l4-en",
+   "titre": "La citation, à 5 300 jetons : herbert et Q4_K_M avec la référence, llama.cpp et ik Q4_0 ailleurs dès le premier jeton",
+   "commentaire": "Même fichier Q4_0 pour llama.cpp et ik, et pourtant herbert, sur un autre code, rend ici la référence au jeton près. Le passage entier contient bien la phrase demandée, mais ce n'est pas la phrase (partiel). En français (l4-fr), les cinq bras, référence comprise, rendent ce passage entier."
+  }
+ ]
+}

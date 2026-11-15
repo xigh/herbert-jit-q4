@@ -1,0 +1,28 @@
+{
+ "ref": "ref/gemma26-wiki.kld",
+ "test": "out/gemma26-wiki-ik-q40.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 262144,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "compressed"
+ },
+ "ppl_ref": 1041.2122396325913,
+ "ppl_test": 1152.8376856967475,
+ "nll_ref": 6.948140928364985,
+ "nll_test": 7.049981734727624,
+ "dnll": 0.10184080636263917,
+ "dnll_se": 0.016914763678364628,
+ "dnll_se_chunk": 0.03362862595581591,
+ "kl_mean": 0.34918314455675725,
+ "kl_se": 0.006431070609233297,
+ "kl_median": 0.20956626553968344,
+ "kl_p99": 2.2548197714964786,
+ "kl_p999": 5.541808021617786,
+ "kl_max": 12.688802758824833,
+ "top1": 0.7106299212598425,
+ "top1_n": 4332,
+ "ref_nll_exact_minus_compressed": 0.1569873051582632
+}

@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nEn quelle année a eu lieu la prise de la Bastille, et quelle fête en garde le souvenir ? Réponds en une phrase.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 200,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

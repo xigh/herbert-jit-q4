@@ -1,0 +1,456 @@
+00c58533	add a0, a1, a2
+40c58533	sub a0, a1, a2
+00c59533	sll a0, a1, a2
+00c5a533	slt a0, a1, a2
+00c5b533	sltu a0, a1, a2
+00c5c533	xor a0, a1, a2
+00c5d533	srl a0, a1, a2
+40c5d533	sra a0, a1, a2
+00c5e533	or a0, a1, a2
+00c5f533	and a0, a1, a2
+00c5853b	addw a0, a1, a2
+40c5853b	subw a0, a1, a2
+00c5953b	sllw a0, a1, a2
+00c5d53b	srlw a0, a1, a2
+40c5d53b	sraw a0, a1, a2
+02c58533	mul a0, a1, a2
+02c59533	mulh a0, a1, a2
+02c5a533	mulhsu a0, a1, a2
+02c5b533	mulhu a0, a1, a2
+02c5c533	div a0, a1, a2
+02c5d533	divu a0, a1, a2
+02c5e533	rem a0, a1, a2
+02c5f533	remu a0, a1, a2
+02c5853b	mulw a0, a1, a2
+02c5c53b	divw a0, a1, a2
+02c5d53b	divuw a0, a1, a2
+02c5e53b	remw a0, a1, a2
+02c5f53b	remuw a0, a1, a2
+20c5a533	sh1add a0, a1, a2
+20c5c533	sh2add a0, a1, a2
+20c5e533	sh3add a0, a1, a2
+08c5853b	add.uw a0, a1, a2
+20c5a53b	sh1add.uw a0, a1, a2
+20c5c53b	sh2add.uw a0, a1, a2
+20c5e53b	sh3add.uw a0, a1, a2
+40c5f533	andn a0, a1, a2
+40c5e533	orn a0, a1, a2
+40c5c533	xnor a0, a1, a2
+0ac5c533	min a0, a1, a2
+0ac5d533	minu a0, a1, a2
+0ac5e533	max a0, a1, a2
+0ac5f533	maxu a0, a1, a2
+60c59533	rol a0, a1, a2
+60c5d533	ror a0, a1, a2
+60c5953b	rolw a0, a1, a2
+60c5d53b	rorw a0, a1, a2
+ff958513	addi a0, a1, -7
+ff95a513	slti a0, a1, -7
+ff95b513	sltiu a0, a1, -7
+ff95c513	xori a0, a1, -7
+ff95e513	ori a0, a1, -7
+ff95f513	andi a0, a1, -7
+ff95851b	addiw a0, a1, -7
+02159513	slli a0, a1, 33
+0215d513	srli a0, a1, 33
+4215d513	srai a0, a1, 33
+0a15951b	slli.uw a0, a1, 33
+6215d513	rori a0, a1, 33
+2a159513	bseti a0, a1, 33
+4a159513	bclri a0, a1, 33
+6a159513	binvi a0, a1, 33
+4a15d513	bexti a0, a1, 33
+0075951b	slliw a0, a1, 7
+0075d51b	srliw a0, a1, 7
+4075d51b	sraiw a0, a1, 7
+6075d51b	roriw a0, a1, 7
+60059513	clz a0, a1
+60159513	ctz a0, a1
+60259513	cpop a0, a1
+6005951b	clzw a0, a1
+6015951b	ctzw a0, a1
+6025951b	cpopw a0, a1
+60459513	sext.b a0, a1
+60559513	sext.h a0, a1
+0805c53b	zext.h a0, a1
+6b85d513	rev8 a0, a1
+2875d513	orc.b a0, a1
+00058513	addi a0, a1, 0
+fff5c513	xori a0, a1, -1
+40b00533	sub a0, zero, a1
+0015b513	sltiu a0, a1, 1
+00b03533	sltu a0, zero, a1
+0005851b	addiw a0, a1, 0
+0805853b	add.uw a0, a1, zero
+ff058503	lb a0, -16(a1)
+ff059503	lh a0, -16(a1)
+ff05a503	lw a0, -16(a1)
+ff05b503	ld a0, -16(a1)
+ff05c503	lbu a0, -16(a1)
+ff05d503	lhu a0, -16(a1)
+ff05e503	lwu a0, -16(a1)
+00c58c23	sb a2, 24(a1)
+00c59c23	sh a2, 24(a1)
+00c5ac23	sw a2, 24(a1)
+00c5bc23	sd a2, 24(a1)
+0ec5a52f	amoswap.w.aqrl a0, a2, (a1)
+06c5a52f	amoadd.w.aqrl a0, a2, (a1)
+26c5a52f	amoxor.w.aqrl a0, a2, (a1)
+66c5a52f	amoand.w.aqrl a0, a2, (a1)
+46c5a52f	amoor.w.aqrl a0, a2, (a1)
+86c5a52f	amomin.w.aqrl a0, a2, (a1)
+a6c5a52f	amomax.w.aqrl a0, a2, (a1)
+c6c5a52f	amominu.w.aqrl a0, a2, (a1)
+e6c5a52f	amomaxu.w.aqrl a0, a2, (a1)
+0ec5b52f	amoswap.d.aqrl a0, a2, (a1)
+06c5b52f	amoadd.d.aqrl a0, a2, (a1)
+26c5b52f	amoxor.d.aqrl a0, a2, (a1)
+66c5b52f	amoand.d.aqrl a0, a2, (a1)
+46c5b52f	amoor.d.aqrl a0, a2, (a1)
+86c5b52f	amomin.d.aqrl a0, a2, (a1)
+a6c5b52f	amomax.d.aqrl a0, a2, (a1)
+c6c5b52f	amominu.d.aqrl a0, a2, (a1)
+e6c5b52f	amomaxu.d.aqrl a0, a2, (a1)
+1ec5a52f	sc.w.aqrl a0, a2, (a1)
+1ec5b52f	sc.d.aqrl a0, a2, (a1)
+04c5b52f	amoadd.d.aq a0, a2, (a1)
+02c5b52f	amoadd.d.rl a0, a2, (a1)
+00c5b52f	amoadd.d a0, a2, (a1)
+1405a52f	lr.w.aq a0, (a1)
+1005b52f	lr.d a0, (a1)
+12345537	lui a0, 74565
+00001517	auipc a0, 1
+008580e7	jalr ra, 8(a1)
+0230000f	fence r, rw
+8330000f	fence.tso
+0000100f	fence.i
+0100000f	pause
+00000073	ecall
+00100073	ebreak
+00259573	csrrw a0, frm, a1
+0015a573	csrrs a0, fflags, a1
+0035b573	csrrc a0, fcsr, a1
+0021d573	csrrwi a0, frm, 3
+c0102573	csrrs a0, time, zero
+c0002573	csrrs a0, cycle, zero
+0085a087	flw ft1, 8(a1)
+0085b087	fld ft1, 8(a1)
+00859087	flh ft1, 8(a1)
+fe15ac27	fsw ft1, -8(a1)
+fe15bc27	fsd ft1, -8(a1)
+fe159c27	fsh ft1, -8(a1)
+003170d3	fadd.s ft1, ft2, ft3
+083170d3	fsub.s ft1, ft2, ft3
+103170d3	fmul.s ft1, ft2, ft3
+183170d3	fdiv.s ft1, ft2, ft3
+023170d3	fadd.d ft1, ft2, ft3
+0a3170d3	fsub.d ft1, ft2, ft3
+123170d3	fmul.d ft1, ft2, ft3
+1a3170d3	fdiv.d ft1, ft2, ft3
+203100d3	fsgnj.s ft1, ft2, ft3
+203110d3	fsgnjn.s ft1, ft2, ft3
+203120d3	fsgnjx.s ft1, ft2, ft3
+283100d3	fmin.s ft1, ft2, ft3
+283110d3	fmax.s ft1, ft2, ft3
+223100d3	fsgnj.d ft1, ft2, ft3
+223110d3	fsgnjn.d ft1, ft2, ft3
+223120d3	fsgnjx.d ft1, ft2, ft3
+2a3100d3	fmin.d ft1, ft2, ft3
+2a3110d3	fmax.d ft1, ft2, ft3
+203170c3	fmadd.s ft1, ft2, ft3, ft4
+203170c7	fmsub.s ft1, ft2, ft3, ft4
+203170cb	fnmsub.s ft1, ft2, ft3, ft4
+203170cf	fnmadd.s ft1, ft2, ft3, ft4
+223170c3	fmadd.d ft1, ft2, ft3, ft4
+223170c7	fmsub.d ft1, ft2, ft3, ft4
+223170cb	fnmsub.d ft1, ft2, ft3, ft4
+223170cf	fnmadd.d ft1, ft2, ft3, ft4
+580170d3	fsqrt.s ft1, ft2
+5a0170d3	fsqrt.d ft1, ft2
+202100d3	fsgnj.s ft1, ft2, ft2
+202110d3	fsgnjn.s ft1, ft2, ft2
+202120d3	fsgnjx.s ft1, ft2, ft2
+222100d3	fsgnj.d ft1, ft2, ft2
+420100d3	fcvt.d.s ft1, ft2
+406100d3	fcvt.s.bf16 ft1, ft2
+e0011553	fclass.s a0, ft2
+e0010553	fmv.x.w a0, ft2
+e2010553	fmv.x.d a0, ft2
+e4010553	fmv.x.h a0, ft2
+f00580d3	fmv.w.x ft1, a1
+f20580d3	fmv.d.x ft1, a1
+f40580d3	fmv.h.x ft1, a1
+d20580d3	fcvt.d.w ft1, a1
+d21580d3	fcvt.d.wu ft1, a1
+401100d3	fcvt.s.d ft1, ft2, rne
+448110d3	fcvt.bf16.s ft1, ft2, rtz
+d0b50ce3	beq a0, a1, -744
+d0b56ae3	bltu a0, a1, -748
+d11ff0ef	jal ra, -752
+00092537	lui a0, 146
+a2b5051b	addiw a0, a0, -1493
+00c51513	slli a0, a0, 12
+3c550513	addi a0, a0, 965
+00d51513	slli a0, a0, 13
+abc50513	addi a0, a0, -1348
+0c7572d7	vsetvli t0, a0, e8, mf2, ta, ma
+007572d7	vsetvli t0, a0, e8, mf2, tu, mu
+0c8572d7	vsetvli t0, a0, e16, m1, ta, ma
+008572d7	vsetvli t0, a0, e16, m1, tu, mu
+0d3572d7	vsetvli t0, a0, e32, m8, ta, ma
+013572d7	vsetvli t0, a0, e32, m8, tu, mu
+0da572d7	vsetvli t0, a0, e64, m4, ta, ma
+01a572d7	vsetvli t0, a0, e64, m4, tu, mu
+dc94f2d7	vsetivli t0, 9, e16alt, m2, ta, ma
+80b572d7	vsetvl t0, a0, a1
+02058407	vle8.v v8, (a1)
+03058407	vle8ff.v v8, (a1)
+02058427	vse8.v v8, (a1)
+0ac58407	vlse8.v v8, (a1), a2
+0ac58427	vsse8.v v8, (a1), a2
+07058407	vluxei8.v v8, (a1), v16
+0f058407	vloxei8.v v8, (a1), v16
+07058427	vsuxei8.v v8, (a1), v16
+0f058427	vsoxei8.v v8, (a1), v16
+42058407	vlseg3e8.v v8, (a1)
+22058427	vsseg2e8.v v8, (a1)
+6ac58407	vlsseg4e8.v v8, (a1), a2
+2ac58427	vssseg2e8.v v8, (a1), a2
+22858407	vl2re8.v v8, (a1)
+0205d407	vle16.v v8, (a1)
+0305d407	vle16ff.v v8, (a1)
+0205d427	vse16.v v8, (a1)
+0ac5d407	vlse16.v v8, (a1), a2
+0ac5d427	vsse16.v v8, (a1), a2
+0705d407	vluxei16.v v8, (a1), v16
+0f05d407	vloxei16.v v8, (a1), v16
+0705d427	vsuxei16.v v8, (a1), v16
+0f05d427	vsoxei16.v v8, (a1), v16
+4205d407	vlseg3e16.v v8, (a1)
+2205d427	vsseg2e16.v v8, (a1)
+6ac5d407	vlsseg4e16.v v8, (a1), a2
+2ac5d427	vssseg2e16.v v8, (a1), a2
+2285d407	vl2re16.v v8, (a1)
+0205e407	vle32.v v8, (a1)
+0305e407	vle32ff.v v8, (a1)
+0205e427	vse32.v v8, (a1)
+0ac5e407	vlse32.v v8, (a1), a2
+0ac5e427	vsse32.v v8, (a1), a2
+0705e407	vluxei32.v v8, (a1), v16
+0f05e407	vloxei32.v v8, (a1), v16
+0705e427	vsuxei32.v v8, (a1), v16
+0f05e427	vsoxei32.v v8, (a1), v16
+4205e407	vlseg3e32.v v8, (a1)
+2205e427	vsseg2e32.v v8, (a1)
+6ac5e407	vlsseg4e32.v v8, (a1), a2
+2ac5e427	vssseg2e32.v v8, (a1), a2
+2285e407	vl2re32.v v8, (a1)
+0205f407	vle64.v v8, (a1)
+0305f407	vle64ff.v v8, (a1)
+0205f427	vse64.v v8, (a1)
+0ac5f407	vlse64.v v8, (a1), a2
+0ac5f427	vsse64.v v8, (a1), a2
+0705f407	vluxei64.v v8, (a1), v16
+0f05f407	vloxei64.v v8, (a1), v16
+0705f427	vsuxei64.v v8, (a1), v16
+0f05f427	vsoxei64.v v8, (a1), v16
+4205f407	vlseg3e64.v v8, (a1)
+2205f427	vsseg2e64.v v8, (a1)
+6ac5f407	vlsseg4e64.v v8, (a1), a2
+2ac5f427	vssseg2e64.v v8, (a1), a2
+2285f407	vl2re64.v v8, (a1)
+62858427	vs4r.v v8, (a1)
+02b58407	vlm.v v8, (a1)
+02b58427	vsm.v v8, (a1)
+03020457	vadd.vv v8, v16, v4
+03024457	vadd.vx v8, v16, tp
+03023457	vadd.vi v8, v16, 4
+0b020457	vsub.vv v8, v16, v4
+0b024457	vsub.vx v8, v16, tp
+0f024457	vrsub.vx v8, v16, tp
+0f023457	vrsub.vi v8, v16, 4
+13020457	vminu.vv v8, v16, v4
+13024457	vminu.vx v8, v16, tp
+17020457	vmin.vv v8, v16, v4
+17024457	vmin.vx v8, v16, tp
+1b020457	vmaxu.vv v8, v16, v4
+1b024457	vmaxu.vx v8, v16, tp
+1f020457	vmax.vv v8, v16, v4
+1f024457	vmax.vx v8, v16, tp
+27020457	vand.vv v8, v16, v4
+27024457	vand.vx v8, v16, tp
+27023457	vand.vi v8, v16, 4
+2b020457	vor.vv v8, v16, v4
+2b024457	vor.vx v8, v16, tp
+2b023457	vor.vi v8, v16, 4
+2f020457	vxor.vv v8, v16, v4
+2f024457	vxor.vx v8, v16, tp
+2f023457	vxor.vi v8, v16, 4
+97020457	vsll.vv v8, v16, v4
+97024457	vsll.vx v8, v16, tp
+97023457	vsll.vi v8, v16, 4
+a3020457	vsrl.vv v8, v16, v4
+a3024457	vsrl.vx v8, v16, tp
+a3023457	vsrl.vi v8, v16, 4
+a7020457	vsra.vv v8, v16, v4
+a7024457	vsra.vx v8, v16, tp
+a7023457	vsra.vi v8, v16, 4
+b3020457	vnsrl.wv v8, v16, v4
+b3024457	vnsrl.wx v8, v16, tp
+b3023457	vnsrl.wi v8, v16, 4
+b7023457	vnsra.wi v8, v16, 4
+63020457	vmseq.vv v8, v16, v4
+63024457	vmseq.vx v8, v16, tp
+63023457	vmseq.vi v8, v16, 4
+67020457	vmsne.vv v8, v16, v4
+67024457	vmsne.vx v8, v16, tp
+67023457	vmsne.vi v8, v16, 4
+6b020457	vmsltu.vv v8, v16, v4
+6b024457	vmsltu.vx v8, v16, tp
+6f020457	vmslt.vv v8, v16, v4
+6f024457	vmslt.vx v8, v16, tp
+73020457	vmsleu.vv v8, v16, v4
+73024457	vmsleu.vx v8, v16, tp
+73023457	vmsleu.vi v8, v16, 4
+77020457	vmsle.vv v8, v16, v4
+77024457	vmsle.vx v8, v16, tp
+77023457	vmsle.vi v8, v16, 4
+7b024457	vmsgtu.vx v8, v16, tp
+7b023457	vmsgtu.vi v8, v16, 4
+7f024457	vmsgt.vx v8, v16, tp
+7f023457	vmsgt.vi v8, v16, 4
+5d020457	vmerge.vvm v8, v16, v4, v0
+5d024457	vmerge.vxm v8, v16, tp, v0
+5d023457	vmerge.vim v8, v16, 4, v0
+5e020457	vmv.v.v v8, v4
+5e024457	vmv.v.x v8, tp
+5e023457	vmv.v.i v8, 4
+9f003457	vmv1r.v v8, v16
+9f00b457	vmv2r.v v8, v16
+9f01b457	vmv4r.v v8, v16
+9f03b457	vmv8r.v v8, v16
+97022457	vmul.vv v8, v16, v4
+97026457	vmul.vx v8, v16, tp
+93022457	vmulhu.vv v8, v16, v4
+9f022457	vmulh.vv v8, v16, v4
+83022457	vdivu.vv v8, v16, v4
+83026457	vdivu.vx v8, v16, tp
+8b026457	vremu.vx v8, v16, tp
+b7022457	vmacc.vv v8, v4, v16
+b7026457	vmacc.vx v8, tp, v16
+a7026457	vmadd.vx v8, tp, v16
+c3022457	vwaddu.vv v8, v16, v4
+e3022457	vwmulu.vv v8, v16, v4
+e3026457	vwmulu.vx v8, v16, tp
+f3026457	vwmaccu.vx v8, tp, v16
+4b032457	vzext.vf2 v8, v16
+4b03a457	vsext.vf2 v8, v16
+4b022457	vzext.vf4 v8, v16
+03022457	vredsum.vs v8, v16, v4
+1b022457	vredmaxu.vs v8, v16, v4
+1f022457	vredmax.vs v8, v16, v4
+13022457	vredminu.vs v8, v16, v4
+43002457	vmv.x.s s0, v16
+42026457	vmv.s.x v8, tp
+43082457	vcpop.m s0, v16
+4308a457	vfirst.m s0, v16
+5208a457	vid.v v8
+53082457	viota.m v8, v16
+67022457	vmand.mm v8, v16, v4
+77022457	vmnand.mm v8, v16, v4
+63022457	vmandn.mm v8, v16, v4
+6b022457	vmor.mm v8, v16, v4
+6f022457	vmxor.mm v8, v16, v4
+73022457	vmorn.mm v8, v16, v4
+7b022457	vmnor.mm v8, v16, v4
+7f022457	vmxnor.mm v8, v16, v4
+5f022457	vcompress.vm v8, v16, v4
+33020457	vrgather.vv v8, v16, v4
+33024457	vrgather.vx v8, v16, tp
+33023457	vrgather.vi v8, v16, 4
+3b020457	vrgatherei16.vv v8, v16, v4
+3b024457	vslideup.vx v8, v16, tp
+3b023457	vslideup.vi v8, v16, 4
+3f024457	vslidedown.vx v8, v16, tp
+3f023457	vslidedown.vi v8, v16, 4
+3b026457	vslide1up.vx v8, v16, tp
+3f026457	vslide1down.vx v8, v16, tp
+3b025457	vfslide1up.vf v8, v16, ft4
+3f025457	vfslide1down.vf v8, v16, ft4
+03021457	vfadd.vv v8, v16, v4
+03025457	vfadd.vf v8, v16, ft4
+0b021457	vfsub.vv v8, v16, v4
+0b025457	vfsub.vf v8, v16, ft4
+9f025457	vfrsub.vf v8, v16, ft4
+93021457	vfmul.vv v8, v16, v4
+93025457	vfmul.vf v8, v16, ft4
+83021457	vfdiv.vv v8, v16, v4
+83025457	vfdiv.vf v8, v16, ft4
+87025457	vfrdiv.vf v8, v16, ft4
+13021457	vfmin.vv v8, v16, v4
+13025457	vfmin.vf v8, v16, ft4
+1b021457	vfmax.vv v8, v16, v4
+1b025457	vfmax.vf v8, v16, ft4
+23021457	vfsgnj.vv v8, v16, v4
+23025457	vfsgnj.vf v8, v16, ft4
+27021457	vfsgnjn.vv v8, v16, v4
+2b021457	vfsgnjx.vv v8, v16, v4
+b3021457	vfmacc.vv v8, v4, v16
+b3025457	vfmacc.vf v8, ft4, v16
+b7021457	vfnmacc.vv v8, v4, v16
+b7025457	vfnmacc.vf v8, ft4, v16
+bb021457	vfmsac.vv v8, v4, v16
+bb025457	vfmsac.vf v8, ft4, v16
+bf021457	vfnmsac.vv v8, v4, v16
+bf025457	vfnmsac.vf v8, ft4, v16
+a3021457	vfmadd.vv v8, v4, v16
+a3025457	vfmadd.vf v8, ft4, v16
+a7021457	vfnmadd.vv v8, v4, v16
+ab021457	vfmsub.vv v8, v4, v16
+ab025457	vfmsub.vf v8, ft4, v16
+af021457	vfnmsub.vv v8, v4, v16
+af025457	vfnmsub.vf v8, ft4, v16
+c3021457	vfwadd.vv v8, v16, v4
+d3021457	vfwadd.wv v8, v16, v4
+e3021457	vfwmul.vv v8, v16, v4
+f3021457	vfwmacc.vv v8, v4, v16
+f3025457	vfwmacc.vf v8, ft4, v16
+ef021457	vfwmaccbf16.vv v8, v4, v16
+ef025457	vfwmaccbf16.vf v8, ft4, v16
+07021457	vfredusum.vs v8, v16, v4
+0f021457	vfredosum.vs v8, v16, v4
+17021457	vfredmin.vs v8, v16, v4
+1f021457	vfredmax.vs v8, v16, v4
+c7021457	vfwredusum.vs v8, v16, v4
+cf021457	vfwredosum.vs v8, v16, v4
+63021457	vmfeq.vv v8, v16, v4
+63025457	vmfeq.vf v8, v16, ft4
+67021457	vmfle.vv v8, v16, v4
+67025457	vmfle.vf v8, v16, ft4
+6f021457	vmflt.vv v8, v16, v4
+6f025457	vmflt.vf v8, v16, ft4
+73021457	vmfne.vv v8, v16, v4
+73025457	vmfne.vf v8, v16, ft4
+77025457	vmfgt.vf v8, v16, ft4
+7f025457	vmfge.vf v8, v16, ft4
+5d025457	vfmerge.vfm v8, v16, ft4, v0
+5e025457	vfmv.v.f v8, ft4
+43001457	vfmv.f.s fs0, v16
+42025457	vfmv.s.f v8, ft4
+4f001457	vfsqrt.v v8, v16
+4f021457	vfrsqrt7.v v8, v16
+4f029457	vfrec7.v v8, v16
+4f081457	vfclass.v v8, v16
+4b001457	vfcvt.xu.f.v v8, v16
+4b009457	vfcvt.x.f.v v8, v16
+4b011457	vfcvt.f.xu.v v8, v16
+4b019457	vfcvt.f.x.v v8, v16
+4b031457	vfcvt.rtz.xu.f.v v8, v16
+4b039457	vfcvt.rtz.x.f.v v8, v16
+4b061457	vfwcvt.f.f.v v8, v16
+4b059457	vfwcvt.f.x.v v8, v16
+4b069457	vfwcvtbf16.f.f.v v8, v16
+4b0a1457	vfncvt.f.f.w v8, v16
+4b0a9457	vfncvt.rod.f.f.w v8, v16
+4b089457	vfncvt.x.f.w v8, v16
+4b0e9457	vfncvtbf16.f.f.w v8, v16

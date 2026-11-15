@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-9",
+  "object": "chat.completion",
+  "created": 1794684367,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```rust\npub fn inverser(s: &str) -> String {\n    s.chars().rev().collect()\n}\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 124,
+    "completion_tokens": 29,
+    "total_tokens": 153,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 124,
+    "prompt_ms": 501.696814,
+    "prompt_per_token_ms": 4.045942048387097,
+    "prompt_per_second": 247.16122674041938,
+    "predicted_n": 29,
+    "predicted_ms": 1707.665021,
+    "predicted_per_token_ms": 58.88500072413793,
+    "predicted_per_second": 16.98225333620627
+  }
+}

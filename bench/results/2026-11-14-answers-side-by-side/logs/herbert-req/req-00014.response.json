@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-14",
+  "object": "chat.completion",
+  "created": 1794676060,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```json\n{\n  \"nom\": \"Charles-François-Bienvenu Myriel\",\n  \"fonction\": \"évêque de Digne\",\n  \"ville\": \"Digne\",\n  \"age_approx\": 75,\n  \"en_poste_depuis\": 1806\n}\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 109,
+    "completion_tokens": 72,
+    "total_tokens": 181,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 109,
+    "prompt_ms": 474.811802,
+    "prompt_per_token_ms": 4.356071577981651,
+    "prompt_per_second": 229.56463917044758,
+    "predicted_n": 72,
+    "predicted_ms": 4313.337210000001,
+    "predicted_per_token_ms": 59.90746125000001,
+    "predicted_per_second": 16.692411581704274
+  }
+}

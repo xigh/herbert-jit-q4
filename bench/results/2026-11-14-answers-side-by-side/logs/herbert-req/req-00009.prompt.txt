@@ -1,0 +1,7 @@
+<|im_start|>user
+Cite cinq fleuves de France, un par ligne, sans commentaire.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

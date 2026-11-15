@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-6",
+  "object": "chat.completion",
+  "created": 1794678188,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "D'après le texte, la toile qu'Harringay présente comme preuve a les dimensions de **24 par 20** (probablement en pouces, bien que l'unité ne soit pas explicitement précisée dans l'extrait, c'est l'unité standard pour ce type de description dans la littérature anglaise de l'époque).\n\nElle est peinte d'une couleur uniforme : un **vert pâle** (décrit dans le texte comme « *Hedge Sparrow's Egg Tint* », soit une teinte d'œuf de moineau, et plus loin comme « *pale green* »)."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2752,
+    "completion_tokens": 133,
+    "total_tokens": 2885,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 2752,
+    "prompt_ms": 6685.463527,
+    "prompt_per_token_ms": 2.4293108746366276,
+    "prompt_per_second": 411.63937083580475,
+    "predicted_n": 133,
+    "predicted_ms": 8492.805238,
+    "predicted_per_token_ms": 63.855678481203014,
+    "predicted_per_second": 15.660314380566275
+  }
+}

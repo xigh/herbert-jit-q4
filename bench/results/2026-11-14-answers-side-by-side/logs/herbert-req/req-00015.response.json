@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-15",
+  "object": "chat.completion",
+  "created": 1794676065,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The old fisherman watched the sea without saying anything, as one watches a friend who is leaving."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 44,
+    "completion_tokens": 21,
+    "total_tokens": 65,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 44,
+    "prompt_ms": 332.569971,
+    "prompt_per_token_ms": 7.558408431818182,
+    "prompt_per_second": 132.3029853468039,
+    "predicted_n": 21,
+    "predicted_ms": 1214.88215,
+    "predicted_per_token_ms": 57.85153095238095,
+    "predicted_per_second": 17.285627251993127
+  }
+}

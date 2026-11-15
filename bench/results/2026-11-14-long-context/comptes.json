@@ -1,0 +1,243 @@
+{
+ "sorties": {
+  "herbert-q40|court": {
+   "quitte": 9,
+   "sur": 10,
+   "mediane_div": 6,
+   "divs": [
+    0,
+    12,
+    5,
+    0,
+    6,
+    28,
+    0,
+    8,
+    50
+   ]
+  },
+  "herbert-q40|long": {
+   "quitte": 7,
+   "sur": 10,
+   "mediane_div": 8,
+   "divs": [
+    8,
+    28,
+    35,
+    0,
+    26,
+    0,
+    3
+   ]
+  },
+  "llama-q40pur|court": {
+   "quitte": 8,
+   "sur": 10,
+   "mediane_div": 8.0,
+   "divs": [
+    0,
+    12,
+    0,
+    6,
+    28,
+    0,
+    37,
+    10
+   ]
+  },
+  "llama-q40pur|long": {
+   "quitte": 9,
+   "sur": 10,
+   "mediane_div": 8,
+   "divs": [
+    12,
+    8,
+    28,
+    23,
+    0,
+    26,
+    0,
+    0,
+    3
+   ]
+  },
+  "ik-q40pur|court": {
+   "quitte": 8,
+   "sur": 10,
+   "mediane_div": 7.0,
+   "divs": [
+    0,
+    12,
+    0,
+    6,
+    28,
+    0,
+    8,
+    10
+   ]
+  },
+  "ik-q40pur|long": {
+   "quitte": 8,
+   "sur": 10,
+   "mediane_div": 5.5,
+   "divs": [
+    8,
+    28,
+    33,
+    0,
+    26,
+    0,
+    0,
+    3
+   ]
+  },
+  "llama-q4km|court": {
+   "quitte": 6,
+   "sur": 10,
+   "mediane_div": 10.5,
+   "divs": [
+    0,
+    16,
+    6,
+    84,
+    0,
+    15
+   ]
+  },
+  "llama-q4km|long": {
+   "quitte": 6,
+   "sur": 10,
+   "mediane_div": 17.0,
+   "divs": [
+    12,
+    28,
+    0,
+    22,
+    1,
+    27
+   ]
+  }
+ },
+ "paires": {
+  "herbert-q40|llama-q40pur|court": 5,
+  "herbert-q40|llama-q40pur|long": 3,
+  "llama-q40pur|ik-q40pur|court": 7,
+  "llama-q40pur|ik-q40pur|long": 5,
+  "herbert-q40|ik-q40pur|court": 5,
+  "herbert-q40|ik-q40pur|long": 3,
+  "llama-q40pur|llama-q4km|court": 3,
+  "llama-q40pur|llama-q4km|long": 2
+ },
+ "temps": {
+  "llama-q40pur|court": {
+   "prefill": 254.2,
+   "decode": 17.17
+  },
+  "llama-q40pur|long": {
+   "prefill": 240.25,
+   "decode": 16.46
+  },
+  "llama-q4km|court": {
+   "prefill": 225.87,
+   "decode": 12.87
+  },
+  "llama-q4km|long": {
+   "prefill": 210.39,
+   "decode": 12.51
+  },
+  "ik-q40pur|court": {
+   "prefill": 491.02,
+   "decode": 21.1
+  },
+  "ik-q40pur|long": {
+   "prefill": 475.35,
+   "decode": 20.5
+  },
+  "herbert-q40|court": {
+   "prefill": 406.1,
+   "decode": 15.84
+  },
+  "herbert-q40|long": {
+   "prefill": 399.2,
+   "decode": 15.21
+  },
+  "ref|court": {
+   "prefill_s": [
+    204.3,
+    26.5,
+    15.2,
+    16.1,
+    14.6,
+    15.8,
+    27.4,
+    37.4,
+    38.7,
+    33.7
+   ],
+   "prefill_tok_s": [
+    13,
+    104,
+    181,
+    172,
+    188,
+    174,
+    100,
+    74,
+    70,
+    81
+   ],
+   "decode_s_par_jeton": [
+    0.301,
+    0.526,
+    0.253,
+    0.254,
+    0.252,
+    0.259,
+    0.769,
+    0.524,
+    0.511,
+    0.448
+   ],
+   "total_s": 624
+  },
+  "ref|long": {
+   "prefill_s": [
+    77.0,
+    72.6,
+    48.0,
+    82.5,
+    63.1,
+    74.9,
+    63.4,
+    82.1,
+    64.6,
+    77.3
+   ],
+   "prefill_tok_s": [
+    69,
+    73,
+    110,
+    64,
+    84,
+    71,
+    84,
+    65,
+    82,
+    69
+   ],
+   "decode_s_par_jeton": [
+    0.642,
+    0.54,
+    0.519,
+    0.618,
+    0.822,
+    0.68,
+    0.91,
+    0.542,
+    0.559,
+    0.607
+   ],
+   "total_s": 1114
+  }
+ }
+}

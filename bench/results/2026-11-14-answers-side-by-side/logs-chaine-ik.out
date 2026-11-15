@@ -1,0 +1,36 @@
+== début 17:25:12 UTC
+               total        used        free      shared  buff/cache   available
+Mem:             186          92           1          61         155          93
+Swap:              1           1           0
+== 17:25:21 ik prêt (pid 3198206)
+[ik] q01 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q02 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q03 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q04 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q05 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q06 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q07 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q08 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q09 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q10 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q11 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q12 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q13 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q14 prompt_ok=True tokenize_matches=True -> 0 tokens
+[ik] q15 prompt_ok=True tokenize_matches=True -> 0 tokens
+q01 11 illisibles [] texte_ok True
+q02 38 illisibles [] texte_ok True
+q03 36 illisibles [] texte_ok True
+q04 4 illisibles [] texte_ok True
+q05 200 illisibles [] texte_ok True
+q06 68 illisibles [] texte_ok True
+q07 105 illisibles [] texte_ok True
+q08 88 illisibles [] texte_ok True
+q09 17 illisibles [] texte_ok True
+q10 78 illisibles [] texte_ok True
+q11 60 illisibles [] texte_ok True
+q12 99 illisibles [] texte_ok True
+q13 41 illisibles [] texte_ok True
+q14 72 illisibles [] texte_ok True
+q15 23 illisibles [] texte_ok True
+== FIN 17:26:12

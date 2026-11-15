@@ -1,0 +1,39 @@
+{
+ "label": "herbert-q4g8",
+ "text": [
+  {
+   "words": 380,
+   "rep": 0,
+   "wall_s": 7.7692702249623835,
+   "prompt_n": 621,
+   "prompt_ms": 1686.363314,
+   "prompt_per_second": 368.2480488305974,
+   "predicted_n": 128,
+   "predicted_ms": 6079.791969999999,
+   "predicted_per_second": 21.053351929079245
+  },
+  {
+   "words": 380,
+   "rep": 1,
+   "wall_s": 7.766646235017106,
+   "prompt_n": 621,
+   "prompt_ms": 1678.2291069999999,
+   "prompt_per_second": 370.03290993450753,
+   "predicted_n": 128,
+   "predicted_ms": 6085.567647000001,
+   "predicted_per_second": 21.03337066068111
+  },
+  {
+   "words": 380,
+   "rep": 2,
+   "wall_s": 7.7608048130059615,
+   "prompt_n": 621,
+   "prompt_ms": 1680.74095,
+   "prompt_per_second": 369.47990111147107,
+   "predicted_n": 128,
+   "predicted_ms": 6078.648801,
+   "predicted_per_second": 21.05731128584739
+  }
+ ],
+ "image": []
+}

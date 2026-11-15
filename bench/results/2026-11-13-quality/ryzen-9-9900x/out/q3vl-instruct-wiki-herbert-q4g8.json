@@ -1,0 +1,28 @@
+{
+ "ref": "ref/q3vl-instruct-wiki.kld",
+ "test": "out/q3vl-instruct-wiki-herbert-q4g8.kld",
+ "n_ctx": 256,
+ "chunks": 48,
+ "positions": 6096,
+ "vocab": 151936,
+ "nll_sources": {
+  "ref_nll": "exact",
+  "test_nll": "exact"
+ },
+ "ppl_ref": 7.63968082518826,
+ "ppl_test": 8.129159051352495,
+ "nll_ref": 2.0333558254979347,
+ "nll_test": 2.0954574804916493,
+ "dnll": 0.06210165499371474,
+ "dnll_se": 0.006756893193945994,
+ "dnll_se_chunk": 0.007181384166503043,
+ "kl_mean": 0.0940720175486044,
+ "kl_se": 0.0020997338024400917,
+ "kl_median": 0.061021090035539294,
+ "kl_p99": 0.6157072109736911,
+ "kl_p999": 1.4953323731816972,
+ "kl_max": 6.964371480907431,
+ "top1": 0.8520341207349081,
+ "top1_n": 5194,
+ "ref_nll_exact_minus_compressed": 0.002142214994004791
+}

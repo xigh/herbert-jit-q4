@@ -1,0 +1,20 @@
+herbert-g8-gemmae2b text {"words": 380, "rep": 0, "wall_s": 4.4012881657108665, "prompt_n": 626, "prompt_ms": 790.8280490000001, "prompt_per_second": 791.5753630534164, "predicted_n": 128, "predicted_ms": 3609.413613, "predicted_per_second": 35.46282408283253}
+herbert-g8-gemmae2b text {"words": 380, "rep": 1, "wall_s": 4.39331151265651, "prompt_n": 626, "prompt_ms": 782.679002, "prompt_per_second": 799.8170366144562, "predicted_n": 128, "predicted_ms": 3609.66248, "predicted_per_second": 35.46037911001585}
+herbert-g8-gemmae2b text {"words": 380, "rep": 2, "wall_s": 4.3941368740051985, "prompt_n": 626, "prompt_ms": 784.357764, "prompt_per_second": 798.1051871120383, "predicted_n": 128, "predicted_ms": 3608.8334250000003, "predicted_per_second": 35.468525400282225}
+BANC DONE herbert-g8-gemmae2b
+llama-gemmae2b text {"words": 380, "rep": 0, "wall_s": 4.755009330809116, "prompt_n": 627, "prompt_ms": 646.776, "prompt_per_second": 969.4237262978219, "predicted_n": 128, "predicted_ms": 4105.484, "predicted_per_second": 30.934233332781222}
+llama-gemmae2b text {"words": 380, "rep": 1, "wall_s": 4.75134227797389, "prompt_n": 627, "prompt_ms": 645.318, "prompt_per_second": 971.613994960624, "predicted_n": 128, "predicted_ms": 4103.863, "predicted_per_second": 30.94645215983087}
+llama-gemmae2b text {"words": 380, "rep": 2, "wall_s": 4.759277136065066, "prompt_n": 627, "prompt_ms": 653.684, "prompt_per_second": 959.1790528757014, "predicted_n": 128, "predicted_ms": 4103.147, "predicted_per_second": 30.951852322132257}
+BANC DONE llama-gemmae2b
+ik-gemmae2b text {"words": 380, "rep": 0, "wall_s": 3.977271681651473, "prompt_n": 627, "prompt_ms": 328.29, "prompt_per_second": 1909.8967376405005, "predicted_n": 128, "predicted_ms": 3646.332, "predicted_per_second": 35.1037700352025}
+ik-gemmae2b text {"words": 380, "rep": 1, "wall_s": 3.979789637029171, "prompt_n": 627, "prompt_ms": 328.625, "prompt_per_second": 1907.949790794979, "predicted_n": 128, "predicted_ms": 3648.601, "predicted_per_second": 35.08193962562637}
+ik-gemmae2b text {"words": 380, "rep": 2, "wall_s": 3.9809751324355602, "prompt_n": 627, "prompt_ms": 328.776, "prompt_per_second": 1907.0735090152566, "predicted_n": 128, "predicted_ms": 3649.852, "predicted_per_second": 35.06991516368335}
+BANC DONE ik-gemmae2b
+ikrtr-gemmae2b text {"words": 380, "rep": 0, "wall_s": 3.9909968180581927, "prompt_n": 627, "prompt_ms": 333.261, "prompt_per_second": 1881.4082655936338, "predicted_n": 128, "predicted_ms": 3655.133, "predicted_per_second": 35.01924553771368}
+ikrtr-gemmae2b text {"words": 380, "rep": 1, "wall_s": 3.970265311188996, "prompt_n": 627, "prompt_ms": 312.759, "prompt_per_second": 2004.7384727537815, "predicted_n": 128, "predicted_ms": 3654.965, "predicted_per_second": 35.020855192867785}
+ikrtr-gemmae2b text {"words": 380, "rep": 2, "wall_s": 3.971137600019574, "prompt_n": 627, "prompt_ms": 312.881, "prompt_per_second": 2003.9567758988242, "predicted_n": 128, "predicted_ms": 3655.738, "predicted_per_second": 35.01345008860044}
+BANC DONE ikrtr-gemmae2b
+herbert-g7-gemmae2b text {"words": 380, "rep": 0, "wall_s": 4.4031190341338515, "prompt_n": 626, "prompt_ms": 773.0726119999999, "prompt_per_second": 809.755759398187, "predicted_n": 128, "predicted_ms": 3628.939063, "predicted_per_second": 35.27201691124126}
+herbert-g7-gemmae2b text {"words": 380, "rep": 1, "wall_s": 4.408486302010715, "prompt_n": 626, "prompt_ms": 778.6603319999999, "prompt_per_second": 803.9448964763753, "predicted_n": 128, "predicted_ms": 3628.806275, "predicted_per_second": 35.27330761133012}
+herbert-g7-gemmae2b text {"words": 380, "rep": 2, "wall_s": 4.409629979170859, "prompt_n": 626, "prompt_ms": 779.602852, "prompt_per_second": 802.9729475643323, "predicted_n": 128, "predicted_ms": 3629.009508, "predicted_per_second": 35.271332223800826}
+BANC DONE herbert-g7-gemmae2b

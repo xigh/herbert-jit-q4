@@ -1,0 +1,10 @@
+{
+ "1": "en partie juste : KL 0,0723 (wiki) dans la fourchette, 0,0767 (fr) juste au-dessus ; top-1 87,6 % / 86,0 % (fr sous 87 %) ; Δnll +0,055 / +0,063 (fr au-dessus de +0,06) ; 3,8 et 3,9 fois la KL du Q4_K_M (juste)",
+ "2": "juste : herbert grille 8 0,0720 contre 0,0723 (wiki, −0,4 %), 0,0759 contre 0,0767 (fr, −1,0 %)",
+ "3": "juste : ik +1,8 % (wiki) et 0,0 % (fr) contre llama ; -rtr −0,8 % et −0,1 % contre ik",
+ "4": "juste : herbert --q4 +24 % (wiki) et +28 % (fr) au-dessus de llama Q4_0 pur",
+ "5": "fausse : llama.cpp Q4_0 pur contre Q4_K_M (même fenêtre, 627 jetons) decode 23,8 contre 16,6 (+44 %, prédit +10 à +25 % et 18–21 tok/s) ; prefill 171,7 contre 157,5 (+9 %, prédit +10 à +40 %) ; le ×1,56 du decode d'herbert devient ×1,08 (prédit ×1,25 à ×1,45)",
+ "6": "en partie juste : ik sans -rtr prefill 313 (627 j.) et decode 26,7, au-dessus des fourchettes (200–300, 18–22) ; ik -rtr prefill 359, dans la fourchette, et il dépasse herbert (336) ; decode -rtr 26,7, égal à sans -rtr (juste)",
+ "7": "juste : herbert 336,4 / 25,9 (627 j.) contre 333,5 / 26,0 hier (621 j.), +0,9 % et −0,4 %",
+ "8": "fausse : herbert / llama.cpp Q4_0 en prefill ×1,96 à 627 jetons et ×1,96 à 6 131 ; l'écart ne grandit pas"
+}

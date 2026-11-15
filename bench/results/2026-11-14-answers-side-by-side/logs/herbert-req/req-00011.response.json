@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-11",
+  "object": "chat.completion",
+  "created": 1794676047,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Arrivé à Digne avec sa sœur Baptistine, le prélat Myriel est assisté par la servante Magloire.\nBaptistine, décrite comme douce et mince, incarne l'idéal de la respectabilité féminine."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 182,
+    "completion_tokens": 54,
+    "total_tokens": 236,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 182,
+    "prompt_ms": 558.8838440000001,
+    "prompt_per_token_ms": 3.070790351648352,
+    "prompt_per_second": 325.6490627773452,
+    "predicted_n": 54,
+    "predicted_ms": 3231.048275,
+    "predicted_per_token_ms": 59.83422731481482,
+    "predicted_per_second": 16.71284221217648
+  }
+}

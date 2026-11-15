@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-9",
+  "object": "chat.completion",
+  "created": 1794676038,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "La Seine\nLa Loire\nLe Rhône\nLa Garonne\nLe Rhin"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 27,
+    "completion_tokens": 17,
+    "total_tokens": 44,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 27,
+    "prompt_ms": 281.094615,
+    "prompt_per_token_ms": 10.410911666666665,
+    "prompt_per_second": 96.05306739867642,
+    "predicted_n": 17,
+    "predicted_ms": 978.758722,
+    "predicted_per_token_ms": 57.57404247058824,
+    "predicted_per_second": 17.368938450185276
+  }
+}

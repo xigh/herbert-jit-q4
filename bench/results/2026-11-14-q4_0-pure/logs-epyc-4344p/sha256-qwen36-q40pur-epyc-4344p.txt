@@ -1,0 +1,1 @@
+531009e7cfefc30f1c7d85a5fdb8ebe3a6288de973aa1ef50e3f52d9b1457146  ~/q40pur/Qwen3.6-35B-A3B-Q4_0-pure.gguf

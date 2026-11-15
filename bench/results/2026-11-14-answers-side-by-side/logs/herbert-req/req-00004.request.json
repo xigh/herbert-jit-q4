@@ -1,0 +1,10 @@
+{
+  "prompt": "<|im_start|>user\nCombien font 17 × 24 ? Donne seulement le résultat.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "n_predict": 200,
+  "temperature": 0,
+  "top_k": 1,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "cache_prompt": false,
+  "n_probs": 1
+}

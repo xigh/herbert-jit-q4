@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-7",
+  "object": "chat.completion",
+  "created": 1794678204,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\"That was rather hasty of you,\" said the picture."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2736,
+    "completion_tokens": 13,
+    "total_tokens": 2749,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 2736,
+    "prompt_ms": 6851.467197,
+    "prompt_per_token_ms": 2.5041912269736843,
+    "prompt_per_second": 399.33052605111965,
+    "predicted_n": 13,
+    "predicted_ms": 777.091395,
+    "predicted_per_token_ms": 59.77626115384616,
+    "predicted_per_second": 16.72904896855794
+  }
+}

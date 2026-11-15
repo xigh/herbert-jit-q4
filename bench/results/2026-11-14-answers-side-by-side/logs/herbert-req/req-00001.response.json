@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-1",
+  "object": "chat.completion",
+  "created": 1794676005,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "La capitale de l'Australie est Canberra."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 29,
+    "completion_tokens": 11,
+    "total_tokens": 40,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 29,
+    "prompt_ms": 289.15306699999996,
+    "prompt_per_token_ms": 9.970795413793102,
+    "prompt_per_second": 100.29290126810241,
+    "predicted_n": 11,
+    "predicted_ms": 654.224906,
+    "predicted_per_token_ms": 59.47499145454546,
+    "predicted_per_second": 16.813789721420356
+  }
+}

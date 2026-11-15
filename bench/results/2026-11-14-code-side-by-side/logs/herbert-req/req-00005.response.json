@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-herbert-5",
+  "object": "chat.completion",
+  "created": 1794684341,
+  "model": "Qwen3.6-35B-A3B",
+  "system_fingerprint": "herbert-jit",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```python\ndef en_romain(n: int) -> str:\n    table = [(1000, \"M\"), (900, \"CM\"), (500, \"D\"), (400, \"CD\"), (100, \"C\"), (90, \"XC\"),\n             (50, \"L\"), (40, \"XL\"), (10, \"X\"), (9, \"IX\"), (5, \"V\"), (4, \"IV\"), (1, \"I\")]\n    resultat = \"\"\n    for valeur, symbole in table:\n        while n >= valeur:\n            resultat += symbole\n            n -= valeur\n    return resultat\n```"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 215,
+    "completion_tokens": 151,
+    "total_tokens": 366,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 215,
+    "prompt_ms": 648.104851,
+    "prompt_per_token_ms": 3.0144411674418605,
+    "prompt_per_second": 331.73644614488467,
+    "predicted_n": 151,
+    "predicted_ms": 9073.166119,
+    "predicted_per_token_ms": 60.0871928410596,
+    "predicted_per_second": 16.6424815791472
+  }
+}
